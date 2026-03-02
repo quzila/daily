@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - "codex/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify required files
+        run: |
+          test -f daily-ai-semiconductor-briefing/SKILL.md
+          test -f daily-news-md-to-html/SKILL.md
+          test -f daily-news-md-to-html/assets/index.html
+
+      - name: Compile Python scripts
+        run: |
+          python -m compileall daily-ai-semiconductor-briefing/scripts
+          python -m compileall daily-news-md-to-html/scripts
+
+      - name: Smoke test CLI entrypoints
+        run: |
+          python daily-ai-semiconductor-briefing/scripts/create_daily_news_files.py --help
+          python daily-ai-semiconductor-briefing/scripts/render_daily_news_landing.py --help
+          python daily-news-md-to-html/scripts/render_markdown_to_html.py --help
