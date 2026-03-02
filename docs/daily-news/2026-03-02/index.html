@@ -327,6 +327,8 @@
       font-size: 9.5px;
       color: var(--txt3);
       letter-spacing: .04em;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
     .conf {
       margin-left: auto;
@@ -392,19 +394,21 @@
     }
     .block-txt { font-size: 13.5px; line-height: 1.9; color: var(--txt2); }
     .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
+      display: inline-block;
       margin-top: 1.4rem;
       font-family: var(--ff-mono);
       font-size: 9.5px;
       letter-spacing: .1em;
-      text-transform: uppercase;
+      text-transform: none;
+      line-height: 1.5;
       color: var(--txt3);
       text-decoration: none;
       padding: 6px 14px;
       border: 1px solid var(--border-hi);
       border-radius: var(--r);
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
       transition: all .2s;
     }
     .card.ai   .card-link:hover { color: var(--ai);   border-color: var(--ai-border); }
@@ -516,9 +520,23 @@
 
     @media (max-width: 720px) {
       nav { padding: 0 .7rem; }
-      nav a { padding: 0 .6rem; }
+      nav > a { padding: 0 .6rem; }
       .shell { padding: 0 10px; }
       .hero { padding: 3.2rem 0 2.4rem; }
+      .card-top { padding: 1.15rem 1rem .95rem; }
+      .card-toggle { padding: .6rem 1rem; }
+      .card-inner { padding: 1.1rem 1rem 1.2rem; }
+      .card-meta { gap: .4rem .55rem; }
+      .conf {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .card-summary { font-size: 14px; line-height: 1.5; }
+      .card-link {
+        font-size: 9px;
+        padding: 6px 10px;
+      }
     }
   </style>
 </head>
@@ -539,7 +557,7 @@
       <span>デイリーAI・半導体ニュース（2026-03-02）</span>
     </div>
     <h1>デイリー<em>AI</em>·<br>半導体ニュース（2026-03-02）</h1>
-    <p class="hero-sub">Generated 2026-03-03 01:26:38 (Asia/Tokyo)</p>
+    <p class="hero-sub">Generated 2026-03-03 01:34:47 (Asia/Tokyo)</p>
   </header>
 </div>
 
@@ -600,7 +618,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">店頭で法人相談を受けるとき、AI導入は「使えるか」だけでなく「継続管理できるか」の説明が重要になる。個人開発でも、ログ/評価/回帰チェックを最初から設計する優先度が上がる。</p>
 </div>
-      <a href="https://www.anthropic.com/news/anthropic-acquires-humanloop" target="_blank" rel="noopener" class="card-link">https://www.anthropic.com/news/anthropic-acquires-humanloop</a>
+      <a href="https://www.anthropic.com/news/anthropic-acquires-humanloop" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -631,7 +649,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">業務では「今使える機能」と「今後の拡張余地」をセットで提案する必要がある。個人開発では、将来のAPI変更を見越した抽象化設計を入れておく判断材料になる。</p>
 </div>
-      <a href="https://www.anthropic.com/news/the-next-chapter-of-claude" target="_blank" rel="noopener" class="card-link">https://www.anthropic.com/news/the-next-chapter-of-claude</a>
+      <a href="https://www.anthropic.com/news/the-next-chapter-of-claude" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -662,7 +680,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">店頭向け社内資料でも、静的マニュアルより「更新前提」の運用が必要。個人開発では、週次でワークフロー見直しの時間を固定する価値が高い。</p>
 </div>
-      <a href="https://github.blog/changelog/2026-02-27-release-roundup/" target="_blank" rel="noopener" class="card-link">https://github.blog/changelog/2026-02-27-release-roundup/</a>
+      <a href="https://github.blog/changelog/2026-02-27-release-roundup/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -698,7 +716,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">店頭業務の案内資料作成でも、下書きAIと校正AIの分離を試せる。個人開発では、設計・実装・レビューでモデルを分ける運用に移行しやすい。</p>
 </div>
-      <a href="https://zenn.dev/search?q=Claude+Code&amp;order=latest" target="_blank" rel="noopener" class="card-link">https://zenn.dev/search?q=Claude+Code&amp;order=latest</a>
+      <a href="https://zenn.dev/search?q=Claude+Code&amp;order=latest" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -729,7 +747,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">業務では、社内説明時に「国内での実例」を添えると説得力が上がる。個人開発では、早期導入時の落とし穴を先回りしやすい。</p>
 </div>
-      <a href="https://zenn.dev/topics/claudecode/articles" target="_blank" rel="noopener" class="card-link">https://zenn.dev/topics/claudecode/articles</a>
+      <a href="https://zenn.dev/topics/claudecode/articles" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -765,7 +783,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">日次報告では速報カテゴリと実践カテゴリを分けて扱う方が読み手に伝わる。個人開発では、失敗談・運用Tipsの抽出対象として継続監視する価値がある。</p>
 </div>
-      <a href="https://note.com/search?q=%E7%94%9F%E6%88%90AI&amp;sort=new" target="_blank" rel="noopener" class="card-link">https://note.com/search?q=%E7%94%9F%E6%88%90AI&amp;sort=new</a>
+      <a href="https://note.com/search?q=%E7%94%9F%E6%88%90AI&amp;sort=new" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -801,7 +819,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">店舗スタッフ教育や個人学習計画に、公式教材中心の順序を組みやすい。情報の鮮度確認を前提に、毎週チェック対象にできる。</p>
 </div>
-      <a href="https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/" target="_blank" rel="noopener" class="card-link">https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/</a>
+      <a href="https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -832,7 +850,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">業務上の説明でも「クラウド一択」から選択肢提示に移行できる。個人開発では、ローカル検証を先行させるコスト最適化が取りやすい。</p>
 </div>
-      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/" target="_blank" rel="noopener" class="card-link">https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/</a>
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -863,7 +881,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">スタッフ向け勉強会や個人学習で、ブラックボックス利用の補助教材として採用しやすい。AI提案時の説明品質を底上げできる。</p>
 </div>
-      <a href="http://karpathy.github.io/2026/02/12/microgpt/" target="_blank" rel="noopener" class="card-link">http://karpathy.github.io/2026/02/12/microgpt/</a>
+      <a href="http://karpathy.github.io/2026/02/12/microgpt/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -909,7 +927,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">店頭提案で「端末性能 + ネットワーク側最適化」の説明が可能になる。個人開発でもエッジ遅延設計を初期から考える必要がある。</p>
 </div>
-      <a href="https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem" target="_blank" rel="noopener" class="card-link">https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem</a>
+      <a href="https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -940,7 +958,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">店頭での価格動向説明に、メモリ供給改善の観点を追加できる。自作/開発環境提案でも、今後の構成選定を見直す根拠になる。</p>
 </div>
-      <a href="https://news.samsung.com/global/samsung-electronics-begins-mass-production-of-industrys-first-ai-optimized-hbm4" target="_blank" rel="noopener" class="card-link">https://news.samsung.com/global/samsung-electronics-begins-mass-production-of-industrys-first-ai-optimized-hbm4</a>
+      <a href="https://news.samsung.com/global/samsung-electronics-begins-mass-production-of-industrys-first-ai-optimized-hbm4" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -971,7 +989,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">業務では価格変動の背景説明に使える。個人開発では調達不確実性を見越した複数構成の準備が有効。</p>
 </div>
-      <a href="https://www.tomshardware.com/tech-industry/tsmc-could-build-chip-fab-in-uae-possibly-using-2nm-process-technology" target="_blank" rel="noopener" class="card-link">https://www.tomshardware.com/tech-industry/tsmc-could-build-chip-fab-in-uae-possibly-using-2nm-process-technology</a>
+      <a href="https://www.tomshardware.com/tech-industry/tsmc-could-build-chip-fab-in-uae-possibly-using-2nm-process-technology" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -1007,7 +1025,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">店頭で将来拡張を重視する顧客提案に使える。個人開発ではローカル推論端末の選定条件を更新すべき。</p>
 </div>
-      <a href="https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/" target="_blank" rel="noopener" class="card-link">https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/</a>
+      <a href="https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -1038,7 +1056,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">業務では顧客の用途別にクラウド/ローカル併用提案を作りやすい。個人開発ではプロトタイプの実行基盤コストを抑える選択肢になる。</p>
 </div>
-      <a href="https://www.amd.com/en/developer/resources/technical-articles/running-a-one-trillion-parameter-large-language-model-on-amd-ryzen-ai-max-plus-cluster.html" target="_blank" rel="noopener" class="card-link">https://www.amd.com/en/developer/resources/technical-articles/running-a-one-trillion-parameter-large-language-model-on-amd-ryzen-ai-max-plus-cluster.html</a>
+      <a href="https://www.amd.com/en/developer/resources/technical-articles/running-a-one-trillion-parameter-large-language-model-on-amd-ryzen-ai-max-plus-cluster.html" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -1054,7 +1072,7 @@
 
 <footer>
   <p>Daily AI · 半導体 Briefing</p>
-  <p>デイリーAI・半導体ニュース（2026-03-02） · Generated 2026-03-03 01:26:38 (Asia/Tokyo)</p>
+  <p>デイリーAI・半導体ニュース（2026-03-02） · Generated 2026-03-03 01:34:47 (Asia/Tokyo)</p>
 </footer>
 
 <script>

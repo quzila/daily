@@ -77,7 +77,12 @@ def _extract_link(raw: str) -> tuple[str, str]:
     """Parse '- リンク: [label](url)' or '- リンク: url' into (url, label)."""
     m = re.match(r"\[([^\]]+)\]\((https?://[^\s)]+)\)", raw.strip())
     if m:
-        return m.group(2), m.group(1)
+        label = m.group(1).strip()
+        url = m.group(2).strip()
+        # Normalize URL-as-label links to a short CTA to avoid mobile overflow.
+        if label == url or re.match(r"^https?://", label):
+            label = "→ 元記事を読む"
+        return url, label
     m2 = re.match(r"(https?://\S+)", raw.strip())
     if m2:
         url = m2.group(1)

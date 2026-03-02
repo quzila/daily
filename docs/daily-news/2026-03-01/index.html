@@ -327,6 +327,8 @@
       font-size: 9.5px;
       color: var(--txt3);
       letter-spacing: .04em;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
     .conf {
       margin-left: auto;
@@ -392,19 +394,21 @@
     }
     .block-txt { font-size: 13.5px; line-height: 1.9; color: var(--txt2); }
     .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
+      display: inline-block;
       margin-top: 1.4rem;
       font-family: var(--ff-mono);
       font-size: 9.5px;
       letter-spacing: .1em;
-      text-transform: uppercase;
+      text-transform: none;
+      line-height: 1.5;
       color: var(--txt3);
       text-decoration: none;
       padding: 6px 14px;
       border: 1px solid var(--border-hi);
       border-radius: var(--r);
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
       transition: all .2s;
     }
     .card.ai   .card-link:hover { color: var(--ai);   border-color: var(--ai-border); }
@@ -516,9 +520,23 @@
 
     @media (max-width: 720px) {
       nav { padding: 0 .7rem; }
-      nav a { padding: 0 .6rem; }
+      nav > a { padding: 0 .6rem; }
       .shell { padding: 0 10px; }
       .hero { padding: 3.2rem 0 2.4rem; }
+      .card-top { padding: 1.15rem 1rem .95rem; }
+      .card-toggle { padding: .6rem 1rem; }
+      .card-inner { padding: 1.1rem 1rem 1.2rem; }
+      .card-meta { gap: .4rem .55rem; }
+      .conf {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .card-summary { font-size: 14px; line-height: 1.5; }
+      .card-link {
+        font-size: 9px;
+        padding: 6px 10px;
+      }
     }
   </style>
 </head>
@@ -539,7 +557,7 @@
       <span>デイリーAI・半導体ニュース（2026-03-01）</span>
     </div>
     <h1>デイリー<em>AI</em>·<br>半導体ニュース（2026-03-01）</h1>
-    <p class="hero-sub">Generated 2026-03-03 01:26:38 (Asia/Tokyo)</p>
+    <p class="hero-sub">Generated 2026-03-03 01:34:47 (Asia/Tokyo)</p>
   </header>
 </div>
 
@@ -600,7 +618,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、法人客や教育機関向けにAI PC/クラウド提案をする際、「使えるか」だけでなく「どの用途で禁止・制限があるか」を説明できると信頼につながる。個人開発では、機能実装時に利用規約とセーフティ境界を先に仕様化し、後から修正する手戻りを減らせる。記事中の「約3分の1が安全領域に関与」という情報は、今後のプロダクト選定でもガバナンス評価軸として使える。</p>
 </div>
-      <a href="https://openai.com/index/our-agreement-with-the-department-of-war" target="_blank" rel="noopener" class="card-link">https://openai.com/index/our-agreement-with-the-department-of-war</a>
+      <a href="https://openai.com/index/our-agreement-with-the-department-of-war" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -631,7 +649,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、スタッフ教育用のFAQ更新や販促原稿チェックなど、反復タスクをAgentに切り出す設計がしやすくなる。個人開発では、Issue粒度で作業を分割し、`レビュー役AI`と`実装役AI`を分離する構成が再現しやすい。特に「再利用82%」は、既存資産を壊しにくい導入方針を説明する材料になる。</p>
 </div>
-      <a href="https://github.blog/changelog/2026-02-27-release-roundup/" target="_blank" rel="noopener" class="card-link">https://github.blog/changelog/2026-02-27-release-roundup/</a>
+      <a href="https://github.blog/changelog/2026-02-27-release-roundup/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -662,7 +680,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、法人案件で「どのベンダーを推すか」を聞かれた際、性能比較だけでなく調達リスク説明が必要になる。個人開発では、将来のAPI停止・地域制限リスクを考え、複数プロバイダ対応の実装を初期段階で仕込む判断につながる。今回の連名声明は、ベンダーロックイン回避を現実的課題として扱う根拠になる。</p>
 </div>
-      <a href="https://www.anthropic.com/news/we-strongly-disagree-with-the-governments-proposal-to-designate-anthropic-a-supply-chain-risk" target="_blank" rel="noopener" class="card-link">https://www.anthropic.com/news/we-strongly-disagree-with-the-governments-proposal-to-designate-anthropic-a-supply-chain-risk</a>
+      <a href="https://www.anthropic.com/news/we-strongly-disagree-with-the-governments-proposal-to-designate-anthropic-a-supply-chain-risk" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -698,7 +716,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、販促文面や比較表のチェック工程を2段階AI化し、人の最終確認だけに圧縮する設計に転用できる。個人開発では、実装AIとレビュアAIを分けることで、レビュー待ちで画面張り付きになる時間を減らせる。記事の「3つの壁」という整理は、店舗教育資料にもそのまま使える説明フレームだ。</p>
 </div>
-      <a href="https://zenn.dev/nrs/articles/db4120beb0e601" target="_blank" rel="noopener" class="card-link">https://zenn.dev/nrs/articles/db4120beb0e601</a>
+      <a href="https://zenn.dev/nrs/articles/db4120beb0e601" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -734,7 +752,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、新人向けのAI接客研修を「公式教材優先」で構成する方が品質を揃えやすい。個人開発では、断片的なSNS情報より公式カリキュラムを先に消化する方が、実装スピードの再現性が高い。upvote 1,884という反応量は、現場ニーズの強さを示す参考値になる。</p>
 </div>
-      <a href="https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/" target="_blank" rel="noopener" class="card-link">https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/</a>
+      <a href="https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -765,7 +783,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、GPU搭載PC提案時に「クラウド課金回避」「ローカル推論」という訴求がしやすくなる。個人開発では、35B級を前提にプロトタイプを回し、必要時のみAPIモデルに切り替えるハイブリッド戦略が取りやすい。サイズ1/3という情報は、VRAM要件と導入コスト説明の起点になる。</p>
 </div>
-      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/" target="_blank" rel="noopener" class="card-link">https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/</a>
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -796,7 +814,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、AI相談を受けた際に「何が内部で動いているか」を平易に説明できるスタッフ教育素材として使える。個人開発では、ブラックボックスで使う前に最小実装で挙動を把握し、推論コストや精度劣化の切り分けがしやすくなる。`200行`という具体値は、学習着手の心理的ハードルを下げる。</p>
 </div>
-      <a href="http://karpathy.github.io/2026/02/12/microgpt/" target="_blank" rel="noopener" class="card-link">http://karpathy.github.io/2026/02/12/microgpt/</a>
+      <a href="http://karpathy.github.io/2026/02/12/microgpt/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -827,7 +845,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、エントリー〜ミドル帯GPUでも現実的なAI用途が増えるため、価格帯別の提案シナリオを作りやすい。個人開発では、35B級のローカル検証を先に回し、必要時のみ高額APIにエスカレーションする運用でコストを抑えられる。`122B/35B`の二段構成は、性能と費用の説明軸として使いやすい。</p>
 </div>
-      <a href="https://venturebeat.com/technology/alibabas-new-open-source-qwen3-5-medium-models-offer-sonnet-4-5-performance" target="_blank" rel="noopener" class="card-link">https://venturebeat.com/technology/alibabas-new-open-source-qwen3-5-medium-models-offer-sonnet-4-5-performance</a>
+      <a href="https://venturebeat.com/technology/alibabas-new-open-source-qwen3-5-medium-models-offer-sonnet-4-5-performance" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -873,7 +891,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、5G/AI端末の訴求時に「端末性能だけでなくネットワーク側AI最適化が進む」説明ができると差別化になる。個人開発では、エッジ推論やネットワーク最適化を前提にしたアプリ設計（遅延・帯域設計）を先に考えるべきだと分かる。MWC 2026明記は、今期の展示トレンドを追う優先順位づけに使える。</p>
 </div>
-      <a href="https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem" target="_blank" rel="noopener" class="card-link">https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem</a>
+      <a href="https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -904,7 +922,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、AI需要で高止まりするPC/部材価格を説明する際に「製造効率改善の時間差」を根拠として示しやすい。個人開発では、外観検査・異常検知の小規模PoCを早めに触っておくと、今後の製造系案件に転用しやすい。`60%`という目標値は、導入効果の現実感を測る基準になる。</p>
 </div>
-      <a href="https://news.samsung.com/uk/samsung-electronics-unveils-vision-for-ai-driven-hyper-connected-factories-at-smart-factory-auto-tech-show-2026" target="_blank" rel="noopener" class="card-link">https://news.samsung.com/uk/samsung-electronics-unveils-vision-for-ai-driven-hyper-connected-factories-at-smart-factory-auto-tech-show-2026</a>
+      <a href="https://news.samsung.com/uk/samsung-electronics-unveils-vision-for-ai-driven-hyper-connected-factories-at-smart-factory-auto-tech-show-2026" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -940,7 +958,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、店頭で「将来増設・保守」を重視する顧客向けに新しい訴求軸を作れる。個人開発では、ローカル推論環境をノートで組む際に、メモリ帯域と交換性の両立を評価項目に入れるべきだと分かる。`$1240`と`8533 MT/s`は価格説明と性能説明をつなぐ具体値になる。</p>
 </div>
-      <a href="https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/" target="_blank" rel="noopener" class="card-link">https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/</a>
+      <a href="https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -971,7 +989,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、欠品・価格変動時に「どこが詰まっているか」を説明する補助資料として使える可能性がある。個人開発では、こうしたグラフ可視化を自作して部材情報を定期更新する仕組みを作ると、技術調査が資産化できる。upvote 4と小規模なので、過信せず検証前提で扱うべき情報だ。</p>
 </div>
-      <a href="https://www.reddit.com/r/Semiconductors/comments/1rhqwsy/full_supply_chain_network/" target="_blank" rel="noopener" class="card-link">https://www.reddit.com/r/Semiconductors/comments/1rhqwsy/full_supply_chain_network/</a>
+      <a href="https://www.reddit.com/r/Semiconductors/comments/1rhqwsy/full_supply_chain_network/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -1002,7 +1020,7 @@
   <div class="block-lbl">自分への影響</div>
   <p class="block-txt">量販店業務では、AI PC提案時に「クラウド依存を減らす構成」という説明価値が高まる。個人開発では、巨大モデルをそのまま回すより、分割・量子化・ハイブリッド運用の設計を先に考える必要がある。`1兆パラメータ`という指標は、ローカル推論の期待値を調整する対話材料になる。</p>
 </div>
-      <a href="https://www.amd.com/en/developer/resources/technical-articles/2026/how-to-run-a-one-trillion-parameter-llm-locally-an-amd.html" target="_blank" rel="noopener" class="card-link">https://www.amd.com/en/developer/resources/technical-articles/2026/how-to-run-a-one-trillion-parameter-llm-locally-an-amd.html</a>
+      <a href="https://www.amd.com/en/developer/resources/technical-articles/2026/how-to-run-a-one-trillion-parameter-llm-locally-an-amd.html" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -1102,7 +1120,7 @@
 
 <footer>
   <p>Daily AI · 半導体 Briefing</p>
-  <p>デイリーAI・半導体ニュース（2026-03-01） · Generated 2026-03-03 01:26:38 (Asia/Tokyo)</p>
+  <p>デイリーAI・半導体ニュース（2026-03-01） · Generated 2026-03-03 01:34:47 (Asia/Tokyo)</p>
 </footer>
 
 <script>

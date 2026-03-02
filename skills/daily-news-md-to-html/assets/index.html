@@ -327,6 +327,8 @@
       font-size: 9.5px;
       color: var(--txt3);
       letter-spacing: .04em;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
     .conf {
       margin-left: auto;
@@ -392,19 +394,21 @@
     }
     .block-txt { font-size: 13.5px; line-height: 1.9; color: var(--txt2); }
     .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
+      display: inline-block;
       margin-top: 1.4rem;
       font-family: var(--ff-mono);
       font-size: 9.5px;
       letter-spacing: .1em;
-      text-transform: uppercase;
+      text-transform: none;
+      line-height: 1.5;
       color: var(--txt3);
       text-decoration: none;
       padding: 6px 14px;
       border: 1px solid var(--border-hi);
       border-radius: var(--r);
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
       transition: all .2s;
     }
     .card.ai   .card-link:hover { color: var(--ai);   border-color: var(--ai-border); }
@@ -516,9 +520,23 @@
 
     @media (max-width: 720px) {
       nav { padding: 0 .7rem; }
-      nav a { padding: 0 .6rem; }
+      nav > a { padding: 0 .6rem; }
       .shell { padding: 0 10px; }
       .hero { padding: 3.2rem 0 2.4rem; }
+      .card-top { padding: 1.15rem 1rem .95rem; }
+      .card-toggle { padding: .6rem 1rem; }
+      .card-inner { padding: 1.1rem 1rem 1.2rem; }
+      .card-meta { gap: .4rem .55rem; }
+      .conf {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .card-summary { font-size: 14px; line-height: 1.5; }
+      .card-link {
+        font-size: 9px;
+        padding: 6px 10px;
+      }
     }
   </style>
 </head>
