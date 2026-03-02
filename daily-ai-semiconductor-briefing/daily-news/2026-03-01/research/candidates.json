@@ -1,0 +1,312 @@
+{
+  "date": "2026-03-01",
+  "generated_at": "2026-03-01T12:22:06.321188+00:00",
+  "candidates": [
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "私のAIチームを紹介します——Gemini・ChatGPT・Claude・Cursorの役割分担｜Masa | 材料開発×データ活用",
+      "url": "https://note.com/_mf_/n/n4300ee1210da",
+      "published_at": "",
+      "snippet": "",
+      "score": 12.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "reddit:ClaudeAI",
+      "title": "Claude has overtaken ChatGPT in the Apple App Store",
+      "url": "https://i.redd.it/osn6yzbfgbmg1.jpeg",
+      "published_at": "2026-02-28",
+      "snippet": "",
+      "score": 11.0,
+      "meta": {
+        "ups": 4135
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "【2026年2月最新】ChatGPTとClaudeが同日に\"最強モデル\"を投下。4大生成AIの最新ランキングを徹底解説｜メカトラ/スキルアップ人事",
+      "url": "https://note.com/crt03/n/n1760324b5050",
+      "published_at": "",
+      "snippet": "",
+      "score": 10.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "reddit:ClaudeAI",
+      "title": "Anthropic has opened up its entire educational curriculum for free",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/",
+      "published_at": "2026-02-28",
+      "snippet": "Anthropic has opened up its entire educational curriculum for free, and now I'm starting to question myself. With Claude Code, MCP Mastery, API courses, and AI Fluency, they've created a proper university-level program. And it's free. While we're trying to learn things from random tutorials on YouTube, Anthropic comes along and says, \"Here's a fully structured curriculum, learn it.\" Now t",
+      "score": 9.0,
+      "meta": {
+        "ups": 1884
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "zenn",
+      "title": "Claude Code や Codex をオーケストレーションして自動でレビュー FB ループを回して洗い物をしてる話",
+      "url": "https://zenn.dev/nrs/articles/db4120beb0e601",
+      "published_at": "2026-02-27",
+      "snippet": "2026-02-27T18:56:12.967+09:00",
+      "score": 8.0,
+      "meta": {
+        "liked_count": 133
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "reddit:LocalLLaMA",
+      "title": "Qwen 3.5-35B-A3B is beyond expectations. It's replaced GPT-OSS-120B as my daily driver and it's 1/3 the size.",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/",
+      "published_at": "2026-02-28",
+      "snippet": "I know everyone has their own subjective take on what models are the best, at which types of tasks, at which sizes, at which quants, at which context lengths and so on and so forth. But Qwen 3.5-35B-A3B has completely shocked me. My use-case is pretty broad, but generally focuses around development tasks. * I have an N8N server setup that aggregates all of my messages, emails, alerts and aggreg",
+      "score": 6.978,
+      "meta": {
+        "ups": 489
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "T40_GPTsから一歩進んで、Claude CodeやCodexの“Skills”を主戦場にした理由｜シンパクト和先生",
+      "url": "https://note.com/simple_tatudora5/n/n5bf52a576db9",
+      "published_at": "",
+      "snippet": "",
+      "score": 6.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "GitHub Copilot CLI vs Claude Code【基礎・比較編】AIコーディングツールの実力を徹底検証｜イザークコンサルティング株式会社",
+      "url": "https://note.com/ezark_company/n/nee98855569cb",
+      "published_at": "",
+      "snippet": "",
+      "score": 6.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "【2026年最新版】Claude Code 完全入門ガイド｜創業者直伝のノウハウ、おすすめSkills・SubAgnets、SaaSの未来、月額400円活用術まで2.7万文字で詳細解説。｜チャエン | 重要AIニュースを毎日発信⚡️",
+      "url": "https://note.com/chaen_channel/n/n170fbfcd94bf",
+      "published_at": "",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "話題のGoogle AntigravityはCursor／Claude Codeとどう違う？ 文章作成にも役立つ？｜アシカガコウジ | コージ次長",
+      "url": "https://note.com/ashikagacast/n/n3a48e5158026",
+      "published_at": "",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "【魅力を解説】「GPT-5.3-Codex-Spark」リアルタイムコーディングに特化した超高速モデルがリリース｜Yasuhito Morimoto",
+      "url": "https://note.com/yasuhitoo/n/nd503d5b591db",
+      "published_at": "",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "【2026年最新】Claude Code to Figmaとは？使い方・設定方法・活用事例を徹底解説｜株式会社AIworker",
+      "url": "https://note.com/ai__worker/n/n9c3b0e88158e",
+      "published_at": "",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "Claude Codeはもうエンジニアだけのものじゃない。全ビジネスパーソンが今すぐ使うべき理由を解説｜株式会社AIworker",
+      "url": "https://note.com/ai__worker/n/nd9153699b71b",
+      "published_at": "",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit:semiconductors",
+      "title": "Use cases of AI for semiconductor professionals",
+      "url": "https://www.reddit.com/r/Semiconductors/comments/1rhgkqo/use_cases_of_ai_for_semiconductor_professionals/",
+      "published_at": "2026-02-28",
+      "snippet": "What AI tools or use cases are you seeing in your company or fab? Are they already delivering real value, or still mostly experimental?",
+      "score": 6.008,
+      "meta": {
+        "ups": 4
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "SK Hynix「フルスタックAIメモリ」の全貌：カスタムHBMから20倍速NANDまで、株価100万ニクスを支える技術の深層｜パウロ",
+      "url": "https://note.com/paul1211/n/n3a1981d23560",
+      "published_at": "",
+      "snippet": "",
+      "score": 6.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit:hardware",
+      "title": "Lenovo launches ThinkBook 16+ with Core X7 Panther Lake CPU and LPCAMM2-8533 memory at around $1240 [VideoCardz]",
+      "url": "https://videocardz.com/newz/lenovo-launches-thinkbook-16-with-core-x7-panther-lake-cpu-and-lpcamm2-8533-memory-at-around-1240",
+      "published_at": "2026-02-28",
+      "snippet": "",
+      "score": 4.216,
+      "meta": {
+        "ups": 108
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit:nvidia",
+      "title": "Do NOT use Preset E with Path Tracing in Resident Evil Requiem. It ruins image quality",
+      "url": "https://www.reddit.com/r/nvidia/comments/1rh9dpn/do_not_use_preset_e_with_path_tracing_in_resident/",
+      "published_at": "2026-02-28",
+      "snippet": "I’ve seen several posts here recommending the use of Ray Reconstruction with the Transformer Preset “E” via Nvidia Inspector override for Resident Evil Requiem with pathtracing enabled. However, I came across a comparison posted in a German forum that highlights some pretty significant downsides. You can check it out yourself: Imgsli comparison: [https://imgsli.com/NDUyODE2](https://imgsli.com/N",
+      "score": 4.116,
+      "meta": {
+        "ups": 58
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit:semiconductors",
+      "title": "Full supply chain network",
+      "url": "https://www.reddit.com/r/Semiconductors/comments/1rhqwsy/full_supply_chain_network/",
+      "published_at": "2026-03-01",
+      "snippet": "Hi, I Built a free tool that maps semiconductor supply chain dependencies, would love this sub to tear it apart It's basically a network graph where you can click any company and see who they supply, who supplies them, whether they're a sole source, what tier, region, all that. https://preview.redd.it/3jg9wkzuwdmg1.png?width=1200&amp;format=png&amp;auto=webp&amp;s=f2d1cc74bde46c0047704926446ff1",
+      "score": 4.008,
+      "meta": {
+        "ups": 4
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【決算解説】NVIDIA 2026年Q4決算徹底分析｜AIインフラ独占は続くのか｜kuga：米国株・日本株などに関する情報提供",
+      "url": "https://note.com/kuga3871/n/n72c51a33b2c0",
+      "published_at": "",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【Micronは買いか？】なぜフォワードPER10倍付近で放置されるのか。HBM特需の裏で進む「AIバブル崩壊」と「超絶決算」の二極化シナリオ｜つぼくん",
+      "url": "https://note.com/bright_stock/n/n31ba65b8c3b5",
+      "published_at": "",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【速報】NVIDIA FY26 Q4決算：驚異的な成長とAI新時代の幕開け｜　米国マネーボイジャー29",
+      "url": "https://note.com/eager_koala3110/n/n77d287d2fbe7",
+      "published_at": "",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "キオクシア(285A)は\"HBM王国\"にどう挑むのか──補給路と城門、二正面作戦の行方｜さくやん",
+      "url": "https://note.com/famous_honest665/n/nd2c0e2bf75e0",
+      "published_at": "",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "半導体製造装置の「百貨店」が掴む3つの技術的変曲点と企業DNAの深掘り／アプライド・マテリアルズ（AMAT）｜池田伸太郎",
+      "url": "https://note.com/s_ikeda/n/n6c989b6dc47d",
+      "published_at": "",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "業界分析｜高市内閣 重点17分野『AI・半導体』分野 ― その構成産業① 半導体製造業（外部環境編）｜busin",
+      "url": "https://note.com/busintemasamo1/n/nbed2dc8619cb",
+      "published_at": "",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "NVIDIA最高益 これはAI革命かバブルの頂上か？｜reika1021 🎈",
+      "url": "https://note.com/reika1021/n/n83495eae13f3",
+      "published_at": "",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【投資の教科書 別冊①】米国株投資家のための「半導体」超入門 Vol.1 ～スマホからAIまで、世界を動かす「21世紀の石油」～｜ハル @米国株を学ぶ会社員",
+      "url": "https://note.com/haru_analyst/n/n9be6867d5ab1",
+      "published_at": "",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【決算解説】キオクシアの衝撃の決算。時価総額12兆円の脅威｜もふもふ不動産note",
+      "url": "https://note.com/mofmof_investor/n/n7a454743eaa4",
+      "published_at": "",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "Astera Labs（ALAB）Needhamカンファレンス解説：2026～2028の勝ち筋と決算の見方｜さんろく",
+      "url": "https://note.com/nopotechinolife/n/n133bb76f2209",
+      "published_at": "",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "2026年1月度【半導体ニュース総覧】今、業界で何が起きているのか｜高野聖義",
+      "url": "https://note.com/medicalconsult/n/n2567c89882dc",
+      "published_at": "",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    }
+  ]
+}

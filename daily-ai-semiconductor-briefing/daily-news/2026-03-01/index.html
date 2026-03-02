@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>デイリーAI・半導体ニュース — 2026.03.01</title>
+  <meta name="description" content="2026年3月1日のAI・半導体ニュースブリーフィング。厳選13本。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Tokens ── */
+    :root {
+      --bg:          #08080f;
+      --surface:     #0e0e1a;
+      --card:        #121220;
+      --card-hover:  #181828;
+      --border:      #1c1c30;
+      --border-hi:   #28283e;
+
+      --ai:          #f0a030;
+      --ai-glow:     rgba(240,160,48,.15);
+      --ai-border:   rgba(240,160,48,.35);
+
+      --chip:        #18d4f0;
+      --chip-glow:   rgba(24,212,240,.12);
+      --chip-border: rgba(24,212,240,.35);
+
+      --txt1: #eaeaf8;
+      --txt2: #8888aa;
+      --txt3: #48486a;
+
+      --green:  #22cc88;
+      --yellow: #d4aa30;
+      --orange: #cc7730;
+
+      --ff-display: 'Playfair Display', 'Noto Sans JP', serif;
+      --ff-body:    'Noto Sans JP', sans-serif;
+      --ff-mono:    'JetBrains Mono', monospace;
+
+      --r: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--txt1);
+      font-family: var(--ff-body);
+      font-size: 14.5px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* grain */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+      opacity: .03;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,8,15,.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 50px;
+      display: flex; align-items: center;
+      padding: 0 max(2rem, calc(50vw - 580px));
+      gap: 0;
+    }
+    .nav-brand {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-right: auto;
+    }
+    .nav-brand b { color: var(--ai); font-weight: 500; }
+    nav a {
+      font-family: var(--ff-mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      text-decoration: none;
+      padding: 0 1.2rem;
+      height: 100%;
+      display: flex; align-items: center;
+      border-left: 1px solid var(--border);
+      transition: color .2s;
+    }
+    nav a:hover         { color: var(--txt1); }
+    nav a.lnk-ai:hover  { color: var(--ai); }
+    nav a.lnk-chip:hover{ color: var(--chip); }
+
+    /* ── Layout shell ── */
+    .shell {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 max(1.5rem, calc(50vw - 580px));
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 5.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: 1.6rem;
+      display: flex; align-items: center; gap: 1.4rem;
+    }
+    .hero-eyebrow::after {
+      content: '';
+      flex: 1; height: 1px;
+      background: linear-gradient(90deg, var(--border-hi), transparent);
+    }
+    .hero-eyebrow span { color: var(--ai); }
+    .hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -.025em;
+      color: var(--txt1);
+      margin-bottom: .6rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--ai); }
+    .hero-sub {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      color: var(--txt3);
+      letter-spacing: .1em;
+      margin-top: 1rem;
+    }
+
+    /* ── Highlights ── */
+    .highlights-wrap {
+      padding: 3.5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-label {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: 1.8rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .sec-label::before { content: '◆'; font-size: 7px; color: var(--ai); }
+
+    .hl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    @media (max-width: 720px) { .hl-grid { grid-template-columns: 1fr; } }
+
+    .hl-card {
+      background: var(--surface);
+      padding: 2rem 2rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: background .2s;
+    }
+    .hl-card:hover { background: var(--card); }
+    .hl-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--ai-glow) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hl-num {
+      font-family: var(--ff-display);
+      font-size: 6.5rem;
+      line-height: 1;
+      color: var(--border-hi);
+      position: absolute;
+      right: 1.2rem; top: .2rem;
+      font-weight: 400;
+      user-select: none;
+    }
+    .hl-text {
+      font-size: 13.5px;
+      line-height: 1.85;
+      color: var(--txt1);
+      position: relative; z-index: 1;
+    }
+    .hl-text strong { color: var(--ai); font-weight: 600; }
+
+    /* ── Section ── */
+    .section { padding: 4.5rem 0 3rem; }
+    .section + .section { border-top: 1px solid var(--border); }
+
+    .section-head {
+      display: flex; align-items: baseline;
+      flex-wrap: wrap; gap: .8rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: 1;
+    }
+    .section-title.ai   { color: var(--ai); }
+    .section-title.chip { color: var(--chip); }
+    .section-en {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      color: var(--txt3);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .2rem;
+    }
+    .section-cnt {
+      margin-left: auto;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      color: var(--txt3);
+    }
+
+    /* ── Sub-section ── */
+    .subsec { margin-bottom: 3.5rem; }
+    .subsec-label {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      padding-bottom: .7rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.6rem;
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .subsec-label::before { content: '▸'; font-size: 8px; }
+
+    /* ── Cards grid ── */
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 2px; }
+    @media (max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border-left: 3px solid var(--border-hi);
+      transition: background .18s, border-color .18s;
+    }
+    .card.ai   { border-left-color: var(--ai-border); }
+    .card.chip { border-left-color: var(--chip-border); }
+    .card:hover { background: var(--card-hover); }
+
+    .card-top {
+      padding: 1.4rem 1.6rem 1.2rem;
+      cursor: pointer;
+    }
+    .card-meta {
+      display: flex; align-items: center; flex-wrap: wrap;
+      gap: .5rem .7rem;
+      margin-bottom: .9rem;
+    }
+    .tag {
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .tag-ai    { background: var(--ai-glow);   color: var(--ai);   border: 1px solid var(--ai-border); }
+    .tag-chip  { background: var(--chip-glow);  color: var(--chip); border: 1px solid var(--chip-border); }
+    .tag-zenn  { background: rgba(35,150,230,.1); color: #3898e8; border: 1px solid rgba(35,150,230,.3); }
+    .tag-reddit{ background: rgba(255,90,40,.1);  color: #ff7050; border: 1px solid rgba(255,90,40,.3); }
+    .tag-hn    { background: rgba(255,140,40,.1); color: #ff9a40; border: 1px solid rgba(255,140,40,.3); }
+
+    .card-src {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      color: var(--txt3);
+      letter-spacing: .04em;
+    }
+    .conf {
+      margin-left: auto;
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .conf-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .conf-high .conf-dot { background: var(--green); }
+    .conf-mid  .conf-dot { background: var(--yellow); }
+    .conf-low  .conf-dot { background: var(--orange); }
+    .conf-high { color: var(--green); }
+    .conf-mid  { color: var(--yellow); }
+    .conf-low  { color: var(--orange); }
+
+    .card-summary {
+      font-family: var(--ff-body);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--txt1);
+    }
+
+    /* toggle row */
+    .card-toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .65rem 1.6rem;
+      background: rgba(0,0,0,.2);
+      cursor: pointer;
+      user-select: none;
+      border-top: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .card-toggle:hover { background: rgba(255,255,255,.03); }
+    .toggle-lbl {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+    .toggle-arrow {
+      font-size: 9px;
+      color: var(--txt3);
+      transition: transform .3s ease;
+    }
+    .card.open .toggle-arrow { transform: rotate(180deg); }
+
+    /* expandable body */
+    .card-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .4s cubic-bezier(.4,0,.2,1);
+    }
+    .card.open .card-body { max-height: 900px; }
+    .card-inner {
+      padding: 1.4rem 1.6rem 1.6rem;
+      border-top: 1px solid var(--border);
+    }
+    .block { margin-top: 1.2rem; }
+    .block:first-child { margin-top: 0; }
+    .block-lbl {
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: .4rem;
+    }
+    .block-txt {
+      font-size: 13.5px;
+      line-height: 1.9;
+      color: var(--txt2);
+    }
+    .card-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      margin-top: 1.4rem;
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid var(--border-hi);
+      border-radius: var(--r);
+      transition: all .2s;
+    }
+    .card.ai   .card-link:hover { color: var(--ai);   border-color: var(--ai-border); }
+    .card.chip .card-link:hover { color: var(--chip); border-color: var(--chip-border); }
+
+    /* ── Source list ── */
+    #sources {
+      padding: 4rem 0 5rem;
+      border-top: 1px solid var(--border);
+    }
+    .sources-title {
+      font-family: var(--ff-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--txt2);
+      letter-spacing: -.02em;
+      margin-bottom: 2.5rem;
+    }
+    .src-item {
+      display: flex; flex-wrap: wrap; align-items: baseline;
+      gap: .5rem 2rem;
+      padding: .7rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .src-name {
+      font-family: var(--ff-mono);
+      font-size: 10.5px;
+      color: var(--txt2);
+      white-space: nowrap;
+      min-width: 180px;
+    }
+    .src-date {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      color: var(--txt3);
+      white-space: nowrap;
+    }
+    .src-url {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      color: var(--txt3);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color .2s;
+    }
+    .src-url:hover { color: var(--txt1); }
+    .src-type {
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 1px 7px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .src-type.ai   { color: var(--ai);   background: var(--ai-glow);   border: 1px solid var(--ai-border); }
+    .src-type.chip { color: var(--chip); background: var(--chip-glow); border: 1px solid var(--chip-border); }
+    .src-type.com  { color: var(--txt2); background: rgba(255,255,255,.04); border: 1px solid var(--border-hi); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 1.8rem max(1.5rem, calc(50vw - 580px));
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: .8rem;
+    }
+    footer p {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .08em;
+      color: var(--txt3);
+    }
+    footer p a { color: var(--txt3); text-decoration: none; }
+    footer p a:hover { color: var(--txt2); }
+
+    /* ── Fade-in on scroll ── */
+    .fi {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .fi.show { opacity: 1; transform: none; }
+
+    /* stagger */
+    .fi:nth-child(2) { transition-delay: .08s; }
+    .fi:nth-child(3) { transition-delay: .16s; }
+    .fi:nth-child(4) { transition-delay: .24s; }
+    .fi:nth-child(5) { transition-delay: .32s; }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-brand">Daily <b>AI</b>·半導体 Briefing</div>
+  <a href="#ai"   class="lnk-ai">AI</a>
+  <a href="#chip" class="lnk-chip">半導体</a>
+  <a href="#sources">ソース一覧</a>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="shell">
+  <header class="hero fi show">
+    <div class="hero-eyebrow">
+      <span>2026.03.01</span>
+      <span>AIニュース 8本</span>
+      <span>半導体ニュース 5本</span>
+      <span>厳選13本</span>
+    </div>
+    <h1>デイリー<em>AI</em>·<br>半導体ニュース</h1>
+    <p class="hero-sub">Daily briefing — AI &amp; Semiconductor — 2026年3月1日</p>
+  </header>
+</div>
+
+<!-- ── Highlights ── -->
+<div class="shell">
+  <section class="highlights-wrap">
+    <div class="sec-label">今日のハイライト（3選）</div>
+    <div class="hl-grid">
+      <div class="hl-card fi">
+        <div class="hl-num">01</div>
+        <p class="hl-text">
+          <strong>OpenAI が国防領域での運用方針を具体化。</strong>「安全ライン」と「政府連携」を同時に打ち出し、規制・公共調達を含む競争軸が強まっている。
+        </p>
+      </div>
+      <div class="hl-card fi">
+        <div class="hl-num">02</div>
+        <p class="hl-text">
+          <strong>GitHub Copilot Coding Agent</strong> が解決率 97%・コード再利用 82% のデータを公開。AIコーディングが「補完」から「タスク自律実行」にシフト。
+        </p>
+      </div>
+      <div class="hl-card fi">
+        <div class="hl-num">03</div>
+        <p class="hl-text">
+          <strong>Samsung × NVIDIA の AI-RAN 協業</strong> が正式発表。通信インフラ領域でも GPU/AI アクセラレーション統合が前進している。
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ════════════════════════════════════
+     AI NEWS
+     ════════════════════════════════════ -->
+<div class="shell">
+  <section class="section" id="ai">
+    <div class="section-head">
+      <h2 class="section-title ai">AI ニュース</h2>
+      <span class="section-en">Artificial Intelligence</span>
+      <span class="section-cnt">8 articles</span>
+    </div>
+
+    <!-- 公式ソース -->
+    <div class="subsec">
+      <div class="subsec-label">公式ソース</div>
+      <div class="cards">
+
+        <!-- OpenAI -->
+        <div class="card ai fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-ai">公式 AI</span>
+              <span class="card-src">OpenAI · 2026-02-27</span>
+              <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+            </div>
+            <p class="card-summary">OpenAI が国防分野での導入方針を公開し、安全上の「境界線」を明記した。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">OpenAI は米国の国防関連ネットワークでのモデル利用に関する方針を示した。安全・アラインメント関連チームについて「全社の約 3 分の 1 が関与」と説明。利用禁止ラインとして「不法な危害」「市民への害」「安全を逸脱する運用」を列挙し、どこまでを支援しどこからを拒否するかを分離した。製品リリース告知ではなく政策・運用ルールを同時に提示した点が今回の更新の中心。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">2026 年は「公的機関での実装可能性」と「安全ガバナンス」が差別化要因になっている。競合の Anthropic や Google も公共領域への関与方針を出しており、AI 企業は規制対応と商用展開を同時に進める局面に入った。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">法人客や教育機関向けに AI PC/クラウド提案をする際、「使えるか」だけでなく「どの用途で禁止・制限があるか」を説明できると信頼につながる。「約 3 分の 1 が安全領域に関与」という情報は、今後のプロダクト選定でもガバナンス評価軸として使える。</p>
+              </div>
+              <a href="https://openai.com/index/our-agreement-with-the-department-of-war" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Changelog -->
+        <div class="card ai fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-ai">公式 AI</span>
+              <span class="card-src">GitHub Changelog · 2026-02-27</span>
+              <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+            </div>
+            <p class="card-summary">GitHub が Copilot / Models / Projects の週次更新を公開し、運用データ付きで AI 開発ワークフローの変化を示した。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">GitHub Models の Prompting に Remote MCP Server Access を追加。Copilot Coding Agent について社内導入時の「解決率 97%」「既存コード再利用 82%」「開発者がアプリ内に留まる割合 72%」という 3 指標を公開。Project ビューでは Agent が同時並行で Issue を処理する運用を説明している。実利用メトリクスまで開示した点が大きい。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">2024–2025 は IDE 補完中心だったが、2026 は「タスク単位で Agent に渡す」運用が標準化し始めている。Claude Code や Cursor も自律実行方向を強めており、GitHub 側は組織運用の実数値を出して優位性を示した。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">反復タスクを Agent に切り出す設計がしやすくなる。Issue 粒度で作業を分割し「レビュー役 AI」と「実装役 AI」を分離する構成が再現しやすい。「再利用 82%」は既存資産を壊しにくい導入方針を説明する材料になる。</p>
+              </div>
+              <a href="https://github.blog/changelog/2026-02-27-release-roundup/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anthropic -->
+        <div class="card ai fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-ai">公式 AI</span>
+              <span class="card-src">Anthropic · 2026-02-27</span>
+              <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+            </div>
+            <p class="card-summary">Anthropic が政府提案への公式反対声明を公開し、公共セクター向け方針で OpenAI との対立軸が鮮明化した。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">政府の「supply chain risk」指定提案に反対する声明を公開。署名は Board Chair（Dario Amodei）と CEO（Michael Kratsios）の連名で、提案の撤回を明確に要求。「国家安全保障・競争・調達」の観点を整理し、一律リスク指定の妥当性に異議を唱えた。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">OpenAI が同時期に政府連携方針を出す中、Anthropic は逆方向の立場を公式化。AI 企業の政策姿勢が二極化している。2026 年の受注競争はモデル性能だけでなく、規制当局との関係設計も勝敗要因になる。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">法人案件でベンダー選定を聞かれた際、性能比較だけでなく調達リスク説明が必要になる。将来の API 停止・地域制限リスクを考え、複数プロバイダ対応の実装を初期段階で仕込む判断につながる。</p>
+              </div>
+              <a href="https://www.anthropic.com/news/we-strongly-disagree-with-the-governments-proposal-to-designate-anthropic-a-supply-chain-risk" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cards -->
+    </div><!-- /subsec 公式 -->
+
+    <!-- Zenn -->
+    <div class="subsec">
+      <div class="subsec-label">Zenn ピックアップ</div>
+      <div class="cards">
+
+        <div class="card ai fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-zenn">Zenn</span>
+              <span class="card-src">Zenn · 2026-02-27</span>
+              <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+            </div>
+            <p class="card-summary">実装 AI とレビュー AI を分離してフィードバックループ化する、実務寄りの運用知見が共有された。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">Claude Code / Codex を併用したレビュー自動化の運用手順を具体例付きで説明。AI 活用の課題を「品質の不安定」「要件ズレ」「承認待ち中断」の 3 点に整理し、手動監視を減らすための役割分離を提案。Lost in the Middle や Context Rot に触れ、単一セッション肥大化の問題を実装視点で扱っている。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">2025 年の「AI に 1 回投げる」使い方から、2026 年は「複数 Agent を設計して回す」使い方へ進んでいる。GitHub Copilot Agent や Claude Code の自律化と流れが一致し、個人開発でも運用設計力の比重が上がっている。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">販促文面や比較表のチェック工程を 2 段階 AI 化し、人の最終確認だけに圧縮する設計に転用できる。実装 AI とレビュア AI を分けることで、レビュー待ちで画面張り付きになる時間を減らせる。</p>
+              </div>
+              <a href="https://zenn.dev/nrs/articles/db4120beb0e601" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Reddit / HN -->
+    <div class="subsec">
+      <div class="subsec-label">Reddit / Hacker News ピックアップ</div>
+      <div class="cards">
+
+        <!-- r/ClaudeAI -->
+        <div class="card ai fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-reddit">Reddit</span>
+              <span class="card-src">r/ClaudeAI · 2026-02-28 · ▲ 1,884</span>
+              <span class="conf conf-low"><span class="conf-dot"></span>確信度: 低</span>
+            </div>
+            <p class="card-summary">Anthropic 学習コンテンツの無償公開が、実務者コミュニティで高い反応を得た。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">Claude Code、MCP Mastery、API courses、AI Fluency など複数コースを「構造化されたカリキュラム」として評価する投稿が upvote 1,884 を記録。単発 Tips ではなく学習体系として扱われた点が注目された。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">2026 年はベンダー公式学習導線が競争力になっている。OpenAI / GitHub も学習面を強化しており、教育体験はプロダクト定着率に直結する。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">新人向けの AI 接客研修を「公式教材優先」で構成する方が品質を揃えやすい。断片的な SNS 情報より公式カリキュラムを先に消化する方が実装スピードの再現性が高い。</p>
+              </div>
+              <a href="https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/" target="_blank" rel="noopener" class="card-link">→ 元スレッドを見る</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- r/LocalLLaMA -->
+        <div class="card ai fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-reddit">Reddit</span>
+              <span class="card-src">r/LocalLLaMA · 2026-02-28 · ▲ 489</span>
+              <span class="conf conf-low"><span class="conf-dot"></span>確信度: 低</span>
+            </div>
+            <p class="card-summary">Qwen 3.5-35B-A3B が 120B 級運用を代替できるという現場報告が拡散し、ローカル運用志向が強まった。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">投稿者は Qwen 3.5-35B-A3B が日常利用で GPT-OSS-120B を置き換えたと述べ、サイズは「約 1/3」と記載。ベンチマークより運用体験が中心で、モデル選定軸が「最大性能」から「実運用コスト」へ寄っていることを示している。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">HN でも Qwen 122B/35B が話題化しており、OSS モデルの実用域が急速に広がっている。商用閉源モデル一択だった流れに対し、ローカル実行可能な中規模モデルが競争圧力になっている。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">GPU 搭載 PC 提案時に「クラウド課金回避」「ローカル推論」という訴求がしやすくなる。35B 級を前提にプロトタイプを回し、必要時のみ API モデルに切り替えるハイブリッド戦略が取りやすい。</p>
+              </div>
+              <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/" target="_blank" rel="noopener" class="card-link">→ 元スレッドを見る</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- HN: microgpt -->
+        <div class="card ai fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-hn">Hacker News</span>
+              <span class="card-src">HN · 2026-03-01 · ▲ 1,021 · 💬 184</span>
+              <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+            </div>
+            <p class="card-summary">Andrej Karpathy の <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:3px;font-size:.9em">microgpt</code> が HN で急上昇し、学習用ミニマル実装として再注目された。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">HN でスコア 1,021・コメント 184 を獲得。200 行の純 Python・依存なし実装として、トークナイザ・Autograd・GPT-2 系ネットワーク・Adam・学習/推論ループを 1 ファイルに収録。記事公開は 2026-02-12 で HN での再拡散が今回発生した。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">巨大モデル運用が主流化する中でも、学習コストを下げる「小さな再実装」需要は継続。Copilot/Claude Code の実務自動化が進むほど、基礎理解を補う教材価値が上がる。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">「何が内部で動いているか」を平易に説明できるスタッフ教育素材として使える。最小実装で挙動を把握し、推論コストや精度劣化の切り分けがしやすくなる。「200 行」という具体値は学習着手の心理的ハードルを下げる。</p>
+              </div>
+              <a href="http://karpathy.github.io/2026/02/12/microgpt/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- HN: Qwen3.5 -->
+        <div class="card ai fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-hn">Hacker News</span>
+              <span class="card-src">HN · 2026-03-01 · ▲ 396 · 💬 212</span>
+              <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+            </div>
+            <p class="card-summary">HN で Qwen 122B/35B の実用性記事が拡散し、中規模 OSS モデルの競争力が再評価された。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">Qwen3.5-122B と Qwen3.5-35B を取り上げ、35B でも高性能閉源モデル級を狙う位置づけを示した記事が HN でスコア 396・コメント 212 を獲得。ローカル実行・コスト効率の観点が読者反応を集めた。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">Reddit の現場評価と HN の技術議論が同方向（中規模モデルの実用化）を示しており、単発バズではなく潮流化の可能性がある。2025 年の「最大モデル偏重」から、2026 年はタスク別最適化競争に移行している。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">エントリー〜ミドル帯 GPU でも現実的な AI 用途が増えるため、価格帯別の提案シナリオを作りやすい。35B 級のローカル検証を先に回し、必要時のみ高額 API にエスカレーションする運用でコストを抑えられる。</p>
+              </div>
+              <a href="https://venturebeat.com/technology/alibabas-new-open-source-qwen3-5-medium-models-offer-sonnet-4-5-performance" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cards -->
+    </div><!-- /subsec reddit/hn -->
+  </section>
+</div>
+
+<!-- ════════════════════════════════════
+     SEMICONDUCTOR NEWS
+     ════════════════════════════════════ -->
+<div class="shell">
+  <section class="section" id="chip">
+    <div class="section-head">
+      <h2 class="section-title chip">半導体ニュース</h2>
+      <span class="section-en">Semiconductors</span>
+      <span class="section-cnt">5 articles</span>
+    </div>
+
+    <!-- 公式ソース -->
+    <div class="subsec">
+      <div class="subsec-label">公式ソース</div>
+      <div class="cards">
+
+        <!-- Samsung + NVIDIA AI-RAN -->
+        <div class="card chip fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-chip">公式 半導体</span>
+              <span class="card-src">Samsung Global Newsroom · 2026-03-01</span>
+              <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+            </div>
+            <p class="card-summary">Samsung と NVIDIA が AI-RAN 協業を正式発表し、通信インフラへの AI 半導体統合を加速させた。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">Samsung の vRAN と NVIDIA の AI プラットフォームを組み合わせ、モバイルネットワークでの AI 活用を拡張する方針を明記。MWC Barcelona 2026 での実証を予定し、研究段階でなく商用化志向を示した。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">半導体需要はデータセンター偏重だったが、通信 RAN 側にも AI アクセラレーション需要が波及。NVIDIA はサーバー GPU 中心から通信インフラ市場へ拡張しており、競合ベンダーとの主戦場が広がっている。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">5G/AI 端末の訴求時に「端末性能だけでなくネットワーク側 AI 最適化が進む」説明ができると差別化になる。エッジ推論やネットワーク最適化を前提にしたアプリ設計（遅延・帯域設計）を先に考えるべきだと分かる。</p>
+              </div>
+              <a href="https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Samsung AI Factory -->
+        <div class="card chip fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-chip">公式 半導体</span>
+              <span class="card-src">Samsung UK Newsroom · 2026-02-28</span>
+              <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+            </div>
+            <p class="card-summary">Samsung が AI 工場ロードマップを公開し、2026 年末までに最大 60% の生産性向上目標を示した。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">Smart Factory + Automation World 2026 での発表として、Samsung Advanced Institute of Technology と Samsung Electronics の共同開発を公開。定量目標として「2026 年末までに最大 60% の生産性向上」「欠陥検出率の改善」を明示した。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">半導体製造は設備・人材制約が強く、歩留まり改善と省人化の両立が中長期テーマ。TSMC/Intel 陣営もスマートファクトリー投資を進めており、製造 AI は差別化ではなく必須要件に近づいている。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">AI 需要で高止まりする PC/部材価格を説明する際に「製造効率改善の時間差」を根拠として示しやすい。外観検査・異常検知の小規模 PoC を早めに触っておくと、今後の製造系案件に転用しやすい。</p>
+              </div>
+              <a href="https://news.samsung.com/uk/samsung-electronics-unveils-vision-for-ai-driven-hyper-connected-factories-at-smart-factory-auto-tech-show-2026" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Community -->
+    <div class="subsec">
+      <div class="subsec-label">コミュニティ（Reddit / HN）</div>
+      <div class="cards">
+
+        <!-- Lenovo ThinkBook -->
+        <div class="card chip fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-reddit">Reddit</span>
+              <span class="card-src">r/hardware · 2026-02-28 · ▲ 108</span>
+              <span class="conf conf-low"><span class="conf-dot"></span>確信度: 低</span>
+            </div>
+            <p class="card-summary">Lenovo 新機種の投稿で、LPCAMM2 採用ノートの具体スペックと価格が共有された。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">ThinkBook 16+ (2026) の構成として 32GB LPCAMM2・8533 MT/s・Core Ultra X7 358H・3200×2000 165Hz・1TB SSD・99.9Wh・価格約 $1,240 が示された。JEDEC CAMM2 系の実装が試作段階から市販段階へ進んだことを示す投稿として扱える。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">メモリは「はんだ付け固定」化が進んでいたが、LPCAMM2 の普及は保守性と性能のバランスを再定義する可能性がある。AI PC 競争でメモリ帯域要求が上がる中、可換モジュール化は販売戦略にも影響する。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">店頭で「将来増設・保守」を重視する顧客向けに新しい訴求軸を作れる。ローカル推論環境をノートで組む際に、メモリ帯域と交換性の両立を評価項目に入れるべきだと分かる。</p>
+              </div>
+              <a href="https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/" target="_blank" rel="noopener" class="card-link">→ 元スレッドを見る</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Supply chain tool -->
+        <div class="card chip fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-reddit">Reddit</span>
+              <span class="card-src">r/Semiconductors · 2026-03-01 · ▲ 4</span>
+              <span class="conf conf-low"><span class="conf-dot"></span>確信度: 低</span>
+            </div>
+            <p class="card-summary">半導体サプライチェーン依存関係を可視化する無償ツールが共有された。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">企業間の「供給先/被供給」「単一供給源」「ティア」「地域」をネットワーク表示するツールを投稿者が公開し、改善フィードバックを募集。upvote は 4 と小規模だが、供給網可視化というテーマは 2026 年の需給不安文脈と一致する。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">NVIDIA/メモリ/先端パッケージ領域で供給制約が続く中、依存関係の可視化は在庫・調達判断に直結。大手ベンダーの公式発表だけでは把握しきれない末端リスクをコミュニティ発ツールで補う流れが出てきている。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">欠品・価格変動時に「どこが詰まっているか」を説明する補助資料として使える可能性がある。グラフ可視化を自作して部材情報を定期更新する仕組みを作ると技術調査が資産化できる。過信せず検証前提で扱うこと。</p>
+              </div>
+              <a href="https://www.reddit.com/r/Semiconductors/comments/1rhqwsy/full_supply_chain_network/" target="_blank" rel="noopener" class="card-link">→ 元スレッドを見る</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AMD Ryzen AI Max+ -->
+        <div class="card chip fi">
+          <div class="card-top" onclick="toggle(this)">
+            <div class="card-meta">
+              <span class="tag tag-hn">Hacker News</span>
+              <span class="card-src">HN · 2026-03-01 · ▲ 62 · 💬 17</span>
+              <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+            </div>
+            <p class="card-summary">AMD Ryzen AI Max+ クラスタで 1 兆パラメータ LLM をローカル実行する記事が HN で話題化した。</p>
+          </div>
+          <div class="card-toggle" onclick="toggle(this)">
+            <span class="toggle-lbl">詳細を読む</span>
+            <span class="toggle-arrow">▼</span>
+          </div>
+          <div class="card-body">
+            <div class="card-inner">
+              <div class="block">
+                <div class="block-lbl">何が起きたか</div>
+                <p class="block-txt">AMD Developer の記事で「One Trillion-Parameter」をタイトルに掲げ、Ryzen AI Max+ クラスタでのローカル推論構成を紹介。外部記事の公開日は 2026-02-25 で、HN での再拡散が今回発生した。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">なぜ重要か</div>
+                <p class="block-txt">AI 推論はクラウド集中からローカル/エッジ分散へ並行展開が進んでいる。NVIDIA 一極に対し AMD 系プラットフォームの実運用事例が増えるほど調達・価格競争が活性化する。</p>
+              </div>
+              <div class="block">
+                <div class="block-lbl">自分への影響</div>
+                <p class="block-txt">AI PC 提案時に「クラウド依存を減らす構成」という説明価値が高まる。巨大モデルをそのまま回すより、分割・量子化・ハイブリッド運用の設計を先に考える必要がある。「1 兆パラメータ」という指標はローカル推論の期待値を調整する対話材料になる。</p>
+              </div>
+              <a href="https://www.amd.com/en/developer/resources/technical-articles/2026/how-to-run-a-one-trillion-parameter-llm-locally-an-amd.html" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── Source list ── -->
+<div class="shell">
+  <section id="sources">
+    <h2 class="sources-title">ソース一覧</h2>
+
+    <div class="src-item">
+      <span class="src-name">OpenAI</span>
+      <span class="src-date">2026-02-27</span>
+      <span class="src-type ai">公式AI</span>
+      <a href="https://openai.com/index/our-agreement-with-the-department-of-war" target="_blank" rel="noopener" class="src-url">openai.com/index/our-agreement-with-the-department-of-war</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">GitHub Changelog</span>
+      <span class="src-date">2026-02-27</span>
+      <span class="src-type ai">公式AI</span>
+      <a href="https://github.blog/changelog/2026-02-27-release-roundup/" target="_blank" rel="noopener" class="src-url">github.blog/changelog/2026-02-27-release-roundup/</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Anthropic News</span>
+      <span class="src-date">2026-02-27</span>
+      <span class="src-type ai">公式AI</span>
+      <a href="https://www.anthropic.com/news/we-strongly-disagree-with-the-governments-proposal-to-designate-anthropic-a-supply-chain-risk" target="_blank" rel="noopener" class="src-url">anthropic.com/news/we-strongly-disagree…</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Zenn</span>
+      <span class="src-date">2026-02-27</span>
+      <span class="src-type com">コミュニティ日本語</span>
+      <a href="https://zenn.dev/nrs/articles/db4120beb0e601" target="_blank" rel="noopener" class="src-url">zenn.dev/nrs/articles/db4120beb0e601</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Reddit r/ClaudeAI</span>
+      <span class="src-date">2026-02-28</span>
+      <span class="src-type com">コミュニティ英語</span>
+      <a href="https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/" target="_blank" rel="noopener" class="src-url">reddit.com/r/ClaudeAI/comments/1rh92yp/…</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Reddit r/LocalLLaMA</span>
+      <span class="src-date">2026-02-28</span>
+      <span class="src-type com">コミュニティ英語</span>
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/" target="_blank" rel="noopener" class="src-url">reddit.com/r/LocalLLaMA/comments/1rh43za/…</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Karpathy blog (HN経由)</span>
+      <span class="src-date">2026-02-12</span>
+      <span class="src-type com">HN / 外部記事</span>
+      <a href="http://karpathy.github.io/2026/02/12/microgpt/" target="_blank" rel="noopener" class="src-url">karpathy.github.io/2026/02/12/microgpt/</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">VentureBeat (HN経由)</span>
+      <span class="src-date">2026-02-28</span>
+      <span class="src-type com">HN / 外部記事</span>
+      <a href="https://venturebeat.com/technology/alibabas-new-open-source-qwen3-5-medium-models-offer-sonnet-4-5-performance" target="_blank" rel="noopener" class="src-url">venturebeat.com/technology/alibabas-new-open-source-qwen3-5…</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Samsung Global Newsroom</span>
+      <span class="src-date">2026-03-01</span>
+      <span class="src-type chip">公式半導体</span>
+      <a href="https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem" target="_blank" rel="noopener" class="src-url">news.samsung.com/global/samsung-nvidia-to-advance-ai-ran…</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Samsung UK Newsroom</span>
+      <span class="src-date">2026-02-28</span>
+      <span class="src-type chip">公式半導体</span>
+      <a href="https://news.samsung.com/uk/samsung-electronics-unveils-vision-for-ai-driven-hyper-connected-factories-at-smart-factory-auto-tech-show-2026" target="_blank" rel="noopener" class="src-url">news.samsung.com/uk/samsung-electronics-unveils-vision…</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Reddit r/hardware</span>
+      <span class="src-date">2026-02-28</span>
+      <span class="src-type com">コミュニティ半導体</span>
+      <a href="https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/" target="_blank" rel="noopener" class="src-url">reddit.com/r/hardware/comments/1rh5fv0/…</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">Reddit r/Semiconductors</span>
+      <span class="src-date">2026-03-01</span>
+      <span class="src-type com">コミュニティ半導体</span>
+      <a href="https://www.reddit.com/r/Semiconductors/comments/1rhqwsy/full_supply_chain_network/" target="_blank" rel="noopener" class="src-url">reddit.com/r/Semiconductors/comments/1rhqwsy/…</a>
+    </div>
+    <div class="src-item">
+      <span class="src-name">AMD Developer (HN経由)</span>
+      <span class="src-date">2026-02-25</span>
+      <span class="src-type com">HN / 外部記事</span>
+      <a href="https://www.amd.com/en/developer/resources/technical-articles/2026/how-to-run-a-one-trillion-parameter-llm-locally-an-amd.html" target="_blank" rel="noopener" class="src-url">amd.com/en/developer/resources/technical-articles/2026/…</a>
+    </div>
+
+  </section>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <p>Daily AI · 半導体 Briefing — 2026.03.01</p>
+  <p>全記事はソース元を参照のこと · Generated 2026-03-01 21:51:26 JST</p>
+</footer>
+
+<script>
+  // ── Toggle card expand ──
+  function toggle(el) {
+    const card = el.closest('.card');
+    const isOpen = card.classList.toggle('open');
+    const lbl = card.querySelector('.toggle-lbl');
+    if (lbl) lbl.textContent = isOpen ? '閉じる' : '詳細を読む';
+  }
+
+  // ── Fade-in on scroll ──
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
