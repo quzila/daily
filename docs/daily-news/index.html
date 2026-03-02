@@ -1,16 +1,442 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daily Briefing Archive</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily AI・半導体ニュース — アーカイブ</title>
+  <meta name="description" content="デイリーAI・半導体ニュースのバックナンバー一覧。AIと半導体領域の最新動向を毎日まとめています。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #08080f;
+      --surface:     #0e0e1a;
+      --paper:       #121220;
+      --paper-hover: #181828;
+      --border:      #1c1c30;
+      --border-hi:   #28283e;
+      --ai:          #f0a030;
+      --ai-glow:     rgba(240,160,48,.12);
+      --ai-border:   rgba(240,160,48,.35);
+      --chip:        #18d4f0;
+      --chip-glow:   rgba(24,212,240,.12);
+      --chip-border: rgba(24,212,240,.35);
+      --txt1: #eaeaf8;
+      --txt2: #8888aa;
+      --txt3: #48486a;
+      --ff-display: "Playfair Display", "Noto Sans JP", serif;
+      --ff-body:    "Noto Sans JP", sans-serif;
+      --ff-mono:    "JetBrains Mono", monospace;
+      --r: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--txt1);
+      font-family: var(--ff-body);
+      font-size: 14.5px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+      opacity: .03;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 max(2rem, calc(50vw - 580px));
+      background: rgba(8,8,15,.88);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+    .nav-brand {
+      margin-right: auto;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      user-select: none;
+    }
+    .nav-brand b { color: var(--ai); font-weight: 500; }
+    nav a {
+      font-family: var(--ff-mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      text-decoration: none;
+      padding: 0 .9rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--txt1); }
+
+    .shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 max(1.5rem, calc(50vw - 580px));
+    }
+
+    .hero {
+      padding: 5rem 0 4rem;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--ai);
+    }
+    .hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -.035em;
+      color: var(--txt1);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { color: var(--ai); font-style: normal; }
+    .hero-sub {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--txt3);
+      margin-top: .4rem;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+    }
+    .stat-num {
+      font-family: var(--ff-display);
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--txt1);
+    }
+    .stat-num span { color: var(--ai); }
+    .stat-label {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+
+    .sec-label {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sec-label::before { content: '◆'; font-size: 7px; color: var(--ai); }
+
+    .latest-section {
+      padding: 3.5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .arc-featured {
+      display: block;
+      text-decoration: none;
+      background: var(--surface);
+      border-left: 3px solid var(--ai-border);
+      position: relative;
+      overflow: hidden;
+      transition: background .2s, border-color .2s;
+      padding: 2.5rem 2.8rem;
+    }
+    .arc-featured::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--ai-glow) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .arc-featured:hover {
+      background: var(--paper);
+      border-left-color: var(--ai);
+    }
+    .arc-latest-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ai);
+      background: var(--ai-glow);
+      border: 1px solid var(--ai-border);
+      border-radius: 2px;
+      padding: 2px 9px;
+      margin-bottom: 1.2rem;
+    }
+    .arc-latest-badge::before { content: '●'; font-size: 6px; }
+    .arc-featured-date {
+      font-family: var(--ff-mono);
+      font-size: 12px;
+      letter-spacing: .12em;
+      color: var(--chip);
+      margin-bottom: .5rem;
+    }
+    .arc-featured-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 400;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+      color: var(--txt1);
+      margin-bottom: 1.2rem;
+    }
+    .arc-featured-desc {
+      font-size: 12.5px;
+      line-height: 1.75;
+      color: var(--txt2);
+      max-width: 720px;
+    }
+    .arc-featured-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 1.8rem;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ai);
+      border: 1px solid var(--ai-border);
+      border-radius: var(--r);
+      padding: .5rem 1.2rem;
+      transition: background .2s, color .2s;
+    }
+    .arc-featured:hover .arc-featured-cta {
+      background: var(--ai-glow);
+    }
+    .arc-featured-cta::after { content: '→'; }
+
+    .archive-section {
+      padding: 3.5rem 0 5rem;
+    }
+    .arc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2px;
+    }
+    .arc-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      background: var(--paper);
+      border-left: 3px solid var(--border-hi);
+      padding: 1.6rem 1.8rem 1.4rem;
+      transition: background .18s, border-color .18s;
+      position: relative;
+      overflow: hidden;
+    }
+    .arc-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--chip-glow) 0%, transparent 50%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+    .arc-card:hover { background: var(--paper-hover); border-left-color: var(--chip-border); }
+    .arc-card:hover::before { opacity: 1; }
+    .arc-card-date {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: var(--chip);
+      margin-bottom: .4rem;
+    }
+    .arc-card-title {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--txt1);
+      font-weight: 500;
+      margin-bottom: .7rem;
+    }
+    .arc-card-desc {
+      font-size: 11.5px;
+      line-height: 1.7;
+      color: var(--txt2);
+      flex: 1;
+    }
+    .arc-card-arrow {
+      margin-top: 1.2rem;
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .1em;
+      color: var(--txt3);
+      transition: color .2s;
+    }
+    .arc-card:hover .arc-card-arrow { color: var(--chip); }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .8rem;
+      padding: 1.8rem max(1.5rem, calc(50vw - 580px));
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+    footer p {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .08em;
+      color: var(--txt3);
+    }
+
+    .fi {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .fi.show { opacity: 1; transform: none; }
+
+    @media (max-width: 720px) {
+      nav { padding: 0 .7rem; }
+      nav a { padding: 0 .6rem; }
+      .shell { padding: 0 10px; }
+      .hero { padding: 3.2rem 0 2.4rem; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .arc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Daily Briefing Archive</h1>
-  <p>Latest: <a href="./2026-03-02/index.html">2026-03-02</a></p>
-  <ul>
-    <li><a href="./2026-03-02/index.html">2026-03-02</a></li>
-    <li><a href="./2026-03-01/index.html">2026-03-01</a></li>
-  </ul>
+
+<nav>
+  <div class="nav-brand">Daily <b>AI</b>·半導体 Briefing</div>
+  <a href="./2026-03-02/index.html">最新号</a>
+</nav>
+
+<div class="shell" id="top">
+  <header class="hero fi show">
+    <div class="hero-eyebrow">
+      <span>DAILY BRIEFING</span>
+      <span>バックナンバー</span>
+    </div>
+    <h1>Daily <em>Archive</em></h1>
+    <p class="hero-sub">// デイリーAI・半導体ニュース — 全バックナンバー</p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num"><span>2</span></span>
+        <span class="stat-label">Published Issues</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">2026</span>
+        <span class="stat-label">Since</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num"><span>Daily</span></span>
+        <span class="stat-label">Frequency</span>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="shell">
+  <section class="latest-section fi">
+    <div class="sec-label">最新号</div>
+    <a href="./2026-03-02/index.html" class="arc-featured">
+      <div class="arc-latest-badge">Latest Issue</div>
+      <div class="arc-featured-date">2026-03-02</div>
+      <div class="arc-featured-title">デイリーAI・半導体ニュース（2026-03-02）</div>
+      <p class="arc-featured-desc">AnthropicがHumanloop買収とClaudeロードマップを連続で出し、モデル性能競争から運用基盤競争へ軸足が移っている。 / SamsungはAI-RAN協業（NVIDIA）とHBM4量産開始を発表し、AI計算需要が通信網とメモリ供給の両面で拡大した。</p>
+      <span class="arc-featured-cta">読む</span>
+    </a>
+  </section>
+</div>
+
+<div class="shell">
+  <section class="archive-section">
+    <div class="sec-label">バックナンバー一覧</div>
+    <div class="arc-grid">
+      <a href="./2026-03-02/index.html" class="arc-card fi">
+        <div class="arc-card-date">2026-03-02</div>
+        <div class="arc-card-title">デイリーAI・半導体ニュース（2026-03-02）</div>
+        <p class="arc-card-desc">AnthropicがHumanloop買収とClaudeロードマップを連続で出し、モデル性能競争から運用基盤競争へ軸足が移っている。 / SamsungはAI-RAN協業（NVIDIA）とHBM4量産開始を発表し、AI計算需要が通信網とメモリ供給の両面で拡大した。</p>
+        <span class="arc-card-arrow">Read →</span>
+      </a>
+
+      <a href="./2026-03-01/index.html" class="arc-card fi">
+        <div class="arc-card-date">2026-03-01</div>
+        <div class="arc-card-title">デイリーAI・半導体ニュース（2026-03-01）</div>
+        <p class="arc-card-desc">OpenAIの国防領域での運用方針が具体化され、同社は「安全ライン」と「政府連携」を同時に打ち出した。プロダクト競争だけでなく、規制・公共調達を含む競争軸が強まっている。 / GitHub Copilot Coding Agentの運用データ（解決率97%、コード再利用82%、アプリ継続72%）が公開され、AIコーディングは「補完」から「タスク自律実行」にシフトしている。</p>
+        <span class="arc-card-arrow">Read →</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>Daily AI · 半導体 Briefing</p>
+  <p>Archive — All Issues</p>
+</footer>
+
+<script>
+const _io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('show'); _io.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fi').forEach(el => _io.observe(el));
+</script>
 </body>
 </html>
