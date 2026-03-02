@@ -1,0 +1,62 @@
+---
+name: daily-briefing-subagent-orchestrator
+description: AI・半導体の日次ニュース作成を、ソース別サブエージェントに分割して実行し、最終的に daily-news.md 作成→HTML生成→GitHub Pages公開（commit/push）まで一気通貫で進める。コンテキスト量を抑えて収集精度を上げたいときに使う。
+---
+
+# Daily Briefing Subagent Orchestrator
+
+## Overview
+
+- 親エージェントは統合と品質管理に専念する。
+- 収集はソース別Skillを読むサブエージェントへ分離する。
+- 各サブエージェント成果物を統合して `daily-news.md` を作成し、HTML化して `docs/` へ反映し、commit/pushまで完了させる。
+
+## Workflow
+
+1. 対象日を決める（既定: `Asia/Tokyo` の当日）。
+2. `reports/daily-news/YYYY-MM-DD/research/sources/` を作成する。
+3. 以下を独立サブエージェントで並列収集し、JSONを保存する。
+   - `$daily-briefing-source-official-ai` -> `official-ai.json`
+   - `$daily-briefing-source-official-semiconductor` -> `official-semiconductor.json`
+   - `$daily-briefing-source-zenn` -> `zenn.json`
+   - `$daily-briefing-source-note` -> `note.json`
+   - `$daily-briefing-source-reddit` -> `reddit.json`
+   - `$daily-briefing-source-hacker-news` -> `hacker-news.json`
+4. 親エージェントで重複URLを除去し、カテゴリ最低件数を満たすように最終選定する。
+5. `reports/daily-news/YYYY-MM-DD/daily-news.md` を生成する。
+6. `python3 /Users/tatsuru/Desktop/daily/skills/daily-news-md-to-html/scripts/render_markdown_to_html.py --date YYYY-MM-DD --timezone Asia/Tokyo --overwrite` を実行する。
+7. `python3 /Users/tatsuru/Desktop/daily/skills/daily-briefing-publish-pages/scripts/publish_daily_briefing.py --date YYYY-MM-DD --timezone Asia/Tokyo --commit --push` を実行して `docs/` 反映から公開完了まで実行する。
+
+## Done 条件
+
+- `reports/daily-news/YYYY-MM-DD/daily-news.md` と `index.html` が生成済み。
+- `docs/daily-news/YYYY-MM-DD/` が更新済み。
+- Git リモートへ push 済み（GitHub Pagesで参照可能）。
+
+## Subagent Output Contract
+
+各ソースSkillの出力は次のJSON構造に揃える。
+
+```json
+{
+  "source": "official-ai",
+  "date": "YYYY-MM-DD",
+  "items": [
+    {
+      "title": "string",
+      "url": "https://...",
+      "published_at": "YYYY-MM-DD",
+      "segment": "ai|semiconductor",
+      "what": "string",
+      "why": "string",
+      "confidence": "high|medium|low"
+    }
+  ]
+}
+```
+
+## Quality Gate
+
+- 期間は 48時間を優先し、不足時は 7日→14日へ拡張する。
+- 推測補完を禁止する。本文取得不可は明示し、確信度を下げる。
+- 最終 `daily-news.md` は各記事に `What/Why/So what` を含める。

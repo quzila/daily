@@ -1,0 +1,4 @@
+interface:
+  display_name: "Daily Briefing Orchestrator"
+  short_description: "ソース別サブエージェント収集で日次ニュースをcommit/pushまで実行"
+  default_prompt: "$daily-briefing-subagent-orchestrator を使って、ソース別サブエージェントで収集結果をJSON化し、daily-news.md作成・HTML化・docs反映・commit/pushまで実行してください。"

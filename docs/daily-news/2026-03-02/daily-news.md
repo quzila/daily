@@ -1,12 +1,12 @@
 # デイリーAI・半導体ニュース（2026-03-02）
 
 ## 今日のハイライト（3選）
-> 1) **通信インフラのAI化が「検証」から「商用前提」に進んだ**
-> NVIDIAのAI-RAN関連発表（2026-03-01）で、T-Mobile/SoftBank/IOHの屋外フィールド検証や、6G向けのオープン・セキュア基盤連携が同日に出た。半導体需要はデータセンターだけでなく、RAN/エッジ側へ広がっている。
-> 2) **AIツールの乗り換えコストを下げる機能競争が加速**
-> Claudeの`Import Memory`は、他AIで蓄積した文脈をコピー&ペーストで移行できる設計を提示。ユーザー囲い込みの軸が「モデル性能」だけでなく「記憶/履歴の可搬性」に移っている。
-> 3) **個人開発のRAG実装が軽量化フェーズへ**
-> Zenn（2026-03-01）の実装記事では、PostgreSQL+Docker前提から`uv + SQLite + Skills`へ簡素化。個人でも継続運用しやすい構成が広がっている。
+> 1) **通信インフラ向けAI需要が実証フェーズから商用設計へ移行**
+> NVIDIAとSamsung/AMDの更新で、AI-RAN・vRANの商用前提実装（MWC 2026）が一気に具体化した。
+> 2) **AIモデルのライフサイクル運用が「性能競争」から「継続提供設計」へ拡張**
+> AnthropicがOpus 3の退役後運用を明示し、モデルの保存・移行ポリシーがプロダクト競争軸になり始めた。
+> 3) **AI開発運用の主戦場がモデル単体からワークフロー統合へ**
+> Zenn/HNでMCP連携やセッション履歴管理が注目され、マルチエージェント運用の実務課題に焦点が移っている。
 
 ---
 
@@ -15,71 +15,153 @@
 ### 公式ソース
 
 ---
-### 【カテゴリA: 公式ソース（AI）】ChatGPT Release Notes（Projects関連アップデート）（OpenAI, ページ内更新（要ログイン環境での時刻確認推奨））
+### 【カテゴリA: 公式ソース（AI）】Joint Statement from OpenAI and Microsoft（OpenAI, 2026-02-27）
 
-**ひとことサマリー（1文）**: OpenAIはProjects機能を拡張し、Proのファイル上限を20→40に引き上げ、共有やカスタマイズ機能を強化した。
+**ひとことサマリー（1文）**: OpenAIとMicrosoftは35Bドル新規投資を含む大型契約を発表し、7年間のAzure運用継続を示した。
 
-**何が起きたか（What）**: OpenAI Help CenterのRelease Notesで、Projectsの更新として、Proユーザーのアップロード上限が`20→40ファイル`に増加。Free/有料のファイル上限差や、アイコン/色などのカスタマイズ機能、共有運用（コラボレーション）に関する記述も更新されている。
+**何が起きたか（What）**:
+OpenAI公式の共同声明では、Microsoftによる35Bドル投資を含む110Bドル資金調達ラウンドに関する合意が示された。あわせて、OpenAIのモデル/プロダクトを今後7年間Azureで継続運用する方針が記載された。研究・プロダクト・商用契約を一体で更新した発表になっている。
 
-**なぜ重要か（Why it matters）**: 2025年までの「1チャット完結」から、2026年は「プロジェクト単位で履歴・資料を蓄積する」運用へ移行中。AIプロダクトの勝負軸が、単発回答品質だけでなく、長期作業の継続性に移っている。
+**なぜ重要か（Why it matters）**:
+AI企業の競争はモデル性能だけでなく、推論基盤をどれだけ長期安定供給できるかに移っている。クラウド契約の長期化は、企業導入側のリスク評価と継続投資判断に直接効く。
 
-**自分への影響（So what）**: 店頭業務では、製品比較表・FAQ・販促文案をプロジェクト単位で管理しやすくなり、引き継ぎコストを下げられる。個人開発では、仕様書やログを1プロジェクトに集約し、週次で同じ文脈を再利用する開発フローを作りやすい。
+**自分への影響（So what）**:
+店頭では「どのAIが賢いか」だけでなく、「継続提供されるか」を顧客説明に入れやすくなる。個人開発では、将来の運用先を見据えてAzure/API前提の構成管理を早めに固める判断材料になる。
 
-- リンク: [https://help.openai.com/en/articles/6825453-chatgpt-release-notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
-- 確信度: 高
----
-
----
-### 【カテゴリA: 公式ソース（AI）】Switch to Claude without starting over（Claude Import Memory）（Claude, ページ内明示なし）
-
-**ひとことサマリー（1文）**: Claudeは他AIから文脈・好みを移す`Import Memory`を打ち出し、移行時の摩擦を大幅に下げた。
-
-**何が起きたか（What）**: Claude公式ページでは、他AIに専用プロンプトを投げて得た内容をClaude側メモリ設定に貼り付けることで、文脈と嗜好を引き継げる手順を提示。説明文では「under a minute」「first conversation feels like your hundredth」として、初回から過去文脈を使える点を強調している。
-
-**なぜ重要か（Why it matters）**: 生成AI利用は複数ツール併用が一般化し、履歴移行の容易さが重要指標になっている。モデルそのものの性能差に加え、「過去知識をどう持ち運べるか」が選定条件に入ってきた。
-
-**自分への影響（So what）**: 店頭では顧客説明用に複数AIを試す際、設定再構築の手間を減らせる。個人開発では、検証用に使うAIを切り替えてもプロジェクト文脈を維持しやすく、再学習コストを抑えられる。
-
-- リンク: [https://www.claude.com/import-memory](https://www.claude.com/import-memory)
+- リンク: [https://openai.com/index/continuing-microsoft-partnership/](https://openai.com/index/continuing-microsoft-partnership/)
 - 確信度: 中
+---
+
+---
+### 【カテゴリA: 公式ソース（AI）】An update on our model deprecation commitments for Claude Opus 3（Anthropic, 2026-02-25）
+
+**ひとことサマリー（1文）**: AnthropicはOpus 3退役後も限定継続提供し、モデル退役ポリシーを具体運用に落とし込んだ。
+
+**何が起きたか（What）**:
+AnthropicはOpus 3を2026-01-05に退役した後も、paidユーザー向けclaude.ai利用継続とAPIの申請提供を続ける方針を明示した。さらに少なくとも3か月の週次エッセイ投稿（Claude’s Corner）を実施し、退役インタビューを含む保存運用を公開した。単なる終了告知ではなく、退役後の扱いを制度化した更新になっている。
+
+**なぜ重要か（Why it matters）**:
+モデルの世代更新が速いほど、企業は移行コストと再検証負荷を抱える。退役ポリシーの透明化は、導入企業の運用計画・監査対応・長期サポート判断に直結する。
+
+**自分への影響（So what）**:
+店頭業務で法人相談を受ける際、AI導入時に「停止時の代替計画」まで含めて提案しやすくなる。個人開発でもモデル依存を分離する設計（抽象化レイヤー/API切替）を前提に組める。
+
+- リンク: [https://www.anthropic.com/research/deprecation-updates-opus-3](https://www.anthropic.com/research/deprecation-updates-opus-3)
+- 確信度: 高
 ---
 
 ### Zenn ピックアップ
 
 ---
-### 【カテゴリC: 日本語コミュニティ（Zenn）】Skillsで実現する軽量パーソナルRAG（Zenn）（Zenn, 2026-03-01）
+### 【カテゴリC: 日本語コミュニティ（Zenn）】Skillsで実現する軽量パーソナルRAG（Zenn, 2026-03-01）
 
-**ひとことサマリー（1文）**: Skillsを使った軽量RAG構成（uv+SQLite）が共有され、個人開発での継続運用ハードルが下がった。
+**ひとことサマリー（1文）**: RAG構成をSkills+uv+SQLiteへ軽量化する実装例が共有され、継続運用のハードルを下げた。
 
-**何が起きたか（What）**: 2026-03-01公開のZenn記事（いいね48）では、従来の`PostgreSQL + pgvector + Docker + MCP`構成から、`Skills + uv + SQLite`中心の軽量構成へ移行した実装が紹介されている。記事内では「Docker不要」「より手軽」という運用面の改善が強調されている。
+**何が起きたか（What）**:
+Zenn記事では、従来のPostgreSQL+pgvector中心RAGから、より軽量なローカル構成へ移行した手順を公開している。MCP連携を保ちながら依存を減らし、個人でも回しやすい保守性を重視した構成が主眼。公開日は2026-03-01で、RAG運用の現実的な簡素化パターンとして提示された。
 
-**なぜ重要か（Why it matters）**: RAGは精度以前に運用コストが障壁になりやすい。軽量化が進むと、検証止まりだった個人/小規模チームが継続運用へ進みやすくなる。
+**なぜ重要か（Why it matters）**:
+RAG導入の失敗要因は精度以前に運用コストであることが多い。軽量化の再現例が増えるほど、PoC止まりだった案件を本番運用へ移しやすくなる。
 
-**自分への影響（So what）**: 店頭業務では、商品FAQ・保証条件・在庫説明のローカル検索基盤を小さく始められる。個人開発では、運用保守コストを抑えつつRAGを組み込み、機能改善サイクルを回しやすい。
+**自分への影響（So what）**:
+店頭向けFAQや製品比較データのローカル検索基盤を小さく試せる。個人開発ではDocker/DB運用の負担を下げ、機能改善の反復速度を上げられる。
 
 - リンク: [https://zenn.dev/karaage0703/articles/d7eaf62437185d](https://zenn.dev/karaage0703/articles/d7eaf62437185d)
+- 確信度: 高
+---
+
+---
+### 【カテゴリC: 日本語コミュニティ（Zenn）】Claude Code と Gemini CLI の間でコピペするのに疲れたので、MCPメッセージバスを作った（Zenn, 2026-03-02）
+
+**ひとことサマリー（1文）**: マルチCLI運用の手作業を減らすMCPメッセージバス実装が公開された。
+
+**何が起きたか（What）**:
+Claude CodeとGemini CLIを併用する際の手動コピペを削減するため、MCPベースのメッセージ中継層を作成した実装記事。コンテキスト受け渡しを運用として定型化し、複数エージェントでの作業分担をしやすくする構成を示している。公開日は2026-03-02。
+
+**なぜ重要か（Why it matters）**:
+AI開発の実務課題はモデル品質よりオーケストレーションに寄ってきている。接続層を標準化できると、ワークフロー全体の再現性が大きく改善する。
+
+**自分への影響（So what）**:
+店頭資料作成や比較タスクで複数AIを使うときに、引き継ぎの手間を削減できる。個人開発では、サブエージェント分業の基盤としてそのまま応用しやすい。
+
+- リンク: [https://zenn.dev/yoichiro/articles/d22c5708e5116c](https://zenn.dev/yoichiro/articles/d22c5708e5116c)
 - 確信度: 中
 ---
 
 ### note ピックアップ
 
-- 該当記事なし（候補収集で不足）。
+---
+### 【カテゴリD: 日本語コミュニティ（note）】Claude Codeで「ひらがなれんしゅうアプリ」をつくったら、子どもの笑顔が見れた（note, 2026-02-28）
+
+**ひとことサマリー（1文）**: Claude Codeを使った家庭向けアプリ試作とユーザーテストの実践記録が共有された。
+
+**何が起きたか（What）**:
+6歳向けひらがな練習アプリをClaude Codeで作る過程を、試作段階のまま公開した記事。家庭内テストで得たフィードバックや改善意図を文章化し、非業務文脈での高速プロトタイピング事例として示している。公開日は2026-02-28。
+
+**なぜ重要か（Why it matters）**:
+AI開発ツールが業務自動化だけでなく、個人開発の検証速度を上げる実例になっている。小さなユーザーテストを早く回す設計は、プロダクト改善の基本パターンとして有効。
+
+**自分への影響（So what）**:
+店頭では顧客の利用シーンに合わせた「小さく試す」提案をしやすくなる。個人開発でも、完成前に早期テストを回す文化を作りやすい。
+
+- リンク: [https://note.com/kenichiota0711/n/nac9765bece34](https://note.com/kenichiota0711/n/nac9765bece34)
+- 確信度: 中
+---
 
 ### Reddit / HN ピックアップ
 
 ---
-### 【カテゴリE/F: コミュニティ（Reddit / HN）】New: Anthropic introduces a memory feature...（r/ClaudeAI）（Reddit r/ClaudeAI, 2026-03-01）
+### 【カテゴリE/F: コミュニティ（Reddit / HN）】WebMCP is available for early preview（Hacker News, 2026-03-01）
 
-**ひとことサマリー（1文）**: Claudeのメモリ移行機能はRedditでも大きく反応が出ており、実ユーザーの関心が高い。
+**ひとことサマリー（1文）**: HN上位でWebMCPのearly previewが議論され、ブラウザ×AIエージェント連携の標準化が注目された。
 
-**何が起きたか（What）**: r/ClaudeAIの2026-03-01投稿は、収集時点で`upvote 1,520`、`コメント 90`。内容は「他AIの文脈・嗜好をClaudeへ移せる新機能」に集中し、運用面の利便性が議論されている。
+**何が起きたか（What）**:
+HNで高スコアを獲得したChrome Developers記事が共有され、WebMCPのearly preview公開が話題化。記事では、Web上の構造化ツールをAIエージェントへ公開する標準化で、速度・信頼性・精度改善を狙うと説明されている。
 
-**なぜ重要か（Why it matters）**: 新機能の価値は、公式発表だけでなくコミュニティの初動反応で測れる。短時間で高い反応が出る機能は、日常運用の痛点（引っ越しコスト）に刺さっている可能性が高い。
+**なぜ重要か（Why it matters）**:
+エージェント運用はモデル単体よりツール連携設計が成果を左右する。Web側標準が整うと、サービス連携の実装負荷が下がり、導入の再現性が上がる。
 
-**自分への影響（So what）**: 店舗向けにAI導入を説明する際、「ベンダー固定」ではなく「移行可能」な設計を示せる。個人開発でも、メモリポータビリティを前提にしたツール選定（出口戦略あり）がしやすい。
+**自分への影響（So what）**:
+店頭業務でも、複数Webサービス連携の説明を具体化しやすくなる。個人開発では、MCP系設計を前提にした拡張しやすい構成を選びやすい。
 
-- リンク: [https://www.reddit.com/r/ClaudeAI/comments/1rhx7pq/new_anthropic_introduces_a_memory_feature_that/](https://www.reddit.com/r/ClaudeAI/comments/1rhx7pq/new_anthropic_introduces_a_memory_feature_that/)
-- 確信度: 低
+- リンク: [https://developer.chrome.com/blog/webmcp-epp](https://developer.chrome.com/blog/webmcp-epp)
+- 確信度: 高
+---
+
+---
+### 【カテゴリE/F: コミュニティ（Reddit / HN）】OpenAI eyes global domination with $110B Amazon and NVIDIA raise, value hits $840B（Reddit r/artificial, 2026-03-01）
+
+**ひとことサマリー（1文）**: 大型資金調達報道がRedditで拡散し、推論供給力の競争激化が主要論点になった。
+
+**何が起きたか（What）**:
+r/artificialで高評価を集めた投稿は、OpenAIの110Bドル資金調達と評価額840Bドルを報じる外部記事を共有した。記事ではAmazon/NVIDIAなどの関与やユーザー規模拡大が言及され、投資規模がコミュニティの議論中心になっている。
+
+**なぜ重要か（Why it matters）**:
+資本規模の差はモデル開発速度だけでなく、推論インフラ・販売チャネル・価格戦略に波及する。コミュニティの初動反応は、市場がどこを競争軸として見ているかの先行指標になる。
+
+**自分への影響（So what）**:
+店頭ではAIサービス比較時に「機能」だけでなく「供給継続性」も説明しやすい。個人開発ではベンダーロックイン回避と複数API設計の優先度が上がる。
+
+- リンク: [https://interestingengineering.com/ai-robotics/openai-110b-funding-amazon-nvidia](https://interestingengineering.com/ai-robotics/openai-110b-funding-amazon-nvidia)
+- 確信度: 中
+---
+
+---
+### 【カテゴリE/F: コミュニティ（Reddit / HN）】Scientists made AI agents ruder — and they performed better at complex reasoning tasks（Reddit r/artificial, 2026-03-02）
+
+**ひとことサマリー（1文）**: 「対話戦略を崩した方が推論性能が上がる」実験報告がコミュニティで注目された。
+
+**何が起きたか（What）**:
+r/artificialで共有された外部記事では、割り込み・沈黙など人間的な会話挙動を導入したエージェント群が複雑推論タスクで改善を示したと紹介。投稿は実験設計の妥当性と実務応用可能性を中心に議論を集めた。
+
+**なぜ重要か（Why it matters）**:
+性能改善がモデル更新だけでなく、エージェント層の会話ポリシー設計で得られる可能性を示している。これは既存モデルでも運用チューニングで成果が出る余地を示唆する。
+
+**自分への影響（So what）**:
+店頭向け説明で「モデルを変えなくても運用設計で改善できる」と伝えやすくなる。個人開発では、プロンプトだけでなく対話制御ロジックを評価対象に入れるべきだと分かる。
+
+- リンク: [https://www.livescience.com/technology/artificial-intelligence/scientists-made-ai-agents-ruder-and-they-performed-better-at-complex-reasoning-tasks](https://www.livescience.com/technology/artificial-intelligence/scientists-made-ai-agents-ruder-and-they-performed-better-at-complex-reasoning-tasks)
+- 確信度: 中
 ---
 
 ---
@@ -89,114 +171,136 @@
 ### 公式ソース
 
 ---
-### 【カテゴリB: 公式ソース（半導体）】NVIDIA and Partners Show That Software-Defined AI-RAN Is the Next Wireless Generation（NVIDIA Blog, 2026-03-01）
+### 【カテゴリB: 公式ソース（半導体）】NVIDIA and Partners Show That Software-Defined AI-RAN Is the Next Wireless Generation（NVIDIA Blog, 2026-02-28）
 
-**ひとことサマリー（1文）**: NVIDIAはAI-RANがラボ段階を超え、通信事業者との屋外検証と商用前提の実証へ進んだと発表した。
+**ひとことサマリー（1文）**: NVIDIAはAI-RANの屋外実証進展を示し、通信インフラAI化の商用フェーズ入りを打ち出した。
 
-**何が起きたか（What）**: 2026-03-01公開。NVIDIAは、T-Mobile US / SoftBank / Indosat Ooredoo HutchisonがAI-RAN実装を進めたと説明。SoftBank AITRASでは`16-layer massive MIMO`の実地試験、IOHでは`FR2 band`でのAI-RAN実装、MWC 2026では`20超`のAI-RAN Allianceデモ予定と記載。
+**何が起きたか（What）**:
+NVIDIAはT-Mobile、SoftBank、Indosat Ooredoo HutchisonでのAI-RAN実装進捗を公開した。記事では16-layer massive MIMO実証、36Gbps/10ms未満の構成例、MWCで33件中26件のNVIDIA採用デモ予定が示されている。AI-RANを6Gに向けた共通基盤として位置づけた内容。
 
-**なぜ重要か（Why it matters）**: 5G/6G基盤が専用ハード依存からソフトウェア定義型へ移るほど、更新速度と供給網の柔軟性が増す。通信インフラのAI化は、GPUだけでなくネットワーク最適化ソフト市場も押し上げる。
+**なぜ重要か（Why it matters）**:
+RAN領域がソフトウェア定義へ寄るほど、汎用計算基盤とネットワーク半導体の結合需要が増える。基地局・エッジまで含めた半導体需要拡張のシグナルになる。
 
-**自分への影響（So what）**: 店頭ではAI PC提案時に「端末だけでなくネットワーク側もAI最適化が進む」説明が可能になる。個人開発では、エッジ前提の遅延設計や帯域設計を最初から織り込む必要がある。
+**自分への影響（So what）**:
+店頭ではAI PC/ネットワーク機器提案で「通信側AI最適化」の文脈を説明しやすい。個人開発では、低遅延設計やエッジ推論前提の構成を初期から考える必要がある。
 
 - リンク: [https://blogs.nvidia.com/blog/software-defined-ai-ran/](https://blogs.nvidia.com/blog/software-defined-ai-ran/)
 - 確信度: 高
-- 補足: 通信×AIの需要拡大で、GPU・高効率CPU・NICの説明軸を同時に持つ接客が有利。
 ---
 
 ---
-### 【カテゴリB: 公式ソース（半導体）】NVIDIA Advances Autonomous Networks With Agentic AI Blueprints and Telco Reasoning Models（NVIDIA Blog, 2026-03-01）
+### 【カテゴリB: 公式ソース（半導体）】NVIDIA Advances Autonomous Networks With Agentic AI Blueprints and Telco Reasoning Models（NVIDIA Blog, 2026-02-28）
 
-**ひとことサマリー（1文）**: NVIDIAは通信業界向けに30Bモデルと運用Blueprintを公開し、NOC自動化と省電力最適化の実装を前進させた。
+**ひとことサマリー（1文）**: NVIDIAは30Bモデルと運用Blueprint公開で、通信運用自動化の実装手順を具体化した。
 
-**何が起きたか（What）**: 2026-03-01公開。AdaptKey AIと共同で`30Bパラメータ`のNVIDIA Nemotron LTMを公開。Tech Mahindraと通信オペレーター向け実装ガイドを提供し、VIAVI TeraVM連携の`intent-driven RAN energy efficiency` Blueprintで、本番投入前にシミュレーション検証できる閉ループ運用を提示。
+**何が起きたか（What）**:
+NVIDIAはAdaptKey AIと30BパラメータNemotron LTMを公開し、Tech Mahindraと通信運用向けガイドを発表した。VIAVI TeraVM連携でintent-driven RAN energy blueprintを提示し、合成データを使った省電力ポリシーの閉ループ検証を可能にした。
 
-**なぜ重要か（Why it matters）**: 通信網の運用コストは人手と電力が支配的。AIエージェントによる故障対応・省エネ制御が標準化すると、OPEX改善が直接利益に効く。
+**なぜ重要か（Why it matters）**:
+通信事業者のコスト構造では運用自動化と省電力が利益に直結する。生成AIをNOC運用へ組み込む標準手順が出ることで、実運用導入の障壁が下がる。
 
-**自分への影響（So what）**: 法人顧客への提案で、AIの価値を「生成」だけでなく「運用最適化」に広げて説明できる。個人開発では、閉ループ評価（推論→方針→シミュレーション）を小規模でも再現する設計が有効。
+**自分への影響（So what）**:
+店頭の法人提案で、AI価値を「生成」だけでなく「運用最適化」まで拡張して説明できる。個人開発では、推論結果をシミュレーションで検証する閉ループ設計を取り入れやすくなる。
 
 - リンク: [https://blogs.nvidia.com/blog/nvidia-agentic-ai-blueprints-telco-reasoning-models/](https://blogs.nvidia.com/blog/nvidia-agentic-ai-blueprints-telco-reasoning-models/)
 - 確信度: 高
-- 補足: 「AI導入=推論API導入」ではなく、運用自動化まで含めた提案が必須になる。
----
-
----
-### 【カテゴリB: 公式ソース（半導体）】NVIDIA and Global Telecom Leaders Commit to Build 6G on Open and Secure AI-Native Platforms（NVIDIA Newsroom, 2026-03-01）
-
-**ひとことサマリー（1文）**: NVIDIAは主要通信・装置・コンサル企業と6GのAIネイティブ基盤整備で連携を宣言した。
-
-**何が起きたか（What）**: 2026-03-01公開。Booz Allen, BT Group, Cisco, Deutsche Telekom, Ericsson, MITRE, Nokia, ODC, SK Telecom, SoftBank, T-Mobileなどと、`open / secure / trustworthy`を掲げる6G基盤方針を発表。6Gを物理AI時代の基盤として位置づけ、RAN/edge/core全体でAI統合を進める方針を示した。
-
-**なぜ重要か（Why it matters）**: 次世代通信は、速度競争だけでなくサプライチェーン耐性・相互運用性・安全性が採用条件になる。国家・キャリア・ベンダーの連携は標準化主導権に直結する。
-
-**自分への影響（So what）**: 店頭では「6G準備」の文脈で、端末買い替えだけでなくクラウド/エッジ連携の将来像を説明できる。個人開発では、閉じた1社依存よりオープン標準準拠の設計が長期保守で有利。
-
-- リンク: [https://nvidianews.nvidia.com/news/nvidia-and-global-telecom-leaders-commit-to-build-6g-on-open-and-secure-ai-native-platforms](https://nvidianews.nvidia.com/news/nvidia-and-global-telecom-leaders-commit-to-build-6g-on-open-and-secure-ai-native-platforms)
-- 確信度: 高
-- 補足: 通信インフラのAI化は、半導体だけでなく標準化レイヤーの理解が販売・提案力に効く。
 ---
 
 ---
 ### 【カテゴリB: 公式ソース（半導体）】Samsung and AMD Reinforce Strategic Collaboration to Advance AI-Powered Network Innovations for Commercial Deployments（Samsung Newsroom, 2026-03-01）
 
-**ひとことサマリー（1文）**: SamsungとAMDは5G Core/vRAN/Private Networkで協業を拡張し、検証段階から商用展開へ進んだ。
+**ひとことサマリー（1文）**: SamsungとAMDは5G Core/vRAN協業を商用展開段階へ進める更新を発表した。
 
-**何が起きたか（What）**: Samsung UK Newsroom記事では、両社の協業範囲を`5G Core / vRAN / private networks`に拡大。Videotron向けに`5G NSA`と`4G LTE Core gateway`を`AMD EPYC 9005`で提供した事例を提示。MWC 2026では追加アクセラレータなしでのAI-powered vRAN、NIS（Network in a Server）展示を予告。
+**何が起きたか（What）**:
+SamsungはAMDとの協業範囲を5G Core、vRAN、private networkへ拡大し、Videotron向けにEPYC 9005採用ソリューションを展開すると公表。MWC 2026ではAI-powered vRANとNetwork in a Serverを披露予定とした。検証フェーズから商用投入へ進むマイルストーンとして示された。
 
-**なぜ重要か（Why it matters）**: Open RAN/仮想化RANは、専用機器中心から汎用CPUベースへの移行を後押しする。AI-RANが商用フェーズに入るほど、ソフト更新主導の競争が強まる。
+**なぜ重要か（Why it matters）**:
+通信インフラの仮想化が進むほど、CPU/アクセラレータの選定自由度とソフト更新速度が競争力になる。商用実績の拡大は採用判断を加速させる。
 
-**自分への影響（So what）**: 店頭では、AMD系プラットフォームの価値を「PC用途」だけでなく通信インフラ実績として説明できる。個人開発でも、汎用ハードでAI処理を回す設計思想がエッジ案件に応用しやすい。
+**自分への影響（So what）**:
+店頭ではAMDプラットフォームの訴求をPC用途以外の実績文脈でも説明できる。個人開発では、特定アクセラレータ前提でない設計方針を取りやすい。
 
 - リンク: [https://news.samsung.com/uk/samsung-and-amd-reinforce-strategic-collaboration-to-advance-ai-powered-network-innovations-for-commercial-deployments](https://news.samsung.com/uk/samsung-and-amd-reinforce-strategic-collaboration-to-advance-ai-powered-network-innovations-for-commercial-deployments)
 - 確信度: 高
-- 補足: 「AI用=GPU専用」から「CPU+ソフト最適化」への提案パターンを増やす余地がある。
 ---
 
 ### コミュニティ（Reddit / HN / その他）
 
-- 該当記事なし（候補収集で不足）。
+---
+### 【カテゴリE/F: コミュニティ（Reddit / HN）】The NIMBY War Against Micron（Reddit r/hardware, 2026-03-01）
+
+**ひとことサマリー（1文）**: Micron工場計画の遅延リスクを扱う記事がRedditで広く議論された。
+
+**何が起きたか（What）**:
+r/hardwareで高評価を集めた共有記事は、Micron Syracuseプロジェクトが訴訟や許認可プロセスで遅延圧力を受ける点を論じた。雇用規模や投資規模と、地域規制/住民対応の摩擦が争点として整理されている。
+
+**なぜ重要か（Why it matters）**:
+半導体供給は生産能力の立ち上げタイミング依存が強く、工場計画の遅延は需給と価格に波及する。コミュニティでも政策・規制が供給網のボトルネックとして認識されている。
+
+**自分への影響（So what）**:
+店頭では将来の在庫/価格変動を説明する際に、技術だけでなく供給網リスクも補足できる。個人開発でも、ハード調達を伴う計画は余裕を持った前提で見積もる必要がある。
+
+- リンク: [https://www.piratewires.com/p/the-nimby-war-against-micron-syracuse](https://www.piratewires.com/p/the-nimby-war-against-micron-syracuse)
+- 確信度: 低
+---
 
 ---
 
 ## その他の候補記事（選外）
 
 ### カテゴリA（公式AI）
-- 候補収集不足のため、今回は選外リストを十分に作成できず。次回は候補収集→選定を明示する。
+- Statement on the comments from Secretary of War Pete Hegseth（政策論点が強く、本日の実装/運用観点からは優先度を下げた）
+  https://www.anthropic.com/news/statement-comments-secretary-war
 
 ### カテゴリB（公式半導体）
-- 候補収集不足のため、今回は選外リストを十分に作成できず。
+- NVIDIA and Global Telecom Leaders Commit to Build 6G on Open and Secure AI-Native Platforms（方針発表中心で、実装詳細のある記事を優先）
+  https://nvidianews.nvidia.com/news/nvidia-and-global-telecom-leaders-commit-to-build-6g-on-open-and-secure-ai-native-platforms
 
 ### カテゴリC（Zenn）
-- 該当なし
+- Claude Code信者がOpenClawを触って感じたこと。驚き屋に転職します。（所感中心のため選外）
+  https://zenn.dev/take4/articles/b4c931992f3665
 
 ### カテゴリD（note）
-- 該当なし
+- 生成AI Claude CodeとAnthropicに見る非エンジニアの仕事の変わり方（概説中心のため本編は実装寄り1本を採用）
+  https://note.com/hitsuji_fire/n/n33e0963c272f
 
 ### カテゴリE（Reddit）
-- 該当なし
+- OpenAI eyes global domination with $110B Amazon and NVIDIA raise, value hits $840B（本編掲載済み）
+  https://interestingengineering.com/ai-robotics/openai-110b-funding-amazon-nvidia
+- Scientists made AI agents ruder — and they performed better at complex reasoning tasks（本編掲載済み）
+  https://www.livescience.com/technology/artificial-intelligence/scientists-made-ai-agents-ruder-and-they-performed-better-at-complex-reasoning-tasks
 
 ### カテゴリF（Hacker News）
-- 該当なし
+- If AI writes code, should the session be part of the commit?（本編と近接テーマのため選外）
+  https://github.com/mandel-macaque/memento
 
 ## ソース一覧
-- OpenAI, 公開日: ページ内更新（要ログイン環境での時刻確認推奨）, アクセス日: 2026-03-02, 種別: 公式
-  https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-- Claude, 公開日: ページ内明示なし, アクセス日: 2026-03-02, 種別: 公式
-  https://www.claude.com/import-memory
-- Reddit r/ClaudeAI, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: コミュニティ
-  https://www.reddit.com/r/ClaudeAI/comments/1rhx7pq/new_anthropic_introduces_a_memory_feature_that/
+- OpenAI, 公開日: 2026-02-27, アクセス日: 2026-03-02, 種別: 公式AI
+  https://openai.com/index/continuing-microsoft-partnership/
+- Anthropic, 公開日: 2026-02-25, アクセス日: 2026-03-02, 種別: 公式AI
+  https://www.anthropic.com/research/deprecation-updates-opus-3
+- NVIDIA Blog, 公開日: 2026-02-28, アクセス日: 2026-03-02, 種別: 公式半導体
+  https://blogs.nvidia.com/blog/software-defined-ai-ran/
+- NVIDIA Blog, 公開日: 2026-02-28, アクセス日: 2026-03-02, 種別: 公式半導体
+  https://blogs.nvidia.com/blog/nvidia-agentic-ai-blueprints-telco-reasoning-models/
+- Samsung Newsroom, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: 公式半導体
+  https://news.samsung.com/uk/samsung-and-amd-reinforce-strategic-collaboration-to-advance-ai-powered-network-innovations-for-commercial-deployments
 - Zenn, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: コミュニティ
   https://zenn.dev/karaage0703/articles/d7eaf62437185d
-- NVIDIA Blog, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: 公式
-  https://blogs.nvidia.com/blog/software-defined-ai-ran/
-- NVIDIA Blog, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: 公式
-  https://blogs.nvidia.com/blog/nvidia-agentic-ai-blueprints-telco-reasoning-models/
-- NVIDIA Newsroom, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: 公式
-  https://nvidianews.nvidia.com/news/nvidia-and-global-telecom-leaders-commit-to-build-6g-on-open-and-secure-ai-native-platforms
-- Samsung Newsroom, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: 公式
-  https://news.samsung.com/uk/samsung-and-amd-reinforce-strategic-collaboration-to-advance-ai-powered-network-innovations-for-commercial-deployments
+- Zenn, 公開日: 2026-03-02, アクセス日: 2026-03-02, 種別: コミュニティ
+  https://zenn.dev/yoichiro/articles/d22c5708e5116c
+- note, 公開日: 2026-02-28, アクセス日: 2026-03-02, 種別: コミュニティ
+  https://note.com/kenichiota0711/n/nac9765bece34
+- Reddit(r/artificial) 経由, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: コミュニティ
+  https://interestingengineering.com/ai-robotics/openai-110b-funding-amazon-nvidia
+- Reddit(r/artificial) 経由, 公開日: 2026-03-02, アクセス日: 2026-03-02, 種別: コミュニティ
+  https://www.livescience.com/technology/artificial-intelligence/scientists-made-ai-agents-ruder-and-they-performed-better-at-complex-reasoning-tasks
+- Reddit(r/hardware) 経由, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: コミュニティ
+  https://www.piratewires.com/p/the-nimby-war-against-micron-syracuse
+- Hacker News 経由, 公開日: 2026-03-01, アクセス日: 2026-03-02, 種別: コミュニティ
+  https://developer.chrome.com/blog/webmcp-epp
 
 ## 対象範囲
 - 対象日: 2026-03-02
 - タイムゾーン: Asia/Tokyo
-- 対象期間: 2026-03-02の48時間前〜現在
+- 対象期間: 2026-03-02の48時間前〜現在（不足カテゴリは7日へ拡張）
