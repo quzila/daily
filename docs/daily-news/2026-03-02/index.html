@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>デイリーAI・半導体ニュース（2026-03-02）</title>
+  <meta name="description" content="1. 通信インフラのAI化が「検証」から「商用前提」に進んだ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #08080f;
+      --surface: #0e0e1a;
+      --paper: #121220;
+      --paper-hover: #181828;
+      --border: #1c1c30;
+      --border-hi: #28283e;
+      --ai: #f0a030;
+      --ai-glow: rgba(240,160,48,.12);
+      --txt1: #eaeaf8;
+      --txt2: #8888aa;
+      --txt3: #48486a;
+      --link: #8dc4ff;
+      --code-bg: #0f0f1a;
+      --code-fg: #d9d9ef;
+      --ff-display: "Playfair Display", "Noto Sans JP", serif;
+      --ff-body: "Noto Sans JP", sans-serif;
+      --ff-mono: "JetBrains Mono", monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--txt1);
+      font-family: var(--ff-body);
+      font-size: 14.5px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+      opacity: .03;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 max(2rem, calc(50vw - 580px));
+      background: rgba(8,8,15,.88);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+    .nav-brand {
+      margin-right: auto;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+    .nav-brand b { color: var(--ai); font-weight: 500; }
+    nav a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 1.2rem;
+      border-left: 1px solid var(--border);
+      font-family: var(--ff-mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--txt1); }
+
+    .shell {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 max(1.5rem, calc(50vw - 580px));
+    }
+
+    .hero {
+      padding: 5.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      margin-bottom: 1.6rem;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+    .hero-eyebrow::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-hi), transparent);
+    }
+    .hero-eyebrow span:first-child { color: var(--ai); }
+    .hero h1 {
+      margin-bottom: .6rem;
+      font-family: var(--ff-display);
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -.025em;
+      color: var(--txt1);
+    }
+    .hero h1 em { color: var(--ai); font-style: italic; }
+    .hero-sub {
+      margin-top: 1rem;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--txt3);
+    }
+
+    .report-shell {
+      padding: 3.2rem 0 4.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .report {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-left: 3px solid rgba(240,160,48,.35);
+      padding: clamp(1.1rem, 2.5vw, 2rem) clamp(1rem, 2.2vw, 2rem);
+    }
+    .report:hover { background: var(--paper-hover); }
+
+    .report h1,
+    .report h2,
+    .report h3,
+    .report h4,
+    .report h5,
+    .report h6 {
+      line-height: 1.35;
+      letter-spacing: -.01em;
+    }
+    .report h1 {
+      margin: 0 0 .7rem;
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      font-weight: 400;
+      color: var(--txt1);
+    }
+    .report h2 {
+      margin: 2rem 0 .7rem;
+      padding-left: .8rem;
+      border-left: 4px solid var(--ai);
+      font-family: var(--ff-display);
+      font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+      font-weight: 400;
+      color: var(--txt1);
+    }
+    .report h3 {
+      margin: 1.4rem 0 .45rem;
+      font-size: 1.1rem;
+      color: #f6bb61;
+    }
+    .report h4,
+    .report h5,
+    .report h6 {
+      margin: 1.2rem 0 .4rem;
+      font-size: 1rem;
+      color: var(--txt2);
+    }
+
+    .report p {
+      margin: 0 0 .9rem;
+      color: var(--txt2);
+    }
+    .report strong { color: var(--txt1); font-weight: 600; }
+    .report em { color: #f8c57a; }
+    .report ul,
+    .report ol {
+      margin: .4rem 0 1rem;
+      padding-left: 1.35rem;
+      color: var(--txt2);
+    }
+    .report li { margin: .18rem 0; }
+    .report li::marker { color: #f2b65a; }
+    .report hr {
+      border: 0;
+      border-top: 1px solid var(--border-hi);
+      margin: 1.5rem 0;
+    }
+    .report a {
+      color: var(--link);
+      text-underline-offset: 2px;
+      word-break: break-word;
+    }
+    .report blockquote {
+      margin: 1rem 0;
+      padding: .65rem .9rem;
+      border-left: 3px solid rgba(240,160,48,.4);
+      background: rgba(255,255,255,.03);
+      color: var(--txt1);
+    }
+    .report code {
+      font-family: var(--ff-mono);
+      font-size: .9em;
+      color: var(--code-fg);
+      background: rgba(255,255,255,.06);
+      border-radius: 4px;
+      padding: 1px 6px;
+    }
+    .report pre {
+      margin: .95rem 0 1.1rem;
+      padding: 12px;
+      background: var(--code-bg);
+      border: 1px solid var(--border-hi);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .report pre code {
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      color: inherit;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .8rem;
+      padding: 1.8rem max(1.5rem, calc(50vw - 580px));
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+    footer p {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .08em;
+      color: var(--txt3);
+    }
+
+    .fi {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .fi.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 720px) {
+      nav { padding: 0 .7rem; }
+      nav a { padding: 0 .6rem; }
+      .shell { padding: 0 10px; }
+      .hero { padding: 3.2rem 0 2.4rem; }
+      .hero-eyebrow { gap: .6rem; flex-wrap: wrap; }
+      .report-shell { padding-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Daily <b>AI</b>·半導体 Briefing</div>
+  <a href="#report">Report</a>
+  <a href="#top">Top</a>
+</nav>
+
+<div class="shell" id="top">
+  <header class="hero fi show">
+    <div class="hero-eyebrow">
+      <span>DAILY BRIEFING</span>
+      <span>デイリーAI・半導体ニュース（2026-03-02）</span>
+    </div>
+    <h1>デイリー<em>AI</em>·<br>半導体ニュース</h1>
+    <p class="hero-sub">デイリーAI・半導体ニュース（2026-03-02）</p>
+    <p class="hero-sub">Generated 2026-03-02 13:40:41 (Asia/Tokyo)</p>
+  </header>
+</div>
+
+<div class="shell">
+  <section class="report-shell">
+    <article id="report" class="report fi show">
+      <h1>デイリーAI・半導体ニュース（2026-03-02）</h1>
+<h2>対象範囲</h2>
+<ul>
+<li>対象日: 2026-03-02</li>
+<li>タイムゾーン: Asia/Tokyo</li>
+<li>基準: 直近48時間を優先（不足分は直近数日を補完し注記）</li>
+</ul>
+<h2>今日のハイライト（3選）</h2>
+<ol>
+<li><strong>通信インフラのAI化が「検証」から「商用前提」に進んだ</strong></li>
+</ol>
+<p>NVIDIAのAI-RAN関連発表（2026-03-01）で、T-Mobile/SoftBank/IOHの屋外フィールド検証や、6G向けのオープン・セキュア基盤連携が同日に出た。半導体需要はデータセンターだけでなく、RAN/エッジ側へ広がっている。</p>
+<ol>
+<li><strong>AIツールの乗り換えコストを下げる機能競争が加速</strong></li>
+</ol>
+<p>Claudeの<code>Import Memory</code>は、他AIで蓄積した文脈をコピー&amp;ペーストで移行できる設計を提示。ユーザー囲い込みの軸が「モデル性能」だけでなく「記憶/履歴の可搬性」に移っている。</p>
+<ol>
+<li><strong>個人開発のRAG実装が軽量化フェーズへ</strong></li>
+</ol>
+<p>Zenn（2026-03-01）の実装記事では、PostgreSQL+Docker前提から<code>uv + SQLite + Skills</code>へ簡素化。個人でも継続運用しやすい構成が広がっている。</p>
+<hr />
+<h2>AIデイリーニュース</h2>
+<h3>記事1</h3>
+<ul>
+<li>タイトル: ChatGPT Release Notes（Projects関連アップデート）</li>
+<li>30秒で読める要約: OpenAIはProjects機能を拡張し、Proのファイル上限を20→40に引き上げ、共有やカスタマイズ機能を強化した。</li>
+<li>記事全体の内容:</li>
+<li>事実（What）: OpenAI Help CenterのRelease Notesで、Projectsの更新として、Proユーザーのアップロード上限が<code>20→40ファイル</code>に増加。Free/有料のファイル上限差や、アイコン/色などのカスタマイズ機能、共有運用（コラボレーション）に関する記述も更新されている。</li>
+<li>背景（Why it matters）: 2025年までの「1チャット完結」から、2026年は「プロジェクト単位で履歴・資料を蓄積する」運用へ移行中。AIプロダクトの勝負軸が、単発回答品質だけでなく、長期作業の継続性に移っている。</li>
+<li>影響（So what: ノジマ業務/自分の開発）: 店頭業務では、製品比較表・FAQ・販促文案をプロジェクト単位で管理しやすくなり、引き継ぎコストを下げられる。個人開発では、仕様書やログを1プロジェクトに集約し、週次で同じ文脈を再利用する開発フローを作りやすい。</li>
+<li>リンク: https://help.openai.com/en/articles/6825453-chatgpt-release-notes</li>
+<li>ソース種別（公式/コミュニティ）: 公式</li>
+<li>公開日: ページ内更新（要ログイン環境での時刻確認推奨）</li>
+<li>アクセス日: 2026-03-02</li>
+<li>確信度: 高</li>
+</ul>
+<h3>記事2</h3>
+<ul>
+<li>タイトル: Switch to Claude without starting over（Claude Import Memory）</li>
+<li>30秒で読める要約: Claudeは他AIから文脈・好みを移す<code>Import Memory</code>を打ち出し、移行時の摩擦を大幅に下げた。</li>
+<li>記事全体の内容:</li>
+<li>事実（What）: Claude公式ページでは、他AIに専用プロンプトを投げて得た内容をClaude側メモリ設定に貼り付けることで、文脈と嗜好を引き継げる手順を提示。説明文では「under a minute」「first conversation feels like your hundredth」として、初回から過去文脈を使える点を強調している。</li>
+<li>背景（Why it matters）: 生成AI利用は複数ツール併用が一般化し、履歴移行の容易さが重要指標になっている。モデルそのものの性能差に加え、「過去知識をどう持ち運べるか」が選定条件に入ってきた。</li>
+<li>影響（So what: ノジマ業務/自分の開発）: 店頭では顧客説明用に複数AIを試す際、設定再構築の手間を減らせる。個人開発では、検証用に使うAIを切り替えてもプロジェクト文脈を維持しやすく、再学習コストを抑えられる。</li>
+<li>リンク: https://www.claude.com/import-memory</li>
+<li>ソース種別（公式/コミュニティ）: 公式</li>
+<li>公開日: ページ内明示なし</li>
+<li>アクセス日: 2026-03-02</li>
+<li>確信度: 中</li>
+</ul>
+<h3>記事3</h3>
+<ul>
+<li>タイトル: New: Anthropic introduces a memory feature...（r/ClaudeAI）</li>
+<li>30秒で読める要約: Claudeのメモリ移行機能はRedditでも大きく反応が出ており、実ユーザーの関心が高い。</li>
+<li>記事全体の内容:</li>
+<li>事実（What）: r/ClaudeAIの2026-03-01投稿は、収集時点で<code>upvote 1,520</code>、<code>コメント 90</code>。内容は「他AIの文脈・嗜好をClaudeへ移せる新機能」に集中し、運用面の利便性が議論されている。</li>
+<li>背景（Why it matters）: 新機能の価値は、公式発表だけでなくコミュニティの初動反応で測れる。短時間で高い反応が出る機能は、日常運用の痛点（引っ越しコスト）に刺さっている可能性が高い。</li>
+<li>影響（So what: ノジマ業務/自分の開発）: 店舗向けにAI導入を説明する際、「ベンダー固定」ではなく「移行可能」な設計を示せる。個人開発でも、メモリポータビリティを前提にしたツール選定（出口戦略あり）がしやすい。</li>
+<li>リンク: https://www.reddit.com/r/ClaudeAI/comments/1rhx7pq/new_anthropic_introduces_a_memory_feature_that/</li>
+<li>ソース種別（公式/コミュニティ）: コミュニティ</li>
+<li>公開日: 2026-03-01</li>
+<li>アクセス日: 2026-03-02</li>
+<li>確信度: 低</li>
+</ul>
+<h3>記事4</h3>
+<ul>
+<li>タイトル: Skillsで実現する軽量パーソナルRAG（Zenn）</li>
+<li>30秒で読める要約: Skillsを使った軽量RAG構成（uv+SQLite）が共有され、個人開発での継続運用ハードルが下がった。</li>
+<li>記事全体の内容:</li>
+<li>事実（What）: 2026-03-01公開のZenn記事（いいね48）では、従来の<code>PostgreSQL + pgvector + Docker + MCP</code>構成から、<code>Skills + uv + SQLite</code>中心の軽量構成へ移行した実装が紹介されている。記事内では「Docker不要」「より手軽」という運用面の改善が強調されている。</li>
+<li>背景（Why it matters）: RAGは精度以前に運用コストが障壁になりやすい。軽量化が進むと、検証止まりだった個人/小規模チームが継続運用へ進みやすくなる。</li>
+<li>影響（So what: ノジマ業務/自分の開発）: 店頭業務では、商品FAQ・保証条件・在庫説明のローカル検索基盤を小さく始められる。個人開発では、運用保守コストを抑えつつRAGを組み込み、機能改善サイクルを回しやすい。</li>
+<li>リンク: https://zenn.dev/karaage0703/articles/d7eaf62437185d</li>
+<li>ソース種別（公式/コミュニティ）: コミュニティ</li>
+<li>公開日: 2026-03-01</li>
+<li>アクセス日: 2026-03-02</li>
+<li>確信度: 中</li>
+</ul>
+<hr />
+<h2>半導体デイリーニュース</h2>
+<h3>記事1</h3>
+<ul>
+<li>タイトル: NVIDIA and Partners Show That Software-Defined AI-RAN Is the Next Wireless Generation</li>
+<li>30秒で読める要約: NVIDIAはAI-RANがラボ段階を超え、通信事業者との屋外検証と商用前提の実証へ進んだと発表した。</li>
+<li>記事全体の内容:</li>
+<li>事実（What）: 2026-03-01公開。NVIDIAは、T-Mobile US / SoftBank / Indosat Ooredoo HutchisonがAI-RAN実装を進めたと説明。SoftBank AITRASでは<code>16-layer massive MIMO</code>の実地試験、IOHでは<code>FR2 band</code>でのAI-RAN実装、MWC 2026では<code>20超</code>のAI-RAN Allianceデモ予定と記載。</li>
+<li>背景（Why it matters）: 5G/6G基盤が専用ハード依存からソフトウェア定義型へ移るほど、更新速度と供給網の柔軟性が増す。通信インフラのAI化は、GPUだけでなくネットワーク最適化ソフト市場も押し上げる。</li>
+<li>影響（So what: 価格/在庫/店頭販売）: 店頭ではAI PC提案時に「端末だけでなくネットワーク側もAI最適化が進む」説明が可能になる。個人開発では、エッジ前提の遅延設計や帯域設計を最初から織り込む必要がある。</li>
+<li>リンク: https://blogs.nvidia.com/blog/software-defined-ai-ran/</li>
+<li>ソース種別（公式/コミュニティ）: 公式</li>
+<li>公開日: 2026-03-01</li>
+<li>アクセス日: 2026-03-02</li>
+<li>確信度: 高</li>
+<li>ここから考えられること: 通信×AIの需要拡大で、GPU・高効率CPU・NICの説明軸を同時に持つ接客が有利。</li>
+</ul>
+<h3>記事2</h3>
+<ul>
+<li>タイトル: NVIDIA Advances Autonomous Networks With Agentic AI Blueprints and Telco Reasoning Models</li>
+<li>30秒で読める要約: NVIDIAは通信業界向けに30Bモデルと運用Blueprintを公開し、NOC自動化と省電力最適化の実装を前進させた。</li>
+<li>記事全体の内容:</li>
+<li>事実（What）: 2026-03-01公開。AdaptKey AIと共同で<code>30Bパラメータ</code>のNVIDIA Nemotron LTMを公開。Tech Mahindraと通信オペレーター向け実装ガイドを提供し、VIAVI TeraVM連携の<code>intent-driven RAN energy efficiency</code> Blueprintで、本番投入前にシミュレーション検証できる閉ループ運用を提示。</li>
+<li>背景（Why it matters）: 通信網の運用コストは人手と電力が支配的。AIエージェントによる故障対応・省エネ制御が標準化すると、OPEX改善が直接利益に効く。</li>
+<li>影響（So what: 価格/在庫/店頭販売）: 法人顧客への提案で、AIの価値を「生成」だけでなく「運用最適化」に広げて説明できる。個人開発では、閉ループ評価（推論→方針→シミュレーション）を小規模でも再現する設計が有効。</li>
+<li>リンク: https://blogs.nvidia.com/blog/nvidia-agentic-ai-blueprints-telco-reasoning-models/</li>
+<li>ソース種別（公式/コミュニティ）: 公式</li>
+<li>公開日: 2026-03-01</li>
+<li>アクセス日: 2026-03-02</li>
+<li>確信度: 高</li>
+<li>ここから考えられること: 「AI導入=推論API導入」ではなく、運用自動化まで含めた提案が必須になる。</li>
+</ul>
+<h3>記事3</h3>
+<ul>
+<li>タイトル: NVIDIA and Global Telecom Leaders Commit to Build 6G on Open and Secure AI-Native Platforms</li>
+<li>30秒で読める要約: NVIDIAは主要通信・装置・コンサル企業と6GのAIネイティブ基盤整備で連携を宣言した。</li>
+<li>記事全体の内容:</li>
+<li>事実（What）: 2026-03-01公開。Booz Allen, BT Group, Cisco, Deutsche Telekom, Ericsson, MITRE, Nokia, ODC, SK Telecom, SoftBank, T-Mobileなどと、<code>open / secure / trustworthy</code>を掲げる6G基盤方針を発表。6Gを物理AI時代の基盤として位置づけ、RAN/edge/core全体でAI統合を進める方針を示した。</li>
+<li>背景（Why it matters）: 次世代通信は、速度競争だけでなくサプライチェーン耐性・相互運用性・安全性が採用条件になる。国家・キャリア・ベンダーの連携は標準化主導権に直結する。</li>
+<li>影響（So what: 価格/在庫/店頭販売）: 店頭では「6G準備」の文脈で、端末買い替えだけでなくクラウド/エッジ連携の将来像を説明できる。個人開発では、閉じた1社依存よりオープン標準準拠の設計が長期保守で有利。</li>
+<li>リンク: https://nvidianews.nvidia.com/news/nvidia-and-global-telecom-leaders-commit-to-build-6g-on-open-and-secure-ai-native-platforms</li>
+<li>ソース種別（公式/コミュニティ）: 公式</li>
+<li>公開日: 2026-03-01</li>
+<li>アクセス日: 2026-03-02</li>
+<li>確信度: 高</li>
+<li>ここから考えられること: 通信インフラのAI化は、半導体だけでなく標準化レイヤーの理解が販売・提案力に効く。</li>
+</ul>
+<h3>記事4</h3>
+<ul>
+<li>タイトル: Samsung and AMD Reinforce Strategic Collaboration to Advance AI-Powered Network Innovations for Commercial Deployments</li>
+<li>30秒で読める要約: SamsungとAMDは5G Core/vRAN/Private Networkで協業を拡張し、検証段階から商用展開へ進んだ。</li>
+<li>記事全体の内容:</li>
+<li>事実（What）: Samsung UK Newsroom記事では、両社の協業範囲を<code>5G Core / vRAN / private networks</code>に拡大。Videotron向けに<code>5G NSA</code>と<code>4G LTE Core gateway</code>を<code>AMD EPYC 9005</code>で提供した事例を提示。MWC 2026では追加アクセラレータなしでのAI-powered vRAN、NIS（Network in a Server）展示を予告。</li>
+<li>背景（Why it matters）: Open RAN/仮想化RANは、専用機器中心から汎用CPUベースへの移行を後押しする。AI-RANが商用フェーズに入るほど、ソフト更新主導の競争が強まる。</li>
+<li>影響（So what: 価格/在庫/店頭販売）: 店頭では、AMD系プラットフォームの価値を「PC用途」だけでなく通信インフラ実績として説明できる。個人開発でも、汎用ハードでAI処理を回す設計思想がエッジ案件に応用しやすい。</li>
+<li>リンク: https://news.samsung.com/uk/samsung-and-amd-reinforce-strategic-collaboration-to-advance-ai-powered-network-innovations-for-commercial-deployments</li>
+<li>ソース種別（公式/コミュニティ）: 公式</li>
+<li>公開日: 2026-03-01</li>
+<li>アクセス日: 2026-03-02</li>
+<li>確信度: 高</li>
+<li>ここから考えられること: 「AI用=GPU専用」から「CPU+ソフト最適化」への提案パターンを増やす余地がある。</li>
+</ul>
+<h2>ソース</h2>
+<ul>
+<li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener noreferrer">OpenAI Help Center: ChatGPT Release Notes</a>（公式, アクセス日: 2026-03-02）</li>
+<li><a href="https://www.claude.com/import-memory" target="_blank" rel="noopener noreferrer">Claude: Import Memory</a>（公式, アクセス日: 2026-03-02）</li>
+<li><a href="https://www.reddit.com/r/ClaudeAI/comments/1rhx7pq/new_anthropic_introduces_a_memory_feature_that/" target="_blank" rel="noopener noreferrer">r/ClaudeAI post</a>（コミュニティ, 公開日: 2026-03-01, アクセス日: 2026-03-02）</li>
+<li><a href="https://zenn.dev/karaage0703/articles/d7eaf62437185d" target="_blank" rel="noopener noreferrer">Zenn: Skillsで実現する軽量パーソナルRAG</a>（コミュニティ, 公開日: 2026-03-01, アクセス日: 2026-03-02）</li>
+<li><a href="https://blogs.nvidia.com/blog/software-defined-ai-ran/" target="_blank" rel="noopener noreferrer">NVIDIA Blog: Software-defined AI-RAN</a>（公式, 公開日: 2026-03-01, アクセス日: 2026-03-02）</li>
+<li><a href="https://blogs.nvidia.com/blog/nvidia-agentic-ai-blueprints-telco-reasoning-models/" target="_blank" rel="noopener noreferrer">NVIDIA Blog: Agentic AI Blueprints</a>（公式, 公開日: 2026-03-01, アクセス日: 2026-03-02）</li>
+<li><a href="https://nvidianews.nvidia.com/news/nvidia-and-global-telecom-leaders-commit-to-build-6g-on-open-and-secure-ai-native-platforms" target="_blank" rel="noopener noreferrer">NVIDIA Newsroom: 6G AI-native platforms</a>（公式, 公開日: 2026-03-01, アクセス日: 2026-03-02）</li>
+<li><a href="https://news.samsung.com/uk/samsung-and-amd-reinforce-strategic-collaboration-to-advance-ai-powered-network-innovations-for-commercial-deployments" target="_blank" rel="noopener noreferrer">Samsung Newsroom UK: Samsung x AMD</a>（公式, 公開日: 2026-03-01, アクセス日: 2026-03-02）</li>
+</ul>
+    </article>
+  </section>
+</div>
+
+<footer>
+  <p>Daily AI · 半導体 Briefing</p>
+  <p>デイリーAI・半導体ニュース（2026-03-02） · Generated 2026-03-02 13:40:41 (Asia/Tokyo)</p>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+
+  document.querySelectorAll(".fi").forEach((el) => io.observe(el));
+</script>
+</body>
+</html>
