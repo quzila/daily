@@ -37,7 +37,7 @@ LINK_MD       = re.compile(r"^-\s*リンク:\s*(.+)$")
 CONF_LINE     = re.compile(r"^-\s*確信度:\s*(高|中|低)$")
 HIGHLIGHT_ITEM = re.compile(r"^>\s*\d+[)）]\s*(.+)$")
 SOURCE_META_LINE = re.compile(
-    r"^-\s*(.+?),\s*公開日:\s*([^,]+),\s*アクセス日:\s*([^,]+),\s*種別:\s*(.+)$"
+    r"^-\s*(.+?),\s*(?:公開日:\s*)?([^,]+),\s*アクセス日:\s*([^,]+),\s*種別:\s*(.+)$"
 )
 
 CATEGORY_TAG: dict[str, str] = {
