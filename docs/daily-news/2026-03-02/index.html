@@ -193,23 +193,32 @@
     }
     .hl-num {
       font-family: var(--ff-display);
-      font-size: 6.5rem;
+      font-size: 5.2rem;
       line-height: 1;
-      color: var(--border-hi);
+      color: rgba(72,72,106,.22);
       position: absolute;
-      right: 1.2rem;
-      top: .2rem;
+      right: 1rem;
+      top: .6rem;
       font-weight: 400;
       user-select: none;
     }
-    .hl-text {
-      font-size: 13.5px;
-      line-height: 1.85;
+    .hl-title {
+      font-size: 14px;
+      line-height: 1.55;
       color: var(--txt1);
       position: relative;
       z-index: 1;
+      margin-bottom: .6rem;
+      font-weight: 600;
     }
-    .hl-text strong { color: var(--ai); font-weight: 600; }
+    .hl-title strong { color: var(--ai); font-weight: 600; }
+    .hl-summary {
+      font-size: 12.5px;
+      line-height: 1.75;
+      color: var(--txt2);
+      position: relative;
+      z-index: 1;
+    }
 
     /* ── Sections ── */
     .section { padding: 4.5rem 0 3rem; }
@@ -524,7 +533,7 @@
       <span>デイリーAI・半導体ニュース（2026-03-02）</span>
     </div>
     <h1>デイリー<em>AI</em>·<br>半導体ニュース（2026-03-02）</h1>
-    <p class="hero-sub">Generated 2026-03-02 22:30:25 (Asia/Tokyo)</p>
+    <p class="hero-sub">Generated 2026-03-02 22:41:35 (Asia/Tokyo)</p>
   </header>
 </div>
 
@@ -534,15 +543,18 @@
     <div class="hl-grid">
 <div class="hl-card fi">
   <div class="hl-num">01</div>
-  <p class="hl-text"><strong>通信インフラ向けAI需要が実証フェーズから商用設計へ移行</strong></p>
+  <p class="hl-title"><strong>通信インフラ向けAI需要が実証フェーズから商用設計へ移行</strong></p>
+  <p class="hl-summary">NVIDIAとSamsung/AMDの更新で、AI-RAN・vRANの商用前提実装（MWC 2026）が一気に具体化した。</p>
 </div>
 <div class="hl-card fi">
   <div class="hl-num">02</div>
-  <p class="hl-text"><strong>AIモデルのライフサイクル運用が「性能競争」から「継続提供設計」へ拡張</strong></p>
+  <p class="hl-title"><strong>AIモデルのライフサイクル運用が「性能競争」から「継続提供設計」へ拡張</strong></p>
+  <p class="hl-summary">AnthropicがOpus 3の退役後運用を明示し、モデルの保存・移行ポリシーがプロダクト競争軸になり始めた。</p>
 </div>
 <div class="hl-card fi">
   <div class="hl-num">03</div>
-  <p class="hl-text"><strong>AI開発運用の主戦場がモデル単体からワークフロー統合へ</strong></p>
+  <p class="hl-title"><strong>AI開発運用の主戦場がモデル単体からワークフロー統合へ</strong></p>
+  <p class="hl-summary">Zenn/HNでMCP連携やセッション履歴管理が注目され、マルチエージェント運用の実務課題に焦点が移っている。</p>
 </div>
     </div>
   </section>
@@ -1055,7 +1067,7 @@
 
 <footer>
   <p>Daily AI · 半導体 Briefing</p>
-  <p>デイリーAI・半導体ニュース（2026-03-02） · Generated 2026-03-02 22:30:25 (Asia/Tokyo)</p>
+  <p>デイリーAI・半導体ニュース（2026-03-02） · Generated 2026-03-02 22:41:35 (Asia/Tokyo)</p>
 </footer>
 
 <script>

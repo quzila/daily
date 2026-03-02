@@ -194,13 +194,22 @@ def render_section(section_id: str, articles: list[ParsedArticle]) -> str:
 
 def render_highlights(highlights: list[str]) -> str:
     cards = ""
-    for i, text in enumerate(highlights, start=1):
+    for i, item in enumerate(highlights, start=1):
         num = f"{i:02d}"
-        html_text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", _he(text))
+        if isinstance(item, dict):
+            title = str(item.get("title", "")).strip()
+            summary = str(item.get("summary", "")).strip()
+        else:
+            title = str(item).strip()
+            summary = ""
+        html_title = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", _he(title))
+        html_summary = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", _he(summary))
+        summary_html = f'  <p class="hl-summary">{html_summary}</p>\n' if html_summary else ""
         cards += (
             f'<div class="hl-card fi">\n'
             f'  <div class="hl-num">{num}</div>\n'
-            f'  <p class="hl-text">{html_text}</p>\n'
+            f'  <p class="hl-title">{html_title}</p>\n'
+            f'{summary_html}'
             f'</div>\n'
         )
     return (
@@ -288,6 +297,7 @@ def parse_structured_markdown(markdown_text: str) -> dict:
     current_field: str = ""
     current_field_lines: list[str] = []
     current_source: dict[str, str] | None = None
+    current_highlight: dict[str, str] | None = None
     state = "PREAMBLE"
 
     def flush_field() -> None:
@@ -335,6 +345,15 @@ def parse_structured_markdown(markdown_text: str) -> dict:
             result["sources"].append(dict(current_source))
         current_source = None
 
+    def finalize_highlight() -> None:
+        nonlocal current_highlight
+        if current_highlight:
+            title = current_highlight.get("title", "").strip()
+            summary = current_highlight.get("summary", "").strip()
+            if title or summary:
+                result["highlights"].append({"title": title, "summary": summary})
+        current_highlight = None
+
     for raw in markdown_text.splitlines():
         line = raw.strip()
 
@@ -345,6 +364,7 @@ def parse_structured_markdown(markdown_text: str) -> dict:
 
         # H2 section headers
         if line.startswith("## "):
+            finalize_highlight()
             finalize_article()
             finalize_source()
             heading = line[3:].strip()
@@ -406,9 +426,20 @@ def parse_structured_markdown(markdown_text: str) -> dict:
 
         # Highlights
         if state == "HIGHLIGHTS":
-            m = HIGHLIGHT_ITEM.match(line)
-            if m:
-                result["highlights"].append(m.group(1).strip())
+            if not line:
+                continue
+            if not line.startswith(">"):
+                continue
+            quoted = line[1:].strip()
+            m_num = re.match(r"^\d+[)）]\s*(.+)$", quoted)
+            if m_num:
+                finalize_highlight()
+                current_highlight = {"title": m_num.group(1).strip(), "summary": ""}
+                continue
+            if current_highlight:
+                if current_highlight["summary"]:
+                    current_highlight["summary"] += " "
+                current_highlight["summary"] += quoted
             continue
 
         # In a section
@@ -486,6 +517,7 @@ def parse_structured_markdown(markdown_text: str) -> dict:
                     current_field_lines.append(line)
                     continue
 
+    finalize_highlight()
     finalize_article()
     finalize_section()
     finalize_source()
