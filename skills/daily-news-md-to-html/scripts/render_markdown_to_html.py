@@ -788,6 +788,7 @@ def render_template(
     template: str,
     *,
     page_title: str,
+    page_date: str,
     generated_at: str,
     description: str,
     content_html: str,
@@ -801,6 +802,7 @@ def render_template(
 
     rendered = template
     rendered = rendered.replace("{{PAGE_TITLE}}", html.escape(page_title))
+    rendered = rendered.replace("{{PAGE_DATE}}", html.escape(page_date))
     rendered = rendered.replace("{{GENERATED_AT}}", html.escape(generated_at))
     rendered = rendered.replace("{{DESCRIPTION}}", html.escape(description))
     rendered = rendered.replace("{{CONTENT_HTML}}", content_html)
@@ -854,6 +856,7 @@ def main() -> int:
     html_doc = render_template(
         template_text,
         page_title=page_title,
+        page_date=target_date,
         generated_at=generated_at,
         description=description,
         content_html=content_html,
