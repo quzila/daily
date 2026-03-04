@@ -1,4 +1,4 @@
-# デイリーAI・半導体ニュース（2026-03-03）
+# デイリーAI・半導体ニュース（2026-03-04）
 
 ## 今日のハイライト（3選）
 > 1) Zenn/noteの実践記事では、AI導入の勝負が「モデル性能」から「運用再現性と安全設計」に移っている。  
@@ -324,25 +324,25 @@ Hacker Newsでは、AMD Ryzen AI Max+ Clusterを使って1兆パラメータ級L
   https://news.ycombinator.com/item?id=43215772
 
 ## ソース一覧
-- Anthropic News, 公開日: 2026-02-17, アクセス日: 2026-03-03, 種別: 公式AI  
+- Anthropic News, 公開日: 2026-02-17, アクセス日: 2026-03-04, 種別: 公式AI  
   https://www.anthropic.com/news
-- GitHub Changelog, 公開日: 2026-03-03, アクセス日: 2026-03-03, 種別: 公式AI  
+- GitHub Changelog, 公開日: 2026-03-03, アクセス日: 2026-03-04, 種別: 公式AI  
   https://github.blog/changelog/
-- Hugging Face Blog, 公開日: 2026-03-03, アクセス日: 2026-03-03, 種別: 公式AI  
+- Hugging Face Blog, 公開日: 2026-03-03, アクセス日: 2026-03-04, 種別: 公式AI  
   https://huggingface.co/blog
-- NVIDIA Newsroom, 公開日: 2026-03-03, アクセス日: 2026-03-03, 種別: 公式半導体  
+- NVIDIA Newsroom, 公開日: 2026-03-03, アクセス日: 2026-03-04, 種別: 公式半導体  
   https://nvidianews.nvidia.com/
-- AMD Newsroom, 公開日: 2026-02-26, アクセス日: 2026-03-03, 種別: 公式半導体  
+- AMD Newsroom, 公開日: 2026-02-26, アクセス日: 2026-03-04, 種別: 公式半導体  
   https://www.amd.com/en/newsroom.html
-- Samsung Newsroom HBM, 公開日: 2026-03-01, アクセス日: 2026-03-03, 種別: 公式半導体  
+- Samsung Newsroom HBM, 公開日: 2026-03-01, アクセス日: 2026-03-04, 種別: 公式半導体  
   https://news.samsung.com/global/tag/hbm
-- Zenn, 公開日: 2026-03-03, アクセス日: 2026-03-03, 種別: コミュニティ  
+- Zenn, 公開日: 2026-03-03, アクセス日: 2026-03-04, 種別: コミュニティ  
   https://zenn.dev/ga14tools/articles/ai-agent-security-risk
-- note, 公開日: 2026-03-01, アクセス日: 2026-03-03, 種別: コミュニティ  
+- note, 公開日: 2026-03-01, アクセス日: 2026-03-04, 種別: コミュニティ  
   https://note.com/shirono_aru/n/n9d97ee1b072f
-- Reddit, 公開日: 2026-02-28, アクセス日: 2026-03-03, 種別: コミュニティ  
+- Reddit, 公開日: 2026-02-28, アクセス日: 2026-03-04, 種別: コミュニティ  
   https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/
-- Hacker News, 公開日: 2026-03-01, アクセス日: 2026-03-03, 種別: コミュニティ  
+- Hacker News, 公開日: 2026-03-01, アクセス日: 2026-03-04, 種別: コミュニティ  
   https://news.ycombinator.com/item?id=43215772
 
 ## 対象範囲
