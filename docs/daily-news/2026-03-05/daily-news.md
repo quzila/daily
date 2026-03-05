@@ -81,7 +81,7 @@ Agent活用は生産性向上に直結する一方で、誤設定があると権
 **自分への影響（So what）**:  
 個人開発でも、GitHubやクラウド連携を使うAgentは最小権限トークンと監査ログ保存を必須条件にする。具体的には、読み取り専用権限を既定にし、書き込み権限が必要な操作だけ短時間トークンへ切り替える運用にする。さらに、重要操作は日次でログを確認して、異常なアクセスがないかを早期に検知する。
 
-- リンク: [https://www.zenn.dev/ga14tools/articles/ai-agent-security-risk](https://www.zenn.dev/ga14tools/articles/ai-agent-security-risk)
+- リンク: [https://zenn.dev/ga14tools/articles/ai-agent-security-risk](https://zenn.dev/ga14tools/articles/ai-agent-security-risk)
 - 確信度: 高
 ---
 
@@ -99,7 +99,7 @@ Agent活用は生産性向上に直結する一方で、誤設定があると権
 **自分への影響（So what）**:  
 自分の開発でも、議事メモ作成や動画メモ整理をMP3文字起こしパイプラインで標準化し、毎回同じ手順で再実行できる状態を目指す。まずは3方式のうち1つを選び、入力フォルダ監視から要約生成までをスクリプト化して運用時間を計測する。これにより、AI活用を実験段階から継続利用フェーズへ進めやすくなる。
 
-- リンク: [https://www.zenn.dev/ktlab/articles/claude-code-mp3-transcription](https://www.zenn.dev/ktlab/articles/claude-code-mp3-transcription)
+- リンク: [https://zenn.dev/ktlab/articles/claude-code-mp3-transcription](https://zenn.dev/ktlab/articles/claude-code-mp3-transcription)
 - 確信度: 高
 ---
 
@@ -117,7 +117,7 @@ AI開発ツールは導入速度が速い一方、環境差による失敗が残
 **自分への影響（So what）**:  
 自分のプロジェクトでも、まずDev Containerで開発環境を固定し、その上でClaude Codeの設定を段階的に積み上げる方針へ切り替える。これにより、OS差分やライブラリ差分で詰まる時間を減らし、機能検証に集中しやすくなる。次の週はテンプレート化した `devcontainer.json` を用意し、新規リポジトリへ使い回せる形に整備する。
 
-- リンク: [https://www.zenn.dev/unsoluble_sugar/articles/4878a6d01b7305](https://www.zenn.dev/unsoluble_sugar/articles/4878a6d01b7305)
+- リンク: [https://zenn.dev/unsoluble_sugar/articles/4878a6d01b7305](https://zenn.dev/unsoluble_sugar/articles/4878a6d01b7305)
 - 確信度: 高
 ---
 
@@ -137,7 +137,7 @@ AI開発ツールは導入速度が速い一方、環境差による失敗が残
 **自分への影響（So what）**:  
 自分の検証では、新ツールの第一印象だけで判断せず、2週間の継続運用で実際に作業時間が短縮されるかを評価項目に含める。具体的には、要件整理、実装、レビューの3工程で利用ログを取り、改善が再現できるかを確認する。これにより、表面的な機能比較では見えない実用性を早期に判断できる。
 
-- リンク: [https://www.note.com/shirono_aru/n/n9d97ee1b072f](https://www.note.com/shirono_aru/n/n9d97ee1b072f)
+- リンク: [https://note.com/shirono_aru/n/n9d97ee1b072f](https://note.com/shirono_aru/n/n9d97ee1b072f)
 - 確信度: 中
 ---
 
@@ -155,7 +155,7 @@ AI開発ツールは導入速度が速い一方、環境差による失敗が残
 **自分への影響（So what）**:  
 自分の開発でも、1つのモデルに固定する運用をやめ、要件整理は対話性重視、コード生成は再現性重視、レビューは網羅性重視という形で分離評価する。毎週同じタスクを複数モデルで回し、工数と品質の差を記録して次週の設定に反映する。これにより、モデル更新があっても運用全体の安定性を維持しやすくなる。
 
-- リンク: [https://www.note.com/chatgpt_ysd/n/n002a7deab61c](https://www.note.com/chatgpt_ysd/n/n002a7deab61c)
+- リンク: [https://note.com/chatgpt_ysd/n/n002a7deab61c](https://note.com/chatgpt_ysd/n/n002a7deab61c)
 - 確信度: 中
 ---
 
@@ -336,16 +336,22 @@ Hacker Newsでは、AMD Ryzen AI Max+ Clusterを使って1兆パラメータ級L
   https://www.amd.com/en/newsroom.html
 - Samsung Newsroom HBM, 公開日: 2026-03-01, アクセス日: 2026-03-05, 種別: 公式半導体  
   https://news.samsung.com/global/tag/hbm
-- Zenn, 公開日: 2026-03-03, アクセス日: 2026-03-05, 種別: コミュニティ  
+- Zenn（AIエージェント経由でアカウントが乗っ取られた事例と今すぐやるべき対策）, 公開日: 2026-03-03, アクセス日: 2026-03-05, 種別: コミュニティ  
   https://zenn.dev/ga14tools/articles/ai-agent-security-risk
-- note, 公開日: 2026-03-01, アクセス日: 2026-03-05, 種別: コミュニティ  
+- Zenn（Claude CodeでMP3音声ファイルを文字起こしする3つの方法）, 公開日: 2026-03-03, アクセス日: 2026-03-05, 種別: コミュニティ  
+  https://zenn.dev/ktlab/articles/claude-code-mp3-transcription
+- Zenn（『実践Claude Code入門』を読みながらDev Container環境でClaude Codeを動かしてみた）, 公開日: 2026-03-03, アクセス日: 2026-03-05, 種別: コミュニティ  
+  https://zenn.dev/unsoluble_sugar/articles/4878a6d01b7305
+- note（日本人の93%が気づいていない、2026年に起きている「AI格差」について）, 公開日: 2026-03-01, アクセス日: 2026-03-05, 種別: コミュニティ  
   https://note.com/shirono_aru/n/n9d97ee1b072f
+- note（GeminiとChatGPTと考えた。AIがOSになる時代、私たち人間は何者として働くのか）, 公開日: 2026-03-01, アクセス日: 2026-03-05, 種別: コミュニティ  
+  https://note.com/chatgpt_ysd/n/n002a7deab61c
 - Reddit, 公開日: 2026-02-28, アクセス日: 2026-03-05, 種別: コミュニティ  
   https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/
 - Hacker News, 公開日: 2026-03-01, アクセス日: 2026-03-05, 種別: コミュニティ  
   https://news.ycombinator.com/item?id=43215772
 
 ## 対象範囲
-- 対象日: 2026-03-03
+- 対象日: 2026-03-05
 - タイムゾーン: Asia/Tokyo
 - 対象期間: 直近48時間優先。不足カテゴリは7日→14日へ拡張。
