@@ -321,7 +321,7 @@ Hacker Newsでは、AMD Ryzen AI Max+ Clusterを使って1兆パラメータ級L
 
 ### カテゴリF（Hacker News）
 - AMDローカル推論記事スレ（半導体側と重複）  
-  https://news.ycombinator.com/item?id=43215772
+  https://www.amd.com/en/developer/resources/technical-articles/2026/how-to-run-a-one-trillion-parameter-llm-locally-an-amd.html
 
 ## ソース一覧
 - Anthropic News, 公開日: 2026-02-17, アクセス日: 2026-03-05, 種別: 公式AI  
