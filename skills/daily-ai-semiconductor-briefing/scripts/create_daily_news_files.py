@@ -196,11 +196,11 @@ def highlight_line(item: dict, target_date: str) -> str:
     source = source_label(str(item.get("source", "")))
     if domain == "ai":
         return (
-            f"{target_date}時点のAIトピックでは「{title}」が上位に入り、"
+            f"「{title}」が上位に入り、"
             f"{source}発の議論を通じて開発フロー最適化の重要性が改めて可視化された。"
         )
     return (
-        f"{target_date}時点の半導体トピックでは「{title}」が注目され、"
+        f"「{title}」が注目され、"
         f"{source}由来の情報から調達・性能・供給の判断材料が更新された。"
     )
 
