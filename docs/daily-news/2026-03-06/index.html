@@ -557,7 +557,7 @@
       <span>デイリーAI・半導体ニュース（2026-03-06）</span>
     </div>
     <h1>デイリー<em>AI</em>·<br>半導体ニュース（2026-03-06）</h1>
-    <p class="hero-sub">Generated 2026-03-06 18:50:47 (Asia/Tokyo)</p>
+    <p class="hero-sub">Generated 2026-03-06 20:57:12 (Asia/Tokyo)</p>
   </header>
 </div>
 
@@ -693,10 +693,10 @@
   <div class="card-top" onclick="toggle(this)">
     <div class="card-meta">
       <span class="tag tag-zenn">Zenn</span>
-      <span class="card-src">Zenn · 2026-03-03</span>
+      <span class="card-src">Zenn · 2026-03-05</span>
       <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
     </div>
-    <p class="card-summary">Agent導入の成否は権限制御設計で決まる、という実務論点が共有された。</p>
+    <p class="card-summary">Claude Code運用で言語選定が開発速度を左右する実践論が整理された。</p>
   </div>
   <div class="card-toggle" onclick="toggle(this)">
     <span class="toggle-lbl">詳細を読む</span>
@@ -706,17 +706,17 @@
     <div class="card-inner">
       <div class="block">
   <div class="block-lbl">何が起きたか</div>
-  <p class="block-txt">記事では、AIエージェント経由でアカウント侵害が発生したケースを題材に、トークン漏えい、過剰権限、監査ログ不足という3つの失敗要因を具体的に整理している。加えて、最小権限設定、秘密情報の分離、操作履歴の保存といった対策を運用手順として提示している。単なる注意喚起ではなく、実際に設定変更へ落とし込める粒度まで踏み込んでいる点が重要だ。</p>
+  <p class="block-txt">記事では、Claude Codeを実務で使う際に、Python・TypeScript・シェルスクリプトなど言語ごとの相性がどう現れるかを比較している。単なる好みではなく、依存管理、実行環境、デバッグ容易性といった運用要件で選ぶべきだという整理が示された。プロンプト設計だけでなく、言語層の選択が成果に直結する点を具体例で説明している。</p>
 </div>
 <div class="block">
   <div class="block-lbl">なぜ重要か</div>
-  <p class="block-txt">Agent活用は生産性向上に直結する一方で、誤設定があると権限境界を一気に越えるリスクがある。1件の侵害事故でも、組織ではAIツール導入そのものが停止される可能性が高く、試行機会を失うコストが大きい。導入初期ほど、機能追加より先に権限と監査の設計を固める必要がある。</p>
+  <p class="block-txt">AIコーディングはモデル性能差だけでなく、実行基盤の整合性で体感品質が大きく変わる。言語ごとの得意領域を見誤ると、同じタスクでも再現性と保守性が落ち、検証コストが増える。導入初期に言語戦略を決めることは、後工程の混乱を減らす実務上の重要ポイントになる。</p>
 </div>
 <div class="block">
   <div class="block-lbl">自分への影響</div>
-  <p class="block-txt">個人開発でも、GitHubやクラウド連携を使うAgentは最小権限トークンと監査ログ保存を必須条件にする。具体的には、読み取り専用権限を既定にし、書き込み権限が必要な操作だけ短時間トークンへ切り替える運用にする。さらに、重要操作は日次でログを確認して、異常なアクセスがないかを早期に検知する。</p>
+  <p class="block-txt">自分の個人開発では、AIエージェント系処理はPython、UI周りはTypeScriptというように責務単位で主言語を固定し、スクリプト混在を減らす方針にする。あわせてテンプレートリポジトリを用意し、毎回同じ実行環境で検証を開始できる形へ寄せる。これにより、モデル更新時でも検証差分の切り分けがしやすくなる。</p>
 </div>
-      <a href="https://zenn.dev/ga14tools/articles/ai-agent-security-risk" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+      <a href="https://zenn.dev/mametter/articles/3e8580ec034201" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -724,10 +724,10 @@
   <div class="card-top" onclick="toggle(this)">
     <div class="card-meta">
       <span class="tag tag-zenn">Zenn</span>
-      <span class="card-src">Zenn · 2026-03-03</span>
+      <span class="card-src">Zenn · 2026-03-05</span>
       <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
     </div>
-    <p class="card-summary">Claude Codeの実運用例として、音声処理ワークフローが具体化された。</p>
+    <p class="card-summary">情報過多の時代に、AIニュースを継続追跡する運用手順が共有された。</p>
   </div>
   <div class="card-toggle" onclick="toggle(this)">
     <span class="toggle-lbl">詳細を読む</span>
@@ -737,48 +737,17 @@
     <div class="card-inner">
       <div class="block">
   <div class="block-lbl">何が起きたか</div>
-  <p class="block-txt">記事では、Claude Codeを使ったMP3文字起こしを3方式で比較し、それぞれの実装手順と使い分け基準を示している。単純な精度比較だけでなく、処理時間、運用手間、再実行のしやすさといった観点が含まれており、日常作業に落とし込みやすい。音声処理をAI開発フローに組み込む具体例として有用な内容になっている。</p>
+  <p class="block-txt">記事では、公式発表、技術コミュニティ、SNSの情報を用途別に分けて毎日確認するフローが提示されている。新着を全部追うのではなく、一次情報を基点にして重要更新のみを抽出する方式で、ノイズを減らす運用が紹介された。読みっぱなしで終わらせず、週次でメモに統合する再利用設計まで含めて説明している。</p>
 </div>
 <div class="block">
   <div class="block-lbl">なぜ重要か</div>
-  <p class="block-txt">生成AIの実務価値は、単発で動くデモよりも、同じ品質で再実行できる運用手順を作れるかで決まる。音声処理は入力データ量が多く手作業だと破綻しやすいため、自動化可能なフロー設計の価値が高い。複数方式を比較した知見は、プロジェクト要件に応じた最適手段の選定を早める。</p>
+  <p class="block-txt">AI分野は更新頻度が高いため、個別記事の質よりも「継続的に取りこぼさない仕組み」が差になる。収集と選別のルールがないと、話題の偏りや見落としが増え、意思決定の質が下がる。個人でも運用フローを定義しておくことが、学習効率と実装精度の両立に直結する。</p>
 </div>
 <div class="block">
   <div class="block-lbl">自分への影響</div>
-  <p class="block-txt">自分の開発でも、議事メモ作成や動画メモ整理をMP3文字起こしパイプラインで標準化し、毎回同じ手順で再実行できる状態を目指す。まずは3方式のうち1つを選び、入力フォルダ監視から要約生成までをスクリプト化して運用時間を計測する。これにより、AI活用を実験段階から継続利用フェーズへ進めやすくなる。</p>
+  <p class="block-txt">自分のデイリー運用では、朝に公式ソース、夜にコミュニティソースを確認する2段構成へ固定し、同日中に要点を1ファイルへ集約する。週末にはそのログを見直して、翌週に試す実装テーマを3件まで絞る。これで情報収集が目的化せず、実装につながる形で知識を回せる。</p>
 </div>
-      <a href="https://zenn.dev/ktlab/articles/claude-code-mp3-transcription" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
-    </div>
-  </div>
-</div>
-<div class="card ai fi">
-  <div class="card-top" onclick="toggle(this)">
-    <div class="card-meta">
-      <span class="tag tag-zenn">Zenn</span>
-      <span class="card-src">Zenn · 2026-03-03</span>
-      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
-    </div>
-    <p class="card-summary">Dev Container前提の手順共有で、環境差による失敗を抑える実践知が出てきた。</p>
-  </div>
-  <div class="card-toggle" onclick="toggle(this)">
-    <span class="toggle-lbl">詳細を読む</span>
-    <span class="toggle-arrow">▼</span>
-  </div>
-  <div class="card-body">
-    <div class="card-inner">
-      <div class="block">
-  <div class="block-lbl">何が起きたか</div>
-  <p class="block-txt">記事では、Dev Container環境でClaude Codeを動かすための初期設定、依存関係、つまずきやすいポイントを段階的に検証している。ローカル環境依存で発生しやすい差分を減らすため、設定ファイルや実行順序を明確化している点が特徴だ。再現性を重視した検証記録として、導入時のチェックリストを作る材料になる。</p>
-</div>
-<div class="block">
-  <div class="block-lbl">なぜ重要か</div>
-  <p class="block-txt">AI開発ツールは導入速度が速い一方、環境差による失敗が残るとチーム展開時にサポート負荷が急増する。Dev Containerで実行条件を固定するアプローチは、オンボーディング時間の短縮とバグ再現性の向上に有効だ。個人開発でも再現性を確保しておくことで、後から構成を見直すコストを抑えられる。</p>
-</div>
-<div class="block">
-  <div class="block-lbl">自分への影響</div>
-  <p class="block-txt">自分のプロジェクトでも、まずDev Containerで開発環境を固定し、その上でClaude Codeの設定を段階的に積み上げる方針へ切り替える。これにより、OS差分やライブラリ差分で詰まる時間を減らし、機能検証に集中しやすくなる。次の週はテンプレート化した `devcontainer.json` を用意し、新規リポジトリへ使い回せる形に整備する。</p>
-</div>
-      <a href="https://zenn.dev/unsoluble_sugar/articles/4878a6d01b7305" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+      <a href="https://zenn.dev/knowledgework/articles/my-ai-catchup" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -791,10 +760,10 @@
   <div class="card-top" onclick="toggle(this)">
     <div class="card-meta">
       <span class="tag tag-note">note</span>
-      <span class="card-src">note · 2026-03-01</span>
+      <span class="card-src">note · 2026-03-03</span>
       <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
     </div>
-    <p class="card-summary">AI格差の論点を、現場での利用習熟差として可視化した。</p>
+    <p class="card-summary">生成AIの主要用語を複数モデルで説明比較する教育コンテンツが公開された。</p>
   </div>
   <div class="card-toggle" onclick="toggle(this)">
     <span class="toggle-lbl">詳細を読む</span>
@@ -804,17 +773,17 @@
     <div class="card-inner">
       <div class="block">
   <div class="block-lbl">何が起きたか</div>
-  <p class="block-txt">記事では、AI導入の有無だけでなく、日常業務へ継続的に組み込めるかどうかで成果差が拡大する構造を具体例付きで整理している。とくにプロンプト改善、検証ループ、成果物レビューの運用差が、同じツールを使っていてもアウトプット品質を分ける要因として示されている。2026年時点の実務では「触った経験」より「運用として回せる設計」が差を生むことを明確に指摘している。</p>
+  <p class="block-txt">記事では、ChatGPT、Gemini、Claudeの説明スタイルを並べながら、生成AIの基本用語を漫画形式で解説している。単純な用語集ではなく、モデルごとの言い回しや重点の違いを読み比べられる構成になっており、初学者が誤解しやすい概念を整理しやすい。学習導線を軽くするためのコンテンツ設計として実務的な示唆がある。</p>
 </div>
 <div class="block">
   <div class="block-lbl">なぜ重要か</div>
-  <p class="block-txt">生成AIの普及が進むほど、競争優位はツール選定そのものから、使いこなしの再現性へ移っていく。つまり、同じモデルを使っても、評価基準や改善手順を持つチームの方が継続的に成果を積み上げやすい。個人開発でもこの流れは同じで、運用設計を持たないと短期的な流行追従で終わるリスクが高い。</p>
+  <p class="block-txt">導入初期のつまずきは高度な技術課題よりも、用語理解の不一致で起きることが多い。複数モデルの説明差分を早い段階で把握しておくと、チーム内の認識齟齬を減らせる。教育コンテンツを運用に組み込むことは、AI活用の再現性を上げるうえで効果が高い。</p>
 </div>
 <div class="block">
   <div class="block-lbl">自分への影響</div>
-  <p class="block-txt">自分の検証では、新ツールの第一印象だけで判断せず、2週間の継続運用で実際に作業時間が短縮されるかを評価項目に含める。具体的には、要件整理、実装、レビューの3工程で利用ログを取り、改善が再現できるかを確認する。これにより、表面的な機能比較では見えない実用性を早期に判断できる。</p>
+  <p class="block-txt">自分の開発メモにも、モデルごとに定義がぶれやすい用語を先に整理したミニ用語集を置く。新しいツールを試す前に、その用語を基準にプロンプトや評価観点を揃える運用に変える。これで検証時の認識ズレを減らし、比較結果の再現性を高められる。</p>
 </div>
-      <a href="https://note.com/shirono_aru/n/n9d97ee1b072f" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+      <a href="https://note.com/chatgpt_ysd/n/n79ea031eefa2" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -822,10 +791,10 @@
   <div class="card-top" onclick="toggle(this)">
     <div class="card-meta">
       <span class="tag tag-note">note</span>
-      <span class="card-src">note · 2026-03-01</span>
+      <span class="card-src">note · 2026-03-05</span>
       <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
     </div>
-    <p class="card-summary">複数モデル前提で仕事設計を見直す視点が共有された。</p>
+    <p class="card-summary">生成AIに意思決定を委ねすぎるリスクを、実生活の文脈で検討した論考が公開された。</p>
   </div>
   <div class="card-toggle" onclick="toggle(this)">
     <span class="toggle-lbl">詳細を読む</span>
@@ -835,17 +804,48 @@
     <div class="card-inner">
       <div class="block">
   <div class="block-lbl">何が起きたか</div>
-  <p class="block-txt">記事では、GeminiとChatGPTを並行利用しながら、作業工程ごとにモデルを使い分ける実践例を通じて、人間の役割再定義を論じている。単一モデルで完結させるのではなく、要約・発散・検証を分離して精度を上げる運用が紹介されている。モデル比較を抽象論で終わらせず、実際の作業分担へ落としている点が特徴だ。</p>
+  <p class="block-txt">記事では、画像生成や対話AIの利便性が高まるなかで、人間側の判断をどこまで委譲するべきかをケースベースで整理している。単なる危機感の表明ではなく、創作、学習、日常判断といった場面ごとに線引きを考える構成になっている。AI活用の拡大局面で、運用ポリシー設計の必要性を再提示した内容だ。</p>
 </div>
 <div class="block">
   <div class="block-lbl">なぜ重要か</div>
-  <p class="block-txt">実務では、モデルの優劣を一つに決めるより、工程ごとに最適なモデルを割り当てる方が品質と速度の両面で有利になる。特に仕様策定とコード生成、レビュー観点の抽出は求める特性が異なるため、複数モデル運用の設計価値が高い。AIをOSのように扱う視点は、将来の開発フロー標準化にもつながる。</p>
+  <p class="block-txt">AI活用は加速しているが、判断責任の所在を曖昧にしたまま使うと、品質事故や倫理的な問題に直結しやすい。開発や運用では「自動化できること」と「人間が最終判断すべきこと」を事前に決めることが重要になる。実装前にガバナンス視点を入れることで、後からの修正コストを抑えられる。</p>
 </div>
 <div class="block">
   <div class="block-lbl">自分への影響</div>
-  <p class="block-txt">自分の開発でも、1つのモデルに固定する運用をやめ、要件整理は対話性重視、コード生成は再現性重視、レビューは網羅性重視という形で分離評価する。毎週同じタスクを複数モデルで回し、工数と品質の差を記録して次週の設定に反映する。これにより、モデル更新があっても運用全体の安定性を維持しやすくなる。</p>
+  <p class="block-txt">自分のワークフローでは、要件確定や最終公開判断のような重要意思決定は必ず人手レビューを通すルールを明文化する。AIには案出しと比較検討までを担当させ、採用判断は根拠付きで記録する形にする。これにより、速度を維持しながら責任境界を明確化できる。</p>
 </div>
-      <a href="https://note.com/chatgpt_ysd/n/n002a7deab61c" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+      <a href="https://note.com/alpaka_ai/n/n214af3c1566c" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-note">note</span>
+      <span class="card-src">note · 2026-03-04</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">個人の実体験から、生成AI導入初期の行動変化と学習定着のプロセスが共有された。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">記事では、ChatGPT導入後に作業習慣や情報発信がどう変化したかを時系列で振り返り、短期間でフリーランス活動へ接続した経緯を紹介している。技術仕様の解説ではなく、日々の利用継続とコミュニティ参加が成果につながった点を強調している。導入初期の心理的ハードルと習慣化の工夫を具体的に示している。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">生成AI活用の成否は、単発の高性能出力よりも、日常に組み込んで継続利用できるかで決まる。実務でも同様に、毎日の小さな改善を積み重ねる運用が中長期の生産性を作る。導入事例を行動レベルで読むことで、再現可能な活用パターンを設計しやすくなる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分の検証でも、派手な自動化を狙う前に、毎日10分で回せる定型タスクの改善から始める方針に戻す。改善効果は週単位で記録し、実際に時間削減できた手順だけを標準化して残す。これで継続運用に耐えるワークフローを着実に増やせる。</p>
+</div>
+      <a href="https://note.com/nenkoro_life/n/ne28ad0efebc2" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
     </div>
   </div>
 </div>
@@ -1136,34 +1136,34 @@
   <a class="src-url" href="https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem" target="_blank" rel="noopener">https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem</a>
 </div>
 <div class="src-item">
-  <span class="src-name">Zenn（AIエージェント経由でアカウントが乗っ取られた事例と今すぐやるべき対策）</span>
+  <span class="src-name">Zenn（Claude Code に向いているプログラミング言語）</span>
+  <span class="src-date">公開: 2026-03-05 / 参照: 2026-03-06</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://zenn.dev/mametter/articles/3e8580ec034201" target="_blank" rel="noopener">https://zenn.dev/mametter/articles/3e8580ec034201</a>
+</div>
+<div class="src-item">
+  <span class="src-name">Zenn（個人的 AI情報の追い方）</span>
+  <span class="src-date">公開: 2026-03-05 / 参照: 2026-03-06</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://zenn.dev/knowledgework/articles/my-ai-catchup" target="_blank" rel="noopener">https://zenn.dev/knowledgework/articles/my-ai-catchup</a>
+</div>
+<div class="src-item">
+  <span class="src-name">note（生成AIのひな祭り AI用語をChatGPT、Gemini、Claudeが漫画で解説）</span>
   <span class="src-date">公開: 2026-03-03 / 参照: 2026-03-06</span>
   <span class="src-type com">コミュニティ</span>
-  <a class="src-url" href="https://zenn.dev/ga14tools/articles/ai-agent-security-risk" target="_blank" rel="noopener">https://zenn.dev/ga14tools/articles/ai-agent-security-risk</a>
+  <a class="src-url" href="https://note.com/chatgpt_ysd/n/n79ea031eefa2" target="_blank" rel="noopener">https://note.com/chatgpt_ysd/n/n79ea031eefa2</a>
 </div>
 <div class="src-item">
-  <span class="src-name">Zenn（Claude CodeでMP3音声ファイルを文字起こしする3つの方法）</span>
-  <span class="src-date">公開: 2026-03-03 / 参照: 2026-03-06</span>
+  <span class="src-name">note（生成AIが現実を書き換えるとき 人生の選択を外部委託してしまう前に）</span>
+  <span class="src-date">公開: 2026-03-05 / 参照: 2026-03-06</span>
   <span class="src-type com">コミュニティ</span>
-  <a class="src-url" href="https://zenn.dev/ktlab/articles/claude-code-mp3-transcription" target="_blank" rel="noopener">https://zenn.dev/ktlab/articles/claude-code-mp3-transcription</a>
+  <a class="src-url" href="https://note.com/alpaka_ai/n/n214af3c1566c" target="_blank" rel="noopener">https://note.com/alpaka_ai/n/n214af3c1566c</a>
 </div>
 <div class="src-item">
-  <span class="src-name">Zenn（『実践Claude Code入門』を読みながらDev Container環境でClaude Codeを動かしてみた）</span>
-  <span class="src-date">公開: 2026-03-03 / 参照: 2026-03-06</span>
+  <span class="src-name">note（ChatGPTを入れた日から人生が変わった 実話）</span>
+  <span class="src-date">公開: 2026-03-04 / 参照: 2026-03-06</span>
   <span class="src-type com">コミュニティ</span>
-  <a class="src-url" href="https://zenn.dev/unsoluble_sugar/articles/4878a6d01b7305" target="_blank" rel="noopener">https://zenn.dev/unsoluble_sugar/articles/4878a6d01b7305</a>
-</div>
-<div class="src-item">
-  <span class="src-name">note（日本人の93%が気づいていない、2026年に起きている「AI格差」について）</span>
-  <span class="src-date">公開: 2026-03-01 / 参照: 2026-03-06</span>
-  <span class="src-type com">コミュニティ</span>
-  <a class="src-url" href="https://note.com/shirono_aru/n/n9d97ee1b072f" target="_blank" rel="noopener">https://note.com/shirono_aru/n/n9d97ee1b072f</a>
-</div>
-<div class="src-item">
-  <span class="src-name">note（GeminiとChatGPTと考えた。AIがOSになる時代、私たち人間は何者として働くのか）</span>
-  <span class="src-date">公開: 2026-03-01 / 参照: 2026-03-06</span>
-  <span class="src-type com">コミュニティ</span>
-  <a class="src-url" href="https://note.com/chatgpt_ysd/n/n002a7deab61c" target="_blank" rel="noopener">https://note.com/chatgpt_ysd/n/n002a7deab61c</a>
+  <a class="src-url" href="https://note.com/nenkoro_life/n/ne28ad0efebc2" target="_blank" rel="noopener">https://note.com/nenkoro_life/n/ne28ad0efebc2</a>
 </div>
 <div class="src-item">
   <span class="src-name">Reddit</span>
@@ -1193,7 +1193,7 @@
 
 <footer>
   <p>Daily AI · 半導体 Briefing</p>
-  <p>デイリーAI・半導体ニュース（2026-03-06） · Generated 2026-03-06 18:50:47 (Asia/Tokyo)</p>
+  <p>デイリーAI・半導体ニュース（2026-03-06） · Generated 2026-03-06 20:57:12 (Asia/Tokyo)</p>
 </footer>
 
 <script>
