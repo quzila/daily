@@ -17,6 +17,17 @@ DEFAULT_OUTPUT_ROOT = Path("reports") / "daily-news"
 MAX_AI_ARTICLES = 8
 MAX_SEMI_ARTICLES = 5
 
+FORBIDDEN_ARTICLE_URL_PATTERNS = (
+    re.compile(r"^https?://news\.ycombinator\.com/item\?id=\d+", re.IGNORECASE),
+    re.compile(r"^https?://github\.blog/changelog/?$", re.IGNORECASE),
+    re.compile(r"^https?://huggingface\.co/blog/?$", re.IGNORECASE),
+    re.compile(r"^https?://nvidianews\.nvidia\.com/?$", re.IGNORECASE),
+    re.compile(r"^https?://www\.amd\.com/en/newsroom\.html/?$", re.IGNORECASE),
+    re.compile(r"^https?://news\.samsung\.com/(?:global/)?tag/[^/?#]+/?$", re.IGNORECASE),
+    re.compile(r"^https?://www\.anthropic\.com/news/?$", re.IGNORECASE),
+    re.compile(r"^https?://openai\.com/news/?$", re.IGNORECASE),
+)
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="日付付きの daily-news.md を作成する。")
@@ -107,6 +118,31 @@ def source_label(source: str) -> str:
     return source
 
 
+def is_forbidden_article_url(url: str) -> bool:
+    return any(pattern.search(url) for pattern in FORBIDDEN_ARTICLE_URL_PATTERNS)
+
+
+def to_float_score(value: object) -> float:
+    try:
+        return float(value)  # type: ignore[arg-type]
+    except Exception:
+        return 0.0
+
+
+def dedupe_by_url(items: list[dict]) -> list[dict]:
+    out: list[dict] = []
+    seen: set[str] = set()
+    for item in items:
+        url = str(item.get("url") or "")
+        if not url:
+            continue
+        if url in seen:
+            continue
+        seen.add(url)
+        out.append(item)
+    return out
+
+
 def article_category(item: dict, domain: str) -> tuple[str, str]:
     source = str(item.get("source", ""))
     if domain == "ai":
@@ -143,6 +179,9 @@ def clean_excerpt(item: dict) -> str:
 
 
 def confidence(item: dict) -> str:
+    conf = normalize_space(str((item.get("meta") or {}).get("confidence") or ""))
+    if conf in {"高", "中", "低"}:
+        return conf
     body_len = len(normalize_space(str(item.get("body_text") or "")))
     if body_len >= 400:
         return "高"
@@ -171,11 +210,11 @@ def build_summary(item: dict, domain: str, target_date: str) -> str:
     source = source_label(str(item.get("source", "")))
     if domain == "ai":
         return (
-            f"{target_date}の収集で {source} の「{title}」を確認し、"
+            f"{source} の「{title}」では、"
             "AI活用を実務へ落とし込むための具体的な運用論点が示された。"
         )
     return (
-        f"{target_date}の収集で {source} の「{title}」を確認し、"
+        f"{source} の「{title}」では、"
         "半導体需要・供給や性能評価に直結する実務的な示唆が得られた。"
     )
 
@@ -184,27 +223,49 @@ def build_what(item: dict, domain: str, target_date: str) -> str:
     title = short_title(str(item.get("title", "")), limit=64)
     source = source_label(str(item.get("source", "")))
     published = normalize_date(str(item.get("published_at") or ""), target_date)
+    seeded_what = normalize_space(str(item.get("what_seed") or ""))
     excerpt = clean_excerpt(item)
+    if seeded_what:
+        return (
+            f"{source}に掲載された「{title}」の公開日は{published}で、"
+            f"{seeded_what}。さらに本文では「{excerpt}」といった記述があり、"
+            "対象テーマの現状把握に必要な事実関係と論点が明確に整理されている。"
+        )
     return (
-        f"本日（{target_date}）の収集では、{source}に掲載された「{title}」を確認した。"
-        f"公開日は{published}で、記事内では「{excerpt}」といった内容が示され、"
+        f"{source}に掲載された「{title}」の公開日は{published}で、"
+        f"記事内では「{excerpt}」といった内容が示され、"
         "対象テーマの現状把握に必要な事実関係と論点が明確に整理されている。"
     )
 
 
 def build_why(item: dict, domain: str, target_date: str) -> str:
     title = short_title(str(item.get("title", "")), limit=52)
+    seeded_why = normalize_space(str(item.get("why_seed") or ""))
+    if seeded_why:
+        if domain == "ai":
+            return (
+                f"{seeded_why}。{title} の論点は、AI開発が単なるモデル選定から"
+                "運用設計・再現性確保へ重心を移している現在の潮流と整合する。"
+                "導入成否は機能比較だけでなく、検証手順・権限管理・学習導線を含む"
+                "実装運用力で決まるため重要度が高い。"
+            )
+        return (
+            f"{seeded_why}。{title} は、半導体分野で続く需要変動と供給制約の中で、"
+            "性能指標・価格・調達リードタイムを同時に見る必要性を示している。"
+            "単一指標だけで判断すると構成最適化を誤るリスクが高く、"
+            "複数ソースで裏取りする実務価値が大きい。"
+        )
     if domain == "ai":
         return (
             f"{title} の論点は、AI開発が単なるモデル選定から運用設計・再現性確保へ"
             "重心を移している現在の潮流と整合する。"
-            f"{target_date}時点でも、導入成否は機能比較だけでなく、"
+            "導入成否は機能比較だけでなく、"
             "検証手順・権限管理・学習導線を含む実装運用力で決まるため重要度が高い。"
         )
     return (
         f"{title} は、半導体分野で続く需要変動と供給制約の中で、"
         "性能指標・価格・調達リードタイムを同時に見る必要性を示している。"
-        f"{target_date}時点では、単一指標だけで判断すると構成最適化を誤るリスクが高く、"
+        "単一指標だけで判断すると構成最適化を誤るリスクが高く、"
         "複数ソースで裏取りする実務価値が大きい。"
     )
 
@@ -212,16 +273,16 @@ def build_why(item: dict, domain: str, target_date: str) -> str:
 def build_so_what(item: dict, domain: str, target_date: str) -> str:
     if domain == "ai":
         return (
-            f"自分の開発では、この話題を{target_date}の検証テーマに入れ、"
+            "自分の開発では、この話題を検証テーマに入れ、"
             "要件整理・実装・レビューの各工程で再現性を測るログ取得を行う。"
             "特にAIコーディング運用では、モデル更新のたびに手順が崩れないよう、"
             "テンプレート化した評価軸を固定して継続比較する。"
         )
     return (
-        f"自分の環境調達では、この内容を{target_date}時点の判断材料として反映し、"
-            "クラウド利用とローカル検証機の配分を再試算する。"
-            "半導体関連のニュースは価格と供給見通しに直結するため、"
-            "週次で構成候補を更新し、調達遅延やコスト上振れのリスクを先に吸収する。"
+        "自分の環境調達では、この内容を判断材料として反映し、"
+        "クラウド利用とローカル検証機の配分を再試算する。"
+        "半導体関連のニュースは価格と供給見通しに直結するため、"
+        "週次で構成候補を更新し、調達遅延やコスト上振れのリスクを先に吸収する。"
     )
 
 
@@ -259,8 +320,101 @@ def render_article(item: dict, target_date: str) -> str:
 
 def filter_items(selected: list[dict], domain: str, max_count: int) -> list[dict]:
     candidates = [x for x in selected if str(x.get("domain")) == domain]
-    candidates.sort(key=lambda x: float(x.get("score", 0.0)), reverse=True)
+    candidates.sort(key=lambda x: to_float_score(x.get("score", 0.0)), reverse=True)
     return candidates[:max_count]
+
+
+def load_source_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def convert_source_items(
+    source_payload: dict,
+    source_name: str,
+    default_domain: str,
+    default_score: float,
+) -> tuple[list[dict], list[dict]]:
+    items = list(source_payload.get("items") or [])
+    selected: list[dict] = []
+    candidates: list[dict] = []
+
+    for idx, item in enumerate(items):
+        segment = str(item.get("segment") or "").strip().lower()
+        domain = "semiconductor" if segment == "semiconductor" else default_domain
+        title = str(item.get("title") or "")
+        url = str(item.get("url") or "")
+        if not url or is_forbidden_article_url(url):
+            continue
+        published = str(item.get("published_at") or "")
+        what = str(item.get("what") or "")
+        why = str(item.get("why") or "")
+        confidence_raw = str(item.get("confidence") or "")
+        confidence_map = {"high": "高", "medium": "中", "low": "低"}
+        confidence_jp = confidence_map.get(confidence_raw.lower(), "")
+
+        payload = {
+            "domain": domain,
+            "source": source_name,
+            "title": title,
+            "url": url,
+            "published_at": published,
+            "snippet": what,
+            "score": round(default_score - idx * 0.01, 3),
+            "meta": {"confidence": confidence_jp},
+            "body_text": "",
+            "what_seed": what,
+            "why_seed": why,
+        }
+        selected.append(payload)
+        candidates.append(
+            {
+                "domain": domain,
+                "source": source_name,
+                "title": title,
+                "url": url,
+                "published_at": published,
+                "snippet": what,
+                "score": round(default_score - idx * 0.01, 3),
+                "meta": {"confidence": confidence_jp},
+            }
+        )
+    return selected, candidates
+
+
+def load_supplemental_sources(research_dir: Path) -> tuple[list[dict], list[dict]]:
+    sources_dir = research_dir / "sources"
+    if not sources_dir.exists():
+        return [], []
+
+    combined_selected: list[dict] = []
+    combined_candidates: list[dict] = []
+
+    official_ai = load_source_json(sources_dir / "official-ai.json")
+    official_ai_selected, official_ai_candidates = convert_source_items(
+        official_ai,
+        source_name="official-ai",
+        default_domain="ai",
+        default_score=30.0,
+    )
+    combined_selected.extend(official_ai_selected)
+    combined_candidates.extend(official_ai_candidates)
+
+    official_semi = load_source_json(sources_dir / "official-semiconductor.json")
+    official_semi_selected, official_semi_candidates = convert_source_items(
+        official_semi,
+        source_name="official-semiconductor",
+        default_domain="semiconductor",
+        default_score=29.0,
+    )
+    combined_selected.extend(official_semi_selected)
+    combined_candidates.extend(official_semi_candidates)
+
+    return combined_selected, combined_candidates
 
 
 def render_other_candidates(
@@ -452,9 +606,10 @@ def main() -> int:
     research_dir = output_dir / "research"
     selected_data = load_json(research_dir / "selected-with-body.json")
     candidates_data = load_json(research_dir / "candidates.json")
+    supplemental_selected, supplemental_candidates = load_supplemental_sources(research_dir)
 
-    selected = list(selected_data.get("selected") or [])
-    candidates = list(candidates_data.get("candidates") or [])
+    selected = dedupe_by_url(supplemental_selected + list(selected_data.get("selected") or []))
+    candidates = dedupe_by_url(supplemental_candidates + list(candidates_data.get("candidates") or []))
 
     if not selected:
         raise SystemExit(
