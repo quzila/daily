@@ -30,7 +30,9 @@ description: Zennのトレンド・トピック・検索を横断してAI/LLM関
 2. 候補不足時は 7日→14日に拡大する。
 3. 候補ページ（トレンド/トピック/検索）から実記事URLを抽出する。
 4. 本文を確認して最終2件以上を選ぶ。
-5. 選外候補を `other_candidates` に残す。
+5. `what` / `why` / `so_what` は本文の要点を自分の言葉で要約する。冒頭段落の転載は禁止する。
+6. `so_what` では、紹介されている手順・失敗例・設計判断を読者が自分の環境でどう検証するかまで書く。
+7. 選外候補を `other_candidates` に残す。
 
 ## URL Rules (必須)
 
@@ -47,7 +49,18 @@ description: Zennのトレンド・トピック・検索を横断してAI/LLM関
 {
   "source": "zenn",
   "date": "YYYY-MM-DD",
-  "items": [],
+  "items": [
+    {
+      "title": "string",
+      "url": "https://zenn.dev/<user>/articles/<slug>",
+      "published_at": "YYYY-MM-DD",
+      "segment": "ai",
+      "what": "本文を要約した2〜4文。転載禁止",
+      "why": "重要性を要約した1〜3文。転載禁止",
+      "so_what": "読者が自分の環境でどう検証するかを要約した1〜2文。転載禁止",
+      "confidence": "high|medium|low"
+    }
+  ],
   "other_candidates": []
 }
 ```

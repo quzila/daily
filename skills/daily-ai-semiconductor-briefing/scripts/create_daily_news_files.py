@@ -84,6 +84,19 @@ def normalize_space(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def strip_terminal_punctuation(text: str) -> str:
+    return re.sub(r"[。．.!?]+$", "", normalize_space(text))
+
+
+def to_sentence(text: str) -> str:
+    core = strip_terminal_punctuation(text)
+    return f"{core}。" if core else ""
+
+
+def compact_len(text: str) -> int:
+    return len(re.sub(r"\s+", "", strip_terminal_punctuation(text)))
+
+
 def short_title(title: str, limit: int = 70) -> str:
     title = normalize_space(title)
     title = title.split("｜", 1)[0].strip()
@@ -106,6 +119,8 @@ def source_label(source: str) -> str:
         return "Zenn"
     if source == "note":
         return "note"
+    if source == "reddit":
+        return "Reddit"
     if source.startswith("reddit:"):
         sub = source.split(":", 1)[1]
         return f"Reddit/{sub}"
@@ -208,6 +223,9 @@ def highlight_line(item: dict, target_date: str) -> str:
 def build_summary(item: dict, domain: str, target_date: str) -> str:
     title = short_title(str(item.get("title", "")), limit=64)
     source = source_label(str(item.get("source", "")))
+    seeded_what = str(item.get("what_seed") or "")
+    if seeded_what:
+        return f"{source} の「{title}」では、{to_sentence(seeded_what)}"
     if domain == "ai":
         return (
             f"{source} の「{title}」では、"
@@ -224,17 +242,46 @@ def build_what(item: dict, domain: str, target_date: str) -> str:
     source = source_label(str(item.get("source", "")))
     published = normalize_date(str(item.get("published_at") or ""), target_date)
     seeded_what = normalize_space(str(item.get("what_seed") or ""))
-    excerpt = clean_excerpt(item)
     if seeded_what:
-        return (
-            f"{source}に掲載された「{title}」の公開日は{published}で、"
-            f"{seeded_what}。さらに本文では「{excerpt}」といった記述があり、"
-            "対象テーマの現状把握に必要な事実関係と論点が明確に整理されている。"
-        )
+        return f"{source}の「{title}」は{published}公開。{to_sentence(seeded_what)}"
     return (
         f"{source}に掲載された「{title}」の公開日は{published}で、"
-        f"記事内では「{excerpt}」といった内容が示され、"
-        "対象テーマの現状把握に必要な事実関係と論点が明確に整理されている。"
+        "本文確認はできているが、構造化メモが不足している。"
+        "公開前に source skill の `what` を補完し、本文断片の転載ではなく要点へ言い換える必要がある。"
+    )
+
+
+def build_why_tail(item: dict, domain: str) -> str:
+    title = short_title(str(item.get("title", "")), limit=44)
+    source = str(item.get("source", ""))
+    if domain == "ai":
+        if source == "official-ai":
+            return (
+                f"{title} のような公式更新は、既存のプロンプト・評価手順・API利用前提を"
+                "点検し直す必要があるため、開発フローへの影響が大きい。"
+            )
+        if source == "zenn":
+            return (
+                f"{title} のような実装知見は、導入前の確認項目や再現手順へ"
+                "そのまま落とし込みやすい。"
+            )
+        if source == "note":
+            return (
+                f"{title} のような実務視点の整理は、導入後の教育や役割分担を"
+                "見直す材料になる。"
+            )
+        return (
+            f"{title} のようなコミュニティ反応は、現場の関心がどこに集まっているかを"
+            "把握し、一次情報で裏取りする優先順位を決める助けになる。"
+        )
+    if source == "official-semiconductor":
+        return (
+            f"{title} のような公式発表は、性能だけでなく供給計画や構成選定の前提を"
+            "更新するため、調達判断に直結する。"
+        )
+    return (
+        f"{title} のような現場反応は、公式資料に出にくい制約や運用コストを補う"
+        "判断材料になる。"
     )
 
 
@@ -242,47 +289,57 @@ def build_why(item: dict, domain: str, target_date: str) -> str:
     title = short_title(str(item.get("title", "")), limit=52)
     seeded_why = normalize_space(str(item.get("why_seed") or ""))
     if seeded_why:
-        if domain == "ai":
-            return (
-                f"{seeded_why}。{title} の論点は、AI開発が単なるモデル選定から"
-                "運用設計・再現性確保へ重心を移している現在の潮流と整合する。"
-                "導入成否は機能比較だけでなく、検証手順・権限管理・学習導線を含む"
-                "実装運用力で決まるため重要度が高い。"
-            )
-        return (
-            f"{seeded_why}。{title} は、半導体分野で続く需要変動と供給制約の中で、"
-            "性能指標・価格・調達リードタイムを同時に見る必要性を示している。"
-            "単一指標だけで判断すると構成最適化を誤るリスクが高く、"
-            "複数ソースで裏取りする実務価値が大きい。"
-        )
+        first = to_sentence(seeded_why)
+        if compact_len(first) >= 60:
+            return first
+        return first + build_why_tail(item, domain)
     if domain == "ai":
         return (
-            f"{title} の論点は、AI開発が単なるモデル選定から運用設計・再現性確保へ"
-            "重心を移している現在の潮流と整合する。"
-            "導入成否は機能比較だけでなく、"
-            "検証手順・権限管理・学習導線を含む実装運用力で決まるため重要度が高い。"
+            f"{title} の重要性を説明する構造化メモが不足している。"
+            "公開前に source skill の `why` を補完し、本文断片の引用ではなく業界上の位置づけへ要約し直す必要がある。"
         )
     return (
-        f"{title} は、半導体分野で続く需要変動と供給制約の中で、"
-        "性能指標・価格・調達リードタイムを同時に見る必要性を示している。"
-        "単一指標だけで判断すると構成最適化を誤るリスクが高く、"
-        "複数ソースで裏取りする実務価値が大きい。"
+        f"{title} の重要性を説明する構造化メモが不足している。"
+        "公開前に source skill の `why` を補完し、本文断片の引用ではなく業界上の位置づけへ要約し直す必要がある。"
     )
 
 
 def build_so_what(item: dict, domain: str, target_date: str) -> str:
+    title = short_title(str(item.get("title", "")), limit=44)
+    source = str(item.get("source", ""))
+    seeded_so_what = normalize_space(str(item.get("so_what_seed") or ""))
+    if seeded_so_what:
+        first = to_sentence(seeded_so_what)
+        if compact_len(first) >= 60:
+            return first
     if domain == "ai":
+        if source == "official-ai":
+            return (
+                f"自分の開発では、{title} を前提に評価ケースと既存プロンプトの互換性確認を先に行う。"
+                "モデル更新ごとの差分を記録し、採用可否を変更点ベースで判断する。"
+            )
+        if source == "zenn":
+            return (
+                f"自分の運用では、{title} で示された手順や失敗例を手元環境で再現し、"
+                "導入チェックリストへ落とし込む。再現できた項目だけを標準手順に残す。"
+            )
+        if source == "note":
+            return (
+                f"自分の運用では、{title} が指摘する実務上の論点を、導入手順・教育・役割分担の"
+                "観点で棚卸しする。抽象論のままにせず、次の運用ルールへ変換して確認する。"
+            )
         return (
-            "自分の開発では、この話題を検証テーマに入れ、"
-            "要件整理・実装・レビューの各工程で再現性を測るログ取得を行う。"
-            "特にAIコーディング運用では、モデル更新のたびに手順が崩れないよう、"
-            "テンプレート化した評価軸を固定して継続比較する。"
+            f"自分の判断では、{title} で盛り上がっている論点を一次情報と照合してから採用を決める。"
+            "熱量だけで乗らず、事実確認できたものだけを検証候補へ入れる。"
+        )
+    if source == "official-semiconductor":
+        return (
+            f"自分の調達判断では、{title} を踏まえて性能比較だけでなく供給時期と構成変更の影響も見直す。"
+            "検証機とクラウド利用の配分を更新し、遅延やコスト上振れを先に吸収する。"
         )
     return (
-        "自分の環境調達では、この内容を判断材料として反映し、"
-        "クラウド利用とローカル検証機の配分を再試算する。"
-        "半導体関連のニュースは価格と供給見通しに直結するため、"
-        "週次で構成候補を更新し、調達遅延やコスト上振れのリスクを先に吸収する。"
+        f"自分の判断では、{title} のような現場反応を公式仕様や価格情報と突き合わせ、"
+        "実運用コストの見積もりに反映する。体感と公式値がずれる点を先に洗い出して構成を決める。"
     )
 
 
@@ -353,6 +410,8 @@ def convert_source_items(
         published = str(item.get("published_at") or "")
         what = str(item.get("what") or "")
         why = str(item.get("why") or "")
+        if not normalize_space(what) or not normalize_space(why):
+            continue
         confidence_raw = str(item.get("confidence") or "")
         confidence_map = {"high": "高", "medium": "中", "low": "低"}
         confidence_jp = confidence_map.get(confidence_raw.lower(), "")
@@ -369,6 +428,7 @@ def convert_source_items(
             "body_text": "",
             "what_seed": what,
             "why_seed": why,
+            "so_what_seed": str(item.get("so_what") or ""),
         }
         selected.append(payload)
         candidates.append(
@@ -394,25 +454,24 @@ def load_supplemental_sources(research_dir: Path) -> tuple[list[dict], list[dict
     combined_selected: list[dict] = []
     combined_candidates: list[dict] = []
 
-    official_ai = load_source_json(sources_dir / "official-ai.json")
-    official_ai_selected, official_ai_candidates = convert_source_items(
-        official_ai,
-        source_name="official-ai",
-        default_domain="ai",
-        default_score=30.0,
+    source_specs = (
+        ("official-ai.json", "official-ai", "ai", 30.0),
+        ("official-semiconductor.json", "official-semiconductor", "semiconductor", 29.0),
+        ("zenn.json", "zenn", "ai", 25.0),
+        ("note.json", "note", "ai", 24.0),
+        ("reddit.json", "reddit", "ai", 23.0),
+        ("hacker-news.json", "hacker-news", "ai", 22.0),
     )
-    combined_selected.extend(official_ai_selected)
-    combined_candidates.extend(official_ai_candidates)
-
-    official_semi = load_source_json(sources_dir / "official-semiconductor.json")
-    official_semi_selected, official_semi_candidates = convert_source_items(
-        official_semi,
-        source_name="official-semiconductor",
-        default_domain="semiconductor",
-        default_score=29.0,
-    )
-    combined_selected.extend(official_semi_selected)
-    combined_candidates.extend(official_semi_candidates)
+    for filename, source_name, default_domain, default_score in source_specs:
+        source_payload = load_source_json(sources_dir / filename)
+        source_selected, source_candidates = convert_source_items(
+            source_payload,
+            source_name=source_name,
+            default_domain=default_domain,
+            default_score=default_score,
+        )
+        combined_selected.extend(source_selected)
+        combined_candidates.extend(source_candidates)
 
     return combined_selected, combined_candidates
 
@@ -608,8 +667,13 @@ def main() -> int:
     candidates_data = load_json(research_dir / "candidates.json")
     supplemental_selected, supplemental_candidates = load_supplemental_sources(research_dir)
 
-    selected = dedupe_by_url(supplemental_selected + list(selected_data.get("selected") or []))
-    candidates = dedupe_by_url(supplemental_candidates + list(candidates_data.get("candidates") or []))
+    if supplemental_selected:
+        # Final report generation must prefer structured source-skill outputs over raw body extracts.
+        selected = dedupe_by_url(supplemental_selected)
+        candidates = dedupe_by_url(supplemental_candidates + list(candidates_data.get("candidates") or []))
+    else:
+        selected = dedupe_by_url(list(selected_data.get("selected") or []))
+        candidates = dedupe_by_url(list(candidates_data.get("candidates") or []))
 
     if not selected:
         raise SystemExit(

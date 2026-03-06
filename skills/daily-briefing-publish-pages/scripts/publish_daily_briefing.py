@@ -35,6 +35,21 @@ WHY_FIELD_PATTERN = re.compile(r"^\*\*なぜ重要か（Why it matters）\*\*:\s
 SOWHAT_FIELD_PATTERN = re.compile(
     r"^\*\*自分への影響（So what[^）]*）\*\*:\s*(.*)$", re.MULTILINE
 )
+PSEUDO_SUMMARY_PATTERNS: tuple[re.Pattern[str], ...] = (
+    re.compile(r"記事内では「[^」]{80,}」といった内容が示され", re.MULTILINE),
+    re.compile(r"さらに本文では「[^」]{80,}」", re.MULTILINE),
+    re.compile(r"\d{4}-\d{2}-\d{2}の収集で", re.MULTILINE),
+    re.compile(r"本日（\d{4}-\d{2}-\d{2}）の収集では", re.MULTILINE),
+    re.compile(r"構造化メモが不足している", re.MULTILINE),
+)
+GENERIC_EXPLANATION_PATTERNS: tuple[re.Pattern[str], ...] = (
+    re.compile(r"本文確認済みの事実を圧縮した要点として", re.MULTILINE),
+    re.compile(r"AI開発が単なるモデル選定から運用設計・再現性確保へ重心を移している", re.MULTILINE),
+    re.compile(r"導入成否は機能比較だけでなく", re.MULTILINE),
+    re.compile(r"この話題を検証テーマに入れ", re.MULTILINE),
+    re.compile(r"テンプレート化した評価軸を固定して継続比較する", re.MULTILINE),
+    re.compile(r"クラウド利用とローカル検証機の配分を再試算する", re.MULTILINE),
+)
 FORBIDDEN_DISCOVERY_URL_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"^https?://zenn\.dev/search\?", re.IGNORECASE),
     re.compile(r"^https?://zenn\.dev/topics/", re.IGNORECASE),
@@ -299,6 +314,24 @@ def check_portal_or_hn_item_url(url: str) -> tuple[bool, str]:
     return True, ""
 
 
+def looks_like_pseudo_explanation(text: str) -> bool:
+    if any(pattern.search(text) for pattern in PSEUDO_SUMMARY_PATTERNS):
+        return True
+    if re.search(r"「[^」]{120,}」", text):
+        return True
+    return False
+
+
+def looks_like_generic_explanation(text: str) -> bool:
+    return any(pattern.search(text) for pattern in GENERIC_EXPLANATION_PATTERNS)
+
+
+def split_sentences_for_validation(text: str) -> list[str]:
+    normalized = markdown_to_plain_text(text)
+    parts = re.split(r"(?<=[。.!?])\s+", normalized)
+    return [part.strip() for part in parts if part.strip()]
+
+
 def validate_report_quality(report_md_path: Path) -> None:
     try:
         markdown_text = report_md_path.read_text(encoding="utf-8")
@@ -315,6 +348,11 @@ def validate_report_quality(report_md_path: Path) -> None:
     source_url_count = 0
     source_urls: list[str] = []
     issues: list[str] = []
+    repeated_sentences: dict[str, dict[str, list[str]]] = {
+        "What": {},
+        "Why": {},
+        "So what": {},
+    }
     i = 0
 
     while i < len(lines):
@@ -386,6 +424,20 @@ def validate_report_quality(report_md_path: Path) -> None:
                 issues.append(
                     f"{title}: {label} is too short (<{MIN_FIELD_CHARS} chars without spaces)"
                 )
+            if text and looks_like_pseudo_explanation(text):
+                issues.append(
+                    f"{title}: {label} looks like a raw excerpt/pseudo-summary; rewrite as a paraphrased explanation"
+                )
+            if text and looks_like_generic_explanation(text):
+                issues.append(
+                    f"{title}: {label} still contains boilerplate explanation; rewrite with article-specific reasoning"
+                )
+            if text:
+                for sentence in split_sentences_for_validation(text):
+                    normalized_sentence = normalize_field_text(sentence)
+                    if len(normalized_sentence) < 28:
+                        continue
+                    repeated_sentences[label].setdefault(normalized_sentence, []).append(title)
 
         link_url = ""
         for block_line in block_lines:
@@ -434,6 +486,15 @@ def validate_report_quality(report_md_path: Path) -> None:
                 issues.append(
                     f"highlight 3 lines are unchanged from previous day ({prev_date}); refresh `## 今日のハイライト（3選）`"
                 )
+
+    for label, sentence_map in repeated_sentences.items():
+        for sentence, titles in sentence_map.items():
+            if len(titles) < 3:
+                continue
+            preview = markdown_to_plain_text(sentence)[:80]
+            issues.append(
+                f"{label} contains repeated boilerplate across {len(titles)} articles: {preview}"
+            )
 
     if issues:
         preview = "\n".join(f"- {item}" for item in issues[:20])
