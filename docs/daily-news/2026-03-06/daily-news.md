@@ -1,9 +1,9 @@
 # デイリーAI・半導体ニュース（2026-03-06）
 
 ## 今日のハイライト（3選）
-> 1) 2026-03-06時点のAIトピックでは「Introducing Claude Sonnet 4.6」が上位に入り、公式AI発の議論を通じて開発フロー最適化の重要性が改めて可視化された。
-> 2) 2026-03-06時点のAIトピックでは「OpenAI model release notes (GPT-4.5 / GPT-5系列更新)」が上位に入り、公式AI発の議論を通じて開発フロー最適化の重要性が改めて可視化された。
-> 3) 2026-03-06時点の半導体トピックでは「Samsung and NVIDIA to advance AI-RAN technologies」が注目され、公式半導体由来の情報から調達・性能・供給の判断材料が更新された。
+> 1) 「Introducing Claude Sonnet 4.6」が上位に入り、公式AI発の議論を通じて開発フロー最適化の重要性が改めて可視化された。
+> 2) 「OpenAI model release notes (GPT-4.5 / GPT-5系列更新)」が上位に入り、公式AI発の議論を通じて開発フロー最適化の重要性が改めて可視化された。
+> 3) 「Samsung and NVIDIA to advance AI-RAN technologies」が注目され、公式半導体由来の情報から調達・性能・供給の判断材料が更新された。
 
 ---
 
