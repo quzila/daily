@@ -41,6 +41,16 @@ FORBIDDEN_DISCOVERY_URL_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"^https?://zenn\.dev/api/", re.IGNORECASE),
     re.compile(r"^https?://note\.com/search\?", re.IGNORECASE),
 )
+FORBIDDEN_ARTICLE_URL_PATTERNS: tuple[re.Pattern[str], ...] = (
+    re.compile(r"^https?://news\.ycombinator\.com/item\?id=\d+", re.IGNORECASE),
+    re.compile(r"^https?://github\.blog/changelog/?$", re.IGNORECASE),
+    re.compile(r"^https?://huggingface\.co/blog/?$", re.IGNORECASE),
+    re.compile(r"^https?://nvidianews\.nvidia\.com/?$", re.IGNORECASE),
+    re.compile(r"^https?://www\.amd\.com/en/newsroom\.html/?$", re.IGNORECASE),
+    re.compile(r"^https?://news\.samsung\.com/(?:global/)?tag/[^/?#]+/?$", re.IGNORECASE),
+    re.compile(r"^https?://www\.anthropic\.com/news/?$", re.IGNORECASE),
+    re.compile(r"^https?://openai\.com/news/?$", re.IGNORECASE),
+)
 DEFAULT_ARCHIVE_SUMMARY = "AIと半導体領域の主要トピックを要点整理した日次ブリーフィング。"
 MIN_FIELD_CHARS = 60
 MIN_AI_ARTICLES = 8
@@ -231,6 +241,15 @@ def extract_report_urls(markdown_text: str) -> list[str]:
     return urls
 
 
+def extract_highlight_lines(markdown_text: str) -> list[str]:
+    highlights: list[str] = []
+    for raw in markdown_text.splitlines():
+        match = HIGHLIGHT_PATTERN.match(raw.strip())
+        if match:
+            highlights.append(markdown_to_plain_text(match.group(1)))
+    return highlights
+
+
 def normalize_field_text(text: str) -> str:
     text = re.sub(r"\[([^\]]+)\]\((https?://[^\s)]+)\)", r"\1", text)
     return re.sub(r"\s+", "", text).strip()
@@ -248,6 +267,8 @@ def extract_markdown_link_url(value: str) -> str:
 def check_zenn_note_reachability(url: str) -> tuple[bool, str]:
     parsed = urllib.parse.urlparse(url)
     host = parsed.netloc.lower()
+    if host in {"www.zenn.dev", "www.note.com"}:
+        return False, f"use canonical host without www for zenn/note: {url}"
     if host not in {"zenn.dev", "note.com"}:
         return True, ""
     if host == "zenn.dev" and not re.match(r"^/[^/]+/articles/[^/?#]+$", parsed.path):
@@ -263,13 +284,25 @@ def check_zenn_note_reachability(url: str) -> tuple[bool, str]:
         return True, ""
     except urllib.error.HTTPError as exc:
         return False, f"url returned status {exc.code}: {url}"
+    except urllib.error.URLError as exc:
+        # Offline/DNS-restricted environments cannot resolve hosts; keep format checks only.
+        if isinstance(getattr(exc, "reason", None), socket.gaierror):
+            return True, ""
+        return False, f"url fetch failed ({exc}): {url}"
     except Exception as exc:
         return False, f"url fetch failed ({exc}): {url}"
 
 
+def check_portal_or_hn_item_url(url: str) -> tuple[bool, str]:
+    if any(pattern.search(url) for pattern in FORBIDDEN_ARTICLE_URL_PATTERNS):
+        return False, f"portal/listing URL is not allowed as article source: {url}"
+    return True, ""
+
+
 def validate_report_quality(report_md_path: Path) -> None:
     try:
-        lines = report_md_path.read_text(encoding="utf-8").splitlines()
+        markdown_text = report_md_path.read_text(encoding="utf-8")
+        lines = markdown_text.splitlines()
     except Exception as exc:
         raise ValueError(f"report markdown read failed: {report_md_path}: {exc}") from exc
 
@@ -280,6 +313,7 @@ def validate_report_quality(report_md_path: Path) -> None:
     source_mode = False
     source_meta_count = 0
     source_url_count = 0
+    source_urls: list[str] = []
     issues: list[str] = []
     i = 0
 
@@ -305,6 +339,7 @@ def validate_report_quality(report_md_path: Path) -> None:
                 source_meta_count += 1
             elif line.startswith("http://") or line.startswith("https://"):
                 source_url_count += 1
+                source_urls.append(line)
 
         heading_match = CATEGORY_HEADING_PATTERN.match(line)
         if not heading_match:
@@ -364,6 +399,9 @@ def validate_report_quality(report_md_path: Path) -> None:
             ok, reason = check_zenn_note_reachability(link_url)
             if not ok:
                 issues.append(f"{title}: {reason}")
+            ok2, reason2 = check_portal_or_hn_item_url(link_url)
+            if not ok2:
+                issues.append(f"{title}: {reason2}")
 
         i = j
 
@@ -375,6 +413,27 @@ def validate_report_quality(report_md_path: Path) -> None:
         issues.append("`## ソース一覧` section is missing")
     if source_meta_count == 0 or source_url_count == 0:
         issues.append("source metadata and URLs must be present in `## ソース一覧`")
+    for source_url in source_urls:
+        ok, reason = check_zenn_note_reachability(source_url)
+        if not ok:
+            issues.append(f"source list URL: {reason}")
+        ok2, reason2 = check_portal_or_hn_item_url(source_url)
+        if not ok2:
+            issues.append(f"source list URL: {reason2}")
+
+    # Prevent stale duplication: today's highlight 3 lines must not be identical to previous day.
+    report_date = report_md_path.parent.name
+    if DATE_PATTERN.match(report_date):
+        prev_date = (dt.datetime.strptime(report_date, "%Y-%m-%d").date() - dt.timedelta(days=1)).isoformat()
+        prev_md = report_md_path.parent.parent / prev_date / "daily-news.md"
+        if prev_md.exists():
+            current_highlights = extract_highlight_lines(markdown_text)
+            prev_text = prev_md.read_text(encoding="utf-8")
+            prev_highlights = extract_highlight_lines(prev_text)
+            if current_highlights and current_highlights == prev_highlights:
+                issues.append(
+                    f"highlight 3 lines are unchanged from previous day ({prev_date}); refresh `## 今日のハイライト（3選）`"
+                )
 
     if issues:
         preview = "\n".join(f"- {item}" for item in issues[:20])
