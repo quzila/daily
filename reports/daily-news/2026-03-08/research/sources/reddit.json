@@ -1,0 +1,46 @@
+{
+  "source": "reddit",
+  "date": "2026-03-08",
+  "items": [
+    {
+      "title": "Anthropic just made Claude Code run without you. Scheduled tasks are live. This is a big deal.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/",
+      "published_at": "2026-03-07",
+      "segment": "ai",
+      "what": "r/ClaudeAIで、Claude Codeのscheduled tasks対応が大きく注目された。投稿本文では、daily commit review、dependency audit、error log scan、PR reviewのような定期作業を、対話なしで夜間に回せる点が強調されている。",
+      "why": "コミュニティが反応しているのは新しいUIではなく、agentが定期実行へ踏み込んだことだ。AIコーディングが都度対話型から自動運転型へ移ると、監督方法と権限設計の重要度が一段上がる。",
+      "so_what": "自分の使い方でも、毎回手で投げている作業をautomation化できるかを見直したい。価値があるのは派手なデモより、毎日同じ確認作業を安全に回せるかどうかだ。",
+      "confidence": "high"
+    },
+    {
+      "title": "OpenAI Robotics head resigns after deal with Pentagon",
+      "url": "https://www.reuters.com/business/openai-robotics-head-resigns-after-deal-with-pentagon-2026-03-07/",
+      "published_at": "2026-03-07",
+      "segment": "ai",
+      "what": "r/artificialやr/singularityで、OpenAIのrobotics責任者Caitlin Kalinowski氏が国防総省との契約後に辞任したReuters記事が広く共有された。報道ベースでは、辞任理由としてDoD契約への懸念が示されている。",
+      "why": "AI企業の競争軸が性能だけでなく、政府契約や軍事利用の線引きへ広がっていることを示す出来事だ。agentやroboticsが現実世界へ出るほど、倫理ルールの違いが組織人事や採用にも跳ね返る。",
+      "so_what": "自分がAIツールを評価するときも、能力だけでなく利用ポリシーや提供企業の姿勢を見る必要がある。特に長期依存する基盤ほど、後から方針転換されたときの影響が大きい。",
+      "confidence": "medium"
+    },
+    {
+      "title": "Nvidia dominates gaming GPU market with 95 percent share as sales of AMD Radeon graphics plummet to a historical low of 5 percent",
+      "url": "https://www.tomshardware.com/pc-components/gpus/nvidia-dominates-discrete-gpu-market-as-sales-of-amd-radeon-graphics-cards-hit-historical-low",
+      "published_at": "2026-03-07",
+      "segment": "semiconductor",
+      "what": "r/Amdで、Jon Peddie ResearchをもとにしたTom's Hardwareの記事が上位に入った。2025年第4四半期の単体GPU市場でNVIDIAが95%、AMDが5%まで低下したという内容で、前年同期比では市場全体が伸びてもシェア差がさらに開いたと整理されている。",
+      "why": "ローカルAIや開発機のGPU調達は、性能だけでなく市場支配率と価格形成に強く影響される。AMDの存在感低下が続くなら、NVIDIA偏重による価格高止まりや選択肢不足が長引く可能性が高い。",
+      "so_what": "自分のGPU調達でも、NVIDIA偏重を前提に代替構成を早めに考える必要がある。価格や在庫が崩れにくい市場なら、購入タイミングとクラウド代替の比較を先にやっておくべきだ。",
+      "confidence": "high"
+    },
+    {
+      "title": "AMD GAIA 0.16 introduces C++17 agent framework for building AI PC agents in pure C++",
+      "url": "https://www.phoronix.com/news/AMD-GAIA-0.16",
+      "published_at": "2026-03-07",
+      "segment": "semiconductor",
+      "what": "r/Amdで、AMD GAIA 0.16が純粋なC++17ベースのagent frameworkをAI PC向けに追加したというPhoronix記事が注目された。ローカル環境でのagent実装と実行基盤を、よりネイティブ寄りに扱える方向が見えている。",
+      "why": "AI PCは推論性能だけでなく、端末上でagentをどう動かすかが差別化要素になってきた。フレームワーク層の整備が進むと、半導体ベンダーはハードだけでなく実行環境でも囲い込みを強められる。",
+      "so_what": "自分がローカルAI環境を試すなら、モデル互換性だけでなく、どのベンダーがagent実行のSDKやフレームワークを整え始めているかも見るべきだ。将来の検証コストを下げるのはハード単体ではなく周辺ソフトだ。",
+      "confidence": "medium"
+    }
+  ]
+}

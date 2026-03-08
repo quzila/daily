@@ -1,0 +1,36 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-08",
+  "items": [
+    {
+      "title": "Codex Security: now in research preview",
+      "url": "https://openai.com/index/codex-security-now-in-research-preview/",
+      "published_at": "2026-03-06",
+      "segment": "ai",
+      "what": "OpenAIがアプリケーションセキュリティ向けのCodex Securityを研究プレビューで公開した。リポジトリから脅威モデルを作り、発見した脆弱性を検証しながら修正案まで返す流れを一体化している。ベータでは過去30日で120万超のコミットを走査し、792件のcriticalと10,561件のhighを検出したほか、あるケースではノイズを84%削減した。",
+      "why": "AIエージェントが実装速度を上げるほど、セキュリティレビューの誤検知と手戻りが新しいボトルネックになる。脅威モデルと自動検証を組み合わせて精度を上げる設計は、単純なルールベース診断より実務への組み込み余地が大きい。",
+      "so_what": "自分の開発では、コード生成の前後でセキュリティ確認を別工程にせず、コンテキスト付きのスキャンと修正提案をCIに近い位置へ置く設計を試す価値がある。レビュー時は検出件数より、誤検知削減と修正パッチの妥当性を評価軸にする。",
+      "confidence": "high"
+    },
+    {
+      "title": "Introducing the Codex app",
+      "url": "https://openai.com/index/introducing-the-codex-app/",
+      "published_at": "2026-02-02",
+      "segment": "ai",
+      "what": "OpenAIがCodexアプリを公開し、複数エージェントを並列で動かしながらスレッド単位で差分確認やコメント、worktree運用までできるデスクトップ体験を前面に出した。skillsとautomationsを同じUIから扱え、CLIやIDE拡張の設定も引き継げる。",
+      "why": "コーディング支援の競争軸が単発補完から、複数エージェントの監督と長時間タスクの運用へ移っている。agentを増やしてもローカルgit状態を汚さずに管理できる点は、個人開発だけでなくチーム導入の障壁を下げる。",
+      "so_what": "自分の運用では、単一チャットで詰め込むより、作業単位でagentを分離して並列化する方が再現性とレビュー効率を上げやすい。daily automationやskill化まで一体で設計すると、日次の調査やCI確認を継続運用しやすくなる。",
+      "confidence": "high"
+    },
+    {
+      "title": "GPT-5.4 is generally available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-03-05-gpt-5-4-is-generally-available-in-github-copilot/",
+      "published_at": "2026-03-05",
+      "segment": "ai",
+      "what": "GitHubがCopilotでGPT-5.4を一般提供に切り替えた。GitHubの案内では、実運用のagentic codingやソフトウェア開発タスクで従来より高い性能を示したモデルとして位置づけている。",
+      "why": "IDE内の補完だけでなく、レビューやエージェント実行まで含めた開発フロー全体でモデル差が効く段階に入っている。Copilot側で新モデルが標準化されると、既存チームの評価基準やプロンプト資産も見直しが必要になる。",
+      "so_what": "自分の開発では、モデル更新日にベンチマークを回すだけでなく、PRコメント生成や複数ファイル変更の安定度も比較したい。採用判断は速度より、長いタスクでの破綻率とレビュー負荷の減り方で見るべきだ。",
+      "confidence": "high"
+    }
+  ]
+}

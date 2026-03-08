@@ -1,0 +1,36 @@
+{
+  "source": "official-semiconductor",
+  "date": "2026-03-08",
+  "items": [
+    {
+      "title": "NVIDIA CEO Jensen Huang and Global Technology Leaders to Showcase Age of AI at GTC 2026",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-ceo-jensen-huang-and-global-technology-leaders-to-showcase-age-of-ai-at-gtc-2026",
+      "published_at": "2026-03-03",
+      "segment": "semiconductor",
+      "what": "NVIDIAがGTC 2026の概要を公表し、3月16日から19日に3万人超が集まり、AIファクトリー、チップ、インフラ、モデル、アプリケーションまでAIスタック全体の更新を扱うと告知した。基調講演ではJensen Huang氏が加速計算からphysical AIまで今年の方向性を示すとしている。",
+      "why": "NVIDIAは単体GPUの発表だけでなく、AI向け設備投資全体の温度感を決める存在になっている。GTCの焦点がチップ単体ではなくAIファクトリー全体に移っていることは、需要がデータセンター設計と電力・光学まで広がっていることを示す。",
+      "so_what": "自分の調達やウォッチでは、今後はGPU SKUだけでなく、周辺のネットワークや電力設計を含めて見る必要がある。GTC後は個別製品名より、どのレイヤーに投資が集中するかで次の半導体ニュースを整理したい。",
+      "confidence": "high"
+    },
+    {
+      "title": "AMD and Nutanix Announce Strategic Partnership to Advance an Open and Scalable Platform for Enterprise AI",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2026-2-25-amd-and-nutanix-announce-strategic-partnership-to.html",
+      "published_at": "2026-02-25",
+      "segment": "semiconductor",
+      "what": "AMDとNutanixが、enterprise AI向けのオープンなフルスタック基盤を共同開発する複数年提携を発表した。AMDはNutanix株に1.5億ドルを出資し、さらに最大1億ドルを共同開発とGo-to-Marketへ拠出する。EPYC CPU、Instinct GPU、ROCm、Nutanix Cloud Platformを組み合わせたagentic AI基盤を2026年後半から市場投入する計画だ。",
+      "why": "エンタープライズAI基盤の勝負が、単一GPU性能からCPU・GPU・ソフトウェア・運用基盤の束ね方へ移っている。オープン構成でNVIDIA一極依存を崩したい顧客にとって、AMD陣営の具体的な投資額と投入時期が見えた点は大きい。",
+      "so_what": "自分の観点では、企業向けAI導入はモデル性能だけでなく、どのスタックが長期運用しやすいかで選ぶ局面に入っている。今後はROCm互換性やKubernetes運用のしやすさも、GPU比較と同じ重みで見るべきだ。",
+      "confidence": "high"
+    },
+    {
+      "title": "AI + Mobile Networks: Intel Showcases What’s Next at MWC 2026",
+      "url": "https://newsroom.intel.com/5g-wireless/ai-mobile-networks-intel-showcases-whats-next-at-mwc-2026",
+      "published_at": "2026-02-10",
+      "segment": "semiconductor",
+      "what": "IntelはMWC 2026で、ライブモバイルネットワーク上でAI推論を動かす展示を行い、既存5Gインフラを全面刷新せずにコア、RAN、エッジへAIを広げる方針を示した。記事ではAI推論をネットワークの近くで動かし、トラフィック最適化や混雑緩和、信号品質改善をリアルタイムで行う構想を説明している。",
+      "why": "AI推論の主戦場がデータセンターだけでなく通信網のエッジに広がると、求められる半導体はGPU単体からCPU・アクセラレータ・ネットワーク最適化向け製品へ分散する。通信事業者のROIを前面に出した点も、AI投資が実証段階から商用効率の議論へ移っていることを示す。",
+      "so_what": "自分のウォッチでは、今後の半導体ニュースをデータセンター専用の話として切り分けない方が良い。ローカル推論やエッジAIに近い文脈として、通信や産業インフラでどのチップが採用されるかも追う価値がある。",
+      "confidence": "high"
+    }
+  ]
+}
