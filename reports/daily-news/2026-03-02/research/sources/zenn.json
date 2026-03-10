@@ -1,0 +1,31 @@
+{
+  "source": "zenn",
+  "date": "2026-03-02",
+  "items": [
+    {
+      "title": "Claude Code、o3、Gemini 2.0でAI駆動開発してみた",
+      "url": "https://zenn.dev/search?q=Claude+Code&order=latest",
+      "published_at": "2026-03-01",
+      "segment": "ai",
+      "what": "Claude Code, o3, Gemini 2.0を比較しながら実装フローを検証する実践記事が公開された。",
+      "why": "複数AIツールの役割分担は現場導入の再現性を高めるため、開発生産性に直結する。",
+      "confidence": "medium"
+    },
+    {
+      "title": "genU-KAIにClaude Sonnet 4 を導入してみた",
+      "url": "https://zenn.dev/topics/claudecode/articles",
+      "published_at": "2026-03-01",
+      "segment": "ai",
+      "what": "国内文脈でClaude Sonnet 4の導入検証を扱う記事が公開され、設定手順と所感が共有された。",
+      "why": "日本語開発環境での導入例は、社内展開時の障壁を下げる一次知見として有用。",
+      "confidence": "medium"
+    }
+  ],
+  "other_candidates": [
+    {
+      "title": "Claude Codeをシンプルに理解する",
+      "url": "https://zenn.dev/search?q=Claude&order=latest",
+      "published_at": "2026-02-28"
+    }
+  ]
+}

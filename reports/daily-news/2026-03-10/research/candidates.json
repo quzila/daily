@@ -1,0 +1,162 @@
+{
+  "date": "2026-03-10",
+  "generated_at": "2026-03-10T04:36:25.207226+00:00",
+  "candidates": [
+    {
+      "domain": "ai",
+      "source": "official-ai",
+      "title": "Copilot code review now runs on an agentic architecture",
+      "url": "https://github.blog/changelog/2026-03-05-copilot-code-review-now-runs-on-an-agentic-architecture/",
+      "published_at": "2026-03-05",
+      "snippet": "GitHubはCopilot code reviewのagentic tool-callingアーキテクチャをGAにした。レビュー時に関連コード、ディレクトリ構造、参照先まで取りに行くことで、差分単体ではなくリポジトリ全体の構造を踏まえた指摘を返す設計で、GitHub Actions上で動作し、self-hosted runner利用時は一度だけ追加設定が必要になる。",
+      "score": 30.0,
+      "meta": {
+        "confidence": "高"
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "official-ai",
+      "title": "Codex Security: now in research preview",
+      "url": "https://openai.com/index/codex-security-now-in-research-preview/",
+      "published_at": "2026-03-06",
+      "snippet": "OpenAIがCodex Securityをresearch previewで公開した。リポジトリから脅威モデルを組み立て、検出した脆弱性を検証環境で裏取りしながら修正案まで返す構成で、ベータでは30日で120万超のコミットを走査し、792件のcriticalと10,561件のhigh-severity findingを検出した。ノイズはあるケースで84%減り、過大なseverity判定も90%以上抑えたとしている。",
+      "score": 29.99,
+      "meta": {
+        "confidence": "高"
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "official-semiconductor",
+      "title": "Samsung Takes Next Stride Toward AI-Native Software-Driven Networks With NVIDIA",
+      "url": "https://news.samsung.com/global/samsung-takes-next-stride-toward-ai-native-software-driven-networks-with-nvidia",
+      "published_at": "2026-03-01",
+      "snippet": "SamsungはR&DセンターでvRANソフトウェアとNVIDIAのaccelerated computing platformを組み合わせたmulti-cell testを完了し、MWC 2026でAI-RANデモを披露すると発表した。AI MIMO beamformerで下り性能とスペクトル効率を上げる構成で、Grace CPUとL4 GPUを載せたARC Compactとの統合も終え、商用化検証を進めている。",
+      "score": 29.0,
+      "meta": {
+        "confidence": "高"
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "official-semiconductor",
+      "title": "NVIDIA and Coherent Announce Strategic Partnership to Develop Optics Technology to Scale Next-Generation Data Center Architecture",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-and-coherent-announce-strategic-partnership-to-develop-optics-technology-to-scale-next-generation-data-center-architecture",
+      "published_at": "2026-03-02",
+      "snippet": "NVIDIAとCoherentが次世代AIデータセンター向け光技術の複数年提携を発表した。NVIDIAはCoherentへ20億ドルを投資し、さらに将来の先端レーザー製品と光ネットワーク製品の供給枠を確保する。発表では、光インターコネクトと先端パッケージ統合をAI factoryの次段階を支える基盤と位置づけ、米国内製造能力の拡張も前面に出した。",
+      "score": 28.99,
+      "meta": {
+        "confidence": "高"
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "official-semiconductor",
+      "title": "AMD and Nutanix Announce Strategic Partnership to Advance an Open and Scalable Platform for Enterprise AI",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2026-2-25-amd-and-nutanix-announce-strategic-partnership-to.html",
+      "published_at": "2026-02-25",
+      "snippet": "AMDとNutanixは、agentic AIアプリケーション向けのopen full-stack AI infrastructureを共同開発する複数年提携を発表した。AMDはNutanix株に1.5億ドルを投資し、さらに最大1億ドルをjoint engineeringとgo-to-marketへ拠出する。初の共同開発プラットフォームは2026年後半投入予定で、EPYC CPU、Instinct GPU、ROCm、Nutanix Cloud Platform/Kubernetes Platformを束ねる構想だ。",
+      "score": 28.98,
+      "meta": {
+        "confidence": "高"
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "zenn",
+      "title": "まだAIコードをレビューするか、しないかで言い争ってるの？",
+      "url": "https://zenn.dev/nuits_jp/articles/2026-03-08-reviewing-ai-code",
+      "published_at": "2026-03-08",
+      "snippet": "AI生成コードをレビューするか否かという二択ではなく、品質を保ったまま人間レビューの総量を減らせるよう開発プロセス全体を作り替えるべきだと論じた記事だ。理由として、レビュワーは今後育ちにくいこと、AIが生成量で人間を圧倒すること、従来型レビューに固執する組織は軽量化した組織に競争で負けることを挙げている。あわせて、良い入力コンテキスト、品質を担保するハーネス、高いレイヤーでの評価基準が必要だと整理した。",
+      "score": 25.0,
+      "meta": {
+        "confidence": "高"
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "zenn",
+      "title": "AIコーディングの原則",
+      "url": "https://zenn.dev/takekazuomi/articles/ai-coding-principles",
+      "published_at": "2026-03-08",
+      "snippet": "チームでAIコーディングを使う前提に立ち、人間がコードのオーナーであり責任主体であること、設計意図や制約を人間が読めるドキュメントとして残すこと、AI向けの指示は『コードからは発見できない知識だけ』に絞ることを原則として整理した記事だ。AI Slopがチームでは人数分だけ増幅される点や、長すぎるAGENTS.md系ファイルが性能やコストを悪化させる実証研究も引用している。",
+      "score": 24.99,
+      "meta": {
+        "confidence": "高"
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "同じClaude Codeを使っているのに、なぜ性能に大きな差がつくのか？ ― AIは「使い方」より「育て方」が大事",
+      "url": "https://note.com/kajiken0630/n/n90c7c022b16c",
+      "published_at": "2026-02-27",
+      "snippet": "公開範囲では、Claude Codeの成果差はプロンプトの巧拙より『AIの育て方』、つまり与える文脈の厚みで決まると論じている。各セッションは毎回記憶が初期化された『天才新入社員』のようなもので、CLAUDE.mdに基本業務を置くだけでは足りず、事業の背景や過去判断を蓄積する記憶設計まで用意する必要があるという整理だ。",
+      "score": 24.0,
+      "meta": {
+        "confidence": "中"
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲",
+      "url": "https://note.com/paul1211/n/n18c3c3ed66f6",
+      "published_at": "2026-03-06",
+      "snippet": "公開範囲では、Broadcomの2026年第1四半期決算を起点に、AIインフラが『汎用GPU＋独自ネットワーク＋光インターコネクト』と『カスタムxPU＋Ethernet＋銅配線延命』の二方向へ分岐し始めたと整理している。2027年に向けたAI半導体1000億ドル超という強気見通しを、単なる需要拡大ではなくポストGPU万能時代の設計転換として読むべきだという切り口だ。",
+      "score": 23.99,
+      "meta": {
+        "confidence": "中"
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "reddit",
+      "title": "Anthropic just made Claude Code run without you. Scheduled tasks are live. This is a big deal.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/",
+      "published_at": "2026-03-07",
+      "snippet": "r/ClaudeAIで、Claude Codeのscheduled tasksがネイティブ対応したことが大きく話題になった。投稿ではdaily commit review、dependency audit、error log scan、PR reviewを夜間に自動実行できると紹介され、コメント欄ではデスクトップ版を開いたままにする必要があることや、false positiveと権限設計への注意も議論されている。",
+      "score": 23.0,
+      "meta": {
+        "confidence": "中"
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "reddit",
+      "title": "Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rnwiyx/qwen_35_27b_is_the_real_deal_beat_gpt5_on_my/",
+      "published_at": "2026-03-08",
+      "snippet": "r/LocalLLaMAで、i7-12700K、RTX 3090 Ti、96GB RAMの環境から、長文プロンプトでPDF結合・変換GUIを作らせた比較が共有された。投稿者によればGPT-5は3回ともGUI起動に失敗した一方、Qwen 3.5 27Bは262K contextで31.26 tok/secを出しつつ3回目で実用的なアプリを完成させた。スクリーンショット入力で細部を詰めた点や、35B系は速度が出ても同タスクでは失敗した点も報告されている。",
+      "score": 22.99,
+      "meta": {
+        "confidence": "中"
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit",
+      "title": "NV-UV brings one-click undervolting to GeForce RTX 50 GPUs",
+      "url": "https://videocardz.com/newz/nv-uv-brings-one-click-undervolting-to-geforce-rtx-50-gpus",
+      "published_at": "2026-03-08",
+      "snippet": "r/nvidia経由で、Blackwell世代向けのundervolting支援ツールNV-UVが注目を集めた。MSI Afterburnerの上に重ねる形で、Eco/Balanced/Performance/Maxのプリセット、DX12/DXRベースのAuto-UV scanner、約573本のゲームを対象にしたUV-Pilot、自動クラッシュ回復まで備えるという。背景にはBlackwellでNVAPIからVF curveを直接書き込みにくくなった事情がある。",
+      "score": 22.98,
+      "meta": {
+        "confidence": "中"
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "hacker-news",
+      "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+      "url": "https://arxiv.org/abs/2603.03823",
+      "published_at": "2026-03-04",
+      "snippet": "Hacker News上位で、LLMエージェントを継続的なコードベース保守で評価するSWE-CI論文が共有された。論文はCIループ上に100タスクを載せ、平均233日・71コミットにわたる実リポジトリの進化履歴を使って、静的な一発修正ではなく長期のmaintainabilityを測るベンチマークを提案している。エージェントには、数十ラウンドの分析と修正を通じて課題を解かせる設計だ。",
+      "score": 22.0,
+      "meta": {
+        "confidence": "高"
+      }
+    }
+  ]
+}

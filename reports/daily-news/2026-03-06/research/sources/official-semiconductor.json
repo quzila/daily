@@ -1,0 +1,33 @@
+{
+  "source": "official-semiconductor",
+  "date": "2026-03-06",
+  "items": [
+    {
+      "title": "Samsung and NVIDIA to advance AI-RAN technologies",
+      "url": "https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem",
+      "published_at": "2026-03-01",
+      "segment": "semiconductor",
+      "what": "SamsungとNVIDIAがAI-RAN協業を発表し、vRANとAI基盤を統合してモバイルネットワークのAI化を進める方針を示した。",
+      "why": "AI半導体需要がデータセンターだけでなく通信インフラ側にも波及し、供給競争の対象領域が広がる。",
+      "confidence": "high"
+    },
+    {
+      "title": "Running a One Trillion-Parameter LLM Locally on AMD Ryzen AI Max+ Cluster",
+      "url": "https://www.amd.com/en/developer/resources/technical-articles/running-a-one-trillion-parameter-large-language-model-on-amd-ryzen-ai-max-plus-cluster.html",
+      "published_at": "2026-02-26",
+      "segment": "semiconductor",
+      "what": "AMD DeveloperがRyzen AI Max+クラスタでの大規模ローカル推論構成を公開し、クラウド依存を減らす実験結果を示した。",
+      "why": "ローカル推論の上限が上がると、GPU/メモリ調達や開発環境設計の前提が変わる。",
+      "confidence": "high"
+    },
+    {
+      "title": "Intel at MWC 2026: network + AI acceleration updates",
+      "url": "https://www.intel.com/content/www/us/en/newsroom/news/intel-mwc-2026.html",
+      "published_at": "2026-02-23",
+      "segment": "semiconductor",
+      "what": "IntelがMWC 2026でネットワーク向けAIアクセラレーション施策を整理し、通信事業者向け導入戦略を提示した。",
+      "why": "端末・基地局・クラウドの3層でAI推論を分散する設計が主流化し、半導体選定が用途別に細分化される。",
+      "confidence": "medium"
+    }
+  ]
+}

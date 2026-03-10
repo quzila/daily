@@ -1,0 +1,39 @@
+{
+  "source": "zenn",
+  "date": "2026-03-05",
+  "items": [
+    {
+      "title": "AIエージェント経由でアカウントが乗っ取られた事例と今すぐやるべき対策",
+      "url": "https://zenn.dev/ga14tools/articles/ai-agent-security-risk",
+      "published_at": "2026-03-03",
+      "segment": "ai",
+      "what": "AIエージェント運用時の権限管理不備による侵害シナリオを整理し、具体的な対策を提示した。",
+      "why": "Agent運用は利便性と引き換えに権限境界が曖昧になりやすく、セキュリティ設計が導入可否を左右する。",
+      "confidence": "high"
+    },
+    {
+      "title": "Claude CodeでMP3音声ファイルを文字起こしする3つの方法",
+      "url": "https://zenn.dev/ktlab/articles/claude-code-mp3-transcription",
+      "published_at": "2026-03-03",
+      "segment": "ai",
+      "what": "Claude Codeを使った音声文字起こしワークフローを3パターン比較し、運用時の選定基準を示した。",
+      "why": "生成AIの価値が単純生成から、実務ワークフロー統合へ移っている。",
+      "confidence": "high"
+    },
+    {
+      "title": "『実践Claude Code入門』を読みながらDev Container環境でClaude Codeを動かしてみた",
+      "url": "https://zenn.dev/unsoluble_sugar/articles/4878a6d01b7305",
+      "published_at": "2026-03-03",
+      "segment": "ai",
+      "what": "Dev ContainerでClaude Codeを再現可能に動かす手順と詰まりやすいポイントを共有した。",
+      "why": "再現可能な開発環境がないと、AIコーディング導入は属人化しやすい。",
+      "confidence": "high"
+    }
+  ],
+  "other_candidates": [
+    {
+      "title": "AIアバターに「目」を与えた話 — MediaPipe × Gemini × Claude の二層視覚アーキテクチャ",
+      "url": "https://zenn.dev/xei/articles/mimi-vision-ai-avatar-eyes"
+    }
+  ]
+}

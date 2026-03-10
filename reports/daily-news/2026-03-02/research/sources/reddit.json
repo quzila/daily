@@ -1,0 +1,33 @@
+{
+  "source": "reddit",
+  "date": "2026-03-02",
+  "items": [
+    {
+      "title": "Anthropic has opened up its entire educational curriculum for free",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/",
+      "published_at": "2026-02-28",
+      "segment": "ai",
+      "what": "r/ClaudeAIで公式学習教材の無償公開が大きく反応を集め、学習導線整備への注目が高まった。",
+      "why": "導入教育コストの低下は、モデル性能以外の競争軸として定着率に直結する。",
+      "confidence": "medium"
+    },
+    {
+      "title": "Qwen 3.5-35B-A3B is beyond expectations",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/",
+      "published_at": "2026-02-28",
+      "segment": "ai",
+      "what": "r/LocalLLaMAでQwen 3.5 35Bの実運用評価が共有され、ローカル推論の実用性に議論が集まった。",
+      "why": "中規模OSSモデルの評価上昇は、クラウド依存コストの見直しに直結する。",
+      "confidence": "medium"
+    },
+    {
+      "title": "Lenovo launches ThinkBook 16+ with LPCAMM2",
+      "url": "https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/",
+      "published_at": "2026-02-28",
+      "segment": "semiconductor",
+      "what": "r/hardwareでLPCAMM2採用機の仕様・価格情報が拡散され、メモリモジュール進化の話題となった。",
+      "why": "可換メモリ規格の普及はAI PCの価格・性能・保守性提案に影響する。",
+      "confidence": "low"
+    }
+  ]
+}

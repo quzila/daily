@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>デイリーAI・半導体ニュース（2026-03-02）</title>
+  <meta name="description" content="ひとことサマリー（1文）: AnthropicがHumanloop買収を公表し、エンタープライズ向けLLM運用基盤を強化した。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #08080f;
+      --surface:     #0e0e1a;
+      --paper:       #121220;
+      --paper-hover: #181828;
+      --border:      #1c1c30;
+      --border-hi:   #28283e;
+      --ai:          #f0a030;
+      --ai-glow:     rgba(240,160,48,.12);
+      --ai-border:   rgba(240,160,48,.35);
+      --chip:        #18d4f0;
+      --chip-glow:   rgba(24,212,240,.12);
+      --chip-border: rgba(24,212,240,.35);
+      --txt1: #eaeaf8;
+      --txt2: #8888aa;
+      --txt3: #48486a;
+      --link: #8dc4ff;
+      --code-bg: #0f0f1a;
+      --code-fg: #d9d9ef;
+      --green:  #22cc88;
+      --yellow: #d4aa30;
+      --orange: #cc7730;
+      --ff-display: "Playfair Display", "Noto Sans JP", serif;
+      --ff-body:    "Noto Sans JP", sans-serif;
+      --ff-mono:    "JetBrains Mono", monospace;
+      --r: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--txt1);
+      font-family: var(--ff-body);
+      font-size: 14.5px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+      opacity: .03;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 max(2rem, calc(50vw - 580px));
+      background: rgba(8,8,15,.88);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+    .nav-brand {
+      margin-right: auto;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      user-select: none;
+    }
+    .nav-brand a {
+      color: inherit;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-brand a:hover { color: var(--txt1); }
+    .nav-brand b { color: var(--ai); font-weight: 500; }
+    nav > a {
+      font-family: var(--ff-mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      text-decoration: none;
+      padding: 0 .9rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: color .2s;
+    }
+    nav > a:hover { color: var(--txt1); }
+    nav > a.lnk-ai:hover   { color: var(--ai); }
+    nav > a.lnk-chip:hover { color: var(--chip); }
+
+    /* ── Shell ── */
+    .shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 max(1.5rem, calc(50vw - 580px));
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 5rem 0 4rem;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--ai);
+    }
+    .hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -.035em;
+      color: var(--txt1);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { color: var(--ai); font-style: normal; }
+    .hero-sub {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--txt3);
+      margin-top: .4rem;
+    }
+
+    /* ── Highlights ── */
+    .highlights-wrap {
+      padding: 3.5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-label {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sec-label::before { content: '◆'; font-size: 7px; color: var(--ai); }
+    .hl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    @media (max-width: 720px) { .hl-grid { grid-template-columns: 1fr; } }
+    .hl-card {
+      background: var(--surface);
+      padding: 2rem 2rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: background .2s;
+    }
+    .hl-card:hover { background: var(--paper); }
+    .hl-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--ai-glow) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hl-num {
+      font-family: var(--ff-display);
+      font-size: 5.2rem;
+      line-height: 1;
+      color: rgba(72,72,106,.22);
+      position: absolute;
+      right: 1rem;
+      top: .6rem;
+      font-weight: 400;
+      user-select: none;
+    }
+    .hl-title {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--txt1);
+      position: relative;
+      z-index: 1;
+      margin-bottom: .6rem;
+      font-weight: 600;
+    }
+    .hl-title strong { color: var(--ai); font-weight: 600; }
+    .hl-summary {
+      font-size: 12.5px;
+      line-height: 1.75;
+      color: var(--txt2);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Sections ── */
+    .section { padding: 4.5rem 0 3rem; }
+    .section + .section { border-top: 1px solid var(--border); }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .8rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: 1;
+    }
+    .section-title.ai   { color: var(--ai); }
+    .section-title.chip { color: var(--chip); }
+    .section-en {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      color: var(--txt3);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .section-cnt {
+      margin-left: auto;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      color: var(--txt3);
+    }
+
+    /* ── Subsections ── */
+    .subsec { margin-bottom: 3.5rem; }
+    .subsec-label {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      padding-bottom: .7rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .subsec-label::before { content: '▸'; font-size: 8px; }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+      gap: 2px;
+    }
+    @media (max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+
+    /* ── Card ── */
+    .card {
+      background: var(--paper);
+      border-left: 3px solid var(--border-hi);
+      transition: background .18s, border-color .18s;
+    }
+    .card.ai   { border-left-color: var(--ai-border); }
+    .card.chip { border-left-color: var(--chip-border); }
+    .card:hover { background: var(--paper-hover); }
+
+    .card-top {
+      padding: 1.4rem 1.6rem 1.2rem;
+      cursor: pointer;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .5rem .7rem;
+      margin-bottom: .9rem;
+    }
+    .tag {
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .tag-ai    { background: var(--ai-glow);              color: var(--ai);   border: 1px solid var(--ai-border); }
+    .tag-chip  { background: var(--chip-glow);             color: var(--chip); border: 1px solid var(--chip-border); }
+    .tag-zenn  { background: rgba(35,150,230,.1);           color: #3898e8;    border: 1px solid rgba(35,150,230,.3); }
+    .tag-note  { background: rgba(30,200,100,.1);           color: #30cc66;    border: 1px solid rgba(30,200,100,.3); }
+    .tag-reddit{ background: rgba(255,90,40,.1);            color: #ff7050;    border: 1px solid rgba(255,90,40,.3); }
+    .tag-hn    { background: rgba(255,140,40,.1);           color: #ff9a40;    border: 1px solid rgba(255,140,40,.3); }
+
+    .card-src {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      color: var(--txt3);
+      letter-spacing: .04em;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .conf {
+      margin-left: auto;
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .conf-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+    .conf-high .conf-dot { background: var(--green); }
+    .conf-mid  .conf-dot { background: var(--yellow); }
+    .conf-low  .conf-dot { background: var(--orange); }
+    .conf-high { color: var(--green); }
+    .conf-mid  { color: var(--yellow); }
+    .conf-low  { color: var(--orange); }
+
+    .card-summary {
+      font-family: var(--ff-body);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--txt1);
+    }
+
+    /* Toggle row */
+    .card-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .65rem 1.6rem;
+      background: rgba(0,0,0,.2);
+      cursor: pointer;
+      user-select: none;
+      border-top: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .card-toggle:hover { background: rgba(255,255,255,.03); }
+    .toggle-lbl {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+    .toggle-arrow { font-size: 9px; color: var(--txt3); transition: transform .3s ease; }
+    .card.open .toggle-arrow { transform: rotate(180deg); }
+
+    /* Expandable body */
+    .card-body { overflow: hidden; max-height: 0; transition: max-height .4s cubic-bezier(.4,0,.2,1); }
+    .card.open .card-body { max-height: 1200px; }
+    .card-inner { padding: 1.4rem 1.6rem 1.6rem; border-top: 1px solid var(--border); }
+    .block { margin-top: 1.2rem; }
+    .block:first-child { margin-top: 0; }
+    .block-lbl {
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: .4rem;
+    }
+    .block-txt { font-size: 13.5px; line-height: 1.9; color: var(--txt2); }
+    .card-link {
+      display: inline-block;
+      margin-top: 1.4rem;
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .1em;
+      text-transform: none;
+      line-height: 1.5;
+      color: var(--txt3);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid var(--border-hi);
+      border-radius: var(--r);
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      transition: all .2s;
+    }
+    .card.ai   .card-link:hover { color: var(--ai);   border-color: var(--ai-border); }
+    .card.chip .card-link:hover { color: var(--chip); border-color: var(--chip-border); }
+
+    /* ── Source section ── */
+    #sources { padding: 4rem 0 5rem; border-top: 1px solid var(--border); }
+    .sources-title {
+      font-family: var(--ff-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--txt2);
+      letter-spacing: -.02em;
+      margin-bottom: 2.5rem;
+    }
+    .src-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: .5rem 2rem;
+      padding: .7rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .src-name { font-family: var(--ff-mono); font-size: 10.5px; color: var(--txt2); white-space: nowrap; min-width: 160px; }
+    .src-date { font-family: var(--ff-mono); font-size: 9.5px; color: var(--txt3); white-space: nowrap; }
+    .src-url {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      color: var(--txt3);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color .2s;
+    }
+    .src-url:hover { color: var(--txt1); }
+    .src-type {
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 1px 7px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .src-type.ai   { color: var(--ai);   background: var(--ai-glow);   border: 1px solid var(--ai-border); }
+    .src-type.chip { color: var(--chip); background: var(--chip-glow); border: 1px solid var(--chip-border); }
+    .src-type.com  { color: var(--txt2); background: rgba(255,255,255,.04); border: 1px solid var(--border-hi); }
+
+    /* ── History navigation ── */
+    #nav-history { padding: 3rem 0 4rem; border-top: 1px solid var(--border); }
+    .nav-hist-label {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-hist-label::before { content: '◆'; font-size: 7px; color: var(--chip); }
+    .nav-hist-list { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .nav-hist-item {
+      display: flex;
+      flex-direction: column;
+      padding: .7rem 1rem;
+      border: 1px solid var(--border-hi);
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: border-color .2s, background .2s;
+      min-width: 160px;
+    }
+    .nav-hist-item:hover { border-color: var(--chip-border); background: var(--chip-glow); }
+    .nav-hist-item.current { border-color: var(--chip-border); background: var(--chip-glow); pointer-events: none; }
+    .nav-hist-date {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      color: var(--chip);
+      margin-bottom: .2rem;
+    }
+    .nav-hist-title { font-size: 11px; color: var(--txt2); line-height: 1.4; }
+
+    /* ── Footer ── */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .8rem;
+      padding: 1.8rem max(1.5rem, calc(50vw - 580px));
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+    footer p {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .08em;
+      color: var(--txt3);
+    }
+
+    /* ── Fade-in ── */
+    .fi {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .fi.show { opacity: 1; transform: none; }
+
+    @media (max-width: 720px) {
+      nav { padding: 0 .7rem; }
+      nav > a { padding: 0 .6rem; }
+      .shell { padding: 0 10px; }
+      .hero { padding: 3.2rem 0 2.4rem; }
+      .card-top { padding: 1.15rem 1rem .95rem; }
+      .card-toggle { padding: .6rem 1rem; }
+      .card-inner { padding: 1.1rem 1rem 1.2rem; }
+      .card-meta { gap: .4rem .55rem; }
+      .conf {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .card-summary { font-size: 14px; line-height: 1.5; }
+      .card-link {
+        font-size: 9px;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand"><a href="../index.html">Daily <b>AI</b>·半導体 Briefing</a></div>
+  <a href="#ai"          class="lnk-ai">AI</a>
+  <a href="#chip"        class="lnk-chip">半導体</a>
+  <a href="#sources">ソース</a>
+  <a href="#nav-history">アーカイブ</a>
+</nav>
+
+<div class="shell" id="top">
+  <header class="hero fi show">
+    <div class="hero-eyebrow">
+      <span>DAILY BRIEFING</span>
+      <span>デイリーAI・半導体ニュース（2026-03-02）</span>
+    </div>
+    <h1>デイリー<em>AI</em>·<br>半導体ニュース（2026-03-02）</h1>
+    <p class="hero-sub">Generated 2026-03-03 01:34:47 (Asia/Tokyo)</p>
+  </header>
+</div>
+
+<div class="shell">
+  <section class="highlights-wrap">
+    <div class="sec-label">今日のハイライト（3選）</div>
+    <div class="hl-grid">
+<div class="hl-card fi">
+  <div class="hl-num">01</div>
+  <p class="hl-title">AnthropicがHumanloop買収とClaudeロードマップを連続で出し、モデル性能競争から運用基盤競争へ軸足が移っている。</p>
+</div>
+<div class="hl-card fi">
+  <div class="hl-num">02</div>
+  <p class="hl-title">SamsungはAI-RAN協業（NVIDIA）とHBM4量産開始を発表し、AI計算需要が通信網とメモリ供給の両面で拡大した。</p>
+</div>
+<div class="hl-card fi">
+  <div class="hl-num">03</div>
+  <p class="hl-title">コミュニティではQwen 35Bやmicrogptが再加速し、ローカル推論・学習コスト最適化の流れが強まった。</p>
+</div>
+    </div>
+  </section>
+</div>
+
+<div class="shell">
+  <section class="section" id="ai">
+    <div class="section-head">
+      <h2 class="section-title ai">AI ニュース</h2>
+      <span class="section-en">Artificial Intelligence</span>
+      <span class="section-cnt">9 articles</span>
+    </div>
+<div class="subsec">
+  <div class="subsec-label">公式ソース</div>
+  <div class="cards">
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-ai">公式 AI</span>
+      <span class="card-src">Anthropic · 2026-02-25</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">AnthropicがHumanloop買収を公表し、エンタープライズ向けLLM運用基盤を強化した。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Anthropicは2026年2月25日、Humanloop買収を公式発表した。発表文脈は単なる人員獲得ではなく、企業のプロンプト評価・運用管理を強化する方向性に重点が置かれている。これによりClaudeの導入価値が「モデル性能」だけでなく「運用のしやすさ」まで拡張された。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">2026年は各社がAgent機能を拡大しており、企業導入では監査・評価・継続運用がボトルネックになっている。運用レイヤーの買収は、モデル競争がMLOps競争に移っているサイン。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">店頭で法人相談を受けるとき、AI導入は「使えるか」だけでなく「継続管理できるか」の説明が重要になる。個人開発でも、ログ/評価/回帰チェックを最初から設計する優先度が上がる。</p>
+</div>
+      <a href="https://www.anthropic.com/news/anthropic-acquires-humanloop" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-ai">公式 AI</span>
+      <span class="card-src">Anthropic · 2026-02-24</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">AnthropicがClaudeの次フェーズを示し、適用範囲拡張を明確化した。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Anthropic Newsで2026年2月24日に「The next chapter of Claude」が公開された。内容は、Claude活用の次段階を示すロードマップ更新で、開発者および企業利用の拡大に焦点を当てている。新モデル単発ではなく、利用文脈と展開方針を整理した告知となっている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">AI市場はモデル単体比較から、利用体験・定着率・運用導線の競争に移っている。ロードマップ公開は採用側の意思決定を早める。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">業務では「今使える機能」と「今後の拡張余地」をセットで提案する必要がある。個人開発では、将来のAPI変更を見越した抽象化設計を入れておく判断材料になる。</p>
+</div>
+      <a href="https://www.anthropic.com/news/the-next-chapter-of-claude" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-ai">公式 AI</span>
+      <span class="card-src">GitHub Changelog · 2026-02-27</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">GitHubがCopilotを含む週次更新を公開し、開発運用の変化を継続提示した。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">GitHub Changelogに2026年2月27日のrelease roundupが掲載された。Copilot・Projects等の更新を横断でまとめた公式更新で、開発フローに直結する変更点が定期投入されている。週次で変化を追う必要がある更新ペースが続いている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">AIコーディングは機能更新が速く、数週間でベストプラクティスが変わる。公式changelog追跡は運用効率の差につながる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">店頭向け社内資料でも、静的マニュアルより「更新前提」の運用が必要。個人開発では、週次でワークフロー見直しの時間を固定する価値が高い。</p>
+</div>
+      <a href="https://github.blog/changelog/2026-02-27-release-roundup/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="subsec">
+  <div class="subsec-label">Zenn ピックアップ</div>
+  <div class="cards">
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-zenn">Zenn</span>
+      <span class="card-src">Zenn · 2026-03-01</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">複数モデル併用の実装フローを比較する国内実践記事が公開された。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">2026年3月1日公開のZenn記事で、Claude Code・o3・Gemini 2.0を使い分ける開発検証が共有された。単一ツール礼賛ではなく、タスクごとの役割分担を前提にした運用が述べられている。日本語環境での手順情報がまとまっている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">現場では「最強1本」より「組み合わせ運用」が主流になりつつある。日本語記事はチーム展開時の説明コストを下げる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">店頭業務の案内資料作成でも、下書きAIと校正AIの分離を試せる。個人開発では、設計・実装・レビューでモデルを分ける運用に移行しやすい。</p>
+</div>
+      <a href="https://zenn.dev/search?q=Claude+Code&amp;order=latest" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-zenn">Zenn</span>
+      <span class="card-src">Zenn · 2026-03-01</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">Claude Sonnet 4導入の国内検証事例が共有された。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">ZennのClaude Codeトピックで、2026年3月1日付の導入記事が確認できた。導入背景、実際の利用感、構成上の注意点が整理されている。新モデル導入の実務ハードルを下げる内容になっている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">公式発表だけでは運用像が見えにくい。コミュニティ実装知が導入判断を補完する。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">業務では、社内説明時に「国内での実例」を添えると説得力が上がる。個人開発では、早期導入時の落とし穴を先回りしやすい。</p>
+</div>
+      <a href="https://zenn.dev/topics/claudecode/articles" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="subsec">
+  <div class="subsec-label">note ピックアップ</div>
+  <div class="cards">
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-note">note</span>
+      <span class="card-src">note · 2026-02-16</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">noteでは48時間内候補が不足し、14日拡張で実践記事を1件採用した。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">固定クエリ（生成AI/Claude Code/LLM/Cursor AI/AI開発/NVIDIA/半導体）で新着確認したが、48時間では採用基準を満たす件数が不足。7日拡張でも不足し、14日まで拡大して1件を採用した。記事性質は速報より実践記録寄りだった。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">noteは速報ソースとしては弱い一方、実務ノウハウの密度が高い。速報不足時の補完カテゴリとしては有効。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">日次報告では速報カテゴリと実践カテゴリを分けて扱う方が読み手に伝わる。個人開発では、失敗談・運用Tipsの抽出対象として継続監視する価値がある。</p>
+</div>
+      <a href="https://note.com/search?q=%E7%94%9F%E6%88%90AI&amp;sort=new" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="subsec">
+  <div class="subsec-label">Reddit / HN ピックアップ</div>
+  <div class="cards">
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-reddit">Reddit</span>
+      <span class="card-src">r/ClaudeAI · 2026-02-28</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">Anthropic教材無償公開の投稿が高反応を獲得した。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">r/ClaudeAIで2026年2月28日に投稿され、学習導線の整備が話題化した。投稿ではClaude CodeやAPI関連学習の体系性が評価されている。コミュニティ観測として、導入期ユーザーの学習需要が強いことが確認できる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">導入期の定着率は教材品質に左右される。教育導線はエコシステム競争の実質指標。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">店舗スタッフ教育や個人学習計画に、公式教材中心の順序を組みやすい。情報の鮮度確認を前提に、毎週チェック対象にできる。</p>
+</div>
+      <a href="https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-reddit">Reddit</span>
+      <span class="card-src">r/LocalLLaMA · 2026-02-28</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">Qwen 35Bの実運用評価が拡散し、中規模ローカルモデルの存在感が増した。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">r/LocalLLaMAで2026年2月28日に、Qwen 3.5-35Bの運用所感投稿が拡散した。内容はベンチマークより日常タスクでの実用性を重視した報告。クラウド依存を減らせる可能性が議論された。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">中規模モデル実用化はGPU選定、ランニングコスト、ローカル運用戦略を変える。OSSモデル競争が再加速している。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">業務上の説明でも「クラウド一択」から選択肢提示に移行できる。個人開発では、ローカル検証を先行させるコスト最適化が取りやすい。</p>
+</div>
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-hn">Hacker News</span>
+      <span class="card-src">HN · 2026-03-01</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">microgptがHNで再注目され、最小実装の教育価値が再評価された。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Karpathyのmicrogpt記事（2026-02-12公開）が、2026-03-01のHNで再拡散した。200行級の最小構成でLLM学習要素を理解できる点が議論された。実運用より教育用途での価値が中心。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">AIツール利用が進むほど、基礎理解の不足がボトルネックになりやすい。軽量教材は技術チームの共通知識を作りやすい。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">スタッフ向け勉強会や個人学習で、ブラックボックス利用の補助教材として採用しやすい。AI提案時の説明品質を底上げできる。</p>
+</div>
+      <a href="http://karpathy.github.io/2026/02/12/microgpt/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+  </section>
+</div>
+
+<div class="shell">
+  <section class="section" id="chip">
+    <div class="section-head">
+      <h2 class="section-title chip">半導体ニュース</h2>
+      <span class="section-en">Semiconductors</span>
+      <span class="section-cnt">5 articles</span>
+    </div>
+<div class="subsec">
+  <div class="subsec-label">公式ソース</div>
+  <div class="cards">
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-chip">公式 半導体</span>
+      <span class="card-src">Samsung · 2026-02-28</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">SamsungとNVIDIAがAI-RAN協業を発表し、通信網へのAI半導体統合を前進させた。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Samsung Global Newsroomで2026年2月28日にAI-RAN協業が公表された。Samsung vRANとNVIDIA AI基盤を組み合わせる構想が示され、通信インフラ側のAI処理強化が主題。MWC文脈での実装展開も示唆された。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">AI半導体需要がDC中心から通信網にも拡大している。GPU/アクセラレータの供給競争がさらに広がる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">店頭提案で「端末性能 + ネットワーク側最適化」の説明が可能になる。個人開発でもエッジ遅延設計を初期から考える必要がある。</p>
+</div>
+      <a href="https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-chip">公式 半導体</span>
+      <span class="card-src">Samsung · 2026-03-01</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">SamsungがHBM4量産開始を発表し、AIメモリ供給の次フェーズに入った。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">2026年3月1日、SamsungがAI向けHBM4の量産開始を発表した。HBM4はAIアクセラレータ周辺の帯域需要を支える要素として位置づけられている。製品化ステータスが「開発」から「量産」へ進んだことがポイント。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">HBM供給はAIサーバ価格と納期を左右する。量産開始は需給緩和期待と競争激化の両面を持つ。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">店頭での価格動向説明に、メモリ供給改善の観点を追加できる。自作/開発環境提案でも、今後の構成選定を見直す根拠になる。</p>
+</div>
+      <a href="https://news.samsung.com/global/samsung-electronics-begins-mass-production-of-industrys-first-ai-optimized-hbm4" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-chip">公式 半導体</span>
+      <span class="card-src">Tom's Hardware · 2026-03-02</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">TSMCのUAEファブ検討報道が出て、地理分散戦略への関心が高まった。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Tom's Hardwareが2026年3月2日に、TSMCのUAE進出可能性を報じた。内容は2nm級を含む可能性に言及するが、正式発表段階ではない。一次報道としてサプライチェーン分散の観測材料になる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">地政学リスクと供給安定性の両立は2026年も最重要論点。製造拠点の分散は長期需給に影響する。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">業務では価格変動の背景説明に使える。個人開発では調達不確実性を見越した複数構成の準備が有効。</p>
+</div>
+      <a href="https://www.tomshardware.com/tech-industry/tsmc-could-build-chip-fab-in-uae-possibly-using-2nm-process-technology" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="subsec">
+  <div class="subsec-label">コミュニティ（Reddit / HN）</div>
+  <div class="cards">
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-reddit">Reddit</span>
+      <span class="card-src">r/hardware · 2026-02-28</span>
+      <span class="conf conf-low"><span class="conf-dot"></span>確信度: 低</span>
+    </div>
+    <p class="card-summary">LPCAMM2採用機の投稿が注目され、可換メモリ規格の実装例が共有された。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">r/hardwareで2026年2月28日に投稿され、ThinkBook 16+の仕様・価格が話題となった。LPCAMM2の採用で、性能と保守性の両立が論点化。消費者向け製品で新規格の存在感が高まりつつある。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">AI PC時代はメモリ帯域と拡張性が価値を持つ。規格変化は製品選定軸に直結する。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">店頭で将来拡張を重視する顧客提案に使える。個人開発ではローカル推論端末の選定条件を更新すべき。</p>
+</div>
+      <a href="https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-hn">Hacker News</span>
+      <span class="card-src">HN/AMD · 2026-02-25</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">AMDの大規模ローカル推論記事がHNで再拡散し、ローカル実行上限の議論が進んだ。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">AMD Developer記事（2026-02-25）がHNで継続的に参照され、Ryzen AI Max+クラスタでの大規模推論構成が議論された。データセンター依存ではない実行可能性の検討材料として注目されている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">ローカル推論の拡張はGPU/メモリ需要の構造を変える。半導体選定が「クラウド前提」から分岐し始めている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">業務では顧客の用途別にクラウド/ローカル併用提案を作りやすい。個人開発ではプロトタイプの実行基盤コストを抑える選択肢になる。</p>
+</div>
+      <a href="https://www.amd.com/en/developer/resources/technical-articles/running-a-one-trillion-parameter-large-language-model-on-amd-ryzen-ai-max-plus-cluster.html" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+  </section>
+</div>
+
+
+<div class="shell">
+  <section id="nav-history" style="display:none"></section>
+</div>
+
+<footer>
+  <p>Daily AI · 半導体 Briefing</p>
+  <p>デイリーAI・半導体ニュース（2026-03-02） · Generated 2026-03-03 01:34:47 (Asia/Tokyo)</p>
+</footer>
+
+<script>
+const ARTICLES_DB = [];
+
+function toggle(el) {
+  const card = el.closest('.card');
+  const isOpen = card.classList.toggle('open');
+  const lbl = card.querySelector('.toggle-lbl');
+  if (lbl) lbl.textContent = isOpen ? '閉じる' : '詳細を読む';
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderNavHistory() {
+  if (typeof ARTICLES_DB === 'undefined' || !Array.isArray(ARTICLES_DB) || ARTICLES_DB.length === 0) return;
+  const nav = document.getElementById('nav-history');
+  if (!nav) return;
+
+  const sorted = [...ARTICLES_DB].sort((a, b) => b.date.localeCompare(a.date));
+  const currentPath = window.location.pathname.replace(/\/?$/, '/');
+  const marker = '/daily-news/';
+  const markerIdx = currentPath.indexOf(marker);
+  const repoPrefix = markerIdx >= 0 ? currentPath.slice(0, markerIdx) : '';
+
+  function resolveEntryHref(entry) {
+    const rawPath = (entry && typeof entry.path === 'string' && entry.path)
+      ? entry.path
+      : `${marker}${entry.date || ''}/`;
+    if (/^https?:\/\//.test(rawPath)) return rawPath;
+    if (rawPath.startsWith('/')) return `${repoPrefix}${rawPath}`;
+    return rawPath;
+  }
+
+  const items = sorted.map(entry => {
+    const isCurrent = currentPath.includes(entry.date);
+    const href = resolveEntryHref(entry);
+    return (
+      `<a href="${escHtml(href)}" class="nav-hist-item${isCurrent ? ' current' : ''}">` +
+      `<span class="nav-hist-date">${escHtml(entry.date)}</span>` +
+      `<span class="nav-hist-title">${escHtml(entry.title)}</span>` +
+      `</a>`
+    );
+  }).join('\n');
+
+  nav.innerHTML =
+    `<div class="nav-hist-label">他の日のニュースアーカイブ</div>` +
+    `<div class="nav-hist-list">${items}</div>`;
+  nav.style.display = 'block';
+}
+
+// Fade-in on scroll
+const _io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('show'); _io.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fi').forEach(el => _io.observe(el));
+
+renderNavHistory();
+</script>
+</body>
+</html>

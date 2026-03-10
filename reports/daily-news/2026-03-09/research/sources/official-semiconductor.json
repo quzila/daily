@@ -1,0 +1,36 @@
+{
+  "source": "official-semiconductor",
+  "date": "2026-03-09",
+  "items": [
+    {
+      "title": "NVIDIA and Coherent Announce Strategic Partnership to Develop Optics Technology to Scale Next-Generation Data Center Architecture",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-and-coherent-announce-strategic-partnership-to-develop-optics-technology-to-scale-next-generation-data-center-architecture",
+      "published_at": "2026-03-02",
+      "segment": "semiconductor",
+      "what": "NVIDIAとCoherentが次世代AIデータセンター向け光技術の複数年提携を発表した。NVIDIAはCoherentへ20億ドルを投資し、さらに将来の先端レーザー製品と光ネットワーク製品の供給枠を確保する。発表では、光インターコネクトと先端パッケージ統合をAI factoryの次段階を支える基盤と位置づけ、米国内製造能力の拡張も前面に出した。",
+      "why": "AIインフラの制約はGPUチップ単体から、光配線とパッケージを含むシステム全体へ移っている。NVIDIAが供給確保と製造能力への資本投入を同時に進めたことは、次のボトルネックがフォトニクスと高帯域接続にあると自ら示した動きとして重い。",
+      "so_what": "半導体ニュースを見るときも、今後はGPUロードマップだけでなく、光学部品、パッケージ、ネットワークの供給線まで一体で追う必要がある。自分の調達判断でも、計算性能より先に相互接続と消費電力が制約になる前提でニュースを読むべきだ。",
+      "confidence": "high"
+    },
+    {
+      "title": "Samsung Takes Next Stride Toward AI-Native Software-Driven Networks With NVIDIA",
+      "url": "https://news.samsung.com/global/samsung-takes-next-stride-toward-ai-native-software-driven-networks-with-nvidia",
+      "published_at": "2026-03-01",
+      "segment": "semiconductor",
+      "what": "SamsungはR&DセンターでvRANソフトウェアとNVIDIAのaccelerated computing platformを組み合わせたmulti-cell testを完了し、MWC 2026でAI-RANデモを披露すると発表した。AI MIMO beamformerで下り性能とスペクトル効率を上げる構成で、Grace CPUとL4 GPUを載せたARC Compactとの統合も終え、商用化検証を進めている。",
+      "why": "AI向け半導体の需要先がデータセンターだけでなく通信ネットワークへ広がると、GPU・CPU・無線ソフトの最適化が一体の競争になる。既存スペクトルから容量を引き出すAI-RANは、キャリア投資を動かす現実的なユースケースとしてチップ需要の裾野を広げる。",
+      "so_what": "自分のウォッチでも、半導体トピックを学習用クラスタだけに限定しない方がいい。通信やエッジの現場でGPU/CPUがどう組み込まれるかを追うと、どの用途で需要が本格化するかを早めに読みやすくなる。",
+      "confidence": "high"
+    },
+    {
+      "title": "AMD and Nutanix Announce Strategic Partnership to Advance an Open and Scalable Platform for Enterprise AI",
+      "url": "https://www.amd.com/en/newsroom/press-releases/2026-2-25-amd-and-nutanix-announce-strategic-partnership-to.html",
+      "published_at": "2026-02-25",
+      "segment": "semiconductor",
+      "what": "AMDとNutanixは、agentic AIアプリケーション向けのopen full-stack AI infrastructureを共同開発する複数年提携を発表した。AMDはNutanix株に1.5億ドルを投資し、さらに最大1億ドルをjoint engineeringとgo-to-marketへ拠出する。初の共同開発プラットフォームは2026年後半投入予定で、EPYC CPU、Instinct GPU、ROCm、Nutanix Cloud Platform/Kubernetes Platformを束ねる構想だ。",
+      "why": "企業のAI基盤選定は、GPU単体性能より『どのスタックで長く運用できるか』に重心が移っている。AMDがソフトウェア、ハイブリッド運用、販売面まで含めてNutanixと組んだことは、垂直統合型AIスタックへの対抗軸が明確になったことを示す。",
+      "so_what": "自分がAIインフラを評価するなら、今後はベンチマークやVRAMだけでなく、ROCm互換性、Kubernetes運用、ライフサイクル管理まで含めて見るべきだ。単一ベンダー依存を避けたい案件では、この種のオープン構成が現実的な代替になるかを早めに確認したい。",
+      "confidence": "high"
+    }
+  ]
+}

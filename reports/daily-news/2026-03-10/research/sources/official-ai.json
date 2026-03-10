@@ -1,0 +1,26 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-10",
+  "items": [
+    {
+      "title": "Copilot code review now runs on an agentic architecture",
+      "url": "https://github.blog/changelog/2026-03-05-copilot-code-review-now-runs-on-an-agentic-architecture/",
+      "published_at": "2026-03-05",
+      "segment": "ai",
+      "what": "GitHubはCopilot code reviewのagentic tool-callingアーキテクチャをGAにした。レビュー時に関連コード、ディレクトリ構造、参照先まで取りに行くことで、差分単体ではなくリポジトリ全体の構造を踏まえた指摘を返す設計で、GitHub Actions上で動作し、self-hosted runner利用時は一度だけ追加設定が必要になる。",
+      "why": "AIレビューの価値は『コメント数』ではなく、設計整合性まで踏み込んだ高シグナルな指摘をどれだけ返せるかで決まる。PR差分だけを読む補助から、必要な文脈を自分で取りに行くreview agentへ進んだことで、レビュー自動化の実運用ハードルが一段下がった。",
+      "so_what": "自分のPR運用でも、lintや型検査の後ろに置く一次レビューを、文脈取得型のagentへ置き換えられるか試す価値がある。導入時はrunner構成とレビューコメントのノイズ量を見て、どこまで人間レビューを前倒しで削れるかを測りたい。",
+      "confidence": "high"
+    },
+    {
+      "title": "Codex Security: now in research preview",
+      "url": "https://openai.com/index/codex-security-now-in-research-preview/",
+      "published_at": "2026-03-06",
+      "segment": "ai",
+      "what": "OpenAIがCodex Securityをresearch previewで公開した。リポジトリから脅威モデルを組み立て、検出した脆弱性を検証環境で裏取りしながら修正案まで返す構成で、ベータでは30日で120万超のコミットを走査し、792件のcriticalと10,561件のhigh-severity findingを検出した。ノイズはあるケースで84%減り、過大なseverity判定も90%以上抑えたとしている。",
+      "why": "AIがコード生成を加速するほど、レビュー工程では『どの警告を本当に直すべきか』の選別コストが膨らむ。脅威モデルと検証を組み合わせて誤検知を減らす設計は、単純な静的解析の延長ではなく、agent時代のセキュリティ運用そのものを再設計する動きとして重要だ。",
+      "so_what": "自分の開発では、生成後に別ツールで一括スキャンするだけでなく、リポジトリ固有の前提を踏まえた検証付きレビューをCI近くへ置くかを見直したい。採用判断では検出件数より、誤検知率と修正パッチのレビューしやすさを評価軸にするべきだ。",
+      "confidence": "high"
+    }
+  ]
+}

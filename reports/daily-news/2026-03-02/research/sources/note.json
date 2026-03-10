@@ -1,0 +1,20 @@
+{
+  "source": "note",
+  "date": "2026-03-02",
+  "items": [
+    {
+      "title": "生成AI・LLM活用の実践記事（48時間外）",
+      "url": "https://note.com/search?q=%E7%94%9F%E6%88%90AI&sort=new",
+      "published_at": "2026-02-16",
+      "segment": "ai",
+      "what": "note検索で生成AI関連の実践記事を確認したが、直近48時間に十分な候補は確保できず、14日拡張で採用した。",
+      "why": "noteは個人実践知の比率が高く、速報性より現場ノウハウの蓄積が価値になるため補完対象として残した。",
+      "confidence": "low"
+    }
+  ],
+  "attempt_log": [
+    "48時間: 生成AI/Claude Code/LLM/Cursor AI/AI開発/NVIDIA/半導体 を確認したが条件一致不足",
+    "7日拡張: 候補不足",
+    "14日拡張: 1件採用"
+  ]
+}

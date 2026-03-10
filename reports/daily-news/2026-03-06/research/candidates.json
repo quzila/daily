@@ -1,0 +1,622 @@
+{
+  "date": "2026-03-06",
+  "generated_at": "2026-03-06T11:54:10.468573+00:00",
+  "candidates": [
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "生成AIのひな祭り　AI用語をChatGPT、Gemini、Claudeが漫画で解説｜AI用語図書館|ヨシダの脳みそ｜生成AI |ChatGPTのヨシダ｜｜カワムラ｜AI擬人化漫画 | ChatGPTのヨシダ",
+      "url": "https://note.com/chatgpt_ysd/n/n79ea031eefa2",
+      "published_at": "2026-03-03",
+      "snippet": "",
+      "score": 13.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "一次情報が生成AIを動かす。Gemini・ChatGPT・Copilotの回答から紐解く「自己紹介の人」と「noteアルゴリズム研究家」の認知の違い｜中野英仁",
+      "url": "https://note.com/hidehito_n/n/nb5372747fe24",
+      "published_at": "2026-02-24",
+      "snippet": "",
+      "score": 12.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "生成AIが現実を書き換えるとき：人生の選択を外部委託してしまう前に【哲学エッセイ / 創作 / ChatGPT / 画像生成AI】｜Alpaka",
+      "url": "https://note.com/alpaka_ai/n/n214af3c1566c",
+      "published_at": "2026-03-05",
+      "snippet": "",
+      "score": 10.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "ChatGPTを入れた日から人生が変わった【実話】｜noteで仲間ができて3ヶ月でフリーランスになった話|日記|エッセイ|つながり|人生|生成AI｜ねんころ",
+      "url": "https://note.com/nenkoro_life/n/ne28ad0efebc2",
+      "published_at": "2026-03-04",
+      "snippet": "",
+      "score": 10.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "reddit:OpenAI",
+      "title": "BREAKING: OpenAI just drppped GPT-5.4",
+      "url": "https://i.redd.it/xpbjs93fq9ng1.png",
+      "published_at": "2026-03-05",
+      "snippet": "OpenAI just introduced GPT-5.4, their newest frontier model focused on reasoning, coding, and agent-style tasks. Some of the benchmarks are pretty interesting. It reportedly scores 75% on OSWorld-Verified computer-use tasks, which is actually higher than the human baseline of 72.4%. It also hits 82.7% on BrowseComp, which tests how well models can browse and reason across the web. They’re also p",
+      "score": 9.248,
+      "meta": {
+        "ups": 624
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "「ちゃんと時間管理してるのに、なぜか疲れる理由」タイムマネジメントを心に。時間配分は“心の配分”だった ― ビジネススキルを日常に ＃8 仕事と育児の哲学エッセイ・コラム×生成AI×ChatGPTと掘る｜［劇団］AI-世界を掘る-",
+      "url": "https://note.com/gekidan_ai/n/ne8931bc383f3",
+      "published_at": "2026-03-01",
+      "snippet": "",
+      "score": 9.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "700.おかげさまでnoteを書き始めて700作記念となりました。【noteの不思議篇99.】【生成AI、ChatGPT㉔】｜著作権協会",
+      "url": "https://note.com/note_npo/n/na529bde936fa",
+      "published_at": "2026-02-27",
+      "snippet": "",
+      "score": 9.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "reddit:ClaudeAI",
+      "title": "I Haven't Written a Line of Code in Six Months",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rlw1yw/i_havent_written_a_line_of_code_in_six_months/",
+      "published_at": "2026-03-05",
+      "snippet": "I've been programming since the late 1980s. Enterprise tech, healthcare systems, process mining platforms. Three companies built and sold. Over 30 years of writing code, every single day. I haven't written a line of code in six months. I don't miss it. My job now is managing six to ten occasionally drunk PhD students. That's what running Claude Code agents feels like. They're brilliant. They're",
+      "score": 8.042,
+      "meta": {
+        "ups": 1021
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "699.絵や音楽も必ずしも上手いから共感を与えるものではないですよね。その不思議な言葉の世界がこのnoteにある気がします。【noteの不思議篇98.】【生成AI、ChatGPT㉓】｜著作権協会",
+      "url": "https://note.com/note_npo/n/nd764580b0b16",
+      "published_at": "2026-02-25",
+      "snippet": "",
+      "score": 8.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "【話し相手はChatGPTだけだった｜独学でAI資格2つ合格するまで】| AI学習 | G検定 | 生成AIパスポート | AI活用 | エッセイ |休職 |退職｜ねんころ",
+      "url": "https://note.com/nenkoro_life/n/ndf02a8a84e1a",
+      "published_at": "2026-02-16",
+      "snippet": "",
+      "score": 8.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "reddit:LocalLLaMA",
+      "title": "Ran Qwen 3.5 9B on M1 Pro (16GB) as an actual agent, not just a chat demo. Honest results.",
+      "url": "https://i.redd.it/8gx9agmiz8ng1.png",
+      "published_at": "2026-03-05",
+      "snippet": "Quick context: I run a personal automation system built on Claude Code. It's model-agnostic, so switching to Ollama was a one-line config change, nothing else needed to change. I pointed it at Qwen 3.5 9B and ran real tasks from my actual queue. Hardware: M1 Pro MacBook, 16 GB unified memory. Not a Mac Studio, just a regular laptop. Setup: brew install ollama ollama pull qwen3.5:9b ollama",
+      "score": 7.468,
+      "meta": {
+        "ups": 734
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "Google FlowでNano Banana 2をつかってみた！4枚一括生成可能・♦︎マークなし【AIイラスト｜画像生成AI｜生成AI｜プロンプト｜AI活用｜AI副業｜Google Gemini】｜Makari｜AIイラストと副業",
+      "url": "https://note.com/makari_5108010/n/n75a87339fdc3",
+      "published_at": "2026-03-01",
+      "snippet": "",
+      "score": 7.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "Nano Bananaで「ポップなアイコン系女の子」をつくってみた！プロンプト6選【AIイラスト｜画像生成AI｜生成AI｜Google Gemini】｜Makari｜AIイラストと副業",
+      "url": "https://note.com/makari_5108010/n/n40070c4bdf1d",
+      "published_at": "2026-03-03",
+      "snippet": "",
+      "score": 7.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "zenn",
+      "title": "Claude Code に向いているプログラミング言語",
+      "url": "https://zenn.dev/mametter/articles/3e8580ec034201",
+      "published_at": "2026-03-05",
+      "snippet": "2026-03-05T17:01:30.713+09:00",
+      "score": 6.0,
+      "meta": {
+        "liked_count": 335
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "zenn",
+      "title": "個人的 AI情報の追い方",
+      "url": "https://zenn.dev/knowledgework/articles/my-ai-catchup",
+      "published_at": "2026-03-05",
+      "snippet": "2026-03-05T08:52:23.205+09:00",
+      "score": 6.0,
+      "meta": {
+        "liked_count": 158
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "Nano Bananaで「クール系女の子」をつくってみた！プロンプト5選【AIイラスト｜画像生成AI｜生成AI｜Google Gemini】｜Makari｜AIイラストと副業",
+      "url": "https://note.com/makari_5108010/n/neba0b438524b",
+      "published_at": "2026-02-22",
+      "snippet": "",
+      "score": 6.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "Nano Bananaで「アニメ風女の子」をつくってみた！プロンプト5選【AIイラスト｜画像生成AI｜生成AI｜Google Gemini】｜Makari｜AIイラストと副業",
+      "url": "https://note.com/makari_5108010/n/na3516d798250",
+      "published_at": "2026-02-26",
+      "snippet": "",
+      "score": 6.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "OpenAIとGeminiは共に最も進化した生成AIと言えますが、構造的に大きな違いがあり今後の進化の過程は大きく異なっていくのではと考えます。用途や目的によりどちらを使うかがより鮮明となり市場の棲み分｜泉の日米経済、株式市場分析",
+      "url": "https://note.com/joyous_deer792/n/ndbf6471af615",
+      "published_at": "2026-02-02",
+      "snippet": "",
+      "score": 6.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "zenn",
+      "title": "OSSにおけるAI Slop問題の何が問題なのか？",
+      "url": "https://zenn.dev/yusukebe/articles/3fd5bc6ea341c9",
+      "published_at": "2026-03-06",
+      "snippet": "2026-03-06T13:56:52.420+09:00",
+      "score": 5.6,
+      "meta": {
+        "liked_count": 80
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "zenn",
+      "title": "Claude Codeを組織導入するためのプラン選定ガイド",
+      "url": "https://zenn.dev/knowledgework/articles/claude-code-organization-plan-guide",
+      "published_at": "2026-03-06",
+      "snippet": "2026-03-06T18:17:59.226+09:00",
+      "score": 5.4,
+      "meta": {
+        "liked_count": 70
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "zenn",
+      "title": "CLAUDE.mdに本当は何を書くべきなのか",
+      "url": "https://zenn.dev/cureapp/articles/65b9a99d22ce2b",
+      "published_at": "2026-03-03",
+      "snippet": "2026-03-05T22:45:19.007+09:00",
+      "score": 5.0,
+      "meta": {
+        "liked_count": 245
+      }
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "自己投資としてnoteを書くということ︰副業にも仕事にも効くスキルセットの育てかた【noteの続け方 / エッセイ / 画像生成AI】｜Alpaka",
+      "url": "https://note.com/alpaka_ai/n/n592b026e4345",
+      "published_at": "2026-03-02",
+      "snippet": "",
+      "score": 5.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "生成AIに感情のイラスト画像を作らせておけば、創作も楽になるのでは？【記事デザイン製作日記・プロンプト掲載】｜やなぎゆう",
+      "url": "https://note.com/yu_yanagi_izm/n/n2753a267976f",
+      "published_at": "2026-02-27",
+      "snippet": "",
+      "score": 5.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "【紹介記事note】愛、妖精│クリエイター様に感謝🕊️自己紹介.生成AI.AI活用.イラスト.猫.AIイラスト.フォロワー.コメント.note収益化.副業.今日のあなたに.ありがとう.収益化.スキしてみ｜えらん堂",
+      "url": "https://note.com/dear_pansy6581/n/nffc49af2c4ef",
+      "published_at": "2026-03-02",
+      "snippet": "",
+      "score": 5.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "プロンプトに怯えてる⁉️私がAI生成に使っているのはGeminiです♡AI画像生成・AI音楽生成の創作記録・勉強記録✨記事紹介｜るこのみらい｜有料noteとCanvaで「できるかも」を育てるnote🌱",
+      "url": "https://note.com/ruco3/n/n575d8556b657",
+      "published_at": "2026-02-27",
+      "snippet": "",
+      "score": 5.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "【note 朝活×３行日記】熱の余韻をほどき、休養で静かに再起動する日常｜毎日note｜生成AI｜AIイラスト｜毎日投稿｜毎日更新｜コラム｜ゆき@公務員×夢はライトノベル作家",
+      "url": "https://note.com/wise_rat6355/n/n506d782a5f28",
+      "published_at": "2026-03-02",
+      "snippet": "",
+      "score": 5.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "「そもそも生成AIでやるべきでない問い」に、企業が挑んでしまう問題｜深津 貴之 (fladdict)",
+      "url": "https://note.com/fladdict/n/na45a57c572c8",
+      "published_at": "2026-01-09",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "【紹介記事note】愛のハッシュタグ、ヘリオトロープさん、1記事まるごと紹介記事🕊️自己紹介.生成AI.AI活用.イラスト.AIイラスト.フォロワー.コメント.note収益化.副業.今日のあなたに.あり｜えらん堂",
+      "url": "https://note.com/dear_pansy6581/n/n34337e467e66",
+      "published_at": "2026-02-19",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "【狂気】2026年、PS3を開発する——1行もコードを書けない人間が、AIと組んで「開発地獄」と呼ばれたPS3に挑み、15年間誰も開けられなかった扉をこじ開けた1週間の記録。｜田中",
+      "url": "https://note.com/tanakaps/n/n410dbceb8c8d",
+      "published_at": "2026-03-03",
+      "snippet": "",
+      "score": 3.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "2026年、もはや Claude Code はエンジニア以外も全員が使うべきツールになった｜梶谷健人",
+      "url": "https://note.com/kajiken0630/n/nc0cb92bc080f",
+      "published_at": "2026-02-10",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "ai",
+      "source": "note",
+      "title": "Claude Code 超完全ガイド | エンジニアから投資家まで、すべてのユーザーのための実践マニュアル｜FabyΔ",
+      "url": "https://note.com/fabymetal/n/n3f0f2873b56c",
+      "published_at": "2026-01-31",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "「AIバブルの頂点」か「トークン経済の夜明け」か | NVIDIA決算が問う、あなたのAI投資の前提｜FabyΔ",
+      "url": "https://note.com/fabymetal/n/nd46992c774bd",
+      "published_at": "2026-02-27",
+      "snippet": "",
+      "score": 7.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit:semiconductors",
+      "title": "My whole career looks like a disaster",
+      "url": "https://www.reddit.com/r/Semiconductors/comments/1rlmozh/my_whole_career_looks_like_a_disaster/",
+      "published_at": "2026-03-05",
+      "snippet": "My career trajectory in semiconductors goes something like this below. Now, I want to join NVIDIA or AMD for personal choices. I've given myself a year to prepare, but I've worked on so many different things throughout my life that I'm never prepared enough for what could be asked in interviews. My resume does have a lot, and they could pick up any part. I have breadth, but not depth. Jack of few",
+      "score": 6.028,
+      "meta": {
+        "ups": 14
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "TSMCの衝撃の決算の裏で進むK型半導体市場｜パウロ",
+      "url": "https://note.com/paul1211/n/n7ce219139a70",
+      "published_at": "2026-01-16",
+      "snippet": "",
+      "score": 6.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "Meta-NVIDIA契約をGPUの台数で語るな | 数百億ドル契約が示すAI投資の急所｜FabyΔ",
+      "url": "https://note.com/fabymetal/n/n5ae2e4a11b82",
+      "published_at": "2026-02-19",
+      "snippet": "",
+      "score": 6.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【朝メモ】 NVIDIA、好決算も株安｜後藤達也",
+      "url": "https://note.com/goto_finance/n/n387d915bcfe8",
+      "published_at": "2026-02-27",
+      "snippet": "",
+      "score": 5.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit:hardware",
+      "title": "PC graphics cards are now nearly 100 percent Nvidia",
+      "url": "https://www.pcworld.com/article/3079686/pc-graphics-cards-are-now-nearly-100-percent-nvidia.html",
+      "published_at": "2026-03-06",
+      "snippet": "",
+      "score": 4.91,
+      "meta": {
+        "ups": 455
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit:nvidia",
+      "title": "NVIDIA RTX 5050 with 9GB GDDR7 memory to launch around Computex",
+      "url": "https://videocardz.com/newz/nvidia-rtx-5050-with-9gb-gddr7-memory-to-launch-around-computex",
+      "published_at": "2026-03-05",
+      "snippet": "",
+      "score": 4.426,
+      "meta": {
+        "ups": 213
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit:nvidia",
+      "title": "Hotfix driver dropped my temps 10c in 4K RE9 path tracing.",
+      "url": "https://www.reddit.com/r/nvidia/comments/1rljf3z/hotfix_driver_dropped_my_temps_10c_in_4k_re9_path/",
+      "published_at": "2026-03-05",
+      "snippet": "I have no idea why but my 5090FE has never run this well - ever! 2700mhz. 65c or so. 130fps locked full path tracing 4K in RE9. No idea why nvidia did but they worked miracles with this hotfix.",
+      "score": 4.252,
+      "meta": {
+        "ups": 126
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "reddit:semiconductors",
+      "title": "Stuck at a top-tier Semiconductor firm with below average pay: Worth staying?",
+      "url": "https://www.reddit.com/r/Semiconductors/comments/1rm7jjo/stuck_at_a_toptier_semiconductor_firm_with_below/",
+      "published_at": "2026-03-06",
+      "snippet": "Looking for some perspective from people who've actually been in this spot. I'm doing Design/DV at a well-known semiconductor company — F500, the kind of name that gets a nod in interviews. The work itself is genuinely interesting, which makes this harder. The pay though, pretty rough. Significantly below market for my region, and it's been that way for a while. We've pushed for a correction as",
+      "score": 4.02,
+      "meta": {
+        "ups": 10
+      }
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "Lumentum $LITE 企業分析 | 外部レーザーは光の半導体時代のツルハシだ｜FabyΔ",
+      "url": "https://note.com/fabymetal/n/n6a65348ea0bf",
+      "published_at": "2026-02-14",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "AI半導体テスト市場の勝者は誰だ？ | アドバンテストとTeradyneの見えない独占｜FabyΔ",
+      "url": "https://note.com/fabymetal/n/n3f505e82e40c",
+      "published_at": "2026-01-29",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "半導体サイクルからDRAM価格が暴落していく過程を分析しその際に打撃がある銘柄を分析していきます。繰り返される歴史とは？過去の日本で半導体のカリスマと呼ばれた人物の言葉を振り返り考えます。｜泉の日米経済、株式市場分析",
+      "url": "https://note.com/joyous_deer792/n/nb188246a0e7c",
+      "published_at": "2026-02-18",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "高騰しているDRAM価格の下落や暴落はいつ起きるのか？半導体サイクルの視点から、その時に向けて頭の体操をしておきます。異常とも言える高騰の先に待っている暴落、そのタイミングを見極めるのは極めて重要。半導｜泉の日米経済、株式市場分析",
+      "url": "https://note.com/joyous_deer792/n/n39b8a8a7efb4",
+      "published_at": "2026-02-16",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "Googleの革命、覇王NVIDIAの猛反撃、そしてBroadcomの深謀遠慮。複雑怪奇なAI半導体「三国志」の幕開け｜パウロ",
+      "url": "https://note.com/paul1211/n/nac24c6d4428f",
+      "published_at": "2025-11-30",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【速報】 NVIDIA決算 ポイントは？｜後藤達也",
+      "url": "https://note.com/goto_finance/n/nc02a4604d7b1",
+      "published_at": "2026-02-26",
+      "snippet": "",
+      "score": 4.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【初めてのNOTE】株式投資では無く、自己投資。Fラン大学から半導体系一流メーカーで年収1000万超え｜13",
+      "url": "https://note.com/unique_tapir6981/n/n5ae144ad8f38",
+      "published_at": "2026-03-01",
+      "snippet": "",
+      "score": 3.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "NVIDIA Vera Rubin時代、AIの真のボトルネックは「光」──それを握る日本企業｜東大ぱふぇっと🐰20代で億り人達成❗米国株式投資で大評判の相場予測noteは20万部突破",
+      "url": "https://note.com/utbuffett/n/n528edc2f1dca",
+      "published_at": "2026-03-03",
+      "snippet": "",
+      "score": 3.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "K型半導体市場の幕開け｜パウロ",
+      "url": "https://note.com/paul1211/n/n3319e7f319f1",
+      "published_at": "2026-02-19",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "半導体産業の次のテーマ｜ABC Trader",
+      "url": "https://note.com/abctrader/n/nec9992ee1cf7",
+      "published_at": "2026-02-26",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "エヌビディアは強いガイダンスを発表、日本経済新聞の一面「AI半導体　産業力底上げ」、日本はスーパーサイクルに突入する｜ABC Trader",
+      "url": "https://note.com/abctrader/n/n0ad931b99608",
+      "published_at": "2026-02-26",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "AIデータセンター企業が半導体を過小償却している会計疑惑でエヌビディア株が急落｜広瀬隆雄",
+      "url": "https://note.com/hirosetakao/n/n3a9137dce56a",
+      "published_at": "2025-11-26",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "日銀短観を株式投資に活かす方法。斜陽産業と言われた繊維が、「電子材料・半導体」進出で大復活、株価も上昇｜ABC Trader",
+      "url": "https://note.com/abctrader/n/n8947a5bd07a6",
+      "published_at": "2026-02-02",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "凍てつく戦場、エッチングの帝王Lam Research VS 日本の挑戦者 東京エレクトロン：次世代半導体の覇権を賭けた頂上決戦｜パウロ",
+      "url": "https://note.com/paul1211/n/n4d4cb597cb41",
+      "published_at": "2026-02-25",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【朝メモ】クアルコム、AI半導体に参入｜後藤達也",
+      "url": "https://note.com/goto_finance/n/n76d1bdcfb9ee",
+      "published_at": "2025-10-28",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "結局、半導体なのかもしれない話｜バカントク",
+      "url": "https://note.com/baka_ntoku/n/nbfff35cef776",
+      "published_at": "2026-02-25",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "[半導体] 半導体ガラス基板：AGC「ベッセルTSL加工法」が塗り替える半導体の勢力図｜葦原 翔（あしはら かける）",
+      "url": "https://note.com/safe_gibbon6757/n/n28ccade078b2",
+      "published_at": "2026-02-21",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "[半導体] シリコンの限界を超えて：ダイヤモンド半導体で日本が「技術で勝ち、事業でも勝つ」ための条件｜葦原 翔（あしはら かける）",
+      "url": "https://note.com/safe_gibbon6757/n/ne3747f7f839c",
+      "published_at": "2026-02-21",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    },
+    {
+      "domain": "semiconductor",
+      "source": "note",
+      "title": "【コアメンバー】NVIDIA説明会 4つの注目発言｜後藤達也",
+      "url": "https://note.com/goto_finance/n/n25e8d4d5d4fb",
+      "published_at": "2026-02-26",
+      "snippet": "",
+      "score": 2.0,
+      "meta": {}
+    }
+  ]
+}

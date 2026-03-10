@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source: Reddit"
+  short_description: "Reddit AI/半導体トピック収集"
+  default_prompt: "$daily-briefing-source-reddit を使って、AI系と半導体系サブレディットから候補を収集し JSON 出力してください。"

@@ -1,0 +1,24 @@
+{
+  "source": "hacker-news",
+  "date": "2026-03-03",
+  "items": [
+    {
+      "title": "Microgpt",
+      "url": "http://karpathy.github.io/2026/02/12/microgpt/",
+      "published_at": "2026-03-01",
+      "segment": "ai",
+      "what": "Karpathyのmicrogpt記事がHNで再拡散し、最小実装でLLM理解を深める学習用途が再評価された。",
+      "why": "AI活用が広がるほど、ブラックボックス運用の限界が出るため、基礎理解を得る教材価値が上がる。",
+      "confidence": "medium"
+    },
+    {
+      "title": "Running a One Trillion-Parameter LLM Locally on AMD Ryzen AI Max+ Cluster",
+      "url": "https://news.ycombinator.com/item?id=43215772",
+      "published_at": "2026-03-01",
+      "segment": "semiconductor",
+      "what": "AMDのローカル推論記事がHNでも継続議論され、メモリ容量・帯域要件の現実的ラインが共有された。",
+      "why": "開発者コミュニティの議論は、実購買前の要件定義に直結する一次シグナルとして有効。",
+      "confidence": "medium"
+    }
+  ]
+}

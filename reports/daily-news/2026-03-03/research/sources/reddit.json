@@ -1,0 +1,33 @@
+{
+  "source": "reddit",
+  "date": "2026-03-03",
+  "items": [
+    {
+      "title": "Anthropic has opened up its entire educational curriculum for free",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rh92yp/anthropic_has_opened_up_its_entire_educational/",
+      "published_at": "2026-02-28",
+      "segment": "ai",
+      "what": "r/ClaudeAIでAnthropic教材無償公開の投稿が高反応を集め、学習導線の整備が評価された。",
+      "why": "導入初期のボトルネックは機能より学習コストで、教育資産の厚みがエコシステム競争力になる。",
+      "confidence": "high"
+    },
+    {
+      "title": "Qwen 3.5-35B-A3B is beyond expectations",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rh43za/qwen_3535ba3b_is_beyond_expectations_its_replaced/",
+      "published_at": "2026-02-28",
+      "segment": "ai",
+      "what": "r/LocalLLaMAでQwen 35Bの実用評価が拡散し、中規模ローカルモデル活用の報告が増えた。",
+      "why": "モデル選定の基準が『最大性能』から『必要十分性能×運用コスト』へ移っている。",
+      "confidence": "medium"
+    },
+    {
+      "title": "Lenovo launches ThinkBook 16+ with LPCAMM2",
+      "url": "https://www.reddit.com/r/hardware/comments/1rh5fv0/lenovo_launches_thinkbook_16_with_core_x7/",
+      "published_at": "2026-02-28",
+      "segment": "semiconductor",
+      "what": "r/hardwareでLPCAMM2採用ノートの投稿が注目され、AI PC時代のメモリ規格変化が議論された。",
+      "why": "メモリ帯域と拡張性はローカル推論体験を左右し、PC調達の評価軸を変える。",
+      "confidence": "low"
+    }
+  ]
+}

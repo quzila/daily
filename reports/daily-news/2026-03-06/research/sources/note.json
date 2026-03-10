@@ -1,0 +1,29 @@
+{
+  "source": "note",
+  "date": "2026-03-06",
+  "items": [
+    {
+      "title": "日本人の93%が気づいていない、2026年に起きている『AI格差』について",
+      "url": "https://note.com/shirono_aru/n/n9d97ee1b072f",
+      "published_at": "2026-03-01",
+      "segment": "ai",
+      "what": "AI活用の習熟差が業務成果の差に直結している点を、現場観点で整理した。",
+      "why": "導入そのものより、運用習熟の差が競争力を決める段階に入っている。",
+      "confidence": "medium"
+    },
+    {
+      "title": "GeminiとChatGPTと考えた。AIがOSになる時代、私たち人間は何者として働くのか",
+      "url": "https://note.com/chatgpt_ysd/n/n002a7deab61c",
+      "published_at": "2026-03-01",
+      "segment": "ai",
+      "what": "複数モデル併用を前提に、仕事設計をどう変えるかを論点化した。",
+      "why": "単一ツール依存ではなく、役割分担ベースの運用が実務では有効になる。",
+      "confidence": "medium"
+    }
+  ],
+  "attempt_log": [
+    "q=生成AI sort=new (48h): 候補不足",
+    "q=Claude Code sort=new (7d): 候補不足",
+    "hashtag/AI・hashtag/生成AI まで拡張して2件採用"
+  ]
+}

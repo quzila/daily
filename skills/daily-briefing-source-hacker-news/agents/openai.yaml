@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source: Hacker News"
+  short_description: "HNのAI/半導体候補収集"
+  default_prompt: "$daily-briefing-source-hacker-news を使って、Hacker NewsからAI/半導体候補を収集し JSON 出力してください。"

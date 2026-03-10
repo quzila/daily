@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source: note"
+  short_description: "note検索のAI/半導体候補収集"
+  default_prompt: "$daily-briefing-source-note を使って、複数クエリでnote記事を収集し JSON 出力してください。"
