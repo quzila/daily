@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source: Official AI"
+  short_description: "公式AIソースの本文確認ニュース収集"
+  default_prompt: "$daily-briefing-source-official-ai を使って、公式AIソースを巡回し、YYYY-MM-DD向けに候補を JSON で出力してください。"

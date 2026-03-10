@@ -385,7 +385,7 @@ def parse_structured_markdown(markdown_text: str) -> dict:
                 state = "SECTION"
             elif "ハイライト" in heading:
                 state = "HIGHLIGHTS"
-            elif "ソース一覧" in heading:
+            elif "ソース一覧" in heading or heading == "ソース":
                 finalize_section()
                 state = "SOURCES"
             elif "その他" in heading:

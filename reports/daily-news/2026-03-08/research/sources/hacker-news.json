@@ -1,0 +1,29 @@
+{
+  "source": "hacker-news",
+  "date": "2026-03-08",
+  "items": [
+    {
+      "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+      "url": "https://arxiv.org/abs/2603.03823",
+      "published_at": "2026-03-04",
+      "segment": "ai",
+      "what": "HN上位で、LLMエージェントをCI前提の継続的なコードベース保守で評価するSWE-CI論文が注目を集めた。論文概要では、既存の一発修正ベンチでは捉えにくい長期の要求変更や機能追加を対象にしている点が強調されている。",
+      "why": "agent codingの実力を測る軸が、単発バグ修正から継続運用へ移っている。現場の開発に近いCI文脈で評価するベンチが増えると、今後は『どのモデルがPRを通し続けられるか』がより重要になる。",
+      "so_what": "自分の評価でも、単発の生成精度だけでなく、テストとCIをまたいだ継続タスクで破綻しないかを見るべきだ。今後のモデル比較は、手元リポジトリで小さな保守タスクを連続投入する形へ寄せたい。",
+      "confidence": "high"
+    },
+    {
+      "title": "New Research Reassesses the Value of Agents.md Files for AI Coding",
+      "url": "https://www.infoq.com/news/2026/03/agents-context-file-value-review/",
+      "published_at": "2026-03-07",
+      "segment": "ai",
+      "what": "HNで、AGENTS.mdのようなコンテキストファイルの効果を再評価するInfoQ記事も共有された。AIコーディングで前提条件や作業ルールを明示ファイルに置く価値が、改めて議論対象になっている。",
+      "why": "モデル性能が上がっても、タスク失敗の多くは文脈不足で起きる。コンテキストファイルの扱いが再度話題になっているのは、agent運用ではプロンプトより恒久的な実行ルールの設計が効くことの裏返しだ。",
+      "so_what": "自分のリポジトリでも、毎回同じ指示をチャットで繰り返すより、実行ルールをファイル化してagentに読ませる方が再現性を上げやすい。skillやautomationの品質も、その前提ファイルの整備に左右される。",
+      "confidence": "medium"
+    }
+  ],
+  "attempt_log": [
+    "HN topstories 上位40件からAI/半導体関連タイトルを抽出し、外部記事URLを優先採用した。"
+  ]
+}

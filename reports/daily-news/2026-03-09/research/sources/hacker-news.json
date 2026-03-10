@@ -1,0 +1,19 @@
+{
+  "source": "hacker-news",
+  "date": "2026-03-09",
+  "items": [
+    {
+      "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+      "url": "https://arxiv.org/abs/2603.03823",
+      "published_at": "2026-03-04",
+      "segment": "ai",
+      "what": "Hacker News上位で、LLMエージェントを継続的なコードベース保守で評価するSWE-CI論文が共有された。論文はCIループ上に100タスクを載せ、平均233日・71コミットにわたる実リポジトリの進化履歴を使って、静的な一発修正ではなく長期のmaintainabilityを測るベンチマークを提案している。エージェントには、数十ラウンドの分析と修正を通じて課題を解かせる設計だ。",
+      "why": "agent codingの評価軸が、単発のfunctional correctnessから、長期保守で品質を維持できるかへ移りつつある。実務に近いCI文脈のベンチが増えると、モデルの勝敗だけでなく『どれだけ壊さずに改善を積み上げられるか』が比較ポイントになる。",
+      "so_what": "自分のツール比較でも、短いコード生成テストだけで判断せず、CIを挟んだ連続タスクで破綻しないかを見るべきだ。小さな保守課題を何日か連続で回す評価を作れば、日常開発に近い形でエージェントの強さを測りやすくなる。",
+      "confidence": "high"
+    }
+  ],
+  "attempt_log": [
+    "HN上位投稿からAI/半導体関連を確認し、外部記事本文が取得できて公開日を確認できる候補を採用した。"
+  ]
+}

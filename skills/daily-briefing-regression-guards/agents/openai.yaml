@@ -1,0 +1,4 @@
+interface:
+  display_name: "Daily Briefing Regression Guards"
+  short_description: "日次ニュース生成の再発防止ルールを適用"
+  default_prompt: "$daily-briefing-regression-guards を読み、最新の再発防止ルールを適用してから daily briefing を実行してください。"

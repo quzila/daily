@@ -1,4 +1,0 @@
-interface:
-  display_name: "デイリー AI・半導体ニュース"
-  short_description: "日次ニュースMarkdownを作成し、HTMLランディングも生成。"
-  default_prompt: "$daily-ai-semiconductor-briefing を使って、直近48時間のAI・半導体ニュースを本文fetchベースで収集し、指定フォーマットのMarkdown日次レポートを作成した後、daily-news.md からHTMLランディングページ（index.html）も生成してください。"

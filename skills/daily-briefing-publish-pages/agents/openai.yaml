@@ -1,0 +1,4 @@
+interface:
+  display_name: "Daily Briefing→GitHub Pages"
+  short_description: "日次ニュースを収集・HTML化してGitHub Pagesへ公開"
+  default_prompt: "$daily-briefing-publish-pages を使って、$daily-ai-semiconductor-briefing で3/1基準の厳格フォーマットで daily-news.md を作成し、$daily-news-md-to-html で記事カード表示の index.html を生成してから GitHub Pages に公開してください。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source: Official Semi"
+  short_description: "公式半導体ソースの本文確認ニュース収集"
+  default_prompt: "$daily-briefing-source-official-semiconductor を使って、公式半導体ソース中心で YYYY-MM-DD 向け候補を JSON 出力してください。"

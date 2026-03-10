@@ -1,0 +1,24 @@
+{
+  "source": "hacker-news",
+  "date": "2026-03-02",
+  "items": [
+    {
+      "title": "Microgpt",
+      "url": "http://karpathy.github.io/2026/02/12/microgpt/",
+      "published_at": "2026-02-12",
+      "segment": "ai",
+      "what": "Andrej KarpathyのmicrogptがHNで再拡散し、ミニマル実装によるLLM学習教材として注目を集めた。",
+      "why": "Agent活用が進むほど、基礎理解を補う軽量実装の教育価値が上がる。",
+      "confidence": "medium"
+    },
+    {
+      "title": "Running a One Trillion-Parameter LLM Locally on AMD Ryzen AI Max+ Cluster",
+      "url": "https://www.amd.com/en/developer/resources/technical-articles/running-a-one-trillion-parameter-large-language-model-on-amd-ryzen-ai-max-plus-cluster.html",
+      "published_at": "2026-02-25",
+      "segment": "semiconductor",
+      "what": "AMDの大規模ローカル推論記事がHNで議論され、Ryzen AI Max+クラスタでの構成が共有された。",
+      "why": "ローカル推論性能の向上は、GPU/メモリ需要と価格帯別の選定基準を変える。",
+      "confidence": "medium"
+    }
+  ]
+}

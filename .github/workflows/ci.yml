@@ -21,17 +21,22 @@ jobs:
 
       - name: Verify required files
         run: |
-          test -f daily-ai-semiconductor-briefing/SKILL.md
-          test -f daily-news-md-to-html/SKILL.md
-          test -f daily-news-md-to-html/assets/index.html
+          test -f skills/daily-ai-semiconductor-briefing/SKILL.md
+          test -f skills/daily-news-md-to-html/SKILL.md
+          test -f skills/daily-briefing-publish-pages/SKILL.md
+          test -f skills/daily-briefing-publish-pages/agents/openai.yaml
+          test -f skills/daily-briefing-publish-pages/scripts/publish_daily_briefing.py
+          test -f skills/daily-news-md-to-html/assets/index.html
 
       - name: Compile Python scripts
         run: |
-          python -m compileall daily-ai-semiconductor-briefing/scripts
-          python -m compileall daily-news-md-to-html/scripts
+          python -m compileall skills/daily-ai-semiconductor-briefing/scripts
+          python -m compileall skills/daily-news-md-to-html/scripts
+          python -m compileall skills/daily-briefing-publish-pages/scripts
 
       - name: Smoke test CLI entrypoints
         run: |
-          python daily-ai-semiconductor-briefing/scripts/create_daily_news_files.py --help
-          python daily-ai-semiconductor-briefing/scripts/render_daily_news_landing.py --help
-          python daily-news-md-to-html/scripts/render_markdown_to_html.py --help
+          python skills/daily-ai-semiconductor-briefing/scripts/create_daily_news_files.py --help
+          python skills/daily-ai-semiconductor-briefing/scripts/render_daily_news_landing.py --help
+          python skills/daily-news-md-to-html/scripts/render_markdown_to_html.py --help
+          python skills/daily-briefing-publish-pages/scripts/publish_daily_briefing.py --help

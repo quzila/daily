@@ -1,0 +1,33 @@
+{
+  "source": "official-semiconductor",
+  "date": "2026-03-02",
+  "items": [
+    {
+      "title": "Samsung and NVIDIA to advance AI-RAN technologies",
+      "url": "https://news.samsung.com/global/samsung-nvidia-to-advance-ai-ran-technologies-and-expand-ai-in-the-mobile-network-ecosystem",
+      "published_at": "2026-02-28",
+      "segment": "semiconductor",
+      "what": "Samsung announced AI-RAN collaboration with NVIDIA, combining Samsung vRAN and NVIDIA AI platforms for mobile network modernization.",
+      "why": "AI silicon demand is expanding from datacenter to telecom infrastructure, widening GPU and accelerator deployment fronts.",
+      "confidence": "high"
+    },
+    {
+      "title": "Samsung begins mass production of AI-optimized HBM4",
+      "url": "https://news.samsung.com/global/samsung-electronics-begins-mass-production-of-industrys-first-ai-optimized-hbm4",
+      "published_at": "2026-03-01",
+      "segment": "semiconductor",
+      "what": "Samsung announced mass production start of HBM4 for AI workloads and highlighted next-generation memory stack positioning.",
+      "why": "HBM availability directly impacts AI server supply and pricing, especially for accelerator-heavy systems.",
+      "confidence": "high"
+    },
+    {
+      "title": "TSMC reportedly evaluating UAE fab plan",
+      "url": "https://www.tomshardware.com/tech-industry/tsmc-could-build-chip-fab-in-uae-possibly-using-2nm-process-technology",
+      "published_at": "2026-03-02",
+      "segment": "semiconductor",
+      "what": "Industry media reported TSMC may consider a UAE fab using advanced process assumptions, pending feasibility and policy alignment.",
+      "why": "Potential geographic diversification matters for long-term supply-chain risk and strategic manufacturing footprint.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Daily News MD→HTML"
-  short_description: "daily-news.md を残したまま index.html をテンプレート生成。"
-  default_prompt: "$daily-ai-semiconductor-briefing で daily-news.md を作成した後、$daily-news-md-to-html を使って assets/index.html テンプレートから index.html を生成してください。Markdownは保持してください。"

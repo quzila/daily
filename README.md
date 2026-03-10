@@ -1,14 +1,23 @@
 # daily
 
-Daily news skills and generated artifacts for AI and semiconductor briefing workflows.
+AI・半導体デイリーブリーフィングの skill 群、生成物、GitHub Pages 公開物を管理するリポジトリです。
 
-## Contents
+## Directory Layout
 
-- `daily-ai-semiconductor-briefing/`: skill to collect sources and produce `daily-news.md` plus landing page generation.
-- `daily-news-md-to-html/`: skill to render Markdown into HTML using a reusable `index.html` template.
+```text
+.
+├── skills/
+│   ├── daily-ai-semiconductor-briefing/   # リサーチと daily-news.md 作成
+│   ├── daily-news-md-to-html/             # Markdown -> HTML 変換
+│   └── daily-briefing-publish-pages/      # docs/ 反映と commit/push
+├── reports/
+│   └── daily-news/YYYY-MM-DD/             # 中間生成物 (daily-news.md, index.html, research/)
+└── docs/
+    └── daily-news/YYYY-MM-DD/             # GitHub Pages 配信用
+```
 
-## Workflow
+## Standard Flow
 
-1. Generate `daily-news.md`.
-2. Keep the Markdown file for downstream RAG usage.
-3. Render `index.html` from the Markdown template pipeline.
+1. `skills/daily-ai-semiconductor-briefing` で `reports/daily-news/YYYY-MM-DD/daily-news.md` を作成。
+2. `skills/daily-news-md-to-html` で同ディレクトリの `index.html` を生成。
+3. `skills/daily-briefing-publish-pages` で `docs/` に同期し、必要なら commit/push。

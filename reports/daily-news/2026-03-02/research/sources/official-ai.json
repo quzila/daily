@@ -1,0 +1,33 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-02",
+  "items": [
+    {
+      "title": "Anthropic acquires Humanloop",
+      "url": "https://www.anthropic.com/news/anthropic-acquires-humanloop",
+      "published_at": "2026-02-25",
+      "segment": "ai",
+      "what": "Anthropic announced the acquisition of Humanloop and emphasized stronger enterprise controls for prompt evaluation and LLM ops.",
+      "why": "This strengthens Anthropic's enterprise workflow story beyond model quality and signals competition shifting to operational tooling.",
+      "confidence": "high"
+    },
+    {
+      "title": "The next chapter of Claude",
+      "url": "https://www.anthropic.com/news/the-next-chapter-of-claude",
+      "published_at": "2026-02-24",
+      "segment": "ai",
+      "what": "Anthropic outlined the next phase of Claude, positioning product roadmap updates around broader deployment and developer use cases.",
+      "why": "Roadmap-level announcements indicate product packaging and distribution are becoming as critical as benchmark performance.",
+      "confidence": "high"
+    },
+    {
+      "title": "February 27 release roundup",
+      "url": "https://github.blog/changelog/2026-02-27-release-roundup/",
+      "published_at": "2026-02-27",
+      "segment": "ai",
+      "what": "GitHub shared weekly updates including Copilot and project workflow changes in the official changelog roundup.",
+      "why": "Frequent platform-level updates affect day-to-day developer productivity and agent-based coding workflow adoption.",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+# デイリーAI・半導体ニュース（2026-03-10）
+
+## 今日のハイライト（3選）
+> 1) 「Copilot code review now runs on an agentic architecture」が上位に入り、公式AI発の議論を通じて開発フロー最適化の重要性が改めて可視化された。
+> 2) 「Codex Security: now in research preview」が上位に入り、公式AI発の議論を通じて開発フロー最適化の重要性が改めて可視化された。
+> 3) 「Samsung Takes Next Stride Toward AI-Native Software-Dri…」が注目され、公式半導体由来の情報から調達・性能・供給の判断材料が更新された。
+
+---
+
+## AI ニュース
+
+### 公式ソース
+
+---
+### 【カテゴリA: 公式ソース（AI）】Copilot code review now runs on an agentic architecture（公式AI, 2026-03-05）
+
+**ひとことサマリー（1文）**: 公式AI の「Copilot code review now runs on an agentic architecture」では、GitHubはCopilot code reviewのagentic tool-callingアーキテクチャをGAにした。レビュー時に関連コード、ディレクトリ構造、参照先まで取りに行くことで、差分単体ではなくリポジトリ全体の構造を踏まえた指摘を返す設計で、GitHub Actions上で動作し、self-hosted runner利用時は一度だけ追加設定が必要になる。
+
+**何が起きたか（What）**:  
+公式AIの「Copilot code review now runs on an agentic architecture」は2026-03-05公開。GitHubはCopilot code reviewのagentic tool-callingアーキテクチャをGAにした。レビュー時に関連コード、ディレクトリ構造、参照先まで取りに行くことで、差分単体ではなくリポジトリ全体の構造を踏まえた指摘を返す設計で、GitHub Actions上で動作し、self-hosted runner利用時は一度だけ追加設定が必要になる。
+
+**なぜ重要か（Why it matters）**:  
+AIレビューの価値は『コメント数』ではなく、設計整合性まで踏み込んだ高シグナルな指摘をどれだけ返せるかで決まる。PR差分だけを読む補助から、必要な文脈を自分で取りに行くreview agentへ進んだことで、レビュー自動化の実運用ハードルが一段下がった。
+
+**自分への影響（So what）**:  
+自分のPR運用でも、lintや型検査の後ろに置く一次レビューを、文脈取得型のagentへ置き換えられるか試す価値がある。導入時はrunner構成とレビューコメントのノイズ量を見て、どこまで人間レビューを前倒しで削れるかを測りたい。
+
+- リンク: [https://github.blog/changelog/2026-03-05-copilot-code-review-now-runs-on-an-agentic-architecture/](https://github.blog/changelog/2026-03-05-copilot-code-review-now-runs-on-an-agentic-architecture/)
+- 確信度: 高
+---
+
+---
+### 【カテゴリA: 公式ソース（AI）】Codex Security: now in research preview（公式AI, 2026-03-06）
+
+**ひとことサマリー（1文）**: 公式AI の「Codex Security: now in research preview」では、OpenAIがCodex Securityをresearch previewで公開した。リポジトリから脅威モデルを組み立て、検出した脆弱性を検証環境で裏取りしながら修正案まで返す構成で、ベータでは30日で120万超のコミットを走査し、792件のcriticalと10,561件のhigh-severity findingを検出した。ノイズはあるケースで84%減り、過大なseverity判定も90%以上抑えたとしている。
+
+**何が起きたか（What）**:  
+公式AIの「Codex Security: now in research preview」は2026-03-06公開。OpenAIがCodex Securityをresearch previewで公開した。リポジトリから脅威モデルを組み立て、検出した脆弱性を検証環境で裏取りしながら修正案まで返す構成で、ベータでは30日で120万超のコミットを走査し、792件のcriticalと10,561件のhigh-severity findingを検出した。ノイズはあるケースで84%減り、過大なseverity判定も90%以上抑えたとしている。
+
+**なぜ重要か（Why it matters）**:  
+AIがコード生成を加速するほど、レビュー工程では『どの警告を本当に直すべきか』の選別コストが膨らむ。脅威モデルと検証を組み合わせて誤検知を減らす設計は、単純な静的解析の延長ではなく、agent時代のセキュリティ運用そのものを再設計する動きとして重要だ。
+
+**自分への影響（So what）**:  
+自分の開発では、生成後に別ツールで一括スキャンするだけでなく、リポジトリ固有の前提を踏まえた検証付きレビューをCI近くへ置くかを見直したい。採用判断では検出件数より、誤検知率と修正パッチのレビューしやすさを評価軸にするべきだ。
+
+- リンク: [https://openai.com/index/codex-security-now-in-research-preview/](https://openai.com/index/codex-security-now-in-research-preview/)
+- 確信度: 高
+---
+
+### Zenn ピックアップ
+
+---
+### 【カテゴリC: 日本語コミュニティ（Zenn）】まだAIコードをレビューするか、しないかで言い争ってるの？（Zenn, 2026-03-08）
+
+**ひとことサマリー（1文）**: Zenn の「まだAIコードをレビューするか、しないかで言い争ってるの？」では、AI生成コードをレビューするか否かという二択ではなく、品質を保ったまま人間レビューの総量を減らせるよう開発プロセス全体を作り替えるべきだと論じた記事だ。理由として、レビュワーは今後育ちにくいこと、AIが生成量で人間を圧倒すること、従来型レビューに固執する組織は軽量化した組織に競争で負けることを挙げている。あわせて、良い入力コンテキスト、品質を担保するハーネス、高いレイヤーでの評価基準が必要だと整理した。
+
+**何が起きたか（What）**:  
+Zennの「まだAIコードをレビューするか、しないかで言い争ってるの？」は2026-03-08公開。AI生成コードをレビューするか否かという二択ではなく、品質を保ったまま人間レビューの総量を減らせるよう開発プロセス全体を作り替えるべきだと論じた記事だ。理由として、レビュワーは今後育ちにくいこと、AIが生成量で人間を圧倒すること、従来型レビューに固執する組織は軽量化した組織に競争で負けることを挙げている。あわせて、良い入力コンテキスト、品質を担保するハーネス、高いレイヤーでの評価基準が必要だと整理した。
+
+**なぜ重要か（Why it matters）**:  
+論点を『レビューをゼロにするか』から『どこを人間が見て、どこを仕組みで肩代わりするか』へ移しているのが重要だ。AIコーディングの普及でボトルネックが実装からレビュー能力へ移るなか、組織設計や育成の問題まで視野に入れた議論は実務への接続が強い。
+
+**自分への影響（So what）**:  
+自分の開発でも、レビュー負荷を嘆く前に、ドキュメント、静的解析、テスト、生成ハーネスのどこで人間レビューを減らせるかを見直したい。PRの差分を全部読む前提を外し、説明責任を持てる単位でチェックを再配置する発想が必要になる。
+
+- リンク: [https://zenn.dev/nuits_jp/articles/2026-03-08-reviewing-ai-code](https://zenn.dev/nuits_jp/articles/2026-03-08-reviewing-ai-code)
+- 確信度: 高
+---
+
+---
+### 【カテゴリC: 日本語コミュニティ（Zenn）】AIコーディングの原則（Zenn, 2026-03-08）
+
+**ひとことサマリー（1文）**: Zenn の「AIコーディングの原則」では、チームでAIコーディングを使う前提に立ち、人間がコードのオーナーであり責任主体であること、設計意図や制約を人間が読めるドキュメントとして残すこと、AI向けの指示は『コードからは発見できない知識だけ』に絞ることを原則として整理した記事だ。AI Slopがチームでは人数分だけ増幅される点や、長すぎるAGENTS.md系ファイルが性能やコストを悪化させる実証研究も引用している。
+
+**何が起きたか（What）**:  
+Zennの「AIコーディングの原則」は2026-03-08公開。チームでAIコーディングを使う前提に立ち、人間がコードのオーナーであり責任主体であること、設計意図や制約を人間が読めるドキュメントとして残すこと、AI向けの指示は『コードからは発見できない知識だけ』に絞ることを原則として整理した記事だ。AI Slopがチームでは人数分だけ増幅される点や、長すぎるAGENTS.md系ファイルが性能やコストを悪化させる実証研究も引用している。
+
+**なぜ重要か（Why it matters）**:  
+AI導入の失敗はモデル性能不足より、責任とコンテキストの扱いを曖昧にしたまま運用を始めることで起きやすい。ドキュメントを単なる補助資料ではなく、開発スループットを左右する資産として位置づけ直した点が、2026年らしい実務論になっている。
+
+**自分への影響（So what）**:  
+自分のリポジトリでも、AI専用ファイルを増やす前に、人間が読んで説明できる設計メモや制約整理を整えた方が効果が高い。コンテキストファイルは失敗原因になった事項だけを最小限で足し、肥大化したら削る運用に寄せたい。
+
+- リンク: [https://zenn.dev/takekazuomi/articles/ai-coding-principles](https://zenn.dev/takekazuomi/articles/ai-coding-principles)
+- 確信度: 高
+---
+
+### note ピックアップ
+
+---
+### 【カテゴリD: 日本語コミュニティ（note）】同じClaude Codeを使っているのに、なぜ性能に大きな差がつくのか？ ― AIは「使い方」より「育て方」が大事（note, 2026-02-27）
+
+**ひとことサマリー（1文）**: note の「同じClaude Codeを使っているのに、なぜ性能に大きな差がつくのか？ ― AIは「使い方」より「育て方」が大事」では、公開範囲では、Claude Codeの成果差はプロンプトの巧拙より『AIの育て方』、つまり与える文脈の厚みで決まると論じている。各セッションは毎回記憶が初期化された『天才新入社員』のようなもので、CLAUDE.mdに基本業務を置くだけでは足りず、事業の背景や過去判断を蓄積する記憶設計まで用意する必要があるという整理だ。
+
+**何が起きたか（What）**:  
+noteの「同じClaude Codeを使っているのに、なぜ性能に大きな差がつくのか？ ― AIは「使い方」より「育て方」が大事」は2026-02-27公開。公開範囲では、Claude Codeの成果差はプロンプトの巧拙より『AIの育て方』、つまり与える文脈の厚みで決まると論じている。各セッションは毎回記憶が初期化された『天才新入社員』のようなもので、CLAUDE.mdに基本業務を置くだけでは足りず、事業の背景や過去判断を蓄積する記憶設計まで用意する必要があるという整理だ。
+
+**なぜ重要か（Why it matters）**:  
+モデルや料金が同じでも体験差が大きい理由を、記憶とコンテキスト設計の問題として言い切っている点が実務的だ。AIツール導入の勝負どころが『どのモデルを使うか』から『何を持続的に覚えさせるか』へ移っていることを示している。
+
+**自分への影響（So what）**:  
+自分の運用でも、毎回ゼロから指示を書くより、判断基準や過去の失敗、顧客固有の前提を残す仕組みをリポジトリ側に持つ方が効く。エージェントの性能差を見るときも、モデル比較だけでなく、継続記憶をどう与えたかをセットで評価したい。
+
+- リンク: [https://note.com/kajiken0630/n/n90c7c022b16c](https://note.com/kajiken0630/n/n90c7c022b16c)
+- 確信度: 中
+---
+
+### Reddit / HN ピックアップ
+
+---
+### 【カテゴリE: Reddit（AI）】Anthropic just made Claude Code run without you. Scheduled tasks are live. This is a bi…（Reddit, 2026-03-07）
+
+**ひとことサマリー（1文）**: Reddit の「Anthropic just made Claude Code run without you. Scheduled task…」では、r/ClaudeAIで、Claude Codeのscheduled tasksがネイティブ対応したことが大きく話題になった。投稿ではdaily commit review、dependency audit、error log scan、PR reviewを夜間に自動実行できると紹介され、コメント欄ではデスクトップ版を開いたままにする必要があることや、false positiveと権限設計への注意も議論されている。
+
+**何が起きたか（What）**:  
+Redditの「Anthropic just made Claude Code run without you. Scheduled task…」は2026-03-07公開。r/ClaudeAIで、Claude Codeのscheduled tasksがネイティブ対応したことが大きく話題になった。投稿ではdaily commit review、dependency audit、error log scan、PR reviewを夜間に自動実行できると紹介され、コメント欄ではデスクトップ版を開いたままにする必要があることや、false positiveと権限設計への注意も議論されている。
+
+**なぜ重要か（Why it matters）**:  
+AIコーディングが『対話のたびに呼ぶ道具』から『自分の時計で動くエージェント』へ進む転換点だからだ。定期実行が標準機能になると、プロンプト品質だけでなく、監督方法、通知、権限境界の設計が本番運用の中心課題になる。
+
+**自分への影響（So what）**:  
+自分が自動化するなら、まずは読み取り中心の定期チェックから始め、書き込みやマージ操作は段階的に許可したい。便利さだけで飛びつかず、false positive時の扱いと、どこまで人が最終確認するかを先に決めてから使うべきだ。
+
+- リンク: [https://www.reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/](https://www.reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/)
+- 確信度: 中
+---
+
+---
+### 【カテゴリE: Reddit（AI）】Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test（Reddit, 2026-03-08）
+
+**ひとことサマリー（1文）**: Reddit の「Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test」では、r/LocalLLaMAで、i7-12700K、RTX 3090 Ti、96GB RAMの環境から、長文プロンプトでPDF結合・変換GUIを作らせた比較が共有された。投稿者によればGPT-5は3回ともGUI起動に失敗した一方、Qwen 3.5 27Bは262K contextで31.26 tok/secを出しつつ3回目で実用的なアプリを完成させた。スクリーンショット入力で細部を詰めた点や、35B系は速度が出ても同タスクでは失敗した点も報告されている。
+
+**何が起きたか（What）**:  
+Redditの「Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test」は2026-03-08公開。r/LocalLLaMAで、i7-12700K、RTX 3090 Ti、96GB RAMの環境から、長文プロンプトでPDF結合・変換GUIを作らせた比較が共有された。投稿者によればGPT-5は3回ともGUI起動に失敗した一方、Qwen 3.5 27Bは262K contextで31.26 tok/secを出しつつ3回目で実用的なアプリを完成させた。スクリーンショット入力で細部を詰めた点や、35B系は速度が出ても同タスクでは失敗した点も報告されている。
+
+**なぜ重要か（Why it matters）**:  
+『大きいクラウドモデルが常に最強』という前提を崩す、現場的なベンチマークとして面白い。ローカルモデルが視覚入力と長文コンテキストを使いながら実務タスクを完走できるなら、コスト、待ち時間、オフライン運用の判断基準が変わる。
+
+**自分への影響（So what）**:  
+自分の比較でも、単純なコード生成ベンチではなく、GUI修正や複数ステップの指示追従まで含めた現実タスクでローカルモデルを試したい。クラウド前提の選定をやめ、用途ごとに『十分な品質ならローカルで回す』選択肢を残しておく価値がある。
+
+- リンク: [https://www.reddit.com/r/LocalLLaMA/comments/1rnwiyx/qwen_35_27b_is_the_real_deal_beat_gpt5_on_my/](https://www.reddit.com/r/LocalLLaMA/comments/1rnwiyx/qwen_35_27b_is_the_real_deal_beat_gpt5_on_my/)
+- 確信度: 中
+---
+
+---
+### 【カテゴリF: Hacker News（AI）】SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integrati…（Hacker News, 2026-03-04）
+
+**ひとことサマリー（1文）**: Hacker News の「SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases…」では、Hacker News上位で、LLMエージェントを継続的なコードベース保守で評価するSWE-CI論文が共有された。論文はCIループ上に100タスクを載せ、平均233日・71コミットにわたる実リポジトリの進化履歴を使って、静的な一発修正ではなく長期のmaintainabilityを測るベンチマークを提案している。エージェントには、数十ラウンドの分析と修正を通じて課題を解かせる設計だ。
+
+**何が起きたか（What）**:  
+Hacker Newsの「SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases…」は2026-03-04公開。Hacker News上位で、LLMエージェントを継続的なコードベース保守で評価するSWE-CI論文が共有された。論文はCIループ上に100タスクを載せ、平均233日・71コミットにわたる実リポジトリの進化履歴を使って、静的な一発修正ではなく長期のmaintainabilityを測るベンチマークを提案している。エージェントには、数十ラウンドの分析と修正を通じて課題を解かせる設計だ。
+
+**なぜ重要か（Why it matters）**:  
+agent codingの評価軸が、単発のfunctional correctnessから、長期保守で品質を維持できるかへ移りつつある。実務に近いCI文脈のベンチが増えると、モデルの勝敗だけでなく『どれだけ壊さずに改善を積み上げられるか』が比較ポイントになる。
+
+**自分への影響（So what）**:  
+自分のツール比較でも、短いコード生成テストだけで判断せず、CIを挟んだ連続タスクで破綻しないかを見るべきだ。小さな保守課題を何日か連続で回す評価を作れば、日常開発に近い形でエージェントの強さを測りやすくなる。
+
+- リンク: [https://arxiv.org/abs/2603.03823](https://arxiv.org/abs/2603.03823)
+- 確信度: 高
+---
+
+---
+
+## 半導体ニュース
+
+### 公式ソース
+
+---
+### 【カテゴリB: 公式ソース（半導体）】Samsung Takes Next Stride Toward AI-Native Software-Driven Networks With NVIDIA（公式半導体, 2026-03-01）
+
+**ひとことサマリー（1文）**: 公式半導体 の「Samsung Takes Next Stride Toward AI-Native Software-Driven Netw…」では、SamsungはR&DセンターでvRANソフトウェアとNVIDIAのaccelerated computing platformを組み合わせたmulti-cell testを完了し、MWC 2026でAI-RANデモを披露すると発表した。AI MIMO beamformerで下り性能とスペクトル効率を上げる構成で、Grace CPUとL4 GPUを載せたARC Compactとの統合も終え、商用化検証を進めている。
+
+**何が起きたか（What）**:  
+公式半導体の「Samsung Takes Next Stride Toward AI-Native Software-Driven Netw…」は2026-03-01公開。SamsungはR&DセンターでvRANソフトウェアとNVIDIAのaccelerated computing platformを組み合わせたmulti-cell testを完了し、MWC 2026でAI-RANデモを披露すると発表した。AI MIMO beamformerで下り性能とスペクトル効率を上げる構成で、Grace CPUとL4 GPUを載せたARC Compactとの統合も終え、商用化検証を進めている。
+
+**なぜ重要か（Why it matters）**:  
+AI向け半導体の需要先がデータセンターだけでなく通信ネットワークへ広がると、GPU・CPU・無線ソフトの最適化が一体の競争になる。既存スペクトルから容量を引き出すAI-RANは、キャリア投資を動かす現実的なユースケースとしてチップ需要の裾野を広げる。
+
+**自分への影響（So what）**:  
+自分のウォッチでも、半導体トピックを学習用クラスタだけに限定しない方がいい。通信やエッジの現場でGPU/CPUがどう組み込まれるかを追うと、どの用途で需要が本格化するかを早めに読みやすくなる。
+
+- リンク: [https://news.samsung.com/global/samsung-takes-next-stride-toward-ai-native-software-driven-networks-with-nvidia](https://news.samsung.com/global/samsung-takes-next-stride-toward-ai-native-software-driven-networks-with-nvidia)
+- 確信度: 高
+---
+
+---
+### 【カテゴリB: 公式ソース（半導体）】NVIDIA and Coherent Announce Strategic Partnership to Develop Optics Technology to Scal…（公式半導体, 2026-03-02）
+
+**ひとことサマリー（1文）**: 公式半導体 の「NVIDIA and Coherent Announce Strategic Partnership to Develop O…」では、NVIDIAとCoherentが次世代AIデータセンター向け光技術の複数年提携を発表した。NVIDIAはCoherentへ20億ドルを投資し、さらに将来の先端レーザー製品と光ネットワーク製品の供給枠を確保する。発表では、光インターコネクトと先端パッケージ統合をAI factoryの次段階を支える基盤と位置づけ、米国内製造能力の拡張も前面に出した。
+
+**何が起きたか（What）**:  
+公式半導体の「NVIDIA and Coherent Announce Strategic Partnership to Develop O…」は2026-03-02公開。NVIDIAとCoherentが次世代AIデータセンター向け光技術の複数年提携を発表した。NVIDIAはCoherentへ20億ドルを投資し、さらに将来の先端レーザー製品と光ネットワーク製品の供給枠を確保する。発表では、光インターコネクトと先端パッケージ統合をAI factoryの次段階を支える基盤と位置づけ、米国内製造能力の拡張も前面に出した。
+
+**なぜ重要か（Why it matters）**:  
+AIインフラの制約はGPUチップ単体から、光配線とパッケージを含むシステム全体へ移っている。NVIDIAが供給確保と製造能力への資本投入を同時に進めたことは、次のボトルネックがフォトニクスと高帯域接続にあると自ら示した動きとして重い。
+
+**自分への影響（So what）**:  
+半導体ニュースを見るときも、今後はGPUロードマップだけでなく、光学部品、パッケージ、ネットワークの供給線まで一体で追う必要がある。自分の調達判断でも、計算性能より先に相互接続と消費電力が制約になる前提でニュースを読むべきだ。
+
+- リンク: [https://nvidianews.nvidia.com/news/nvidia-and-coherent-announce-strategic-partnership-to-develop-optics-technology-to-scale-next-generation-data-center-architecture](https://nvidianews.nvidia.com/news/nvidia-and-coherent-announce-strategic-partnership-to-develop-optics-technology-to-scale-next-generation-data-center-architecture)
+- 確信度: 高
+---
+
+---
+### 【カテゴリB: 公式ソース（半導体）】AMD and Nutanix Announce Strategic Partnership to Advance an Open and Scalable Platform…（公式半導体, 2026-02-25）
+
+**ひとことサマリー（1文）**: 公式半導体 の「AMD and Nutanix Announce Strategic Partnership to Advance an Op…」では、AMDとNutanixは、agentic AIアプリケーション向けのopen full-stack AI infrastructureを共同開発する複数年提携を発表した。AMDはNutanix株に1.5億ドルを投資し、さらに最大1億ドルをjoint engineeringとgo-to-marketへ拠出する。初の共同開発プラットフォームは2026年後半投入予定で、EPYC CPU、Instinct GPU、ROCm、Nutanix Cloud Platform/Kubernetes Platformを束ねる構想だ。
+
+**何が起きたか（What）**:  
+公式半導体の「AMD and Nutanix Announce Strategic Partnership to Advance an Op…」は2026-02-25公開。AMDとNutanixは、agentic AIアプリケーション向けのopen full-stack AI infrastructureを共同開発する複数年提携を発表した。AMDはNutanix株に1.5億ドルを投資し、さらに最大1億ドルをjoint engineeringとgo-to-marketへ拠出する。初の共同開発プラットフォームは2026年後半投入予定で、EPYC CPU、Instinct GPU、ROCm、Nutanix Cloud Platform/Kubernetes Platformを束ねる構想だ。
+
+**なぜ重要か（Why it matters）**:  
+企業のAI基盤選定は、GPU単体性能より『どのスタックで長く運用できるか』に重心が移っている。AMDがソフトウェア、ハイブリッド運用、販売面まで含めてNutanixと組んだことは、垂直統合型AIスタックへの対抗軸が明確になったことを示す。
+
+**自分への影響（So what）**:  
+自分がAIインフラを評価するなら、今後はベンチマークやVRAMだけでなく、ROCm互換性、Kubernetes運用、ライフサイクル管理まで含めて見るべきだ。単一ベンダー依存を避けたい案件では、この種のオープン構成が現実的な代替になるかを早めに確認したい。
+
+- リンク: [https://www.amd.com/en/newsroom/press-releases/2026-2-25-amd-and-nutanix-announce-strategic-partnership-to.html](https://www.amd.com/en/newsroom/press-releases/2026-2-25-amd-and-nutanix-announce-strategic-partnership-to.html)
+- 確信度: 高
+---
+
+### コミュニティ（Reddit / HN / その他）
+
+---
+### 【カテゴリE/F: コミュニティ（半導体）】「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲（note, 2026-03-06）
+
+**ひとことサマリー（1文）**: note の「「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲」では、公開範囲では、Broadcomの2026年第1四半期決算を起点に、AIインフラが『汎用GPU＋独自ネットワーク＋光インターコネクト』と『カスタムxPU＋Ethernet＋銅配線延命』の二方向へ分岐し始めたと整理している。2027年に向けたAI半導体1000億ドル超という強気見通しを、単なる需要拡大ではなくポストGPU万能時代の設計転換として読むべきだという切り口だ。
+
+**何が起きたか（What）**:  
+noteの「「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲」は2026-03-06公開。公開範囲では、Broadcomの2026年第1四半期決算を起点に、AIインフラが『汎用GPU＋独自ネットワーク＋光インターコネクト』と『カスタムxPU＋Ethernet＋銅配線延命』の二方向へ分岐し始めたと整理している。2027年に向けたAI半導体1000億ドル超という強気見通しを、単なる需要拡大ではなくポストGPU万能時代の設計転換として読むべきだという切り口だ。
+
+**なぜ重要か（Why it matters）**:  
+GPUのシェア争いだけでは見えない、ネットワークとインターコネクト側の主導権争いを読み解く視点がある。NVIDIA一強の継続を前提にせず、顧客最適化されたxPUやEthernet陣営へ価値が移る可能性を早めに捉える材料になる。
+
+**自分への影響（So what）**:  
+自分が半導体ニュースを追うときも、今後はGPU売上だけでなく、ネットワーク、光学、カスタムシリコンのどこに資本が流れているかを見たい。ローカルAIやクラウド調達を考える上でも、勝敗がチップ単体では決まらない前提で情報を整理する必要がある。
+
+- リンク: [https://note.com/paul1211/n/n18c3c3ed66f6](https://note.com/paul1211/n/n18c3c3ed66f6)
+- 確信度: 中
+---
+
+---
+### 【カテゴリE/F: コミュニティ（半導体）】NV-UV brings one-click undervolting to GeForce RTX 50 GPUs（Reddit, 2026-03-08）
+
+**ひとことサマリー（1文）**: Reddit の「NV-UV brings one-click undervolting to GeForce RTX 50 GPUs」では、r/nvidia経由で、Blackwell世代向けのundervolting支援ツールNV-UVが注目を集めた。MSI Afterburnerの上に重ねる形で、Eco/Balanced/Performance/Maxのプリセット、DX12/DXRベースのAuto-UV scanner、約573本のゲームを対象にしたUV-Pilot、自動クラッシュ回復まで備えるという。背景にはBlackwellでNVAPIからVF curveを直接書き込みにくくなった事情がある。
+
+**何が起きたか（What）**:  
+Redditの「NV-UV brings one-click undervolting to GeForce RTX 50 GPUs」は2026-03-08公開。r/nvidia経由で、Blackwell世代向けのundervolting支援ツールNV-UVが注目を集めた。MSI Afterburnerの上に重ねる形で、Eco/Balanced/Performance/Maxのプリセット、DX12/DXRベースのAuto-UV scanner、約573本のゲームを対象にしたUV-Pilot、自動クラッシュ回復まで備えるという。背景にはBlackwellでNVAPIからVF curveを直接書き込みにくくなった事情がある。
+
+**なぜ重要か（Why it matters）**:  
+新GPU世代では、性能だけでなく電力・温度をどう制御できるかが実運用の満足度を左右する。コミュニティが補助ツールを急いで作っているのは、ハードそのものより周辺ソフトとドライバ成熟度が体験の差を生むことを示している。
+
+**自分への影響（So what）**:  
+自分が開発機やローカルAI用GPUを選ぶときも、カタログスペックだけでなく、ドライバの安定性や電力調整ツールの成熟度を見たい。Blackwellを検討するなら、初期世代はチューニング環境まで含めて確認してから導入した方が安全だ。
+
+- リンク: [https://videocardz.com/newz/nv-uv-brings-one-click-undervolting-to-geforce-rtx-50-gpus](https://videocardz.com/newz/nv-uv-brings-one-click-undervolting-to-geforce-rtx-50-gpus)
+- 確信度: 中
+---
+
+## その他の候補記事（選外）
+
+### カテゴリA（公式AI）
+- 該当候補なし（当日採用を優先）
+
+### カテゴリB（公式半導体）
+- 該当候補なし（当日採用を優先）
+
+### カテゴリC（Zenn）
+- 該当候補なし（当日採用を優先）
+
+### カテゴリD（note）
+- 該当候補なし（当日採用を優先）
+
+### カテゴリE（Reddit）
+- 該当候補なし（当日採用を優先）
+
+### カテゴリF（Hacker News）
+- 該当候補なし（当日採用を優先）
+
+
+## ソース一覧
+- 公式AI（Copilot code review now runs on an agentic architecture）, 公開日: 2026-03-05, アクセス日: 2026-03-10, 種別: 公式AI  
+  https://github.blog/changelog/2026-03-05-copilot-code-review-now-runs-on-an-agentic-architecture/
+- 公式AI（Codex Security: now in research preview）, 公開日: 2026-03-06, アクセス日: 2026-03-10, 種別: 公式AI  
+  https://openai.com/index/codex-security-now-in-research-preview/
+- Zenn（まだAIコードをレビューするか、しないかで言い争ってるの？）, 公開日: 2026-03-08, アクセス日: 2026-03-10, 種別: コミュニティ  
+  https://zenn.dev/nuits_jp/articles/2026-03-08-reviewing-ai-code
+- Zenn（AIコーディングの原則）, 公開日: 2026-03-08, アクセス日: 2026-03-10, 種別: コミュニティ  
+  https://zenn.dev/takekazuomi/articles/ai-coding-principles
+- note（同じClaude Codeを使っているのに、なぜ性能に大きな差がつくのか？ ― AIは「使い方」より「育て方」が大事）, 公開日: 2026-02-27, アクセス日: 2026-03-10, 種別: コミュニティ  
+  https://note.com/kajiken0630/n/n90c7c022b16c
+- Reddit（Anthropic just made Claude Code run without you. Scheduled ta…）, 公開日: 2026-03-07, アクセス日: 2026-03-10, 種別: コミュニティ  
+  https://www.reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/
+- Reddit（Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test）, 公開日: 2026-03-08, アクセス日: 2026-03-10, 種別: コミュニティ  
+  https://www.reddit.com/r/LocalLLaMA/comments/1rnwiyx/qwen_35_27b_is_the_real_deal_beat_gpt5_on_my/
+- Hacker News（SWE-CI: Evaluating Agent Capabilities in Maintaining Codebase…）, 公開日: 2026-03-04, アクセス日: 2026-03-10, 種別: コミュニティ  
+  https://arxiv.org/abs/2603.03823
+- 公式半導体（Samsung Takes Next Stride Toward AI-Native Software-Driven Ne…）, 公開日: 2026-03-01, アクセス日: 2026-03-10, 種別: 公式半導体  
+  https://news.samsung.com/global/samsung-takes-next-stride-toward-ai-native-software-driven-networks-with-nvidia
+- 公式半導体（NVIDIA and Coherent Announce Strategic Partnership to Develop…）, 公開日: 2026-03-02, アクセス日: 2026-03-10, 種別: 公式半導体  
+  https://nvidianews.nvidia.com/news/nvidia-and-coherent-announce-strategic-partnership-to-develop-optics-technology-to-scale-next-generation-data-center-architecture
+- 公式半導体（AMD and Nutanix Announce Strategic Partnership to Advance an…）, 公開日: 2026-02-25, アクセス日: 2026-03-10, 種別: 公式半導体  
+  https://www.amd.com/en/newsroom/press-releases/2026-2-25-amd-and-nutanix-announce-strategic-partnership-to.html
+- note（「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲）, 公開日: 2026-03-06, アクセス日: 2026-03-10, 種別: コミュニティ  
+  https://note.com/paul1211/n/n18c3c3ed66f6
+- Reddit（NV-UV brings one-click undervolting to GeForce RTX 50 GPUs）, 公開日: 2026-03-08, アクセス日: 2026-03-10, 種別: コミュニティ  
+  https://videocardz.com/newz/nv-uv-brings-one-click-undervolting-to-geforce-rtx-50-gpus
+
+## 対象範囲
+- 対象日: 2026-03-10
+- タイムゾーン: Asia/Tokyo
+- 対象期間: 2026-03-10の48時間前〜現在（不足カテゴリは7日→14日へ拡張）

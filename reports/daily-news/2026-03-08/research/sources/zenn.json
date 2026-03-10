@@ -1,0 +1,48 @@
+{
+  "source": "zenn",
+  "date": "2026-03-08",
+  "items": [
+    {
+      "title": "Claude と Gemini でコードレビューを比較した結果と使い分け",
+      "url": "https://zenn.dev/ga14tools/articles/ai-code-review-claude-gemini",
+      "published_at": "2026-03-08",
+      "segment": "ai",
+      "what": "同じコードをClaudeとGeminiにレビューさせ、指摘の傾向と向いている用途を比較した記事。著者は両者の得意分野がはっきり分かれ、レビューの目的に応じて使い分けた方が実務では機能すると整理している。",
+      "why": "AIコードレビューの品質差はモデル名だけでは見えにくく、実例比較がないと現場に載せづらい。レビュー用途を一つのモデルに固定せず、欠陥検出と説明のしやすさを分けて考える視点は運用設計に直結する。",
+      "so_what": "自分の運用でも、モデルを一本化する前に同一diffで比較し、レビュー観点ごとに役割分担させる検証を入れたい。特にPRレビューでは、精度だけでなく根拠の分かりやすさも採用条件にする。",
+      "confidence": "high"
+    },
+    {
+      "title": "AIコーディングの原則",
+      "url": "https://zenn.dev/takekazuomi/articles/ai-coding-principles",
+      "published_at": "2026-03-08",
+      "segment": "ai",
+      "what": "AIコーディングが広がる一方で、低品質なAI生成物がチーム全体のレビュー負荷を増やすという前提から、著者がチーム運用向けの原則をまとめた。個人では吸収できるノイズも、組織では増幅されるため、人間の責任範囲や品質基準を明確に置くべきだと論じている。",
+      "why": "2026年のAIコーディングは導入可否より、どう統制するかが論点になっている。生成速度よりも、スロップをチームでどう抑えるかを原則レベルで言語化した記事は、実務導入の失敗を減らしやすい。",
+      "so_what": "自分の開発では、便利なプロンプト集を増やす前に、誰が最終責任を持つかとレビュー基準を文章化した方がよい。AI利用ルールをコード品質と切り離さず、PR運用に落とし込む必要がある。",
+      "confidence": "high"
+    },
+    {
+      "title": "Amazon Bedrock AgentCore Policyが正式リリース——AIエージェントに「コード外ガードレール」を適用する",
+      "url": "https://zenn.dev/taketaka1986/articles/2026-03-07-bedrock-agentcore-policy-ga",
+      "published_at": "2026-03-08",
+      "segment": "ai",
+      "what": "Amazon Bedrock AgentCore PolicyのGAを受けて、エージェントへコード外のガードレールを与える考え方と適用範囲を整理した記事。実装ロジックとは別に、エージェントの許容行動をポリシーとして制御する発想を説明している。",
+      "why": "AIエージェントはツール実行まで踏み込むため、コードレビューだけでは防げない事故が増える。ポリシーレイヤーで制約を定義する考え方は、agent運用が本番系へ近づくほど重要になる。",
+      "so_what": "自分の自動化でも、権限や実行条件をプロンプトだけに埋め込まず、別レイヤーで明示的に制御する設計を試したい。特にファイル編集や外部アクセスの可否は、運用ルールとして切り出した方が安全だ。",
+      "confidence": "high"
+    }
+  ],
+  "other_candidates": [
+    {
+      "title": "Devin機能紹介:Agentモード",
+      "url": "https://zenn.dev/aidd/articles/4f9bdacbfd6f32",
+      "published_at": "2026-03-08"
+    },
+    {
+      "title": "WSL2 + RTX3080でローカルLLM環境を構築する完全ガイド【Ollama + Open WebUI + Web検索対応】",
+      "url": "https://zenn.dev/tests04/articles/f641c2df67826f",
+      "published_at": "2026-03-08"
+    }
+  ]
+}

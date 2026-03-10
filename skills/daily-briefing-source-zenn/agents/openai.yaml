@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source: Zenn"
+  short_description: "Zenn AI/LLM記事の候補収集"
+  default_prompt: "$daily-briefing-source-zenn を使って、ZennのAI/LLM関連記事を収集し JSON 出力してください。"

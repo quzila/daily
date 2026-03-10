@@ -1,0 +1,33 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-03",
+  "items": [
+    {
+      "title": "OpenAI research and product updates from February 2026",
+      "url": "https://openai.com/news/",
+      "published_at": "2026-02-27",
+      "segment": "ai",
+      "what": "OpenAIのnewsページで2月後半の研究・製品更新が連続して告知され、企業導入の実装論点（推論性能・安全性・運用）をまとめて提示した。",
+      "why": "機能断片ではなく、研究と製品更新が同じ流れで示されることで、企業側は採用判断を『モデル単体』から『運用継続性』に移せる。",
+      "confidence": "high"
+    },
+    {
+      "title": "Introducing Claude Sonnet 4.6",
+      "url": "https://www.anthropic.com/news/introducing-claude-sonnet-4-6",
+      "published_at": "2026-02-17",
+      "segment": "ai",
+      "what": "AnthropicがClaude Sonnet 4.6を公開し、コード生成・推論品質の改善点を公式に説明した。",
+      "why": "同クラスモデルの競争軸が、ベンチマーク値だけでなく実タスクでの安定度と開発体験に移っていることを裏づける。",
+      "confidence": "high"
+    },
+    {
+      "title": "OpenAI model release notes (GPT-4.5 / GPT-5系列更新)",
+      "url": "https://help.openai.com/en/articles/9624314-model-release-notes",
+      "published_at": "2026-02-10",
+      "segment": "ai",
+      "what": "モデルリリースノートでGPT-4.5/GPT-5系更新の差分が継続告知され、API/ChatGPTの挙動変化を追跡できる形で公開された。",
+      "why": "現場の品質事故は『知らないうちのモデル挙動変更』で起きやすく、リリースノートの定点観測が運用品質に直結する。",
+      "confidence": "high"
+    }
+  ]
+}
