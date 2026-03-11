@@ -1,0 +1,26 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-11",
+  "items": [
+    {
+      "title": "GPT-5.4 now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-03-05-gpt-5-4-now-available-in-github-copilot/",
+      "published_at": "2026-03-05",
+      "segment": "ai",
+      "what": "GitHubはGPT-5.4をGitHub Copilotへロールアウトした。Copilot Chat、code completion、coding agent、code review、Copilot Edits、Spaces、Copilot CLIで利用でき、Copilot BusinessとEnterpriseでは管理者が組織の既定モデルとして選べる。code completionでの利用は公開プレビューとして始まっている。",
+      "why": "同じ最新モデルがIDE、CLI、レビュー、エージェント実行まで横断して使えるようになると、開発フローの分断が減り、モデル選定は個人設定ではなく組織の運用設計の論点になる。管理者側で既定モデルを固定できる点は、品質評価とガバナンスを回しやすくする。",
+      "so_what": "自分の開発でも、IDE補完だけでなくレビューやCLI実行まで同じモデルで揃えた時に、どこで品質が伸びてどこでノイズが増えるかを見たい。個人の好みで切り替える前に、既定モデルを1つ決めて評価基準を固定した方が比較しやすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "Codex Security: now in research preview",
+      "url": "https://openai.com/index/codex-security-now-in-research-preview/",
+      "published_at": "2026-03-06",
+      "segment": "ai",
+      "what": "OpenAIはCodex Securityをresearch previewとして公開した。リポジトリから脅威モデルを組み立て、見つけた脆弱性を検証環境で再現しながら修正案を返す構成で、ベータ期間30日で120万件超のコミットを走査し、792件のcriticalと10,561件のhigh-severity findingを検出した。OpenAIは一部ケースでノイズを84%減らし、過大なseverity判定を90%以上抑えたとしている。",
+      "why": "AIが書くコード量が増えるほど、セキュリティ運用の負荷は『何件検出したか』より『どれだけ誤検知を減らして修正可能な形にできるか』へ移る。脅威モデルと検証を組み合わせる設計は、静的解析の延長ではなく、リポジトリ文脈を読むセキュリティエージェントへの移行を示している。",
+      "so_what": "生成後に別ツールで一括スキャンするだけではなく、リポジトリ固有の前提を踏まえた検証付きレビューをCI近くへ置けるかを見直したい。採用判断では検出件数より、誤検知率と修正提案のレビューしやすさを重視するべきだ。",
+      "confidence": "high"
+    }
+  ]
+}

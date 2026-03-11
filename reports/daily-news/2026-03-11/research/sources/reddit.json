@@ -1,0 +1,36 @@
+{
+  "source": "reddit",
+  "date": "2026-03-11",
+  "items": [
+    {
+      "title": "/loop in Claude Code: Run your agents indefinitely!",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1ro4hoq/loop_in_claude_code_run_your_agents_indefinitely/",
+      "published_at": "2026-03-10",
+      "segment": "ai",
+      "what": "r/ClaudeCodeで、Claude Codeの`/loop`機能を使えば、停止条件に達するまでエージェントを回し続けられるという投稿が話題になった。投稿では、バグ修正やPRレビューのような反復作業をバックグラウンドで継続実行する使い方が紹介され、コメント欄では夜間実行や監督方法に関する議論が集まっている。",
+      "why": "AIコーディングが『呼び出して使うツール』から『一定条件まで自律実行するワーカー』へ進みつつあることを示す。便利さと同時に、停止条件、監視、権限境界をどう設計するかが実運用の中心論点になる。",
+      "so_what": "自分が自動化するなら、まずは読み取り中心の定期チェックやリサーチから始め、書き込みや修正適用は確認付きで段階的に広げたい。便利さだけでなく、いつ止めるかと誰が最後に確認するかを先に決めるべきだ。",
+      "confidence": "medium"
+    },
+    {
+      "title": "Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rnwiyx/qwen_35_27b_is_the_real_deal_beat_gpt5_on_my/",
+      "published_at": "2026-03-08",
+      "segment": "ai",
+      "what": "r/LocalLLaMAで、i7-12700K、RTX 3090 Ti、96GB RAMの環境から、長文プロンプトでPDF結合・変換GUIを作らせた比較が共有された。投稿者によればGPT-5は3回ともGUI起動に失敗した一方、Qwen 3.5 27Bは262K contextで31.26 tok/secを出しつつ3回目で実用的なアプリを完成させた。",
+      "why": "『大きいクラウドモデルが常に最強』という前提を崩す、現場寄りの比較として面白い。ローカルモデルが視覚入力と長文コンテキストを使いながら実務タスクを完走できるなら、コスト、待ち時間、オフライン運用の判断基準が変わる。",
+      "so_what": "自分の比較でも、単純なコード生成ベンチではなく、GUI修正や複数ステップの指示追従まで含めた現実タスクでローカルモデルを試したい。クラウド前提の選定をやめ、用途ごとに『十分な品質ならローカルで回す』選択肢を残しておく価値がある。",
+      "confidence": "medium"
+    },
+    {
+      "title": "NV-UV brings one-click undervolting to GeForce RTX 50 GPUs",
+      "url": "https://videocardz.com/newz/nv-uv-brings-one-click-undervolting-to-geforce-rtx-50-gpus",
+      "published_at": "2026-03-08",
+      "segment": "semiconductor",
+      "what": "r/nvidiaで共有されたVideocardz記事によると、Blackwell世代向けのundervolting支援ツールNV-UVが公開された。MSI Afterburnerの上に重ねる形でEco/Balanced/Performance/Maxのプリセット、DX12/DXRベースのAuto-UV scanner、約573本のゲームを対象にしたUV-Pilot、自動クラッシュ回復まで備えるという。",
+      "why": "新GPU世代では、性能だけでなく電力・温度をどう制御できるかが実運用の満足度を左右する。コミュニティが補助ツールを急いで作っているのは、ハードそのものより周辺ソフトとドライバ成熟度が体験差を生むことを示している。",
+      "so_what": "自分が開発機やローカルAI用GPUを選ぶ時も、カタログスペックだけでなく、ドライバの安定性や電力調整ツールの成熟度を見たい。Blackwellを検討するなら、初期世代はチューニング環境まで含めて確認した方が安全だ。",
+      "confidence": "medium"
+    }
+  ]
+}

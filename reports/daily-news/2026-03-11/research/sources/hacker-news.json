@@ -1,0 +1,16 @@
+{
+  "source": "hacker-news",
+  "date": "2026-03-11",
+  "items": [
+    {
+      "title": "Agents that run while I sleep",
+      "url": "https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep",
+      "published_at": "2026-03-10",
+      "segment": "ai",
+      "what": "Hacker News上位で共有された記事は、数時間単位でコードを書くエージェントを無監督で走らせる運用では、差分レビューだけでは品質を担保できないと指摘する。著者は、Plain Englishで期待挙動を書き下ろし、AIにその仕様を満たすか検証させる方法を、TDDの考え方を軽量化した信頼メカニズムとして提案している。",
+      "why": "エージェントが出力するコード量が増えるほど、人間が全部の差分を読む運用は破綻しやすい。『何を書くか』より『何を正解とみなすか』を先に明文化する発想は、AI時代の評価基盤として重要だ。",
+      "so_what": "自分の開発でも、長時間走るエージェントを使うなら、まずPlain Englishの受け入れ条件をファイル化してから実装させたい。レビューで全部捕まえる前提をやめ、期待挙動を先に固定する方が事故を減らせる。",
+      "confidence": "high"
+    }
+  ]
+}
