@@ -1,0 +1,149 @@
+# Daily Research Context (2026-03-13)
+
+## Writing Rule
+- 各記事は必ず `事実(What) / 背景(Why it matters) / 影響(So what)` を含める。
+- 事実には数字・日付・固有名詞を入れる。
+- 影響は、AI記事ではAIコーディング趣味の視点、半導体記事では店頭業務または開発環境調達の視点に接続する。
+
+## Output Contract (3/1 Style)
+- 最終出力の見出し順序は固定すること。
+  1) `## 今日のハイライト（3選）`
+  2) `## AI ニュース` → `### 公式ソース / Zenn ピックアップ / note ピックアップ / Reddit / HN ピックアップ`
+  3) `## 半導体ニュース` → `### 公式ソース / コミュニティ（Reddit / HN / その他）`
+  4) `## その他の候補記事（選外）`
+  5) `## ソース一覧`
+- 記事は `---` で区切り、タイトル行は次の形式を使うこと。
+  - AI公式: `### 【カテゴリA: 公式ソース（AI）】記事タイトル（出典名, 公開日）`
+  - 半導体公式: `### 【カテゴリB: 公式ソース（半導体）】記事タイトル（出典名, 公開日）`
+- 記事ブロックのラベルは次の4つを必須にすること。
+  - `**ひとことサマリー（1文）**`
+  - `**何が起きたか（What）**`
+  - `**なぜ重要か（Why it matters）**`
+  - `**自分への影響（So what）**`
+
+## Few-shot (Good Example)
+- タイトル: Copilot CLI GA
+- 30秒で読める要約: 2026-02-25にGA。CLIで計画実行とMCP連携が正式化し、運用自動化の実装コストが下がった。
+- 記事全体の内容:
+  - 事実(What): GitHub公式がGAを発表。プレビュー(2025-09)からの主要追加はエージェント実行、セッション継続、MCP対応。
+  - 背景(Why it matters): AI開発の主戦場がIDE内補完から、CLIを含む運用全体へ移っている。
+  - 影響(So what): 障害一次対応テンプレをCLI化し、週末の個人開発でデバッグ自動化パイプラインに転用できる。
+- 記事ブロック見出し例:
+  - `### 【カテゴリA: 公式ソース（AI）】Copilot CLI が GA（GitHub Changelog, 2026-02-25）`
+
+## [AI] Major agentic capabilities improvements in GitHub Copilot for JetBrains IDEs
+- Source: official-ai
+- Published: 2026-03-11
+- URL: https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides/
+- Score: 30.0
+- Snippet: GitHubはJetBrains IDE向けCopilotを更新し、custom agents、sub-agents、plan agentをGAにした。agent hooksはpreview、MCP向けauto-approve対応、Nested AGENTS.mdとCLAUDE.mdのinstruction file対応、auto model selectionのGA化なども同時に入った。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [AI] Codex Security: now in research preview
+- Source: official-ai
+- Published: 2026-03-06
+- URL: https://openai.com/index/codex-security-now-in-research-preview/
+- Score: 29.99
+- Snippet: OpenAIはCodex Securityをresearch previewとして公開した。リポジトリから脅威モデルを組み立て、見つけた脆弱性を検証環境で再現しながら修正案を返す構成で、ベータ期間30日で120万件超のコミットを走査し、792件のcriticalと10,561件のhigh-severity findingを検出した。OpenAIは一部ケースでノイズを84%減らし、過大なseverity判定を90%以上抑えたとしている。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [SEMICONDUCTOR] Intel Launches Core Series 2 Processor with Real-Time Performance and Expands Edge AI Portfolio
+- Source: official-semiconductor
+- Published: 2026-03-09
+- URL: https://newsroom.intel.com/client-computing/intel-launches-core-series-2-processors-expands-edge-ai-portfolio
+- Score: 29.0
+- Snippet: IntelはEmbedded World 2026で、mission-criticalなedge用途向けにCore Series 2 processors with P-coresを発表した。AMD Ryzen 7 9700X比で最大4.4倍低いPCIe latency、2.5倍高いdeterministic response time、3.8倍高いdeterministic performanceを訴求し、patient monitoring向けHealth & Life Sciences Edge AI Suiteのpreviewも公開した。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [SEMICONDUCTOR] Samsung and AMD Reinforce Strategic Collaboration To Advance AI-Powered Network Innovations for Commercial Deployments
+- Source: official-semiconductor
+- Published: 2026-03-02
+- URL: https://news.samsung.com/global/samsung-and-amd-reinforce-strategic-collaboration-to-advance-ai-powered-network-innovations-for-commercial-deployments
+- Score: 28.99
+- Snippet: SamsungはAMDと連携し、5G Core、virtualized RAN、private networksで商用展開段階に入ったと発表した。Videotron向け5G NSAと4G LTE Core gatewayにはAMD EPYC 9005 Series CPUsを採用し、MWC 2026では追加アクセラレータなしで商用品質のAI-powered vRANを動かしたmulti-cell testing結果と、AI on RAN用途を載せるNetwork in a Serverを披露した。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [SEMICONDUCTOR] NVIDIA and Coherent Announce Strategic Partnership to Develop Optics Technology to Scale Next-Generation Data Center Architecture
+- Source: official-semiconductor
+- Published: 2026-03-02
+- URL: https://nvidianews.nvidia.com/news/nvidia-and-coherent-announce-strategic-partnership-to-develop-optics-technology-to-scale-next-generation-data-center-architecture
+- Score: 28.98
+- Snippet: NVIDIAとCoherentは、次世代AIデータセンター向け光学技術の複数年戦略提携を発表した。NVIDIAはCoherentへ20億ドルを投資し、先端レーザー製品と光ネットワーク製品の将来供給枠も確保する。発表では、光インターコネクトと先端パッケージ統合をAIインフラ次段階の基盤と位置づけ、Coherentの米国内製造能力拡張も支援する。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [AI] AI駆動開発で重要になるセルフレビューとPRでの説明責任
+- Source: zenn
+- Published: 2026-03-11
+- URL: https://zenn.dev/tokushun109/articles/bdd78b1dbd8992
+- Score: 25.0
+- Snippet: この記事は、AIコーディングで実装コストがほぼゼロに近づく一方、コードを理解するコストはむしろ増えていると整理する。従来は設計しながら実装していたが、生成AIでは『コードは存在するが理解プロセスを通っていない』状態が生まれやすく、その補完としてセルフレビューとPRでの説明責任が重要になると論じている。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [AI] Claude CodeでXcode Cloudのテスト失敗を自動分析・修正する仕組みを作ってみた
+- Source: zenn
+- Published: 2026-03-11
+- URL: https://zenn.dev/zaico/articles/b4572d16949df6
+- Score: 24.99
+- Snippet: ZAICO Developers Blogは、Claude Codeのカスタムコマンド`/check-xc-tests`とasc CLIを組み合わせ、Xcode Cloudの失敗テストを自動分析する仕組みを紹介した。現在ブランチの最新テスト結果取得とgit diff分析を並列に走らせ、失敗テストと変更内容の関連度を判定し、関連性が高い場合だけユーザー確認後に修正案を適用するマルチエージェント構成を取っている。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [AI] 同じClaude Codeを使っているのに、なぜ性能に大きな差がつくのか？ ― AIは「使い方」より「育て方」が大事
+- Source: note
+- Published: 2026-02-27
+- URL: https://note.com/kajiken0630/n/n90c7c022b16c
+- Score: 24.0
+- Snippet: 梶谷健人氏は、Claude Codeの成果差はプロンプトの巧拙より『AIの育て方』、つまり与える文脈と記憶設計の差で生まれると論じた。記事では、AIは毎回記憶が初期化された『天才新入社員』のようなもので、`CLAUDE.md`による基本マニュアルだけでは足りず、事業背景や過去判断を継続的に蓄積する仕組みが必要だと整理している。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [SEMICONDUCTOR] 「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲
+- Source: note
+- Published: 2026-03-06
+- URL: https://note.com/paul1211/n/n18c3c3ed66f6
+- Score: 23.99
+- Snippet: パウロ氏はBroadcomの2026年第1四半期決算を起点に、AIインフラの設計思想が『汎用GPU＋独自ネットワーク＋光インターコネクト』と『カスタムxPU＋Ethernet＋銅配線延命』の二方向へ分岐し始めたと整理した。2027年に向けたAI半導体1000億ドル超という強気見通しを、単なる需要拡大ではなくポストGPU万能時代の構造変化として読むべきだと論じている。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [AI] Anthropic just made Claude Code run without you. Scheduled tasks are live. This is a big deal.
+- Source: reddit
+- Published: 2026-03-07
+- URL: https://www.reddit.com/r/ClaudeAI/comments/1rna5mb/anthropic_just_made_claude_code_run_without_you/
+- Score: 23.0
+- Snippet: r/ClaudeAIで、Claude Codeのscheduled tasksがネイティブ対応したことが大きく話題になった。投稿ではdaily commit review、dependency audit、error log scan、PR reviewを夜間に自動実行できると紹介され、コメント欄ではデスクトップ版を開いたままにする必要があることや、false positiveと権限設計への注意も議論されている。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [AI] Qwen 3.5 27B is the REAL DEAL - Beat GPT-5 on my first test
+- Source: reddit
+- Published: 2026-03-08
+- URL: https://www.reddit.com/r/LocalLLaMA/comments/1rnwiyx/qwen_35_27b_is_the_real_deal_beat_gpt5_on_my/
+- Score: 22.99
+- Snippet: r/LocalLLaMAで、i7-12700K、RTX 3090 Ti、96GB RAMの環境から、長文プロンプトでPDF結合と変換GUIを作らせた比較が共有された。投稿者によればGPT-5は3回ともGUI起動に失敗した一方、Qwen 3.5 27Bは262K contextで31.26 tok/secを出しつつ3回目で実用的なアプリを完成させた。スクリーンショット入力で細部を詰めた点や、35B系は速度が出ても同タスクでは失敗した点も報告されている。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [SEMICONDUCTOR] NV-UV brings one-click undervolting to GeForce RTX 50 GPUs
+- Source: reddit
+- Published: 2026-03-08
+- URL: https://videocardz.com/newz/nv-uv-brings-one-click-undervolting-to-geforce-rtx-50-gpus
+- Score: 22.98
+- Snippet: r/nvidia経由で、Blackwell世代向けのundervolting支援ツールNV-UVが注目を集めた。MSI Afterburnerの上に重ねる形で、Eco、Balanced、Performance、Maxのプリセット、DX12とDXRベースのAuto-UV scanner、約573本のゲームを対象にしたUV-Pilot、自動クラッシュ回復まで備えるという。背景にはBlackwellでNVAPIからVF curveを直接書き込みにくくなった事情がある。
+- Body:
+(本文取得に失敗。要手動確認)
+
+## [AI] Agents that run while I sleep
+- Source: hacker-news
+- Published: 2026-03-10
+- URL: https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep
+- Score: 22.0
+- Snippet: Hacker News上位で共有された記事は、数時間単位でコードを書くエージェントを無監督で走らせる運用では、差分レビューだけでは品質を担保できないと指摘する。著者は、Plain Englishで期待挙動を書き下ろし、AIにその仕様を満たすか検証させる方法を、TDDの考え方を軽量化した信頼メカニズムとして提案している。
+- Body:
+(本文取得に失敗。要手動確認)

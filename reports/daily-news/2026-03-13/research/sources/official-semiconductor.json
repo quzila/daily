@@ -1,0 +1,36 @@
+{
+  "source": "official-semiconductor",
+  "date": "2026-03-13",
+  "items": [
+    {
+      "title": "Intel Launches Core Series 2 Processor with Real-Time Performance and Expands Edge AI Portfolio",
+      "url": "https://newsroom.intel.com/client-computing/intel-launches-core-series-2-processors-expands-edge-ai-portfolio",
+      "published_at": "2026-03-09",
+      "segment": "semiconductor",
+      "what": "IntelはEmbedded World 2026で、mission-criticalなedge用途向けにCore Series 2 processors with P-coresを発表した。AMD Ryzen 7 9700X比で最大4.4倍低いPCIe latency、2.5倍高いdeterministic response time、3.8倍高いdeterministic performanceを訴求し、patient monitoring向けHealth & Life Sciences Edge AI Suiteのpreviewも公開した。",
+      "why": "AI推論の主戦場がクラウドだけでなく工場、医療、制御系エッジへ広がる中では、単純なTOPSよりもリアルタイム性と産業向け供給の長さが差別化要素になる。IntelがEdge AI Suitesを用途別に増やし始めたことで、半導体競争がチップ単体からリファレンスワークロード込みの実装競争へ移っている。",
+      "so_what": "自分がエッジAIやローカル推論機材を見るときも、NPUの理論性能だけでなく、遅延保証や検証済みワークロードがどこまで揃うかを重視したい。産業や医療系の案件では、ベンチマークの速さより運用上の再現性と長期供給の方が先に効くと考えるべきだ。",
+      "confidence": "high"
+    },
+    {
+      "title": "Samsung and AMD Reinforce Strategic Collaboration To Advance AI-Powered Network Innovations for Commercial Deployments",
+      "url": "https://news.samsung.com/global/samsung-and-amd-reinforce-strategic-collaboration-to-advance-ai-powered-network-innovations-for-commercial-deployments",
+      "published_at": "2026-03-02",
+      "segment": "semiconductor",
+      "what": "SamsungはAMDと連携し、5G Core、virtualized RAN、private networksで商用展開段階に入ったと発表した。Videotron向け5G NSAと4G LTE Core gatewayにはAMD EPYC 9005 Series CPUsを採用し、MWC 2026では追加アクセラレータなしで商用品質のAI-powered vRANを動かしたmulti-cell testing結果と、AI on RAN用途を載せるNetwork in a Serverを披露した。",
+      "why": "AIネイティブな通信網では、専用アクセラレータを増やすより、CPU中心の仮想化スタックで柔軟性と電力効率を両立できるかが重要になる。SamsungとAMDが検証から商用段階へ進んだことで、通信インフラ向け半導体の競争軸がGPU一辺倒ではなく、汎用CPUとソフトウェア最適化へ広がっていることが明確になった。",
+      "so_what": "半導体ニュースを見るときも、データセンターGPUだけでなく、通信網でAI推論を回すためのCPU、仮想化、運用ソフトの組み合わせを追う必要がある。自分がインフラ構成を評価するなら、専用カードの有無より、商用環境でどこまでソフトウェアだけで拡張できるかを重視したい。",
+      "confidence": "high"
+    },
+    {
+      "title": "NVIDIA and Coherent Announce Strategic Partnership to Develop Optics Technology to Scale Next-Generation Data Center Architecture",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-and-coherent-announce-strategic-partnership-to-develop-optics-technology-to-scale-next-generation-data-center-architecture",
+      "published_at": "2026-03-02",
+      "segment": "semiconductor",
+      "what": "NVIDIAとCoherentは、次世代AIデータセンター向け光学技術の複数年戦略提携を発表した。NVIDIAはCoherentへ20億ドルを投資し、先端レーザー製品と光ネットワーク製品の将来供給枠も確保する。発表では、光インターコネクトと先端パッケージ統合をAIインフラ次段階の基盤と位置づけ、Coherentの米国内製造能力拡張も支援する。",
+      "why": "AIインフラの制約がGPU単体から、光配線、パッケージ、消費電力を含むシステム全体へ移っていることをNVIDIA自身が示した動きだ。供給確保と資本投下を同時に進めることで、次のボトルネックがフォトニクス側にあると明確になった。",
+      "so_what": "半導体ニュースを見る時も、今後はGPUロードマップだけでなく、光学部品とパッケージ供給線を一体で追う必要がある。自分の調達判断でも、計算性能より先に相互接続と消費電力が制約になる前提で情報を整理したい。",
+      "confidence": "high"
+    }
+  ]
+}
