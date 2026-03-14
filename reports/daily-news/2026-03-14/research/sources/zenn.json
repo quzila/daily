@@ -1,0 +1,27 @@
+{
+  "source": "zenn",
+  "date": "2026-03-14",
+  "items": [
+    {
+      "title": "Claude Code 全社導入までの意思決定と歴史",
+      "url": "https://zenn.dev/gemcook/articles/claude-code-company-wide",
+      "published_at": "2026-03-12",
+      "segment": "ai",
+      "what": "Gemcook Tech Blogは、GitHub CopilotやClaude Codeを部分導入してきた流れを振り返りながら、2026年2月にClaude Codeの全社導入へ踏み切るまでの意思決定を整理した。Cursor、Windsurf、Devinなど選択肢が増える中でも、完璧な勝ち筋を待つより、社内のAIリテラシーを標準化して『点の知識を線にする』判断を優先したと述べている。",
+      "why": "AIツール導入の本当の難所が、最高の製品選びそのものではなく、社内に散らばった活用知見をどう標準手順へ変えるかにあることが分かる。個人の試行錯誤だけでは再現性が低く、組織としての生産性改善に結び付きにくいという現実的な論点を示している。",
+      "so_what": "自分のチームでも、評価期間を引き延ばして全員が別々の道具を試すだけで終わっていないかを見直したい。永続的な正解ツールを当てるより、使い方、ガードレール、教育手順を先に標準化して、知見を共有資産に変える方が効果が出やすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "Claude Codeを加速させる私の推しスキル・ツール・設定（Findyイベント登壇資料）",
+      "url": "https://zenn.dev/ubie_dev/articles/claude-code-tips-findy-2026",
+      "published_at": "2026-03-11",
+      "segment": "ai",
+      "what": "Ubie テックブログは、Claude Code利用を速くするための周辺ツールと設定を具体的に紹介した。Raycastのhotkeyとsnippetで起動とプロンプト投入を短縮し、CleanShot XのOCRで画像より軽い形で文字情報を渡し、GitHub URLやterminal起点の操作を組み合わせて、AIコーディングの待ち時間と文脈移送の手数を減らしている。",
+      "why": "AIコーディングの生産性差は、モデル性能そのものだけでなく、人間がどれだけ素早く文脈を渡して往復できるかで大きく開く。launcher、OCR、snippetのような小さな改善を一つのループとして最適化する視点は、実務での体感速度に直結する。",
+      "so_what": "自分がcoding agentの効果を上げたいなら、モデル比較の前に、起動時間、スクショからの情報移送、定型プロンプト入力の遅さを棚卸ししたい。日常の摩擦を減らす周辺整備の方が、毎日の開発速度には大きく効く可能性がある。",
+      "confidence": "high"
+    }
+  ],
+  "other_candidates": []
+}

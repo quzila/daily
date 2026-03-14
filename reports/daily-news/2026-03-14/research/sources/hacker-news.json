@@ -1,0 +1,16 @@
+{
+  "source": "hacker-news",
+  "date": "2026-03-14",
+  "items": [
+    {
+      "title": "Can I run AI locally?",
+      "url": "https://www.canirun.ai/",
+      "published_at": "2026-03-13",
+      "segment": "ai",
+      "what": "Hacker Newsで上位に入ったCanIRun.aiは、browser APIから見えるローカル環境をもとに、どのAIモデルがそのマシンで現実的に動くかを一覧化するサイトだ。modelごとに必要メモリ、context長、architecture、quantization候補、用途別タグを並べ、chat、code、reasoning、visionの各タスクでローカル実行の可否を見積もれる。",
+      "why": "ローカルAIの普及を妨げるのは、モデル品質以上に『自分のマシンで本当に動くのか分からない』という不確実性だ。VRAMや量子化の条件を具体的に見せるツールは、ローカル推論を試す前の迷いを減らし、クラウド一択だった判断を揺らす材料になる。",
+      "so_what": "自分がcloudとlocalを使い分けるなら、まず手元GPUの実メモリと必要contextを数値で把握し、現実的なモデル帯を決めたい。parameter数の印象だけで選ぶより、量子化込みで回る候補を先に絞った方が、検証時間もダウンロードも無駄が減る。",
+      "confidence": "high"
+    }
+  ]
+}

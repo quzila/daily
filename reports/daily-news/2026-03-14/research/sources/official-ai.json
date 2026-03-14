@@ -1,0 +1,36 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-14",
+  "items": [
+    {
+      "title": "Optionally skip approval for Copilot coding agent Actions workflows",
+      "url": "https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows",
+      "published_at": "2026-03-13",
+      "segment": "ai",
+      "what": "GitHubは、Copilot coding agentが作成したPRやpushに対して、GitHub Actionsの実行前に必要だった人手の承認を、リポジトリ設定で省略できるようにした。既定では従来どおり承認必須のままだが、管理者はテストを即時走らせてエージェントの変更を素早く検証できる。",
+      "why": "AIコーディングの論点が、提案を受け取る段階から、CIまで含めた実運用の設計へ進んでいる。ワークフローがトークンやsecretに触れ得る環境で自動実行を許すかどうかは、単なる利便性ではなく、エージェントにどこまで権限を渡せるかという運用方針そのものになる。",
+      "so_what": "自分がcoding agentを常用するなら、まず権限の弱い検証用リポジトリでだけこの設定を有効にし、workflow permissionとsecret露出範囲を先に点検したい。重要なのはPRを開けるかではなく、どのリポジトリなら人手ゲートなしでCIを回してよいかを明文化することだ。",
+      "confidence": "high"
+    },
+    {
+      "title": "Request Copilot code review from GitHub CLI",
+      "url": "https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli",
+      "published_at": "2026-03-11",
+      "segment": "ai",
+      "what": "GitHubは、`gh pr edit` と `gh pr create` からGitHub Copilotへ直接レビュー依頼できるようにした。`gh pr edit --add-reviewer @copilot` の非対話フローに加え、reviewerとassigneeの選択も検索型に変わり、大規模組織での操作速度とアクセシビリティを改善している。",
+      "why": "AIレビューがブラウザ上の追加機能ではなく、CLI中心の通常フローへ入った意味は大きい。レビュー依頼をterminalの既存運用へ埋め込めるようになると、Copilot reviewは試し打ちではなく、PR作成や更新の標準手順として定着しやすくなる。",
+      "so_what": "自分のチームが`gh`中心でPRを回しているなら、Copilot reviewをaliasや自動化スクリプトに組み込み、いつAIレビューを必須にするかを運用ルールとして決めたい。静的解析や人間レビューとどう役割分担するかを整理しないと、便利でもノイズ源になりやすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "Codex Security: now in research preview",
+      "url": "https://openai.com/index/codex-security-now-in-research-preview/",
+      "published_at": "2026-03-06",
+      "segment": "ai",
+      "what": "OpenAIはCodex Securityをresearch previewとして公開し、リポジトリ文脈から脅威モデルを作り、検出した問題を検証環境で再現しながら修正案まで返す構成を示した。OpenAIによれば、ベータ30日で120万件超のcommitを走査し、792件のcriticalと10,561件のhigh-severity findingを検出しつつ、一部ケースではノイズを84%削減したという。",
+      "why": "AIがコードを書く量が増えるほど、価値があるのはアラート件数そのものではなく、開発者が本当に直せる粒度まで絞り込めるかになる。リポジトリ固有の前提を読み、再現性まで見に行くセキュリティエージェントは、静的解析の延長ではなくAI開発時代の新しい品質管理レイヤーとして重要だ。",
+      "so_what": "自分がAIセキュリティ製品を評価するなら、検出数よりも誤検知率、再現手順の明確さ、修正提案のレビューしやすさを見たい。導入先もスキャン専用環境ではなく、CIやpre-merge reviewの近くに置いた方が、リポジトリ文脈を活かして実効性を出しやすい。",
+      "confidence": "high"
+    }
+  ]
+}

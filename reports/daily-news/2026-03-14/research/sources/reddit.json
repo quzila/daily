@@ -1,0 +1,26 @@
+{
+  "source": "reddit",
+  "date": "2026-03-14",
+  "items": [
+    {
+      "title": "An AI agent deleted 25,000 documents from the wrong database. One second of distraction. Real case.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rshuz9/an_ai_agent_deleted_25000_documents_from_the/",
+      "published_at": "2026-03-13",
+      "segment": "ai",
+      "what": "r/ClaudeAIで、Claude生成のbash one-linerを一瞬の見落としで承認した結果、Downloads配下に残っていた別プロジェクト用のcredential JSONが使われ、意図しないプロジェクトの約25,000件のdocumentが削除されたという実体験が共有された。投稿者は、agentがリポジトリ外のfilesystemやcredentialにも触れ得ること、破壊的操作に十分な摩擦が必要なことを教訓として挙げている。",
+      "why": "デモでは見えにくい『agentの速度が人間の承認ミスの被害を拡大する』失敗形を具体的に示しているからだ。`.md`でプロジェクト構造を説明していても、credential管理や端末全体のファイル配置が甘ければ、運用事故はリポジトリ外から起き得ると分かる。",
+      "so_what": "自分がshell権限のあるagentを使うなら、削除系コマンド、credential path、対象環境の切り替えは別段階で再確認したい。古いservice accountを汎用フォルダに放置せず、agentは自分が見ているrepoの外にも到達できる前提で安全策を設計するべきだ。",
+      "confidence": "medium"
+    },
+    {
+      "title": "NVIDIA, Intel join Microsoft for Advanced Shader Delivery, confirmed for Lunar/Panther Lake and GeForce RTX 50",
+      "url": "https://videocardz.com/newz/nvidia-intel-join-microsoft-for-advanced-shader-delivery-confirmed-for-lunar-panther-lake-and-geforce-rtx-50",
+      "published_at": "2026-03-13",
+      "segment": "semiconductor",
+      "what": "r/nvidiaで注目された記事は、MicrosoftがAdvanced Shader Deliveryに加え、DirectX Linear AlgebraとDirectX Compute Graph Compilerを準備しており、IntelはLunar LakeとPanther Lake、NVIDIAはGeForce RTX 50での対応を進めていると伝えた。狙いはshader compilationのstutter削減と、neural renderingやupscalingのようなAI処理をDirectX経由で扱いやすくすることにある。",
+      "why": "クライアント向けAI半導体の価値が、チップの生性能だけでなく、OS、API、compiler、driverを含むenablementの厚みへ移っていると分かる。共通のDirectX系ツールが広がれば、AI機能を載せる開発者の負担が下がり、対応ハードの実用性が一段上がる。",
+      "so_what": "自分がPC向けAI機能やlocal graphics workloadを評価する時も、TFLOPSや世代名だけでなく、API対応、compiler、driver rolloutの速さを見たい。実アプリでは、ベンチマーク差よりも、安定した開発経路があるかどうかが採用を左右する。",
+      "confidence": "medium"
+    }
+  ]
+}
