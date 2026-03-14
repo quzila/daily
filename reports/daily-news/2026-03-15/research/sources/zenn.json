@@ -1,0 +1,27 @@
+{
+  "source": "zenn",
+  "date": "2026-03-15",
+  "items": [
+    {
+      "title": "Playwright + OWASP ZAP + Claude Code で E2E テストから脆弱性診断まで一気通貫でできるかやってみた",
+      "url": "https://zenn.dev/rescuenow/articles/7192f8ca6ebe48",
+      "published_at": "2026-03-13",
+      "segment": "ai",
+      "what": "レスキューナウテックブログは、Next.js製Todoアプリに対してPlaywrightで12本のE2Eシナリオを書き、FastAPI+MySQL化したうえで、同じシナリオをOWASP ZAPプロキシ経由で再実行して脆弱性診断へ流す実験を紹介した。selectorの曖昧一致やdisabled buttonなど、AI支援でも詰まりやすい実装ポイントも具体的に共有している。",
+      "why": "機能テストとセキュリティ検査を別工程で持つのではなく、同じユーザーフローを再利用して品質保証を一段つなげられることを示す記事だからだ。AIにテストコードを書かせる時代ほど、生成したE2E資産をAppSecまで伸ばせるかが生産性差になる。",
+      "so_what": "自分のAI開発フローでも、まずPlaywrightで実利用に近いシナリオを固め、それをZAPやブラウザ自動化に再利用できる形で保ちたい。テストを一回きりの確認で終わらせず、運用前の安全確認まで伸ばせる設計にしておく価値が大きい。",
+      "confidence": "high"
+    },
+    {
+      "title": "Claude CodeやCodexのスキルの管理を楽にするツール「faceted-prompting」",
+      "url": "https://zenn.dev/nrs/articles/88f158aca0505b",
+      "published_at": "2026-03-12",
+      "segment": "ai",
+      "what": "nrs氏は、プロンプトをpersona、policy、knowledge、instruction、output contractといった関心ごとごとに分割して管理し、compositionで組み合わせられるnpmツール「faceted-prompting」を紹介した。system promptとuser promptへの出力だけでなく、Claude CodeやCodex向けのskillとしてインストールする導線まで用意している。",
+      "why": "AI運用のボトルネックがモデル性能だけでなく、肥大化したpromptやSKILL.mdの保守性に移っていることを端的に示している。共有ルールや知識を部品化できれば、複数のagentや開発ツールへ横展開しやすくなり、変更管理も楽になる。",
+      "so_what": "自分が複数のskillや長いsystem promptを抱えるなら、共通ルールと案件固有知識を分けて持ち、composeして配る形に寄せたい。毎回巨大な一枚物を直すより、再利用単位を明確にした方がagentの挙動差分も追いやすい。",
+      "confidence": "high"
+    }
+  ],
+  "other_candidates": []
+}

@@ -1,0 +1,36 @@
+{
+  "source": "official-semiconductor",
+  "date": "2026-03-15",
+  "items": [
+    {
+      "title": "Agentic AI Brings New Attention to CPUs in the AI Data Center",
+      "url": "https://www.amd.com/en/blogs/2026/agentic-ai-brings-new-attention-to-cpus-in-the-ai-data.html",
+      "published_at": "2026-03-13",
+      "segment": "semiconductor",
+      "what": "AMDは、agentic AIの拡大でデータセンターCPUの役割が再評価されていると整理し、CPUがworkflow orchestration、memory/data movement、周辺エンタープライズ処理の中核を担うと説明した。記事では、5th Gen AMD EPYC搭載システムが比較対象のNVIDIA Grace Superchip系システムに対して、最大2.1倍のper-core性能と最大2.26倍のSPECpower向上を見込めると紹介している。",
+      "why": "AIインフラの差別化がGPUの枚数だけでは決まらず、agentの周辺処理をどれだけ効率よくさばけるかに移っていると分かる。推論やツール呼び出しが増えるほど、CPU、ネットワーク、ソフトウェア互換性まで含めた全体設計がボトルネックになる。",
+      "so_what": "自分がAIサーバーや検証環境を比べるなら、GPU性能だけでなくCPUのper-core性能、電力効率、既存x86ソフト資産との相性も一緒に見たい。agentic workflowでは制御系の遅さが全体体感を崩すので、周辺処理の設計を軽視できない。",
+      "confidence": "high"
+    },
+    {
+      "title": "Intel Announces New Intel Core Ultra 200S Plus Series Desktop Processors",
+      "url": "https://newsroom.intel.com/client-computing/intel-announces-new-intel-core-ultra-200s-plus-series-desktop-processors",
+      "published_at": "2026-03-11",
+      "segment": "semiconductor",
+      "what": "IntelはCore Ultra 200S Plus系列の270Kと250K Plusを発表し、前世代比でcore増加と最大900MHzのdie-to-die周波数向上を打ち出した。Core Ultra 7 270K Plusは競合比で最大2倍のcreator性能を掲げ、select games向けにはnative performanceを高めるIntel Binary Optimization Toolも投入している。",
+      "why": "クライアント半導体の競争が、単純なピーク性能だけでなく、ゲーム、制作、ローカルAI処理を含む実アプリの最適化勝負へ移っていると読める。CPU本体だけでなく、translation layerやランタイム最適化をセットで出してくる点が重要だ。",
+      "so_what": "自分が開発機や自作PCを選ぶなら、世代名やベンチマーク平均だけでなく、どのワークロードで何が最適化されるのかを確認したい。ローカルAIやゲーム周りは、ハード単体よりソフトウェアスタック込みの改善が実使用感を左右しやすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "Meta、4種類のAIチップMTIAを発表、英スタートアップが宇宙空間で製造した半導体を評価する研究所を設立",
+      "url": "https://www.semiconportal.com/archive/news/picks/260313-picks.html",
+      "published_at": "2026-03-13",
+      "segment": "semiconductor",
+      "what": "SemiconPortalは、MetaがMTIA 300、400、450、500の4種類のAIチップを公表し、量産済みのMTIA 300に続いて、生成AI推論向けの上位3製品を2027年から順次生産する計画だと報じた。あわせて、英SpaceForgeが低軌道で製造した半導体を評価するNMRCをスウォンジ大学に設立し、無重力環境で作る結晶品質の検証を進める動きも紹介している。",
+      "why": "GPU調達だけではなく、ハイパースケーラーが推論向けASICを自前で高速に回す流れと、製造側で新しい結晶品質や材料プロセスを探る流れが同時に進んでいる。半導体競争の主戦場が、設計 cadence と製造技術の両面に広がっていることが分かる。",
+      "so_what": "自分が半導体動向を追うなら、NVIDIAやAMDの出荷だけでなく、Metaのような自社チップ計画と、その裏で誰が設計や製造を支えるかを見たい。中長期では、推論ASICの設計パートナーや新材料・新製造の実証が、次の勝ち筋になる可能性がある。",
+      "confidence": "medium"
+    }
+  ]
+}

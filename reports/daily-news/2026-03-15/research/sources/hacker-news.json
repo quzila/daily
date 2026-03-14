@@ -1,0 +1,16 @@
+{
+  "source": "hacker-news",
+  "date": "2026-03-15",
+  "items": [
+    {
+      "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6",
+      "url": "https://claude.com/blog/1m-context-ga",
+      "published_at": "2026-03-13",
+      "segment": "ai",
+      "what": "Hacker Newsで首位に上がったAnthropicの公式記事は、Opus 4.6とSonnet 4.6の100万トークンcontext windowをGAにし、長文コンテキストの追加料金を廃止したと発表した。Claude Platform、Azure Foundry、Vertex AIで利用でき、200K超のリクエストでもbeta header不要、media上限は100枚から600枚相当に増え、Claude CodeでもMax・Team・EnterpriseのOpus 4.6セッションに1M contextが標準で入る。",
+      "why": "長文コンテキストが高額な実験機能ではなく、agentic workflowの既定値へ近づいたことを意味するからだ。価格、rate limit、APIヘッダの摩擦が同時に下がると、複数段の要約やコンテキスト圧縮を前提にした設計を見直せる。",
+      "so_what": "自分がcoding agentや調査agentを組むなら、無理に小刻みな要約チェーンを挟む前に、1M contextでそのままコードベースや議事録を食わせた時の品質差を測りたい。構成を複雑にするより、大きな一枚窓で済む場面が増えるなら運用はかなり軽くなる。",
+      "confidence": "high"
+    }
+  ]
+}

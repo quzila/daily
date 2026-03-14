@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>デイリーAI・半導体ニュース（2026-03-15）</title>
+  <meta name="description" content="ひとことサマリー（1文）: 公式AI の「Major agentic capabilities improvements in GitHub Copilot for J…」では、GitHubはJetBrains向けCopilotで、cust" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #08080f;
+      --surface:     #0e0e1a;
+      --paper:       #121220;
+      --paper-hover: #181828;
+      --border:      #1c1c30;
+      --border-hi:   #28283e;
+      --ai:          #f0a030;
+      --ai-glow:     rgba(240,160,48,.12);
+      --ai-border:   rgba(240,160,48,.35);
+      --chip:        #18d4f0;
+      --chip-glow:   rgba(24,212,240,.12);
+      --chip-border: rgba(24,212,240,.35);
+      --txt1: #eaeaf8;
+      --txt2: #8888aa;
+      --txt3: #48486a;
+      --link: #8dc4ff;
+      --code-bg: #0f0f1a;
+      --code-fg: #d9d9ef;
+      --green:  #22cc88;
+      --yellow: #d4aa30;
+      --orange: #cc7730;
+      --ff-display: "Playfair Display", "Noto Sans JP", serif;
+      --ff-body:    "Noto Sans JP", sans-serif;
+      --ff-mono:    "JetBrains Mono", monospace;
+      --r: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--txt1);
+      font-family: var(--ff-body);
+      font-size: 14.5px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+      opacity: .03;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 max(2rem, calc(50vw - 580px));
+      background: rgba(8,8,15,.88);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+    .nav-brand {
+      margin-right: auto;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      user-select: none;
+    }
+    .nav-brand a {
+      color: inherit;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-brand a:hover { color: var(--txt1); }
+    .nav-brand b { color: var(--ai); font-weight: 500; }
+    nav > a {
+      font-family: var(--ff-mono);
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      text-decoration: none;
+      padding: 0 .9rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: color .2s;
+    }
+    nav > a:hover { color: var(--txt1); }
+    nav > a.lnk-ai:hover   { color: var(--ai); }
+    nav > a.lnk-chip:hover { color: var(--chip); }
+
+    /* ── Shell ── */
+    .shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 max(1.5rem, calc(50vw - 580px));
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 5rem 0 4rem;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--ai);
+    }
+    .hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -.035em;
+      color: var(--txt1);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { color: var(--ai); font-style: normal; }
+    .hero-sub {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--txt3);
+      margin-top: .4rem;
+    }
+
+    /* ── Highlights ── */
+    .highlights-wrap {
+      padding: 3.5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-label {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sec-label::before { content: '◆'; font-size: 7px; color: var(--ai); }
+    .hl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    @media (max-width: 720px) { .hl-grid { grid-template-columns: 1fr; } }
+    .hl-card {
+      background: var(--surface);
+      padding: 2rem 2rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: background .2s;
+    }
+    .hl-card:hover { background: var(--paper); }
+    .hl-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--ai-glow) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hl-num {
+      font-family: var(--ff-display);
+      font-size: 5.2rem;
+      line-height: 1;
+      color: rgba(72,72,106,.22);
+      position: absolute;
+      right: 1rem;
+      top: .6rem;
+      font-weight: 400;
+      user-select: none;
+    }
+    .hl-title {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--txt1);
+      position: relative;
+      z-index: 1;
+      margin-bottom: .6rem;
+      font-weight: 600;
+    }
+    .hl-title strong { color: var(--ai); font-weight: 600; }
+    .hl-summary {
+      font-size: 12.5px;
+      line-height: 1.75;
+      color: var(--txt2);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Sections ── */
+    .section { padding: 4.5rem 0 3rem; }
+    .section + .section { border-top: 1px solid var(--border); }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .8rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: 1;
+    }
+    .section-title.ai   { color: var(--ai); }
+    .section-title.chip { color: var(--chip); }
+    .section-en {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      color: var(--txt3);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .section-cnt {
+      margin-left: auto;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      color: var(--txt3);
+    }
+
+    /* ── Subsections ── */
+    .subsec { margin-bottom: 3.5rem; }
+    .subsec-label {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      padding-bottom: .7rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .subsec-label::before { content: '▸'; font-size: 8px; }
+
+    /* ── Cards grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+      gap: 2px;
+    }
+    @media (max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+
+    /* ── Card ── */
+    .card {
+      background: var(--paper);
+      border-left: 3px solid var(--border-hi);
+      transition: background .18s, border-color .18s;
+    }
+    .card.ai   { border-left-color: var(--ai-border); }
+    .card.chip { border-left-color: var(--chip-border); }
+    .card:hover { background: var(--paper-hover); }
+
+    .card-top {
+      padding: 1.4rem 1.6rem 1.2rem;
+      cursor: pointer;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .5rem .7rem;
+      margin-bottom: .9rem;
+    }
+    .tag {
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .tag-ai    { background: var(--ai-glow);              color: var(--ai);   border: 1px solid var(--ai-border); }
+    .tag-chip  { background: var(--chip-glow);             color: var(--chip); border: 1px solid var(--chip-border); }
+    .tag-zenn  { background: rgba(35,150,230,.1);           color: #3898e8;    border: 1px solid rgba(35,150,230,.3); }
+    .tag-note  { background: rgba(30,200,100,.1);           color: #30cc66;    border: 1px solid rgba(30,200,100,.3); }
+    .tag-reddit{ background: rgba(255,90,40,.1);            color: #ff7050;    border: 1px solid rgba(255,90,40,.3); }
+    .tag-hn    { background: rgba(255,140,40,.1);           color: #ff9a40;    border: 1px solid rgba(255,140,40,.3); }
+
+    .card-src {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      color: var(--txt3);
+      letter-spacing: .04em;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .conf {
+      margin-left: auto;
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .conf-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+    .conf-high .conf-dot { background: var(--green); }
+    .conf-mid  .conf-dot { background: var(--yellow); }
+    .conf-low  .conf-dot { background: var(--orange); }
+    .conf-high { color: var(--green); }
+    .conf-mid  { color: var(--yellow); }
+    .conf-low  { color: var(--orange); }
+
+    .card-summary {
+      font-family: var(--ff-body);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--txt1);
+    }
+
+    /* Toggle row */
+    .card-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .65rem 1.6rem;
+      background: rgba(0,0,0,.2);
+      cursor: pointer;
+      user-select: none;
+      border-top: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .card-toggle:hover { background: rgba(255,255,255,.03); }
+    .toggle-lbl {
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--txt3);
+    }
+    .toggle-arrow { font-size: 9px; color: var(--txt3); transition: transform .3s ease; }
+    .card.open .toggle-arrow { transform: rotate(180deg); }
+
+    /* Expandable body */
+    .card-body { overflow: hidden; max-height: 0; transition: max-height .4s cubic-bezier(.4,0,.2,1); }
+    .card.open .card-body { max-height: 1200px; }
+    .card-inner { padding: 1.4rem 1.6rem 1.6rem; border-top: 1px solid var(--border); }
+    .block { margin-top: 1.2rem; }
+    .block:first-child { margin-top: 0; }
+    .block-lbl {
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: .4rem;
+    }
+    .block-txt { font-size: 13.5px; line-height: 1.9; color: var(--txt2); }
+    .card-link {
+      display: inline-block;
+      margin-top: 1.4rem;
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .1em;
+      text-transform: none;
+      line-height: 1.5;
+      color: var(--txt3);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid var(--border-hi);
+      border-radius: var(--r);
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      transition: all .2s;
+    }
+    .card.ai   .card-link:hover { color: var(--ai);   border-color: var(--ai-border); }
+    .card.chip .card-link:hover { color: var(--chip); border-color: var(--chip-border); }
+
+    /* ── Source section ── */
+    #sources { padding: 4rem 0 5rem; border-top: 1px solid var(--border); }
+    .sources-title {
+      font-family: var(--ff-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--txt2);
+      letter-spacing: -.02em;
+      margin-bottom: 2.5rem;
+    }
+    .src-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: .5rem 2rem;
+      padding: .7rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .src-name { font-family: var(--ff-mono); font-size: 10.5px; color: var(--txt2); white-space: nowrap; min-width: 160px; }
+    .src-date { font-family: var(--ff-mono); font-size: 9.5px; color: var(--txt3); white-space: nowrap; }
+    .src-url {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      color: var(--txt3);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color .2s;
+    }
+    .src-url:hover { color: var(--txt1); }
+    .src-type {
+      font-family: var(--ff-mono);
+      font-size: 8.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 1px 7px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .src-type.ai   { color: var(--ai);   background: var(--ai-glow);   border: 1px solid var(--ai-border); }
+    .src-type.chip { color: var(--chip); background: var(--chip-glow); border: 1px solid var(--chip-border); }
+    .src-type.com  { color: var(--txt2); background: rgba(255,255,255,.04); border: 1px solid var(--border-hi); }
+
+    /* ── History navigation ── */
+    #nav-history { padding: 3rem 0 4rem; border-top: 1px solid var(--border); }
+    .nav-hist-label {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--txt3);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-hist-label::before { content: '◆'; font-size: 7px; color: var(--chip); }
+    .nav-hist-list { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .nav-hist-item {
+      display: flex;
+      flex-direction: column;
+      padding: .7rem 1rem;
+      border: 1px solid var(--border-hi);
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: border-color .2s, background .2s;
+      min-width: 160px;
+    }
+    .nav-hist-item:hover { border-color: var(--chip-border); background: var(--chip-glow); }
+    .nav-hist-item.current { border-color: var(--chip-border); background: var(--chip-glow); pointer-events: none; }
+    .nav-hist-date {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      color: var(--chip);
+      margin-bottom: .2rem;
+    }
+    .nav-hist-title { font-size: 11px; color: var(--txt2); line-height: 1.4; }
+
+    /* ── Footer ── */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .8rem;
+      padding: 1.8rem max(1.5rem, calc(50vw - 580px));
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+    footer p {
+      font-family: var(--ff-mono);
+      font-size: 9.5px;
+      letter-spacing: .08em;
+      color: var(--txt3);
+    }
+
+    /* ── Fade-in ── */
+    .fi {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .fi.show { opacity: 1; transform: none; }
+
+    @media (max-width: 720px) {
+      nav { padding: 0 .7rem; }
+      nav > a { padding: 0 .6rem; }
+      .shell { padding: 0 10px; }
+      .hero { padding: 3.2rem 0 2.4rem; }
+      .card-top { padding: 1.15rem 1rem .95rem; }
+      .card-toggle { padding: .6rem 1rem; }
+      .card-inner { padding: 1.1rem 1rem 1.2rem; }
+      .card-meta { gap: .4rem .55rem; }
+      .conf {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .card-summary { font-size: 14px; line-height: 1.5; }
+      .card-link {
+        font-size: 9px;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand"><a href="../index.html">Daily <b>AI</b>·半導体 Briefing</a></div>
+  <a href="#ai"          class="lnk-ai">AI</a>
+  <a href="#chip"        class="lnk-chip">半導体</a>
+  <a href="#sources">ソース</a>
+  <a href="#nav-history">アーカイブ</a>
+</nav>
+
+<div class="shell" id="top">
+  <header class="hero fi show">
+    <div class="hero-eyebrow">
+      <span>DAILY BRIEFING</span>
+      <span>デイリーAI・半導体ニュース（2026-03-15）</span>
+    </div>
+    <h1>デイリー<em>AI</em>·<br>半導体ニュース（2026-03-15）</h1>
+    <p class="hero-sub">Generated 2026-03-15 00:28:12 (Asia/Tokyo)</p>
+  </header>
+</div>
+
+<div class="shell">
+  <section class="highlights-wrap">
+    <div class="sec-label">今日のハイライト（3選）</div>
+    <div class="hl-grid">
+<div class="hl-card fi">
+  <div class="hl-num">01</div>
+  <p class="hl-title">「Major agentic capabilities improvements in GitHub Copil…」が上位に入り、公式AI発の議論を通じて開発フロー最適化の重要性が改めて可視化された。</p>
+</div>
+<div class="hl-card fi">
+  <div class="hl-num">02</div>
+  <p class="hl-title">「Optionally skip approval for Copilot coding agent Actio…」が上位に入り、公式AI発の議論を通じて開発フロー最適化の重要性が改めて可視化された。</p>
+</div>
+<div class="hl-card fi">
+  <div class="hl-num">03</div>
+  <p class="hl-title">「Agentic AI Brings New Attention to CPUs in the AI Data…」が注目され、公式半導体由来の情報から調達・性能・供給の判断材料が更新された。</p>
+</div>
+    </div>
+  </section>
+</div>
+
+<div class="shell">
+  <section class="section" id="ai">
+    <div class="section-head">
+      <h2 class="section-title ai">AI ニュース</h2>
+      <span class="section-en">Artificial Intelligence</span>
+      <span class="section-cnt">8 articles</span>
+    </div>
+<div class="subsec">
+  <div class="subsec-label">公式ソース</div>
+  <div class="cards">
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-ai">公式 AI</span>
+      <span class="card-src">公式AI · 2026-03-11</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">公式AI の「Major agentic capabilities improvements in GitHub Copilot for J…」では、GitHubはJetBrains向けCopilotで、custom agents、sub-agents、plan agentをGAにし、agent hooksのpublic preview、MCPのauto-approve、AGENTS.md/CLAUDE.md対応、auto model selection GAをまとめて導入した。IDE内でプロジェクト固有の指示ファイルと外部ツール連携を前提に、役割を分けたagentを継続的に動かせる構成へ進めている。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">公式AIの「Major agentic capabilities improvements in GitHub Copilot for J…」は2026-03-11公開。GitHubはJetBrains向けCopilotで、custom agents、sub-agents、plan agentをGAにし、agent hooksのpublic preview、MCPのauto-approve、AGENTS.md/CLAUDE.md対応、auto model selection GAをまとめて導入した。IDE内でプロジェクト固有の指示ファイルと外部ツール連携を前提に、役割を分けたagentを継続的に動かせる構成へ進めている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">Copilotが単なるコード補完から、IDE内で複数エージェントを編成してワークフローを回す運用基盤へ寄ってきたことを示す更新だ。instruction fileやhooksが共通化されると、個人の便利設定ではなく、チームで再利用できる開発手順としてAI運用を標準化しやすくなる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分がJetBrains系IDEとcoding agentを併用するなら、まずAGENTS.mdやCLAUDE.mdにレビュー観点、禁止操作、テスト手順を切り出し、hooksでlintや確認コマンドを自動化したい。モデル選択より先に、どこまでを再利用可能な運用部品として定義できるかが差になりそうだ。</p>
+</div>
+      <a href="https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-ai">公式 AI</span>
+      <span class="card-src">公式AI · 2026-03-13</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">公式AI の「Optionally skip approval for Copilot coding agent Actions workf…」では、GitHubは、Copilot coding agentが作成したPRやpushに対して、GitHub Actionsの実行前に必要だった人手の承認を、リポジトリ設定で省略できるようにした。既定では従来どおり承認必須のままだが、管理者はテストを即時走らせてエージェントの変更を素早く検証できる。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">公式AIの「Optionally skip approval for Copilot coding agent Actions workf…」は2026-03-13公開。GitHubは、Copilot coding agentが作成したPRやpushに対して、GitHub Actionsの実行前に必要だった人手の承認を、リポジトリ設定で省略できるようにした。既定では従来どおり承認必須のままだが、管理者はテストを即時走らせてエージェントの変更を素早く検証できる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">AIコーディングの論点が、提案を受け取る段階から、CIまで含めた実運用の設計へ進んでいる。ワークフローがトークンやsecretに触れ得る環境で自動実行を許すかどうかは、単なる利便性ではなく、エージェントにどこまで権限を渡せるかという運用方針そのものになる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分がcoding agentを常用するなら、まず権限の弱い検証用リポジトリでだけこの設定を有効にし、workflow permissionとsecret露出範囲を先に点検したい。重要なのはPRを開けるかではなく、どのリポジトリなら人手ゲートなしでCIを回してよいかを明文化することだ。</p>
+</div>
+      <a href="https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="subsec">
+  <div class="subsec-label">Zenn ピックアップ</div>
+  <div class="cards">
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-zenn">Zenn</span>
+      <span class="card-src">Zenn · 2026-03-13</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">Zenn の「Playwright + OWASP ZAP + Claude Code で E2E テストから脆弱性診断まで一気通貫でできる…」では、レスキューナウテックブログは、Next.js製Todoアプリに対してPlaywrightで12本のE2Eシナリオを書き、FastAPI+MySQL化したうえで、同じシナリオをOWASP ZAPプロキシ経由で再実行して脆弱性診断へ流す実験を紹介した。selectorの曖昧一致やdisabled buttonなど、AI支援でも詰まりやすい実装ポイントも具体的に共有している。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Zennの「Playwright + OWASP ZAP + Claude Code で E2E テストから脆弱性診断まで一気通貫でできる…」は2026-03-13公開。レスキューナウテックブログは、Next.js製Todoアプリに対してPlaywrightで12本のE2Eシナリオを書き、FastAPI+MySQL化したうえで、同じシナリオをOWASP ZAPプロキシ経由で再実行して脆弱性診断へ流す実験を紹介した。selectorの曖昧一致やdisabled buttonなど、AI支援でも詰まりやすい実装ポイントも具体的に共有している。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">機能テストとセキュリティ検査を別工程で持つのではなく、同じユーザーフローを再利用して品質保証を一段つなげられることを示す記事だからだ。AIにテストコードを書かせる時代ほど、生成したE2E資産をAppSecまで伸ばせるかが生産性差になる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分のAI開発フローでも、まずPlaywrightで実利用に近いシナリオを固め、それをZAPやブラウザ自動化に再利用できる形で保ちたい。テストを一回きりの確認で終わらせず、運用前の安全確認まで伸ばせる設計にしておく価値が大きい。</p>
+</div>
+      <a href="https://zenn.dev/rescuenow/articles/7192f8ca6ebe48" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-zenn">Zenn</span>
+      <span class="card-src">Zenn · 2026-03-12</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">Zenn の「Claude CodeやCodexのスキルの管理を楽にするツール「faceted-prompting」」では、nrs氏は、プロンプトをpersona、policy、knowledge、instruction、output contractといった関心ごとごとに分割して管理し、compositionで組み合わせられるnpmツール「faceted-prompting」を紹介した。system promptとuser promptへの出力だけでなく、Claude CodeやCodex向けのskillとしてインストールする導線まで用意している。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Zennの「Claude CodeやCodexのスキルの管理を楽にするツール「faceted-prompting」」は2026-03-12公開。nrs氏は、プロンプトをpersona、policy、knowledge、instruction、output contractといった関心ごとごとに分割して管理し、compositionで組み合わせられるnpmツール「faceted-prompting」を紹介した。system promptとuser promptへの出力だけでなく、Claude CodeやCodex向けのskillとしてインストールする導線まで用意している。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">AI運用のボトルネックがモデル性能だけでなく、肥大化したpromptやSKILL.mdの保守性に移っていることを端的に示している。共有ルールや知識を部品化できれば、複数のagentや開発ツールへ横展開しやすくなり、変更管理も楽になる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分が複数のskillや長いsystem promptを抱えるなら、共通ルールと案件固有知識を分けて持ち、composeして配る形に寄せたい。毎回巨大な一枚物を直すより、再利用単位を明確にした方がagentの挙動差分も追いやすい。</p>
+</div>
+      <a href="https://zenn.dev/nrs/articles/88f158aca0505b" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="subsec">
+  <div class="subsec-label">note ピックアップ</div>
+  <div class="cards">
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-note">note</span>
+      <span class="card-src">note · 2026-03-10</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">note の「【Vibe Codingは終わった？】AIに丸投げする人が見落としている"致命的"な落とし穴」では、KAWAI氏は、Karpathyの『Vibe Codingは終わった。これからはAgentic Engineeringだ』という転換点を軸に、AIへの丸投げ開発の限界を整理した。記事では、Lovable生成アプリ1,645件の調査で170件に情報漏えい穴が見つかった例や、AIと人間の共同コードで重大欠陥が1.7倍になったという分析、Replit agentによる本番DB削除事例を引きながら、設計・指示・検証・責任を人間が担うべきだと論じている。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">noteの「【Vibe Codingは終わった？】AIに丸投げする人が見落としている"致命的"な落とし穴」は2026-03-10公開。KAWAI氏は、Karpathyの『Vibe Codingは終わった。これからはAgentic Engineeringだ』という転換点を軸に、AIへの丸投げ開発の限界を整理した。記事では、Lovable生成アプリ1,645件の調査で170件に情報漏えい穴が見つかった例や、AIと人間の共同コードで重大欠陥が1.7倍になったという分析、Replit agentによる本番DB削除事例を引きながら、設計・指示・検証・責任を人間が担うべきだと論じている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">AI開発の失敗が、モデルの出来不出来より、設計やテストを省いて『動いたから終わり』にしてしまう運用から生まれていることを具体例で説明している。Agentic Engineeringを、プロンプト術ではなく、設計と品質保証を伴う仕事の再定義として捉え直せる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分がcoding agentを使う時も、依頼前に要件、完成条件、確認観点を短くても先に固定し、返ってきた成果物を説明できるかで受け取りを判断したい。生成速度より、設計とテストの責任をどこに置くかを先に決める方が、実務では効く。</p>
+</div>
+      <a href="https://note.com/kawaidesign/n/nf9d920785217" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="subsec">
+  <div class="subsec-label">Reddit / HN ピックアップ</div>
+  <div class="cards">
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-reddit">Reddit</span>
+      <span class="card-src">Reddit · 2026-03-13</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">Reddit の「An AI agent deleted 25,000 documents from the wrong database. O…」では、r/ClaudeAIで、Claude生成のbash one-linerを一瞬の見落としで承認した結果、Downloads配下に残っていた別プロジェクト用のcredential JSONが使われ、意図しないプロジェクトの約25,000件のdocumentが削除されたという実体験が共有された。投稿者は、agentがリポジトリ外のfilesystemやcredentialにも触れ得ること、破壊的操作に十分な摩擦が必要なことを教訓として挙げている。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Redditの「An AI agent deleted 25,000 documents from the wrong database. O…」は2026-03-13公開。r/ClaudeAIで、Claude生成のbash one-linerを一瞬の見落としで承認した結果、Downloads配下に残っていた別プロジェクト用のcredential JSONが使われ、意図しないプロジェクトの約25,000件のdocumentが削除されたという実体験が共有された。投稿者は、agentがリポジトリ外のfilesystemやcredentialにも触れ得ること、破壊的操作に十分な摩擦が必要なことを教訓として挙げている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">デモでは見えにくい『agentの速度が人間の承認ミスの被害を拡大する』失敗形を具体的に示しているからだ。`.md`でプロジェクト構造を説明していても、credential管理や端末全体のファイル配置が甘ければ、運用事故はリポジトリ外から起き得ると分かる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分がshell権限のあるagentを使うなら、削除系コマンド、credential path、対象環境の切り替えは別段階で再確認したい。古いservice accountを汎用フォルダに放置せず、agentは自分が見ているrepoの外にも到達できる前提で安全策を設計するべきだ。</p>
+</div>
+      <a href="https://www.reddit.com/r/ClaudeAI/comments/1rshuz9/an_ai_agent_deleted_25000_documents_from_the/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-reddit">Reddit</span>
+      <span class="card-src">Reddit · 2026-03-13</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">Reddit の「I'm fully blind, and AI is a game changer for me. Are there any…」では、r/LocalLLaMAで、全盲の投稿者が、AIによる画像説明や読めない文書の読解、PythonやSwiftを使った自作ツール開発が生活を大きく変えたと共有し、Claude CodeやCodexに近い体験をローカルLLMで実現できるかを問いかけた。投稿は、AI活用が単なる効率化ではなく、アクセシビリティと自立支援の基盤になっている実例として広く反応を集めた。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Redditの「I'm fully blind, and AI is a game changer for me. Are there any…」は2026-03-13公開。r/LocalLLaMAで、全盲の投稿者が、AIによる画像説明や読めない文書の読解、PythonやSwiftを使った自作ツール開発が生活を大きく変えたと共有し、Claude CodeやCodexに近い体験をローカルLLMで実現できるかを問いかけた。投稿は、AI活用が単なる効率化ではなく、アクセシビリティと自立支援の基盤になっている実例として広く反応を集めた。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">ローカルLLM需要が、コストやプライバシーだけでなく、アクセシビリティ、応答の一貫性、手元で制御できる支援環境への要求からも生まれていると分かる。ベンチマーク上の強さだけでは測れない『使えるAI』の基準を示す投稿だ。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分がlocal AIを試すなら、単なる推論速度だけでなく、OCRや画像説明、長文補助、screen reader前提の操作性まで含めて評価したい。AI支援の価値は、最高スコアより、日常の障壁をどれだけ減らせるかで決まる場面が多い。</p>
+</div>
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rsuhwl/im_fully_blind_and_ai_is_a_game_changer_for_me/" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card ai fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-hn">Hacker News</span>
+      <span class="card-src">Hacker News · 2026-03-13</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">Hacker News の「1M context is now generally available for Opus 4.6 and Sonnet 4…」では、Hacker Newsで首位に上がったAnthropicの公式記事は、Opus 4.6とSonnet 4.6の100万トークンcontext windowをGAにし、長文コンテキストの追加料金を廃止したと発表した。Claude Platform、Azure Foundry、Vertex AIで利用でき、200K超のリクエストでもbeta header不要、media上限は100枚から600枚相当に増え、Claude CodeでもMax・Team・EnterpriseのOpus 4.6セッションに1M contextが標準で入る。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Hacker Newsの「1M context is now generally available for Opus 4.6 and Sonnet 4…」は2026-03-13公開。Hacker Newsで首位に上がったAnthropicの公式記事は、Opus 4.6とSonnet 4.6の100万トークンcontext windowをGAにし、長文コンテキストの追加料金を廃止したと発表した。Claude Platform、Azure Foundry、Vertex AIで利用でき、200K超のリクエストでもbeta header不要、media上限は100枚から600枚相当に増え、Claude CodeでもMax・Team・EnterpriseのOpus 4.6セッションに1M contextが標準で入る。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">長文コンテキストが高額な実験機能ではなく、agentic workflowの既定値へ近づいたことを意味するからだ。価格、rate limit、APIヘッダの摩擦が同時に下がると、複数段の要約やコンテキスト圧縮を前提にした設計を見直せる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分がcoding agentや調査agentを組むなら、無理に小刻みな要約チェーンを挟む前に、1M contextでそのままコードベースや議事録を食わせた時の品質差を測りたい。構成を複雑にするより、大きな一枚窓で済む場面が増えるなら運用はかなり軽くなる。</p>
+</div>
+      <a href="https://claude.com/blog/1m-context-ga" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+  </section>
+</div>
+
+<div class="shell">
+  <section class="section" id="chip">
+    <div class="section-head">
+      <h2 class="section-title chip">半導体ニュース</h2>
+      <span class="section-en">Semiconductors</span>
+      <span class="section-cnt">5 articles</span>
+    </div>
+<div class="subsec">
+  <div class="subsec-label">公式ソース</div>
+  <div class="cards">
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-chip">公式 半導体</span>
+      <span class="card-src">公式半導体 · 2026-03-13</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">公式半導体 の「Agentic AI Brings New Attention to CPUs in the AI Data Center」では、AMDは、agentic AIの拡大でデータセンターCPUの役割が再評価されていると整理し、CPUがworkflow orchestration、memory/data movement、周辺エンタープライズ処理の中核を担うと説明した。記事では、5th Gen AMD EPYC搭載システムが比較対象のNVIDIA Grace Superchip系システムに対して、最大2.1倍のper-core性能と最大2.26倍のSPECpower向上を見込めると紹介している。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">公式半導体の「Agentic AI Brings New Attention to CPUs in the AI Data Center」は2026-03-13公開。AMDは、agentic AIの拡大でデータセンターCPUの役割が再評価されていると整理し、CPUがworkflow orchestration、memory/data movement、周辺エンタープライズ処理の中核を担うと説明した。記事では、5th Gen AMD EPYC搭載システムが比較対象のNVIDIA Grace Superchip系システムに対して、最大2.1倍のper-core性能と最大2.26倍のSPECpower向上を見込めると紹介している。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">AIインフラの差別化がGPUの枚数だけでは決まらず、agentの周辺処理をどれだけ効率よくさばけるかに移っていると分かる。推論やツール呼び出しが増えるほど、CPU、ネットワーク、ソフトウェア互換性まで含めた全体設計がボトルネックになる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分がAIサーバーや検証環境を比べるなら、GPU性能だけでなくCPUのper-core性能、電力効率、既存x86ソフト資産との相性も一緒に見たい。agentic workflowでは制御系の遅さが全体体感を崩すので、周辺処理の設計を軽視できない。</p>
+</div>
+      <a href="https://www.amd.com/en/blogs/2026/agentic-ai-brings-new-attention-to-cpus-in-the-ai-data.html" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-chip">公式 半導体</span>
+      <span class="card-src">公式半導体 · 2026-03-11</span>
+      <span class="conf conf-high"><span class="conf-dot"></span>確信度: 高</span>
+    </div>
+    <p class="card-summary">公式半導体 の「Intel Announces New Intel Core Ultra 200S Plus Series Desktop P…」では、IntelはCore Ultra 200S Plus系列の270Kと250K Plusを発表し、前世代比でcore増加と最大900MHzのdie-to-die周波数向上を打ち出した。Core Ultra 7 270K Plusは競合比で最大2倍のcreator性能を掲げ、select games向けにはnative performanceを高めるIntel Binary Optimization Toolも投入している。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">公式半導体の「Intel Announces New Intel Core Ultra 200S Plus Series Desktop P…」は2026-03-11公開。IntelはCore Ultra 200S Plus系列の270Kと250K Plusを発表し、前世代比でcore増加と最大900MHzのdie-to-die周波数向上を打ち出した。Core Ultra 7 270K Plusは競合比で最大2倍のcreator性能を掲げ、select games向けにはnative performanceを高めるIntel Binary Optimization Toolも投入している。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">クライアント半導体の競争が、単純なピーク性能だけでなく、ゲーム、制作、ローカルAI処理を含む実アプリの最適化勝負へ移っていると読める。CPU本体だけでなく、translation layerやランタイム最適化をセットで出してくる点が重要だ。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分が開発機や自作PCを選ぶなら、世代名やベンチマーク平均だけでなく、どのワークロードで何が最適化されるのかを確認したい。ローカルAIやゲーム周りは、ハード単体よりソフトウェアスタック込みの改善が実使用感を左右しやすい。</p>
+</div>
+      <a href="https://newsroom.intel.com/client-computing/intel-announces-new-intel-core-ultra-200s-plus-series-desktop-processors" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-chip">公式 半導体</span>
+      <span class="card-src">公式半導体 · 2026-03-13</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">公式半導体 の「Meta、4種類のAIチップMTIAを発表、英スタートアップが宇宙空間で製造した半導体を評価する研究所を設立」では、SemiconPortalは、MetaがMTIA 300、400、450、500の4種類のAIチップを公表し、量産済みのMTIA 300に続いて、生成AI推論向けの上位3製品を2027年から順次生産する計画だと報じた。あわせて、英SpaceForgeが低軌道で製造した半導体を評価するNMRCをスウォンジ大学に設立し、無重力環境で作る結晶品質の検証を進める動きも紹介している。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">公式半導体の「Meta、4種類のAIチップMTIAを発表、英スタートアップが宇宙空間で製造した半導体を評価する研究所を設立」は2026-03-13公開。SemiconPortalは、MetaがMTIA 300、400、450、500の4種類のAIチップを公表し、量産済みのMTIA 300に続いて、生成AI推論向けの上位3製品を2027年から順次生産する計画だと報じた。あわせて、英SpaceForgeが低軌道で製造した半導体を評価するNMRCをスウォンジ大学に設立し、無重力環境で作る結晶品質の検証を進める動きも紹介している。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">GPU調達だけではなく、ハイパースケーラーが推論向けASICを自前で高速に回す流れと、製造側で新しい結晶品質や材料プロセスを探る流れが同時に進んでいる。半導体競争の主戦場が、設計 cadence と製造技術の両面に広がっていることが分かる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分が半導体動向を追うなら、NVIDIAやAMDの出荷だけでなく、Metaのような自社チップ計画と、その裏で誰が設計や製造を支えるかを見たい。中長期では、推論ASICの設計パートナーや新材料・新製造の実証が、次の勝ち筋になる可能性がある。</p>
+</div>
+      <a href="https://www.semiconportal.com/archive/news/picks/260313-picks.html" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="subsec">
+  <div class="subsec-label">コミュニティ（Reddit / HN / その他）</div>
+  <div class="cards">
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-reddit">Reddit</span>
+      <span class="card-src">note · 2026-03-06</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">note の「「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲」では、パウロ氏はBroadcomの2026年第1四半期決算を起点に、AIインフラが『汎用GPU＋独自ネットワーク＋光』と『カスタムxPU＋Ethernet＋銅配線延命』の二極へ分かれ始めたと整理した。決算を単なる強気ガイダンスではなく、Google、Meta、Anthropic、OpenAIのような大口顧客がNVIDIA依存をどう崩すかを示す設計図として読み解いている。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">noteの「「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲」は2026-03-06公開。パウロ氏はBroadcomの2026年第1四半期決算を起点に、AIインフラが『汎用GPU＋独自ネットワーク＋光』と『カスタムxPU＋Ethernet＋銅配線延命』の二極へ分かれ始めたと整理した。決算を単なる強気ガイダンスではなく、Google、Meta、Anthropic、OpenAIのような大口顧客がNVIDIA依存をどう崩すかを示す設計図として読み解いている。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">半導体の勝敗がGPU単体の出荷だけでは決まらず、custom silicon、networking、optics、interconnectまで含めたクラスター設計に広がっていることを理解する助けになる。AI需要の果実が加速器ベンダー以外にも配分される可能性を具体的に見せる視点だ。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分が半導体動向を追うなら、GPU売上の上下だけでなく、どの顧客が独自fabricやcustom xPUへ寄っているかを注視したい。Ethernet陣営とoptics陣営のどちらに投資が流れるかを見る方が、中期の構図を読みやすい。</p>
+</div>
+      <a href="https://note.com/paul1211/n/n18c3c3ed66f6" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+<div class="card chip fi">
+  <div class="card-top" onclick="toggle(this)">
+    <div class="card-meta">
+      <span class="tag tag-reddit">Reddit</span>
+      <span class="card-src">Reddit · 2026-03-13</span>
+      <span class="conf conf-mid"><span class="conf-dot"></span>確信度: 中</span>
+    </div>
+    <p class="card-summary">Reddit の「NVIDIA, Intel join Microsoft for Advanced Shader Delivery, conf…」では、r/nvidiaで注目された記事は、MicrosoftがAdvanced Shader Deliveryに加え、DirectX Linear AlgebraとDirectX Compute Graph Compilerを準備しており、IntelはLunar LakeとPanther Lake、NVIDIAはGeForce RTX 50での対応を進めていると伝えた。狙いはshader compilationのstutter削減と、neural renderingやupscalingのようなAI処理をDirectX経由で扱いやすくすることにある。</p>
+  </div>
+  <div class="card-toggle" onclick="toggle(this)">
+    <span class="toggle-lbl">詳細を読む</span>
+    <span class="toggle-arrow">▼</span>
+  </div>
+  <div class="card-body">
+    <div class="card-inner">
+      <div class="block">
+  <div class="block-lbl">何が起きたか</div>
+  <p class="block-txt">Redditの「NVIDIA, Intel join Microsoft for Advanced Shader Delivery, conf…」は2026-03-13公開。r/nvidiaで注目された記事は、MicrosoftがAdvanced Shader Deliveryに加え、DirectX Linear AlgebraとDirectX Compute Graph Compilerを準備しており、IntelはLunar LakeとPanther Lake、NVIDIAはGeForce RTX 50での対応を進めていると伝えた。狙いはshader compilationのstutter削減と、neural renderingやupscalingのようなAI処理をDirectX経由で扱いやすくすることにある。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">なぜ重要か</div>
+  <p class="block-txt">クライアント向けAI半導体の価値が、チップの生性能だけでなく、OS、API、compiler、driverを含むenablementの厚みへ移っていると分かる。共通のDirectX系ツールが広がれば、AI機能を載せる開発者の負担が下がり、対応ハードの実用性が一段上がる。</p>
+</div>
+<div class="block">
+  <div class="block-lbl">自分への影響</div>
+  <p class="block-txt">自分がPC向けAI機能やlocal graphics workloadを評価する時も、TFLOPSや世代名だけでなく、API対応、compiler、driver rolloutの速さを見たい。実アプリでは、ベンチマーク差よりも、安定した開発経路があるかどうかが採用を左右する。</p>
+</div>
+      <a href="https://videocardz.com/newz/nvidia-intel-join-microsoft-for-advanced-shader-delivery-confirmed-for-lunar-panther-lake-and-geforce-rtx-50" target="_blank" rel="noopener" class="card-link">→ 元記事を読む</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+  </section>
+</div>
+
+<div class="shell">
+  <section id="sources">
+    <h2 class="sources-title">ソース一覧</h2>
+<div class="src-item">
+  <span class="src-name">公式AI（Major agentic capabilities improvements in GitHub Copilot for…）</span>
+  <span class="src-date">公開: 2026-03-11 / 参照: 2026-03-15</span>
+  <span class="src-type ai">公式AI</span>
+  <a class="src-url" href="https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides/" target="_blank" rel="noopener">https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides/</a>
+</div>
+<div class="src-item">
+  <span class="src-name">公式AI（Optionally skip approval for Copilot coding agent Actions wor…）</span>
+  <span class="src-date">公開: 2026-03-13 / 参照: 2026-03-15</span>
+  <span class="src-type ai">公式AI</span>
+  <a class="src-url" href="https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows" target="_blank" rel="noopener">https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows</a>
+</div>
+<div class="src-item">
+  <span class="src-name">Zenn（Playwright + OWASP ZAP + Claude Code で E2E テストから脆弱性診断まで一気通貫でで…）</span>
+  <span class="src-date">公開: 2026-03-13 / 参照: 2026-03-15</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://zenn.dev/rescuenow/articles/7192f8ca6ebe48" target="_blank" rel="noopener">https://zenn.dev/rescuenow/articles/7192f8ca6ebe48</a>
+</div>
+<div class="src-item">
+  <span class="src-name">Zenn（Claude CodeやCodexのスキルの管理を楽にするツール「faceted-prompting」）</span>
+  <span class="src-date">公開: 2026-03-12 / 参照: 2026-03-15</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://zenn.dev/nrs/articles/88f158aca0505b" target="_blank" rel="noopener">https://zenn.dev/nrs/articles/88f158aca0505b</a>
+</div>
+<div class="src-item">
+  <span class="src-name">note（【Vibe Codingは終わった？】AIに丸投げする人が見落としている"致命的"な落とし穴）</span>
+  <span class="src-date">公開: 2026-03-10 / 参照: 2026-03-15</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://note.com/kawaidesign/n/nf9d920785217" target="_blank" rel="noopener">https://note.com/kawaidesign/n/nf9d920785217</a>
+</div>
+<div class="src-item">
+  <span class="src-name">Reddit（An AI agent deleted 25,000 documents from the wrong database.…）</span>
+  <span class="src-date">公開: 2026-03-13 / 参照: 2026-03-15</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://www.reddit.com/r/ClaudeAI/comments/1rshuz9/an_ai_agent_deleted_25000_documents_from_the/" target="_blank" rel="noopener">https://www.reddit.com/r/ClaudeAI/comments/1rshuz9/an_ai_agent_deleted_25000_documents_from_the/</a>
+</div>
+<div class="src-item">
+  <span class="src-name">Reddit（I'm fully blind, and AI is a game changer for me. Are there a…）</span>
+  <span class="src-date">公開: 2026-03-13 / 参照: 2026-03-15</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://www.reddit.com/r/LocalLLaMA/comments/1rsuhwl/im_fully_blind_and_ai_is_a_game_changer_for_me/" target="_blank" rel="noopener">https://www.reddit.com/r/LocalLLaMA/comments/1rsuhwl/im_fully_blind_and_ai_is_a_game_changer_for_me/</a>
+</div>
+<div class="src-item">
+  <span class="src-name">Hacker News（1M context is now generally available for Opus 4.6 and Sonnet…）</span>
+  <span class="src-date">公開: 2026-03-13 / 参照: 2026-03-15</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://claude.com/blog/1m-context-ga" target="_blank" rel="noopener">https://claude.com/blog/1m-context-ga</a>
+</div>
+<div class="src-item">
+  <span class="src-name">公式半導体（Agentic AI Brings New Attention to CPUs in the AI Data Center）</span>
+  <span class="src-date">公開: 2026-03-13 / 参照: 2026-03-15</span>
+  <span class="src-type chip">公式半導体</span>
+  <a class="src-url" href="https://www.amd.com/en/blogs/2026/agentic-ai-brings-new-attention-to-cpus-in-the-ai-data.html" target="_blank" rel="noopener">https://www.amd.com/en/blogs/2026/agentic-ai-brings-new-attention-to-cpus-in-the-ai-data.html</a>
+</div>
+<div class="src-item">
+  <span class="src-name">公式半導体（Intel Announces New Intel Core Ultra 200S Plus Series Desktop…）</span>
+  <span class="src-date">公開: 2026-03-11 / 参照: 2026-03-15</span>
+  <span class="src-type chip">公式半導体</span>
+  <a class="src-url" href="https://newsroom.intel.com/client-computing/intel-announces-new-intel-core-ultra-200s-plus-series-desktop-processors" target="_blank" rel="noopener">https://newsroom.intel.com/client-computing/intel-announces-new-intel-core-ultra-200s-plus-series-desktop-processors</a>
+</div>
+<div class="src-item">
+  <span class="src-name">公式半導体（Meta、4種類のAIチップMTIAを発表、英スタートアップが宇宙空間で製造した半導体を評価する研究所を設立）</span>
+  <span class="src-date">公開: 2026-03-13 / 参照: 2026-03-15</span>
+  <span class="src-type chip">公式半導体</span>
+  <a class="src-url" href="https://www.semiconportal.com/archive/news/picks/260313-picks.html" target="_blank" rel="noopener">https://www.semiconportal.com/archive/news/picks/260313-picks.html</a>
+</div>
+<div class="src-item">
+  <span class="src-name">note（「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲）</span>
+  <span class="src-date">公開: 2026-03-06 / 参照: 2026-03-15</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://note.com/paul1211/n/n18c3c3ed66f6" target="_blank" rel="noopener">https://note.com/paul1211/n/n18c3c3ed66f6</a>
+</div>
+<div class="src-item">
+  <span class="src-name">Reddit（NVIDIA, Intel join Microsoft for Advanced Shader Delivery, co…）</span>
+  <span class="src-date">公開: 2026-03-13 / 参照: 2026-03-15</span>
+  <span class="src-type com">コミュニティ</span>
+  <a class="src-url" href="https://videocardz.com/newz/nvidia-intel-join-microsoft-for-advanced-shader-delivery-confirmed-for-lunar-panther-lake-and-geforce-rtx-50" target="_blank" rel="noopener">https://videocardz.com/newz/nvidia-intel-join-microsoft-for-advanced-shader-delivery-confirmed-for-lunar-panther-lake-and-geforce-rtx-50</a>
+</div>
+  </section>
+</div>
+
+
+<div class="shell">
+  <section id="nav-history" style="display:none"></section>
+</div>
+
+<footer>
+  <p>Daily AI · 半導体 Briefing</p>
+  <p>デイリーAI・半導体ニュース（2026-03-15） · Generated 2026-03-15 00:28:12 (Asia/Tokyo)</p>
+</footer>
+
+<script>
+const ARTICLES_DB = [];
+
+function toggle(el) {
+  const card = el.closest('.card');
+  const isOpen = card.classList.toggle('open');
+  const lbl = card.querySelector('.toggle-lbl');
+  if (lbl) lbl.textContent = isOpen ? '閉じる' : '詳細を読む';
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderNavHistory() {
+  if (typeof ARTICLES_DB === 'undefined' || !Array.isArray(ARTICLES_DB) || ARTICLES_DB.length === 0) return;
+  const nav = document.getElementById('nav-history');
+  if (!nav) return;
+
+  const sorted = [...ARTICLES_DB].sort((a, b) => b.date.localeCompare(a.date));
+  const currentPath = window.location.pathname.replace(/\/?$/, '/');
+  const marker = '/daily-news/';
+  const markerIdx = currentPath.indexOf(marker);
+  const repoPrefix = markerIdx >= 0 ? currentPath.slice(0, markerIdx) : '';
+
+  function resolveEntryHref(entry) {
+    const rawPath = (entry && typeof entry.path === 'string' && entry.path)
+      ? entry.path
+      : `${marker}${entry.date || ''}/`;
+    if (/^https?:\/\//.test(rawPath)) return rawPath;
+    if (rawPath.startsWith('/')) return `${repoPrefix}${rawPath}`;
+    return rawPath;
+  }
+
+  const items = sorted.map(entry => {
+    const isCurrent = currentPath.includes(entry.date);
+    const href = resolveEntryHref(entry);
+    return (
+      `<a href="${escHtml(href)}" class="nav-hist-item${isCurrent ? ' current' : ''}">` +
+      `<span class="nav-hist-date">${escHtml(entry.date)}</span>` +
+      `<span class="nav-hist-title">${escHtml(entry.title)}</span>` +
+      `</a>`
+    );
+  }).join('\n');
+
+  nav.innerHTML =
+    `<div class="nav-hist-label">他の日のニュースアーカイブ</div>` +
+    `<div class="nav-hist-list">${items}</div>`;
+  nav.style.display = 'block';
+}
+
+// Fade-in on scroll
+const _io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('show'); _io.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fi').forEach(el => _io.observe(el));
+
+renderNavHistory();
+</script>
+</body>
+</html>

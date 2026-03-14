@@ -1,0 +1,30 @@
+{
+  "source": "note",
+  "date": "2026-03-15",
+  "items": [
+    {
+      "title": "【Vibe Codingは終わった？】AIに丸投げする人が見落としている\"致命的\"な落とし穴",
+      "url": "https://note.com/kawaidesign/n/nf9d920785217",
+      "published_at": "2026-03-10",
+      "segment": "ai",
+      "what": "KAWAI氏は、Karpathyの『Vibe Codingは終わった。これからはAgentic Engineeringだ』という転換点を軸に、AIへの丸投げ開発の限界を整理した。記事では、Lovable生成アプリ1,645件の調査で170件に情報漏えい穴が見つかった例や、AIと人間の共同コードで重大欠陥が1.7倍になったという分析、Replit agentによる本番DB削除事例を引きながら、設計・指示・検証・責任を人間が担うべきだと論じている。",
+      "why": "AI開発の失敗が、モデルの出来不出来より、設計やテストを省いて『動いたから終わり』にしてしまう運用から生まれていることを具体例で説明している。Agentic Engineeringを、プロンプト術ではなく、設計と品質保証を伴う仕事の再定義として捉え直せる。",
+      "so_what": "自分がcoding agentを使う時も、依頼前に要件、完成条件、確認観点を短くても先に固定し、返ってきた成果物を説明できるかで受け取りを判断したい。生成速度より、設計とテストの責任をどこに置くかを先に決める方が、実務では効く。",
+      "confidence": "high"
+    },
+    {
+      "title": "「光とGPU」か「銅とxPU」か。Broadcom決算が鳴らしたAI半導体・第2フェーズの号砲",
+      "url": "https://note.com/paul1211/n/n18c3c3ed66f6",
+      "published_at": "2026-03-06",
+      "segment": "semiconductor",
+      "what": "パウロ氏はBroadcomの2026年第1四半期決算を起点に、AIインフラが『汎用GPU＋独自ネットワーク＋光』と『カスタムxPU＋Ethernet＋銅配線延命』の二極へ分かれ始めたと整理した。決算を単なる強気ガイダンスではなく、Google、Meta、Anthropic、OpenAIのような大口顧客がNVIDIA依存をどう崩すかを示す設計図として読み解いている。",
+      "why": "半導体の勝敗がGPU単体の出荷だけでは決まらず、custom silicon、networking、optics、interconnectまで含めたクラスター設計に広がっていることを理解する助けになる。AI需要の果実が加速器ベンダー以外にも配分される可能性を具体的に見せる視点だ。",
+      "so_what": "自分が半導体動向を追うなら、GPU売上の上下だけでなく、どの顧客が独自fabricやcustom xPUへ寄っているかを注視したい。Ethernet陣営とoptics陣営のどちらに投資が流れるかを見る方が、中期の構図を読みやすい。",
+      "confidence": "medium"
+    }
+  ],
+  "attempt_log": [
+    "note検索は生成AI、Claude Code、Cursor AI、NVIDIA、半導体で20件以上ずつ確認し、48時間で不足したため7日まで拡大した",
+    "AIはAgentic Engineeringへの移行を論じた3月10日記事、半導体はBroadcom決算を構造分析した3月6日記事を採用した"
+  ]
+}

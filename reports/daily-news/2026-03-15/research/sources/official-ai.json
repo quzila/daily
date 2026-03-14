@@ -1,0 +1,26 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-15",
+  "items": [
+    {
+      "title": "Major agentic capabilities improvements in GitHub Copilot for JetBrains IDEs",
+      "url": "https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides/",
+      "published_at": "2026-03-11",
+      "segment": "ai",
+      "what": "GitHubはJetBrains向けCopilotで、custom agents、sub-agents、plan agentをGAにし、agent hooksのpublic preview、MCPのauto-approve、AGENTS.md/CLAUDE.md対応、auto model selection GAをまとめて導入した。IDE内でプロジェクト固有の指示ファイルと外部ツール連携を前提に、役割を分けたagentを継続的に動かせる構成へ進めている。",
+      "why": "Copilotが単なるコード補完から、IDE内で複数エージェントを編成してワークフローを回す運用基盤へ寄ってきたことを示す更新だ。instruction fileやhooksが共通化されると、個人の便利設定ではなく、チームで再利用できる開発手順としてAI運用を標準化しやすくなる。",
+      "so_what": "自分がJetBrains系IDEとcoding agentを併用するなら、まずAGENTS.mdやCLAUDE.mdにレビュー観点、禁止操作、テスト手順を切り出し、hooksでlintや確認コマンドを自動化したい。モデル選択より先に、どこまでを再利用可能な運用部品として定義できるかが差になりそうだ。",
+      "confidence": "high"
+    },
+    {
+      "title": "Optionally skip approval for Copilot coding agent Actions workflows",
+      "url": "https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows",
+      "published_at": "2026-03-13",
+      "segment": "ai",
+      "what": "GitHubは、Copilot coding agentが作成したPRやpushに対して、GitHub Actionsの実行前に必要だった人手の承認を、リポジトリ設定で省略できるようにした。既定では従来どおり承認必須のままだが、管理者はテストを即時走らせてエージェントの変更を素早く検証できる。",
+      "why": "AIコーディングの論点が、提案を受け取る段階から、CIまで含めた実運用の設計へ進んでいる。ワークフローがトークンやsecretに触れ得る環境で自動実行を許すかどうかは、単なる利便性ではなく、エージェントにどこまで権限を渡せるかという運用方針そのものになる。",
+      "so_what": "自分がcoding agentを常用するなら、まず権限の弱い検証用リポジトリでだけこの設定を有効にし、workflow permissionとsecret露出範囲を先に点検したい。重要なのはPRを開けるかではなく、どのリポジトリなら人手ゲートなしでCIを回してよいかを明文化することだ。",
+      "confidence": "high"
+    }
+  ]
+}
