@@ -1,0 +1,34 @@
+{
+  "source": "zenn",
+  "date": "2026-03-17",
+  "items": [
+    {
+      "title": "Claude CodeのSkillsで再現性のないAI作業を固定化した話",
+      "url": "https://zenn.dev/dx_pm_product/articles/claude-code-skills-flutter-build",
+      "published_at": "2026-03-17",
+      "segment": "ai",
+      "what": "この記事は、Claude CodeにFlutterアプリをiOSシミュレーターで動かさせると、同じ依頼でもWeb向けビルド、環境変数の勝手な追加、エラー無視など挙動がぶれる問題を出発点にしている。その対策としてSkillsを使い、`flutter run` を build・install・launch に分割し、同期実行へ寄せ、SKILL.md側に「終了コードとログだけを信じる」「自動修正で先に進まない」といった行動ルールまで埋め込んで再現性を上げていた。",
+      "why": "LLMに複数ステップ作業をプロンプトだけで任せると、判断の揺れやエラー握りつぶしが入り込みやすいことを、具体的な失敗例で示しているのが重要だ。うまくいくかはモデルの賢さだけではなく、処理をスクリプト化し、失敗条件を機械的に判定できる形へ落とせるかで決まる。",
+      "so_what": "自分がagentにビルドやデプロイ準備を任せるなら、長い自然言語指示を磨く前に、Skillsやシェルスクリプトへ分解して終了条件を固定したい。再現しない成功体験より、毎回同じ失敗を再現できる状態を作る方が、結果的に運用の立て直しが速い。",
+      "confidence": "high"
+    },
+    {
+      "title": "Claude CodeのReact習熟度を測る",
+      "url": "https://zenn.dev/uhyo/articles/react-profession-bench-1",
+      "published_at": "2026-03-16",
+      "segment": "ai",
+      "what": "uhyo氏はClaude CodeのHaiku、Sonnet、Opusに対して6つのReact実装課題を同一条件で与え、状態設計、Effect衛生、コンポーネント設計、TypeScript品質、パフォーマンス、アクセシビリティの観点で比較した。平均点はSonnet 67.8、Opus 68.7、Haiku 58.2で、従来型のReactパターンはこなせても、Suspense、`useSyncExternalStore`、`useEffectEvent` などReact 19寄りの設計では全モデルがスコアを落としている。",
+      "why": "agentの評価を「動いたかどうか」で済ませず、特定フレームワークの設計原則に照らして測る視点がはっきり出ている。Reactのように流儀が強い領域では、モデル差よりも『どのAPIでつまずき、どこに人間のレビューを残すべきか』を見極めるベンチマークの方が価値を持つ。",
+      "so_what": "自分がReact実装をagentへ任せるなら、まず stateの持ち方やEffectの扱いを確認する専用チェック項目を持ちたい。新しいAPI周りはまだ素通しにせず、ベンチマーク的な小課題で癖を見てから本番コードへ流し込む方が安全だ。",
+      "confidence": "high"
+    }
+  ],
+  "other_candidates": [
+    {
+      "title": "Claude Code / CodexでKaggle金メダルを取った話",
+      "url": "https://zenn.dev/chiman/articles/b233cc808d6af3",
+      "published_at": "2026-03-16",
+      "segment": "ai"
+    }
+  ]
+}

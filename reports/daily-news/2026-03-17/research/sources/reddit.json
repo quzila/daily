@@ -1,0 +1,46 @@
+{
+  "source": "reddit",
+  "date": "2026-03-17",
+  "items": [
+    {
+      "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+      "published_at": "2026-03-14",
+      "segment": "ai",
+      "what": "r/LocalLLaMAでは、元Manusのbackend leadが、agentを2年運用した結果として、型付きfunction catalogを増やすより単一の `run(command=\"...\")` ツールへ寄せた方が安定すると共有した。投稿では、pipeや `&&` を解釈するchain parser、progressive help、binary guard、出力あふれ対策、sandboxingまで含め、LLMのI/OをUnix風CLIへ寄せる設計を詳しく説明している。",
+      "why": "agentのツール設計が「専用関数を何個作るか」ではなく、「失敗しにくい実行インターフェースをどう定義するか」に移っていると分かる投稿だ。モデルの能力差より、実行面の整え方が成功率を左右するという現場知見として重い。",
+      "so_what": "自分がagent用ツールを増やすなら、まず細かい関数を量産する前に、単一run系ツールと整った標準出力でどこまで回せるか試したい。GUIをなぞらせるより、CLI前提の素直なI/Oへ寄せた方がLLMの失敗を減らしやすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "I used Claude Code to reverse engineer a 13-year-old game binary and crack a restriction nobody had solved — the community is losing it",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ru3irp/i_used_claude_code_to_reverse_engineer_a/",
+      "published_at": "2026-03-15",
+      "segment": "ai",
+      "what": "r/ClaudeAIでは、Claude Codeを使って13年前のゲーム『Disney Infinity 1.0』のバイナリを解析し、長年解決されていなかった制限を外した事例が共有された。投稿者はsymbolもsourceもない状態から13個のvalidation call siteを見つけ、17本のbinary patchと3件のdata file修正を24時間未満でまとめ、成果物をGitHubへ公開している。",
+      "why": "LLM支援がWebアプリや定型CRUDだけでなく、逆アセンブルやパッチ作成のような探索的で文脈の重い作業にも入り始めていることを示す。ブラックボックス資産に対して仮説、差分、検証を高速に回せるなら、手を付けにくかった保守領域の難度が変わる。",
+      "so_what": "自分が古いコードや仕様不明資産に向き合う時も、最初から全面改修を考えず、agentで探索ログと差分候補を先に集めるやり方を試したい。ただし、再現性のためにパッチと検証手順は人間が別管理で残し、成果だけを信じないようにしたい。",
+      "confidence": "medium"
+    },
+    {
+      "title": "The Iran War Is Also Now a Semiconductor Problem",
+      "url": "https://carnegieendowment.org/emissary/2026/03/iran-korea-semiconductor-chips-energy-oil-hormuz",
+      "published_at": "2026-03-16",
+      "segment": "semiconductor",
+      "what": "r/semiconductorsでは、イラン情勢が半導体供給へどう波及するかを論じたCarnegieの記事が共有され、ホルムズ海峡やエネルギー市場の不安定化が韓国を含むアジアのチップ供給網へ与える圧力が議論になっていた。製造装置や原材料そのものだけでなく、エネルギー価格と海上物流の揺れが後段の製造能力を削る論点として注目されている。",
+      "why": "半導体供給のボトルネックがfab能力や先端GPU不足だけではなく、地政学、海運、燃料価格といった外部要因に強く結びついていると分かる。AI需要が強い局面ほど、材料と輸送の乱れは遅れて価格と供給計画へ効いてくる。",
+      "so_what": "自分が半導体ニュースを見る時も、製品発表や決算だけでなく、エネルギーや物流のニュースを横に並べて見たい。需給逼迫はチップメーカーの発表より先に、周辺インフラの緊張として現れることがある。",
+      "confidence": "medium"
+    },
+    {
+      "title": "NVIDIA, Intel join Microsoft for Advanced Shader Delivery, confirmed for Lunar/Panther Lake and GeForce RTX 50",
+      "url": "https://videocardz.com/newz/nvidia-intel-join-microsoft-for-advanced-shader-delivery-confirmed-for-lunar-panther-lake-and-geforce-rtx-50",
+      "published_at": "2026-03-13",
+      "segment": "semiconductor",
+      "what": "r/nvidiaで話題になった記事は、MicrosoftがAdvanced Shader Deliveryに加え、DirectX Linear AlgebraやDirectX Compute Graph Compilerを進めており、IntelのLunar LakeとPanther Lake、NVIDIAのGeForce RTX 50が対応予定だと伝えている。shader compilationによるstutter削減だけでなく、neural renderingやupscalingのようなAI処理をDirectX経由で扱いやすくするのが狙いとされる。",
+      "why": "クライアント向けAI半導体の価値が、チップ単体の性能より、OS、API、compiler、driverを含むenablementの厚みで決まることを示す話題だ。開発者がAI機能を載せやすい基盤をどれだけ早く整えられるかが、対応ハードの実用性へ直結する。",
+      "so_what": "自分がPC向けAI機能やgraphics workloadを評価するなら、TFLOPSや世代名だけでなく、API対応とcompiler整備の進み具合を確認したい。実アプリではピーク性能より、安定した開発経路があるかどうかの方が採用判断に効きやすい。",
+      "confidence": "medium"
+    }
+  ]
+}

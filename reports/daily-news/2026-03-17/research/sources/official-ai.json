@@ -1,0 +1,26 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-17",
+  "items": [
+    {
+      "title": "Major agentic capabilities improvements in GitHub Copilot for JetBrains IDEs",
+      "url": "https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides",
+      "published_at": "2026-03-11",
+      "segment": "ai",
+      "what": "GitHubはJetBrains IDE向けCopilotで、custom agents、sub-agents、plan agentをGAに引き上げ、agent hooksをプレビュー、MCPのauto-approve対応、instruction files拡張、auto model selectionの一般提供までまとめて進めた。IDE内で単発補完を受ける段階から、役割分担されたエージェントを前提に作業フローを編成する段階へ機能が一気に寄っている。",
+      "why": "これはCopilotの価値がコード補完ではなく、計画、実行、外部ツール接続、承認境界を含む「開発環境内の運用設計」に移っていることを示す更新だ。JetBrains利用者にとっては、どのタスクをサブエージェントへ任せ、どこにhookで統制を入れるかが、そのまま品質と安全性の差になる。",
+      "so_what": "自分がJetBrains系でagent運用を強めるなら、まず instruction files と hooks を使ってレビュー観点と禁止操作を固定し、MCPのauto-approveは検証用ワークスペースだけで試す。モデル選択を人手で全部抱えるより、役割分担と承認境界を先に設計した方が運用は安定する。",
+      "confidence": "high"
+    },
+    {
+      "title": "Request Copilot code review from GitHub CLI",
+      "url": "https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli",
+      "published_at": "2026-03-11",
+      "segment": "ai",
+      "what": "GitHubはGitHub CLI v2.88.0以降で、`gh pr edit --add-reviewer @copilot` や `gh pr create` の対話フローからCopilot code reviewを直接呼べるようにした。加えて、reviewerとassigneeの選択を検索ベースに切り替え、大規模組織で候補一覧を丸ごと読み込んでいた遅さやアクセシビリティ問題も同時に改善している。",
+      "why": "PR作成からレビュー依頼までをCLIに閉じられるのは、ターミナル中心の開発やagent駆動ワークフローでは大きい。レビューAIをブラウザの補助機能としてではなく、PR生成パイプラインの一工程として扱えるようになり、レビューの自動化余地が広がる。",
+      "so_what": "自分がCLI主体で開発するなら、PR作成時点でCopilot reviewを自動付与する運用を試し、レビュー観点を人間用テンプレートとどう分担するかを整理したい。ブラウザを開かずに回せる分、レビューを後回しにしにくくなり、個人開発でも差分確認の習慣を埋め込みやすい。",
+      "confidence": "high"
+    }
+  ]
+}
