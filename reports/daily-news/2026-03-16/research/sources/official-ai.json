@@ -1,0 +1,26 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-16",
+  "items": [
+    {
+      "title": "Optionally skip approval for Copilot coding agent Actions workflows",
+      "url": "https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows",
+      "published_at": "2026-03-13",
+      "segment": "ai",
+      "what": "GitHubは、Copilot coding agentが作成したPRやpushを外部コントリビュータ相当として止めていたActions実行について、リポジトリ管理者が人手承認ステップを省略できる設定を追加した。既定値は従来どおり承認必須のままで、即時CIと安全性のどちらを優先するかをリポジトリ単位で選べる。",
+      "why": "coding agentの論点が、提案精度だけでなくCIまで含めた運用設計へ移っていると分かる更新だ。workflow tokenやsecretに触れ得る環境でどこまで自動実行を許すかは、そのままエージェントへの権限委譲ポリシーになる。",
+      "so_what": "自分がagentにCIまで回させるなら、まず検証用リポジトリだけでこの設定を試し、workflow permissionsとsecret露出範囲を先に棚卸ししたい。本番系では『どの条件なら承認なしで走らせるか』を文章で固定してから広げるべきだ。",
+      "confidence": "high"
+    },
+    {
+      "title": "Copilot auto model selection is generally available in JetBrains IDEs",
+      "url": "https://github.blog/changelog/2026-03-12-copilot-auto-model-selection-is-generally-available-in-jetbrains-ides",
+      "published_at": "2026-03-12",
+      "segment": "ai",
+      "what": "GitHubはJetBrains IDE向けCopilotでauto model selectionをGAにし、プラン、ポリシー、可用性に応じてGPT-5.4、GPT-5.3-Codex、Sonnet 4.6、Haiku 4.5を自動で振り分けられるようにした。auto利用時はmodel multiplierが10%割引され、hoverで実際に使われたモデルも確認できる。",
+      "why": "モデル選定が利用者の都度判断からIDE側のルーティング機能へ移りつつあることを示す。開発現場では『どのモデルを選ぶか』より、『どのタスクをどの制約下で自動配車させるか』の設計が重要になっていく。",
+      "so_what": "自分が複数モデルを併用するなら、まずautoに任せてログや体感を見つつ、外したくない用途だけ明示モデルへ切り出したい。手動で全部決めるより、例外条件だけを設計する方が運用負荷は下がりやすい。",
+      "confidence": "high"
+    }
+  ]
+}

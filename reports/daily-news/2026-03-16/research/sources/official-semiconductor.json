@@ -1,0 +1,36 @@
+{
+  "source": "official-semiconductor",
+  "date": "2026-03-16",
+  "items": [
+    {
+      "title": "Intel Announces New Intel Core Ultra 200S Plus Series Desktop Processors",
+      "url": "https://newsroom.intel.com/client-computing/intel-announces-new-intel-core-ultra-200s-plus-series-desktop-processors",
+      "published_at": "2026-03-11",
+      "segment": "semiconductor",
+      "what": "IntelはCore Ultra 7 270K PlusとCore Ultra 5 250K/KF Plusを発表し、既存のCore Ultra Series 2 desktop比でcore数増加と最大900MHzのdie-to-die周波数向上を打ち出した。上位の270K Plusは24コア構成で、gamingでは最大15%のgeomean改善、競合CPU比では最大103%のマルチスレッド性能向上を掲げ、select games向けのIntel Binary Optimization Toolも投入する。",
+      "why": "クライアント半導体の競争が、CPU単体のスペック表ではなく、ゲーム、制作、ローカルAIを含む実アプリ最適化の束で争われていると分かる。translation layerやランタイム最適化を同時に出す構えは、ソフトウェア込みで使用感を作る方向そのものだ。",
+      "so_what": "自分が開発機や自作PCを選ぶなら、世代名や平均ベンチだけでなく、どの実ワークロードに最適化が入るのかを確認したい。ローカルAIやゲーム用途では、ハード差よりソフトウェアスタック込みの改善が体感差を作りやすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "NVIDIA and Nebius Partner to Scale Full-Stack AI Cloud",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-and-nebius-partner-to-scale-full-stack-ai-cloud",
+      "published_at": "2026-03-11",
+      "segment": "semiconductor",
+      "what": "NVIDIAはNebiusとの提携を拡大し、AI factories向けにRubin世代、Vera CPU、BlueField系ストレージとネットワークを含むフルスタック展開を進めると発表した。Nebiusは2030年末までに5ギガワット超のNVIDIAシステム導入を目標とし、NVIDIA自身も20億ドルを投資している。",
+      "why": "AIインフラ競争がGPU供給だけでなく、電力、ネットワーク、CPU、運用基盤まで束ねたフルスタック供給能力へ広がっていると分かる。大規模クラウドの差はチップ枚数ではなく、工場のように積み上げられる供給網と設備計画で決まり始めている。",
+      "so_what": "自分がAI半導体動向を見るなら、GPU出荷数だけでなく、誰がどの電力規模でクラスターを建て、CPUやネットワークをどの組み合わせで押さえているかを追いたい。次の勝負は加速器単品より、供給能力そのものになりやすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "Postcard from embedded world: Meet Intel Core Series 2 processor with P-cores",
+      "url": "https://newsroom.intel.com/client-computing/postcard-from-embedded-world-meet-intel-core-series-2-processor-with-p-cores",
+      "published_at": "2026-03-12",
+      "segment": "semiconductor",
+      "what": "Intelはembedded world向けに、P-core搭載のIntel Core Series 2 processorを産業・エッジ用途へ訴求し、複数のedge workloadを並行処理しながらdeterministic performanceを維持できる点を前面に出した。ミッションクリティカル用途を見据え、consumer向けCPUとは別の文脈でSeries 2を展開している。",
+      "why": "AI半導体の広がりがクラウドやPCだけでなく、industrial edgeの制御系まで含むことが分かる。性能の絶対値より、リアルタイム性や安定動作をどう担保するかが差別化軸になる市場だ。",
+      "so_what": "自分がedge AIや現場向けシステムを見るなら、TOPSやコア数だけでなく、determinismや長期供給の前提を確認したい。クラウド向けの派手な数字とは別の評価軸で半導体を見た方が実態に近い。",
+      "confidence": "medium"
+    }
+  ]
+}

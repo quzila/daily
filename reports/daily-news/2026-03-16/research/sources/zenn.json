@@ -1,0 +1,27 @@
+{
+  "source": "zenn",
+  "date": "2026-03-16",
+  "items": [
+    {
+      "title": "課題ベースで学ぶClaude Code便利機能",
+      "url": "https://zenn.dev/hsaki/articles/why-claude-code-function",
+      "published_at": "2026-03-15",
+      "segment": "ai",
+      "what": "さき氏は、Claude Codeを使い始めた人がぶつかりやすい不満を起点に、CLAUDE.md、Hook、MCP、Skill、permission設定、sessionとcontextの扱いを『どの課題を解くための機能か』という順で整理した。会話中心のClaude.aiと違い、ファイル参照やコマンド実行まで含めて作業を委任できる点を、現場の詰まりどころに結びつけて説明している。",
+      "why": "機能一覧を上から覚えるより、『何に困った時に何を使うか』で学んだ方がagent運用は定着しやすいと分かる記事だからだ。coding agentの価値は多機能さそのものではなく、日々の摩擦をどこまで減らせるかで決まる。",
+      "so_what": "自分がClaude Codeや類似agentを広げるなら、まず機能の網羅表より、よくある失敗と対処機能の対応表を作りたい。導入教育は『Hookとは何か』より、『この事故を防ぐにはHookを使う』の形で渡した方が実務に乗りやすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "生成AIでパワポを作る方法一覧【2026年3月版】",
+      "url": "https://zenn.dev/ncukondo/articles/ai-generate-pptx-methods-2026",
+      "published_at": "2026-03-14",
+      "segment": "ai",
+      "what": "ncukondo氏は、生成AIでPPTXを作る方法をGUI完結型、Markdown型、コード生成型に分けて比較し、『PPTX出力対応』と『編集可能なPPTXが出る』の違いを整理した。NotebookLMのPPTXは画像埋め込みで直接編集しづらく、Gammaはテキスト編集可能だがレイアウト崩れが起きやすく、Claude.aiのPPTX SkillやMarp、PptxGenJSは再現性や編集性の設計が鍵になるとまとめている。",
+      "why": "AI生成物の評価軸が、見た目の派手さではなく、後工程で人が編集できるか、再生成に耐えるかへ移っていることを示している。業務利用では『出せる』より『直せる』が重要で、その差がツール選定を分ける。",
+      "so_what": "自分がAIで資料作成を回すなら、初回生成品質だけでなく、編集可能性と再現手順を必ず確認したい。単発の見栄えより、Markdownやコードで再生成できる経路を残した方が運用は安定しやすい。",
+      "confidence": "high"
+    }
+  ],
+  "other_candidates": []
+}
