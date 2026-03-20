@@ -1,0 +1,26 @@
+{
+  "source": "zenn",
+  "date": "2026-03-20",
+  "items": [
+    {
+      "title": "生成AI時代のドキュメント基盤",
+      "url": "https://zenn.dev/nuits_jp/articles/2026-03-19-genai-documentation-foundation",
+      "published_at": "2026-03-19",
+      "segment": "ai",
+      "what": "この記事は、生成AI時代の開発ではMarkdown中心のドキュメント基盤が再び重要になると整理し、7年間運用してきた基盤の知見を公開している。WordやExcelから脱却して、MkDocsベースで800ページ超の文書をgit管理し、PDF出力、PRレビュー、MermaidのSVG化、draw.io由来SVGのPDF変換まで含めて運用する具体策が並ぶ。",
+      "why": "AI開発ではコードだけでなく、仕様、手順、契約、レビュー観点を機械可読な形で残せるかがそのまま再現性に効く。ドキュメントを捨てるか残すかの二択ではなく、AIと人間の双方が読める形で版管理し、配布まで含めて基盤化する視点が実務に直結する。",
+      "so_what": "自分がagentを使った開発を続けるなら、まずプロジェクト文書をMarkdownとgit前提へ寄せ、コードと同じレビュー経路に載せたい。AIに説明させる前に、仕様や判断根拠を差分で追える形へ揃えた方が、あとで再利用しやすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "Claude Codeをフル活用！本気で使える厳選Skills/Plugin 8選",
+      "url": "https://zenn.dev/itsuki_y/articles/0eb054f14523d7",
+      "published_at": "2026-03-18",
+      "segment": "ai",
+      "what": "この記事は、Claude Codeを8カ月使い込んだ上で、常用に耐えたSkillsとPluginだけを8個に絞って紹介している。brainstormingで設計合意を先に固めるSuperpowers、進捗をMarkdownへ永続化するPlanning with Files、複数agentで誤検知を減らすCode Review、終了条件を満たすまで止めないRalph Loopなど、導入効果と注意点を具体例付きで整理していた。",
+      "why": "agent活用はツールを増やすほど良くなるのではなく、どの機能を常時オンにし、どれを必要時だけ呼ぶかの設計が重要だと分かる。コンテキストを食い潰す万能設定より、永続化、設計確認、レビュー、完了条件といった失敗しやすい箇所を補強する方が運用は安定する。",
+      "so_what": "自分がClaude Code周りを整えるなら、まず常時有効化するSkillは最小限に絞り、プロジェクト固有の手順は `.claude/skills/` のような共有しやすい場所へ寄せたい。便利そうなものを全部入れるより、再現性が上がる部品だけを残した方が日常運用では効く。",
+      "confidence": "high"
+    }
+  ]
+}

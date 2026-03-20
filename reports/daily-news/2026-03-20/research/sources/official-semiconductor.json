@@ -1,0 +1,26 @@
+{
+  "source": "official-semiconductor",
+  "date": "2026-03-20",
+  "items": [
+    {
+      "title": "Agentic AI Brings New Attention to CPUs in the AI Data Center",
+      "url": "https://www.amd.com/en/blogs/2026/agentic-ai-brings-new-attention-to-cpus-in-the-ai-data.html",
+      "published_at": "2026-03-13",
+      "segment": "semiconductor",
+      "what": "AMDは、agentic AIの拡大でデータセンターCPUの役割が再評価されていると整理し、CPUがworkflow orchestration、memory and data movement、周辺エンタープライズ処理の中核を担うと説明した。記事では5th Gen AMD EPYC搭載システムが比較対象のGrace Superchip系システムに対して、最大2.1倍のper-core性能と最大2.26倍のSPECpower向上を見込めると訴求している。",
+      "why": "AIインフラの差別化がGPUの枚数だけでは決まらず、agentの周辺処理をどれだけ効率よくさばけるかに移っていると分かる。推論やツール呼び出しが増えるほど、CPU、ネットワーク、ソフトウェア互換性まで含めた全体設計がボトルネックになる。",
+      "so_what": "自分がAIサーバーや検証環境を比べるなら、GPU性能だけでなくCPUのper-core性能、電力効率、既存x86ソフト資産との相性も一緒に見たい。agent workflowでは制御系の遅さが全体体感を崩すので、周辺処理の設計を軽視できない。",
+      "confidence": "high"
+    },
+    {
+      "title": "NVIDIA and Nebius Partner to Scale Full-Stack AI Cloud",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-and-nebius-partner-to-scale-full-stack-ai-cloud",
+      "published_at": "2026-03-11",
+      "segment": "semiconductor",
+      "what": "NVIDIAはNebiusとの提携拡大を発表し、Rubin世代GPU、Vera CPU、BlueField系ネットワークとストレージを含むフルスタックAIクラウドを共同で広げる方針を示した。Nebiusは2030年末までに5ギガワット超のNVIDIAシステム導入を目標に据え、NVIDIA自身も20億ドルを投資して需要側だけでなく供給側の建設を押し込んでいる。",
+      "why": "AI半導体の競争軸がGPU単品の性能や出荷枚数から、電力、CPU、NIC、ストレージまで含む供給能力全体へ移っていることが分かる。大型顧客の発表を見る時も、チップの型番だけでなく、何メガワット級の拠点をどの時期に積み上げるのかを見ないと実勢が読みにくい。",
+      "so_what": "自分がAIインフラ動向を追うなら、次からはGPUの世代名だけでなく、電力容量、ネットワーク構成、CPUの抱き合わせまでメモして比較したい。供給網が太いプレイヤーほど、モデル競争が激しくなっても実運用で主導権を握りやすい。",
+      "confidence": "high"
+    }
+  ]
+}

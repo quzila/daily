@@ -1,0 +1,19 @@
+{
+  "source": "hacker-news",
+  "date": "2026-03-20",
+  "items": [
+    {
+      "title": "What Is Agentic Engineering?",
+      "url": "https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/",
+      "published_at": "2026-03-16",
+      "segment": "ai",
+      "what": "Hacker Newsで上位に入ったSimon Willisonのガイドは、agentic engineeringを『coding agentの支援を受けてソフトウェアを作る実践』と定義し、agentの本質を『toolをloopで回してgoalへ近づくこと』だと整理した。コード生成そのものより、何を作るかを定義し、試し、評価し、軌道修正する人間側の役割がむしろ増えると論じている。",
+      "why": "coding agent活用を単なる自動化ではなく、仕事の分担再設計として捉え直せるからだ。人間の責務が曖昧なまま導入すると、速く壊すだけになりやすいという含意がある。",
+      "so_what": "自分がagent導入を進めるなら、どこを自動化するかより先に、何を人間が判断し続けるかを明文化したい。要件定義、評価基準、停止条件を残せない運用は、速度が出ても長続きしない。",
+      "confidence": "high"
+    }
+  ],
+  "attempt_log": [
+    "HN最終リンクは news.ycombinator.com ではなく外部記事URLを採用した。"
+  ]
+}

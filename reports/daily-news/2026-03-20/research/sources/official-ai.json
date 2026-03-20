@@ -1,0 +1,26 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-20",
+  "items": [
+    {
+      "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6",
+      "url": "https://claude.com/blog/1m-context-ga",
+      "published_at": "2026-03-13",
+      "segment": "ai",
+      "what": "AnthropicはOpus 4.6とSonnet 4.6で100万トークンのcontext windowをGAに引き上げ、200K超のリクエストでもbeta header不要で使える状態にした。Claude Platform、Azure Foundry、Vertex AIで順次利用でき、Claude CodeでもMax・Team・EnterpriseのOpus 4.6セッションに1M contextが標準で入る。",
+      "why": "長文コンテキストが高額な実験機能ではなく、agent workflowの標準前提へ近づいた意味が大きい。ヘッダ管理や追加料金の摩擦が下がると、大規模コードベースや議事録を細かく分割して圧縮する設計を見直しやすくなり、運用設計そのものに影響する。",
+      "so_what": "自分が調査agentやcoding agentを組むなら、要約チェーンを増やす前に1M contextでそのまま食わせた時の品質差を測りたい。分割や中間要約を減らせるなら、実装も検証も単純になり、失敗点の切り分けもかなり楽になる。",
+      "confidence": "high"
+    },
+    {
+      "title": "Optionally skip approval for Copilot coding agent Actions workflows",
+      "url": "https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows",
+      "published_at": "2026-03-13",
+      "segment": "ai",
+      "what": "GitHubは、Copilot coding agentが作成したPRやpushを外部コントリビュータ相当として止めていたActions実行について、リポジトリ管理者が人手承認ステップを省略できる設定を追加した。既定値は従来どおり承認必須のままで、即時CIと安全性のどちらを優先するかをリポジトリ単位で選べる。",
+      "why": "coding agentの論点が、提案精度だけでなくCIまで含めた運用設計へ移っていると分かる更新だ。workflow tokenやsecretに触れ得る環境でどこまで自動実行を許すかは、そのままエージェントへの権限委譲ポリシーになる。",
+      "so_what": "自分がagentにCIまで回させるなら、まず検証用リポジトリだけでこの設定を試し、workflow permissionsとsecret露出範囲を先に棚卸ししたい。本番系では、どの条件なら承認なしで走らせるかを文章で固定してから広げるべきだ。",
+      "confidence": "high"
+    }
+  ]
+}

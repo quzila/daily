@@ -1,0 +1,56 @@
+{
+  "source": "reddit",
+  "date": "2026-03-20",
+  "items": [
+    {
+      "title": "I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead.",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/",
+      "published_at": "2026-03-14",
+      "segment": "ai",
+      "what": "r/LocalLLaMAでは、元Manusのbackend leadが、agentを2年運用した結果として、型付きfunction catalogを増やすより単一の `run(command=\"...\")` ツールへ寄せた方が安定すると共有した。投稿では、pipeや `&&` を解釈するparser、progressive help、binary guard、出力あふれ対策、sandboxingまで含め、LLMのI/OをUnix風CLIへ寄せる設計を詳しく説明している。",
+      "why": "agentのツール設計が、専用関数を何個作るかではなく、失敗しにくい実行インターフェースをどう定義するかへ移っていると分かる。モデルの能力差より、実行面の整え方が成功率を左右するという現場知見として重い。",
+      "so_what": "自分がagent用ツールを増やすなら、まず細かい関数を量産する前に、単一run系ツールと整った標準出力でどこまで回せるか試したい。GUIをなぞらせるより、CLI前提の素直なI/Oへ寄せた方がLLMの失敗を減らしやすい。",
+      "confidence": "high"
+    },
+    {
+      "title": "I used Claude Code to reverse engineer a 13-year-old game binary and crack a restriction nobody had solved — the community is losing it",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ru3irp/i_used_claude_code_to_reverse_engineer_a/",
+      "published_at": "2026-03-15",
+      "segment": "ai",
+      "what": "r/ClaudeAIでは、Claude Codeを使って13年前のゲーム『Disney Infinity 1.0』のバイナリを解析し、長年解決されていなかった制限を外した事例が共有された。投稿者はsymbolもsourceもない状態から13個のvalidation call siteを見つけ、17本のbinary patchと3件のdata file修正を24時間未満でまとめ、成果物をGitHubへ公開している。",
+      "why": "LLM支援がWebアプリや定型CRUDだけでなく、逆アセンブルやパッチ作成のような探索的で文脈の重い作業にも入り始めていることを示す。ブラックボックス資産に対して仮説、差分、検証を高速に回せるなら、手を付けにくかった保守領域の難度が変わる。",
+      "so_what": "自分が古いコードや仕様不明資産に向き合う時も、最初から全面改修を考えず、agentで探索ログと差分候補を先に集めるやり方を試したい。ただし、再現性のためにパッチと検証手順は人間が別管理で残し、成果だけを信じないようにしたい。",
+      "confidence": "medium"
+    },
+    {
+      "title": "Super Micro co-founder, employee and contractor smuggled Nvidia chips to China, U.S. prosecutors charge",
+      "url": "https://www.cnbc.com/2026/03/19/us-tech-execs-smuggled-nvidia-chips-to-china-prosecutors-say.html",
+      "published_at": "2026-03-19",
+      "segment": "semiconductor",
+      "what": "r/hardwareとr/AMD_Stockで話題になったCNBC記事は、米検察がSuper Micro関係者3人を、NVIDIA GPU搭載サーバーを中国へ違法に迂回輸出したとして起訴したと伝えている。起訴状では東南アジアの中継企業を使った偽装書類とダミー設置が示され、2024年以降で約25億ドル、2025年4月下旬から5月中旬だけでも5億1000万ドル相当の販売が問題視されている。",
+      "why": "AI半導体の需給は性能競争だけでなく、輸出規制とコンプライアンス執行で大きく揺れることが分かる。高性能GPUが国家安全保障の対象になっている以上、サーバーベンダーや流通経路のリスクは、そのまま供給の安定性と価格形成に跳ね返る。",
+      "so_what": "自分がAIサーバーやGPU市場を追うなら、製品発表やベンチマークだけでなく、輸出規制、ライセンス、再輸出経路のニュースも同列に見たい。需要が強い局面ほど、法規制の綻びや摘発が供給見通しを一気に変える。",
+      "confidence": "high"
+    },
+    {
+      "title": "Intel Reportedly Readies a 10% Price Hike for Consumer CPUs",
+      "url": "https://www.techpowerup.com/347549/intel-reportedly-readies-a-10-price-hike-for-consumer-cpus?type=News",
+      "published_at": "2026-03-19",
+      "segment": "semiconductor",
+      "what": "r/hardwareで共有されたTechPowerUp記事は、Intelが主要PC顧客に対し、Core Ultra系を中心とするconsumer CPUの価格を約10%引き上げる計画を伝えたと報じている。記事では、メモリやストレージ、GPUに続いてCPUまで値上がり圧力が及び、OEM各社はAI PCや上位機種の訴求を強めながら価格転嫁を進める可能性が高いと整理していた。",
+      "why": "データセンター需要や部材高騰の影響が、ついに一般PCのCPU価格にも波及していると読める。AI向け需要が強い局面では、ゲーミングや開発向けのローカル環境も同じ部品市場の圧力を受けるため、消費者向け半導体を別世界として切り離せない。",
+      "so_what": "自分が開発機や自作PCを更新するなら、CPUだけ後回しにせず、メモリやGPUも含めた総額で早めに見積もりたい。値上げが本格化する前に構成を固めるか、AI PCの販促で割安になる機種を狙うかを先に判断しておく必要がある。",
+      "confidence": "medium"
+    },
+    {
+      "title": "NVIDIA, Intel join Microsoft for Advanced Shader Delivery, confirmed for Lunar/Panther Lake and GeForce RTX 50",
+      "url": "https://videocardz.com/newz/nvidia-intel-join-microsoft-for-advanced-shader-delivery-confirmed-for-lunar-panther-lake-and-geforce-rtx-50",
+      "published_at": "2026-03-13",
+      "segment": "semiconductor",
+      "what": "r/nvidiaで話題になった記事は、MicrosoftがAdvanced Shader Deliveryに加え、DirectX Linear AlgebraやDirectX Compute Graph Compilerを進めており、IntelのLunar LakeとPanther Lake、NVIDIAのGeForce RTX 50が対応予定だと伝えている。shader compilationによるstutter削減だけでなく、neural renderingやupscalingのようなAI処理をDirectX経由で扱いやすくする狙いがある。",
+      "why": "クライアント向けAI半導体の価値が、チップ単体の性能より、OS、API、compiler、driverを含むenablementの厚みで決まることを示す話題だ。開発者がAI機能を載せやすい基盤をどれだけ早く整えられるかが、対応ハードの実用性へ直結する。",
+      "so_what": "自分がPC向けAI機能やgraphics workloadを評価するなら、TFLOPSや世代名だけでなく、API対応とcompiler整備の進み具合を確認したい。実アプリではピーク性能より、安定した開発経路があるかどうかの方が採用判断に効きやすい。",
+      "confidence": "medium"
+    }
+  ]
+}
