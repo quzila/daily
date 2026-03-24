@@ -1,0 +1,26 @@
+{
+  "source": "official-ai",
+  "date": "2026-03-24",
+  "items": [
+    {
+      "title": "Gemini 3.1 Pro is now available in JetBrains IDEs, Xcode, and Eclipse",
+      "url": "https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse/",
+      "published_at": "2026-03-23",
+      "segment": "ai",
+      "what": "GitHub CopilotでGemini 3.1 Proのpublic previewが始まり、Copilot Enterprise, Copilot Business, Copilot Pro, Copilot Pro+から利用できるようになった。github.com、GitHub Mobile、Visual Studio Code、Visual Studio、JetBrains IDEs、Xcode、EclipseのCopilot Chatで、agent / ask / editモードのモデルピッカーから選べる。BusinessとEnterpriseでは管理者がCopilot設定でGemini 3.1 Pro policyを有効化する必要がある。",
+      "why": "同じCopilotでも、利用できるモデルと有効化手順がIDEや組織設定で変わることが明示された。モデル追加は単なる機能拡張ではなく、組織導入時の評価対象と承認手順を増やす更新でもある。",
+      "so_what": "Copilotを使うなら、まず管理者ポリシーでGemini 3.1 Proが有効かを確認し、各IDEのagent / ask / editで出力差を比較するべきだ。モデル切り替えが入る前提で、既存のプロンプトやレビュー基準を再検証した方が運用が安定する。",
+      "confidence": "high"
+    },
+    {
+      "title": "Copilot usage metrics now resolve auto model selection to actual models",
+      "url": "https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models/",
+      "published_at": "2026-03-20",
+      "segment": "ai",
+      "what": "Copilot usage metricsで、auto model selection時の利用が汎用的なAuto表記ではなく実際のモデル名で表示されるようになった。REST APIとダッシュボードの両方で、enterprise / org / userレベルの`totals_by_model_feature`や chat mode別のモデル利用チャートに反映される。公式説明では、auto利用は解決後のモデル集計に含まれる。",
+      "why": "自動選択を使っていても、どのモデルが実際に使われたかを追えるようになり、監査やコンプライアンスの確認精度が上がる。モデル利用の見え方が改善されると、評価レポートの作り方や採用モデルの比較方法にも影響する。",
+      "so_what": "Copilot利用分析をしているなら、Auto集計のまま判断せず、この更新後のAPIとダッシュボードでモデル別の実利用を見直すべきだ。特に組織導入では、レポートの基準をactual modelベースに揃え直した方が誤読を減らせる。",
+      "confidence": "high"
+    }
+  ]
+}

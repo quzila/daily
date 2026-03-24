@@ -1,0 +1,26 @@
+{
+  "source": "official-semiconductor",
+  "date": "2026-03-24",
+  "items": [
+    {
+      "title": "Intel Xeon 6 used as Host CPUs in NVIDIA DGX Rubin NVL8 Systems",
+      "url": "https://newsroom.intel.com/data-center/intel-xeon-6-used-as-host-cpus-in-nvidia-dgx-rubin-nvl8-systems",
+      "published_at": "2026-03-16",
+      "segment": "semiconductor",
+      "what": "IntelはGTC 2026で、NVIDIA DGX Rubin NVL8 systemsのホストCPUにIntel Xeon 6が採用されたと発表した。記事では、AI推論が大規模学習からリアルタイム推論へ移るなかで、ホストCPUがオーケストレーション、メモリアクセス、モデル保護、スループット管理の中核になると整理し、Xeon 6の強みとして最大8TBのシステムメモリ、MRDIMMによる世代比3倍のメモリ帯域、PCIe 5.0、CPU-GPU経路の confidential computing 対応を挙げている。",
+      "why": "AI基盤のボトルネックがGPU単体ではなく、CPUが担う制御、メモリ、I/O、セキュリティに広がっていることを示す。NVIDIAの次世代ラック設計にIntelが入り続けるのは、調達時にCPU世代やメモリ帯域を含めたシステム全体で比較する必要があることを示唆する。",
+      "so_what": "AIサーバーや推論基盤を追うなら、GPUの世代名だけでなく、ホストCPUの役割、メモリ構成、PCIe帯域、機密計算対応まで一緒に見るべきだ。推論が増えるほど、CPU側の設計差が総所有コストと運用安定性に直結する。",
+      "confidence": "high"
+    },
+    {
+      "title": "Intel Launches New Core Ultra 200HX Plus Series Mobile Processors",
+      "url": "https://newsroom.intel.com/client-computing/intel-launches-core-ultra-200hx-plus-series-mobile-processors",
+      "published_at": "2026-03-17",
+      "segment": "semiconductor",
+      "what": "IntelはCore Ultra 200HX Plusシリーズのモバイル向け新CPUとしてCore Ultra 9 290HX PlusとCore Ultra 7 270HX Plusを発表した。最大900MHzのdie-to-die周波数向上、新しいIntel Binary Optimization Tool、最大+8%のゲーミング性能と+7%のシングルスレッド性能改善、さらにWi-Fi 7、Bluetooth 5.4、Thunderbolt 5対応を訴求し、OEM搭載機は2026年3月17日から順次出荷される。",
+      "why": "ノートPC向けでも、単なる演算性能だけでなく、周辺I/Oやソフト最適化まで含めた製品競争になっていることが分かる。高性能モバイルCPUの更新は、PCサプライチェーンや法人向け更新需要、ゲーム・制作機の出荷計画に直結する。",
+      "so_what": "PC調達や製品比較では、CPUベンチマークだけでなく、無線規格、外部接続、出荷開始時期を同じテーブルで見ると判断しやすい。OEMがすぐ出せる世代は、実際の購入候補に乗りやすい。",
+      "confidence": "high"
+    }
+  ]
+}

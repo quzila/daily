@@ -1,0 +1,51 @@
+{
+  "source": "hacker-news",
+  "date": "2026-03-24",
+  "items": [
+    {
+      "title": "Show HN: Cq – Stack Overflow for AI coding agents",
+      "url": "https://blog.mozilla.ai/cq-stack-overflow-for-agents/",
+      "published_at": "2026-03-23",
+      "segment": "ai",
+      "what": "Mozilla AI describes cq as a shared knowledge layer for agents, modeled on Stack Overflow. The post argues that agents keep repeating the same failures in isolation and need a way to query prior learnings, contribute fixes, and reuse structured context before taking work.",
+      "why": "The piece points to agent memory and shared troubleshooting as a likely next-layer product area, not just a convenience feature. If agents keep spreading into everyday engineering work, shared knowledge systems could cut repeated mistakes and token waste.",
+      "so_what": "I should watch whether this pattern becomes standard in agent tooling and how it plugs into CLI and IDE workflows. That would change my verification priorities toward durable team knowledge instead of prompt-only reuse.",
+      "confidence": "high"
+    },
+    {
+      "title": "I built an AI receptionist for a mechanic shop",
+      "url": "https://www.itsthatlady.dev/blog/building-an-ai-receptionist-for-my-brother/",
+      "published_at": "2026-03-20",
+      "segment": "ai",
+      "what": "The post frames a simple business problem: a luxury mechanic shop misses many calls and loses jobs because no one answers the phone. The author builds an AI receptionist to catch those calls and turn missed demand into booked work.",
+      "why": "This is a concrete example of AI moving into revenue-recovery automation for small businesses. The value is less about novelty and more about whether the system reliably captures leads and routes customers without dropping them.",
+      "so_what": "For similar systems, I should prioritize handoff behavior, failure modes, and measurable business recovery over demo polish. That is the difference between a flashy bot and something operationally useful.",
+      "confidence": "medium"
+    },
+    {
+      "title": "How I'm Productive with Claude Code",
+      "url": "https://neilkakkar.com/productive-with-claude-code.html",
+      "published_at": "2026-03-16",
+      "segment": "ai",
+      "what": "Neil Kakkar describes using Claude Code to automate routine implementation work, PR preparation, preview checks, and UI verification. The article emphasizes faster rebuilds, parallel worktrees, and making a task count as done only after the agent has verified the result.",
+      "why": "The post is a practical example of agents being used as workflow multipliers rather than one-shot code generators. Its main claim is that the real gains come from removing context switches and tightening the verification loop.",
+      "so_what": "I should evaluate agent workflows by how much they reduce switching cost and how they shift verification, not by raw output volume. That frames where bugs are likely to surface when similar workflows are adopted.",
+      "confidence": "high"
+    },
+    {
+      "title": "BIO – The Bao I/O Co-Processor",
+      "url": "https://www.crowdsupply.com/baochip/dabao/updates/bio-the-bao-i-o-co-processor",
+      "published_at": "2026-03-21",
+      "segment": "semiconductor",
+      "what": "The Baochip update explains the BIO I/O co-processor, compares it with Raspberry Pi PIO, and walks through the architecture and programming examples. The article then shows that the co-processor consumes substantial FPGA resources and can hurt timing more than expected.",
+      "why": "It is a useful reminder that peripheral blocks are not free in hardware design and can dominate area and critical-path budgets. The post ties software abstractions back to actual FPGA and silicon tradeoffs.",
+      "so_what": "For semiconductor and embedded coverage, I should keep watching for resource maps, timing impact, and implementation cost rather than feature claims alone. That is the practical lens for judging open hardware designs like Baochip.",
+      "confidence": "medium"
+    }
+  ],
+  "attempt_log": [
+    "Scanned the HN top30 for 2026-03-24 and kept only AI/semiconductor links with accessible external bodies.",
+    "Selected Show HN: Cq, I built an AI receptionist for a mechanic shop, How I'm Productive with Claude Code, and BIO - The Bao I/O Co-Processor.",
+    "BIO did not expose an explicit on-page publish date, so published_at uses the HN story date from item 47469744; the Twitter/X LLM clip was skipped because it did not provide a stable article body."
+  ]
+}

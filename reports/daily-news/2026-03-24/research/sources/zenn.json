@@ -1,0 +1,48 @@
+{
+  "source": "zenn",
+  "date": "2026-03-24",
+  "items": [
+    {
+      "title": "Claude Codeのエージェントで別リポジトリをコンテキスト分離して作業させる",
+      "url": "https://zenn.dev/rinomiya_sumoru/articles/claude-code-agent-separate-repo",
+      "published_at": "2026-03-24",
+      "segment": "ai",
+      "what": "この記事は、Claude Codeで別リポジトリの作業をするときに、メイン会話のコンテキストを汚さずに委譲する方法をまとめている。embedded git repo の問題を避けるために実体を別パスへ移し、元の場所からはシンボリックリンクで参照する構成を取っていた。さらに、CLAUDE.md にエージェント委譲のパターンを書いて、作業ディレクトリを明示する運用にしていた。",
+      "why": "単にエージェントを呼ぶだけでは、作業履歴や設定が混ざって目的のリポジトリの文脈を保てないことが分かる。複数リポジトリを並行して扱う人には、かなり実務的な分離パターンだ。",
+      "so_what": "自分の環境でも、まず別リポジトリの実体パスを固定してから、エージェントの起動ディレクトリと CLAUDE.md の参照先が一致するかを確認したい。git status が壊れないことと、メイン会話に余計な差分が積み上がらないことを検証するとよい。",
+      "confidence": "high"
+    },
+    {
+      "title": "【Claude Code】Kaggle上位勢が設定するClaude Codeのskillsとagentsをチェックする",
+      "url": "https://zenn.dev/nakakiiro/articles/kaggle_claude_code_boilerplate",
+      "published_at": "2026-03-23",
+      "segment": "ai",
+      "what": "この記事は、Kaggle上位勢が公開している Claude Code の設定例を3つ取り上げ、skills と agents の使い分けを比較している。6フェーズの実験ワークフロー、Claude実験と人間実験を分ける命名規則、SESSION_NOTES.md による継続記録、.steering/ による設計強制など、実験管理を仕組み化する工夫が整理されていた。あわせて、code-reviewer や data-analyzer のような役割別エージェントも紹介していた。",
+      "why": "AI支援の価値が、コード生成そのものよりも、実験の設計・記録・レビューをどこまで形式化できるかに移っていることが見える。Kaggle のように試行錯誤が多い現場では、再現性を支えるルールがそのまま成果に効く。",
+      "so_what": "自分のワークフローにも、実験開始前のチェックリスト、命名規則、記録ファイル、レビュー担当の分離を入れられるか試したい。まずは1つの作業領域だけで、Claude に任せる範囲と人間が見る範囲を明示してみるのが現実的だ。",
+      "confidence": "high"
+    },
+    {
+      "title": "Claude Code を使いこなすために意識している 5つのこと",
+      "url": "https://zenn.dev/sunagaku/articles/claude-code-usage-mindset",
+      "published_at": "2026-03-23",
+      "segment": "ai",
+      "what": "この記事は、Claude Code をうまく使うための心構えを5項目で整理している。公式ドキュメントを読むこと、作業を効率化する視点を持つこと、AI の処理をブラックボックスにしないこと、新しい仕組みは小さく試すこと、フレームワークや仕組みを自作して理解を深めることが主題だった。単なる便利機能の紹介ではなく、使い方を継続的に磨く姿勢に重きを置いていた。",
+      "why": "AI ツールの使いこなしは、機能の多さよりも、検証と振り返りの習慣で差がつくことが伝わる。新機能を追うだけではなく、自分の操作や指示の癖を見直す重要性がはっきりしている。",
+      "so_what": "自分が Claude Code を使うときも、まず小さな手順改善を1つだけ試し、結果を見てから広げる運用にしたい。うまくいった/いかなかった理由をメモに残し、後から再現できる形で Skill 化するのがよさそうだ。",
+      "confidence": "high"
+    }
+  ],
+  "other_candidates": [
+    {
+      "title": "AI駆動開発をする人が知っておきたいPC用語・プログラミング用語",
+      "url": "https://zenn.dev/ryuseiueda/articles/-aipcai-programing",
+      "published_at": "2026-03-24"
+    },
+    {
+      "title": "Notionのページをいい感じのPDFにしてくれるClaude Codeスキルを作った話",
+      "url": "https://zenn.dev/xtone/articles/notion-pdf-skill",
+      "published_at": "2026-03-24"
+    }
+  ]
+}

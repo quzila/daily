@@ -1,0 +1,36 @@
+{
+  "source": "reddit",
+  "date": "2026-03-24",
+  "items": [
+    {
+      "title": "Qwen3.5-35B-A3B hits 37.8% on SWE-bench Verified Hard - nearly matching Claude Opus 4.6 (40%) with the right verification strategy",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rkdlqi/qwen3535ba3b_hits_378_on_swebench_verified_hard/",
+      "published_at": "2026-03-04",
+      "segment": "ai",
+      "what": "r/LocalLLaMAの投稿では、Qwen3.5-35B-A3Bを3B active paramsのMoEとしてvLLMで回し、verify-after-every-editを入れるとSWE-bench Verified Hardで22.2%から37.8%まで伸びたと報告している。付属のGitHubリポジトリでは、self-verification戦略の比較として、compaction設定や200-step系の実験結果も整理されている。",
+      "why": "3B-activeのモデルが、単純な検証ループ追加だけで難問ベンチにかなり近づくのは、agentの信頼性がモデルサイズだけで決まらないことを示す。コードエージェントの実運用では、推論能力よりも検証の入れ方が成果を左右しうる。",
+      "so_what": "この結果を追うなら、元のSWE-bench設定、実行ハーネス、再現用スクリプトを一次情報で確認したい。特に hard subset の 37.8% と full benchmark の 67.0% が同じ条件で出ているかを切り分ける必要がある。",
+      "confidence": "high"
+    },
+    {
+      "title": "PSA: Humans are scary stupid",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rkrwub/psa_humans_are_scary_stupid/",
+      "published_at": "2026-03-04",
+      "segment": "ai",
+      "what": "r/LocalLLaMAのモデレーター投稿で、前日のQwen3.5 4bに関する誤情報拡散を受け、画像認識の主張が実際には誤りで、300超のupvoteが付いても内容確認がされていなかったと指摘している。投稿者は、LLMの出力を鵜呑みにせず、検証可能なソースや複数情報源でのクロスチェックを促した。",
+      "why": "コミュニティのAI話題は、性能デモよりも検証不足のまま拡散されやすい。モデルの能力議論だけでなく、投稿の信頼性管理が同じくらい重要だと示している。",
+      "so_what": "今後この手の投稿を拾うなら、スクリーンショットや一枚画像だけではなく、元データや再現手順まで確認する必要がある。モデル評価は、出力結果だけでなく入力・プロンプト・検証方法をセットで見ないと危ない。",
+      "confidence": "medium"
+    },
+    {
+      "title": "GeForce RTX At PAX East 2026: Verified Priority Access IRL, Swag, Giveaways & More",
+      "url": "https://www.nvidia.com/en-us/geforce/news/geforce-rtx-pax-east-2026-swag-verified-priority-access/",
+      "published_at": "2026-03-23",
+      "segment": "semiconductor",
+      "what": "NVIDIAの公式記事では、GeForceチームがPAX East 2026に参加し、GeForce RTX 50 Series Founders EditionをMSRPで買えるVerified Priority Access IRLや、ブースでの抽選、限定swag、デモを案内している。本文にはCyberpowerPC、PNY、Razerの出展内容も並び、イベント連動の販促と体験施策が中心だと分かる。",
+      "why": "製品発表そのものではないが、RTX 50シリーズの販促や入手導線がどう設計されているかを示している。NVIDIAのGPU供給とイベント運営の見せ方は、需要の強さとブランドコントロールの両方を測る材料になる。",
+      "so_what": "需要動向を見るなら、スペック記事だけでなく公式の流通施策や会場施策も追う必要がある。Founders Editionの入手性やMSRP施策は一般消費者向けの実勢価格感に影響するので、一次情報で追跡したい。",
+      "confidence": "medium"
+    }
+  ]
+}
